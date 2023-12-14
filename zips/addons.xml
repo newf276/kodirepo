@@ -754,7 +754,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
 	</extension>
 </addon>
 
-<addon id="repository.newf" name="Repository Newf" version="8.0" provider-name="newf276">
+<addon id="repository.newf" name="Repository Newf" version="1.0.0" provider-name="newf276">
     <extension point="xbmc.addon.repository" name="Repository Newf">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/newf276/kodirepo/master/zips/addons.xml</info>
@@ -831,6 +831,17 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
             <info compressed="false">https://raw.githubusercontent.com/umbrellaplug/umbrellaplug.github.io/master/nexus/zips/addons.xml</info>
             <checksum>https://raw.githubusercontent.com/umbrellaplug/umbrellaplug.github.io/master/nexus/zips/addons.xml.md5</checksum>
             <datadir zip="true">https://raw.githubusercontent.com/umbrellaplug/umbrellaplug.github.io/master/nexus/zips/</datadir>
+        </dir>
+        <dir minversion="19.0.0">
+			<info compressed="false">https://github.com/CastagnaIT/repository.castagnait/raw/kodi/kodi19/addons.xml</info>
+			<checksum>https://github.com/CastagnaIT/repository.castagnait/raw/kodi/kodi19/addons.xml.md5</checksum>
+			<datadir zip="true">https://github.com/CastagnaIT/repository.castagnait/raw/kodi/kodi19</datadir>
+			<hashes>false</hashes>
+		</dir>
+            <dir minversion="19.0.0">
+            <info compressed="false">https://raw.githubusercontent.com/kodifitzwell/repo/master/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/kodifitzwell/repo/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/kodifitzwell/repo/master/</datadir>
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
