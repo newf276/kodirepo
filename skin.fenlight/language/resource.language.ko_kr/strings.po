@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Main\n"
-"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-11-15 09:47+0000\n"
+"PO-Revision-Date: 2023-11-23 17:23+0000\n"
 "Last-Translator: Minho Park <parkmino@gmail.com>\n"
 "Language-Team: Korean <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-fenlight/ko_kr/>\n"
 "Language: ko_kr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.1\n"
 
 msgctxt "Addon Summary"
 msgid "Fenlight skin by phil65. (Kodi's default skin)"
@@ -23,11 +23,11 @@ msgstr "phil65가 만든 Fenlight 스킨. (Kodi 기본 스킨)"
 
 msgctxt "Addon Description"
 msgid "Fenlight is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "Estuary는 Kodi 17.0이상의 기본 스킨입니다. 처음 Kodi를 접하는 사용자가 쉽게 이해하고 사용할 수 있도록 만들었습니다."
+msgstr "Fenlight는 Kodi 17.0이상의 기본 스킨입니다. 처음 Kodi를 접하는 사용자가 쉽게 이해하고 사용할 수 있도록 만들었습니다."
 
 msgctxt "Addon Disclaimer"
 msgid "Fenlight is the default skin for Kodi, removing it may cause issues"
-msgstr "Estuary는 Kodi의 기본스킨으로 제거시 문제가 생길 수 있습니다"
+msgstr "Fenlight는 Kodi의 기본스킨으로 제거시 문제가 생길 수 있습니다"
 
 msgctxt "#31000"
 msgid "Now playing"
@@ -248,14 +248,6 @@ msgstr "시작할 때 로그인 화면 표시"
 msgctxt "#31058"
 msgid "Automatic Login on startup"
 msgstr "시작할 때 자동 로그인"
-
-msgctxt "#31059"
-msgid "Select + X"
-msgstr "Select + X"
-
-msgctxt "#31060"
-msgid "Select + Start"
-msgstr "Select + Start"
 
 msgctxt "#31061"
 msgid "Main menu items"
@@ -739,6 +731,34 @@ msgstr "미디어"
 msgctxt "#31611"
 msgid "System"
 msgstr "시스템"
+
+#. Video version dialog button
+msgctxt "#31612"
+msgid "Add version"
+msgstr "버전 추가"
+
+#. Video version dialog button
+msgctxt "#31613"
+msgid "Add extras"
+msgstr "기타 추가"
+
+#. Video version dialog button
+msgctxt "#31614"
+msgid "Set default"
+msgstr "기본값으로 설정"
+
+#. Video version dialog button
+msgctxt "#31615"
+msgid "Extras"
+msgstr "기타"
+
+#~ msgctxt "#31059"
+#~ msgid "Select + X"
+#~ msgstr "Select + X"
+
+#~ msgctxt "#31060"
+#~ msgid "Select + Start"
+#~ msgstr "Select + Start"
 
 #~ msgctxt "#31137"
 #~ msgid "PVR info"

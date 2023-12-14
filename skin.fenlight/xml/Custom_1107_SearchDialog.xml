@@ -25,6 +25,13 @@
 						<onclick condition="!System.HasAddon(plugin.video.fenlight)">InstallAddon(plugin.video.fenlight)</onclick>
 					</item>
 					<item>
+						<label>$LOCALIZE[31113]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick condition="System.AddonIsEnabled(script.globalsearch)">RunScript(script.globalsearch)</onclick>
+						<onclick condition="System.HasAddon(script.globalsearch) + !System.AddonIsEnabled(script.globalsearch)">EnableAddon(script.globalsearch)</onclick>
+						<onclick condition="!System.HasAddon(script.globalsearch)">InstallAddon(script.globalsearch)</onclick>
+					</item>
+					<item>
 						<label>$LOCALIZE[31145]</label>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>ActivateWindow(addonbrowser,addons://search/,return)</onclick>

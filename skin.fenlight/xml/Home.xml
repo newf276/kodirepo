@@ -62,13 +62,13 @@
 							<param name="content_path" value="plugin://plugin.video.fenlight/?action=tmdb_movies_in_theaters&iconImage=intheatres&mode=build_movie_list&name=32464"/>
 							<param name="widget_header" value="In Theatre"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5200"/>
+							<param name="list_id" value="5100"/>
 						</include>
 						<include content="WidgetListPoster">
 							<param name="content_path" value="plugin://plugin.video.fenlight/?name=Blockbusters&amp;iconImage=most_voted&amp;mode=build_movie_list&amp;action=tmdb_movies_blockbusters&amp;random_support=true"/>
 							<param name="widget_header" value="Blockbusters"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5300"/>
+							<param name="list_id" value="5200"/>
 						</include>
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
@@ -96,13 +96,13 @@
 							<param name="sortorder" value="ascending"/>
 							<param name="widget_header" value="Next Episode"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6200"/>
+							<param name="list_id" value="6100"/>
 						</include>
 						<include content="WidgetListPoster">
 							<param name="content_path" value="plugin://plugin.video.fenlight/?name=32460&amp;action=tmdb_tv_premieres&amp;iconImage=fresh&amp;mode=build_tvshow_list"/>
 							<param name="widget_header" value="Premieres"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6100"/>
+							<param name="list_id" value="6200"/>
 						</include>
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">

@@ -62,13 +62,13 @@
 							<param name="content_path" value="plugin://plugin.video.popcorn/?action=moviePopularRecent"/>
 							<param name="widget_header" value="Popular Movies"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5200"/>
+							<param name="list_id" value="5100"/>
 						</include>
 						<include content="WidgetListPoster">
 							<param name="content_path" value="plugin://plugin.video.popcorn/?action=genericEndpoint&amp;endpoint=trending&amp;mediatype=movies"/>
 							<param name="widget_header" value="Tredning Now"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5300"/>
+							<param name="list_id" value="5200"/>
 						</include>
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
@@ -96,13 +96,13 @@
 							<param name="sortorder" value="ascending"/>
 							<param name="widget_header" value="Next Episode"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6200"/>
+							<param name="list_id" value="6100"/>
 						</include>
 						<include content="WidgetListPoster">
 							<param name="content_path" value="plugin://plugin.video.popcorn/?action=showsPopularRecent"/>
 							<param name="widget_header" value="Popular Shows"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6100"/>
+							<param name="list_id" value="6200"/>
 						</include>
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">

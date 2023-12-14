@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Main\n"
-"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-07-24 11:49+0000\n"
+"PO-Revision-Date: 2023-11-28 18:10+0000\n"
 "Last-Translator: Oskari Lavinto <olavinto@protonmail.com>\n"
 "Language-Team: Finnish <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-fenlight/fi_fi/>\n"
 "Language: fi_fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.18.2\n"
+"X-Generator: Weblate 5.2.1\n"
 
 msgctxt "Addon Summary"
 msgid "Fenlight skin by phil65. (Kodi's default skin)"
@@ -199,7 +199,7 @@ msgstr "Kameran valmistaja"
 
 msgctxt "#31042"
 msgid "Playlist options"
-msgstr "Toistolistan valinnat"
+msgstr "Toistolistavalinnat"
 
 msgctxt "#31043"
 msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
@@ -249,14 +249,6 @@ msgctxt "#31058"
 msgid "Automatic Login on startup"
 msgstr "Kirjaudu automaattisesti käynnistettäessä"
 
-msgctxt "#31059"
-msgid "Select + X"
-msgstr "Valinta + X"
-
-msgctxt "#31060"
-msgid "Select + Start"
-msgstr "Valitse + Aloita"
-
 msgctxt "#31061"
 msgid "Main menu items"
 msgstr "Päävalikon kohteet"
@@ -271,11 +263,11 @@ msgstr "Osiot"
 
 msgctxt "#31065"
 msgid "Video playlist"
-msgstr "Videoiden toistolista"
+msgstr "Videotoistolista"
 
 msgctxt "#31066"
 msgid "Music playlist"
-msgstr "Musiikin toistolista"
+msgstr "Musiikkitoistolista"
 
 msgctxt "#31067"
 msgid "Event log"
@@ -739,6 +731,34 @@ msgstr "Media"
 msgctxt "#31611"
 msgid "System"
 msgstr "Järjestelmä"
+
+#. Video version dialog button
+msgctxt "#31612"
+msgid "Add version"
+msgstr ""
+
+#. Video version dialog button
+msgctxt "#31613"
+msgid "Add extras"
+msgstr ""
+
+#. Video version dialog button
+msgctxt "#31614"
+msgid "Set default"
+msgstr ""
+
+#. Video version dialog button
+msgctxt "#31615"
+msgid "Extras"
+msgstr "Lisäsisältö"
+
+#~ msgctxt "#31059"
+#~ msgid "Select + X"
+#~ msgstr "Valinta + X"
+
+#~ msgctxt "#31060"
+#~ msgid "Select + Start"
+#~ msgstr "Valitse + Aloita"
 
 #~ msgctxt "#31137"
 #~ msgid "PVR info"
