@@ -21,6 +21,7 @@ metacache_db = translatePath(path_join(database_path_raw, 'metacache.db'))
 debridcache_db = translatePath(path_join(database_path_raw, 'debridcache.db'))
 external_db = translatePath(path_join(database_path_raw, 'external.db'))
 settings_db = translatePath(path_join(database_path_raw, 'settings.db'))
+database_timeout = 10
 database_locations = {
 'navigator_db': navigator_db, 'watched_db': watched_db, 'favorites_db': favorites_db, 'settings_db': settings_db, 'trakt_db': trakt_db,
 'maincache_db': maincache_db, 'metacache_db': metacache_db, 'debridcache_db': debridcache_db, 'lists_db': lists_db, 'external_db': external_db
@@ -93,7 +94,7 @@ def get_timestamp(offset=0):
 
 def check_database(database_name):
 	if not path_exists(databases_path): make_directory(databases_path)
-	dbcon = database.connect(database_locations[database_name], timeout=40, isolation_level=None, check_same_thread=False)
+	dbcon = database.connect(database_locations[database_name], timeout=database_timeout, isolation_level=None, check_same_thread=False)
 	for command in table_creators[database_name]: dbcon.execute(command)
 	dbcon.execute('PRAGMA synchronous = OFF')
 	dbcon.execute('PRAGMA journal_mode = OFF')

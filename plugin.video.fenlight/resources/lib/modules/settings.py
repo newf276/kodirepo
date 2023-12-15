@@ -250,3 +250,9 @@ def nextep_include_unwatched():
 
 def nextep_include_unaired():
 	return get_setting('fenlight.nextep.include_unaired', 'false') == 'true'
+
+def update_delay():
+	return int(get_setting('update.delay', '90'))
+
+def update_action():
+	return int(get_setting('update.action', '0'))

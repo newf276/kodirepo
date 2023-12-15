@@ -1,5 +1,22 @@
+++
 
-[COLOR dodgerblue][B]Version 1.0.05[/B][/COLOR]
+[COLOR dodgerblue][B]Version 1.0.12/13[/B][/COLOR]
+- Added new startup updater to run on Kodi start.
+- 2 settings for startup updater in Manage Updates->Startup Update:
+        
+"Delay Before Running": Choose time in seconds to delay the service after Kodi starts. Defaults to 90 secs. Best not to set this too low.
+        
+"Update Action": Set this to one of the following. Defaults to Prompt:
+                "Prompt": Confirm dialog appears when update available,
+                "Automatic": Update without user interaction,
+                "Notification": Alert the user of an update with a notification,
+                "Off": No update performed or dialog/notification displayed.
+- Other changes/fixes.
+
+[COLOR dodgerblue][B]Version 1.0.10/11[/B][/COLOR]
+- Test of new update system.
+
+[COLOR dodgerblue][B]Version 1.0.09[/B][/COLOR]
 - Added updating ability within the addon. Tools->"Check for Updates" will make Fen Light check online for an update for itself. If found, you can choose to install the update. This replaces Kodi's repository and addon management system. If all goes well, I will add an automatic update check on each Kodi start.
 - Added "Single Episode Display Format" setting in Navigation->Content. There is a setting for format within Fen Light, and one for Widgets.
 

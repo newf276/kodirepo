@@ -147,7 +147,6 @@ class source:
 			e_check = ''
 		else: s_check, e_check = self.season, self.episode
 		sources = external_cache.get(provider, self.media_type, self.tmdb_id, self.title, self.year, s_check, e_check)
-		sources = None
 		if sources == None:
 			if pack == 'Show':
 				expiry_hours = self.show_expiry

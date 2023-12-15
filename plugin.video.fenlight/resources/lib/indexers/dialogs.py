@@ -296,7 +296,6 @@ def extras_buttons_choice(params):
 					('Restore [B]TV Show[/B] Buttons to Default', 'restore.tvshow'),
 					('Restore [B]Movie & TV Show[/B] Buttons to Default', 'restore.both')]
 		list_items = [{'line1': i[0]} for i in choices]
-		list_items.extend([{'line1': i[0]} for i in choices])
 		kwargs = {'items': json.dumps(list_items), 'heading': 'Choose Media Type to Set Buttons', 'narrow_window': 'true'}
 		choice = select_dialog(choices, **kwargs)
 		if choice == None:

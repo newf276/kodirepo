@@ -189,7 +189,6 @@ def default_settings():
 {'setting_id': 'image_download_directory', 'setting_type': 'path', 'setting_default': 'special://profile/addon_data/plugin.video.fen/Image Downloads/', 'browse_mode': '0'},
 
 
-
 #================================================================================#
 #====================================FEATURES====================================#
 #================================================================================#
@@ -199,7 +198,6 @@ def default_settings():
 {'setting_id': 'extras.enable_scrollbars', 'setting_type': 'boolean', 'setting_default': 'false'},
 #==================== Custom Actions
 {'setting_id': 'auto_custom_actions', 'setting_type': 'boolean', 'setting_default': 'true'},
-
 
 
 #==================================================================================#
@@ -225,7 +223,6 @@ def default_settings():
 {'setting_id': 'widget_hide_next_page', 'setting_type': 'boolean', 'setting_default': 'true'},
 
 
-
 #=====================================================================================#
 #====================================META ACCOUNTS====================================#
 #=====================================================================================#
@@ -233,7 +230,6 @@ def default_settings():
 {'setting_id': 'trakt.user', 'setting_type': 'string', 'setting_default': 'empty_setting'},
 #==================== OMDb
 {'setting_id': 'omdb_api', 'setting_type': 'string', 'setting_default': 'empty_setting'},
-
 
 
 #=========================================================================================#
@@ -289,7 +285,6 @@ def default_settings():
 {'setting_id': 'results.folders_ignore_filters', 'setting_type': 'boolean', 'setting_default': 'false'},
 
 
-
 #===============================================================================#
 #====================================RESULTS====================================#
 #===============================================================================#
@@ -328,7 +323,6 @@ def default_settings():
 {'setting_id': 'scraper_single_highlight', 'setting_type': 'string', 'setting_default': 'FF008EB2'},
 
 
-
 #===============================================================================#
 #===================================PLAYBACK====================================#
 #===============================================================================#
@@ -353,6 +347,13 @@ def default_settings():
 {'setting_id': 'playback.limit_resolve', 'setting_type': 'boolean', 'setting_default': 'false'},
 {'setting_id': 'playback.volumecheck_enabled', 'setting_type': 'boolean', 'setting_default': 'false'},
 {'setting_id': 'playback.volumecheck_percent', 'setting_type': 'action', 'setting_default': '50', 'min_value': '1', 'max_value': '100'},
+
+
+#=====================================================================================#
+#====================================MANAGE UPDATES===================================#
+#=====================================================================================#
+{'setting_id': 'update.action', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Prompt', '1': 'Automatic', '2': 'Notification', '3': 'Off'}},
+{'setting_id': 'update.delay', 'setting_type': 'action', 'setting_default': '90', 'min_value': '10', 'max_value': '300'},
 
 
 #=========================================================================================#

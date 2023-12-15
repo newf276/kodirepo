@@ -19,11 +19,12 @@ class FenLightMonitor(xbmc_monitor):
 			Thread(target=service_functions.CustomFonts().run).start()
 			service_functions.RemoveOldDatabases().run()
 			Thread(target=service_functions.TraktMonitor().run).start()
+			Thread(target=service_functions.UpdateCheck().run).start()
 		except: pass
 
 	def finishServices(self):
 		set_property(services_finished_prop, 'true')
-		sleep(200)
+		sleep(100)
 		kodi_refresh()
 
 	def onNotification(self, sender, method, data):

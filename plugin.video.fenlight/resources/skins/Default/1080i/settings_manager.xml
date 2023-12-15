@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
     <onload>SetFocus(2000,0,absolute)</onload>
-    <!-- settings_values -->
     <controls>
         <!-- Background -->
         <control type="image">
@@ -126,6 +125,10 @@
                     </item>
                     <item id="60">
                         <label>Playback</label>
+                        <onclick>noop</onclick>
+                    </item>
+                    <item id="70">
+                        <label>Manage Updates</label>
                         <onclick>noop</onclick>
                     </item>
                 </content>
@@ -1590,6 +1593,29 @@
                         <property name="setting_type">numeric</property>
                         <property name="setting_value">$INFO[Window(10000).Property(fenlight.playback.volumecheck_percent)]</property>
                         <onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=settings_manager.set_numeric&amp;setting_id=playback.volumecheck_percent)</onclick>
+                    </item>
+    <!-- MANAGE UPDATES 70 -->
+            <!-- Startup Update -->
+                    <item>
+                        <visible>Container(2000).HasFocus(70)</visible>
+                        <label>Startup Update</label>
+                        <property name="setting_type">separator</property>
+                        <onclick>noop</onclick>
+                    </item>
+                    <item>
+                        <visible>Container(2000).HasFocus(70)</visible>
+                        <label>Update Action</label>
+                        <property name="setting_type">action</property>
+                        <property name="setting_value">$INFO[Window(10000).Property(fenlight.update.action_name)]</property>
+                        <onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=settings_manager.set_from_list&amp;setting_id=update.action)</onclick>
+                    </item>
+                    <item>
+                        <visible>Container(2000).HasFocus(70)</visible>
+                        <visible>String.IsEqual(Window(10000).Property(fenlight.playback.volumecheck_enabled),true)</visible>
+                        <label>Delay Before Running (secs)</label>
+                        <property name="setting_type">numeric</property>
+                        <property name="setting_value">$INFO[Window(10000).Property(fenlight.update.delay)]</property>
+                        <onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=settings_manager.set_numeric&amp;setting_id=update.delay)</onclick>
                     </item>
                 </content>
             </control>

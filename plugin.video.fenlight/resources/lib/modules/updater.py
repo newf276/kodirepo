@@ -8,24 +8,34 @@ from modules import kodi_utils
 
 requests, addon_info, unzip, confirm_dialog, ok_dialog = kodi_utils.requests, kodi_utils.addon_info, kodi_utils.unzip, kodi_utils.confirm_dialog, kodi_utils.ok_dialog
 translate_path, osPath, delete_file, execute_builtin = kodi_utils.translate_path, kodi_utils.osPath, kodi_utils.delete_file, kodi_utils.execute_builtin
-update_local_addons, disable_enable_addon, update_kodi_addons_db = kodi_utils.update_local_addons, kodi_utils.disable_enable_addon, kodi_utils.update_kodi_addons_db
+update_local_addons, disable_enable_addon = kodi_utils.update_local_addons, kodi_utils.disable_enable_addon
+update_kodi_addons_db, notification = kodi_utils.update_kodi_addons_db, kodi_utils.notification
 
 packages_dir = translate_path('special://home/addons/packages/')
 home_addons_dir = translate_path('special://home/addons/')
 destination_check = translate_path('special://home/addons/plugin.video.fenlight/')
 
-def update_check():
+def get_versions():
 	result = requests.get('https://gitlab.com/Tikipeter/Tikipeter.gitlab.io/raw/main/fen_light_version')
 	if result.status_code != 200: return
 	online_version = result.text.replace('\n', '')
 	current_version = addon_info('version')
-	line = 'Installed Version: [B]%s[/B][CR]Online Version: [B]%s[/B][CR][CR]%s' % (current_version, online_version, '%s')
-	if current_version != online_version:
-		if not confirm_dialog(heading='Fen Light Updater', text=line % '[B]An Update is Available[/B][CR]Perform Update?'): return
-	else: return ok_dialog(heading='Fen Light Updater', text=line % '[B]No Update Available[/B]')
-	return update_addon(online_version)
+	return current_version, online_version
 
-def update_addon(new_version):
+def update_check(action=4):
+	if action == 3: return
+	current_version, online_version = get_versions()
+	line = 'Installed Version: [B]%s[/B][CR]Online Version: [B]%s[/B][CR][CR] ' % (current_version, online_version)
+	if current_version == online_version:
+		if action == 4: return ok_dialog(heading='Fen Light Updater', text=line + '[B]No Update Available[/B]')
+		return
+	if action in (0, 4):
+		if not confirm_dialog(heading='Fen Light Updater', text=line + '[B]An Update is Available[/B][CR]Perform Update?'): return
+	if action == 1: notification('Fen Light Update Occuring')
+	if action == 2: return notification('Fen Light Update Available')
+	return update_addon(online_version, action)
+
+def update_addon(new_version, action):
 	execute_builtin('ActivateWindow(Home)', True)
 	zip_name = 'plugin.video.fenlight-%s.zip' % new_version
 	url = 'https://gitlab.com/Tikipeter/Tikipeter.gitlab.io/raw/main/%s' % zip_name
@@ -37,7 +47,7 @@ def update_addon(new_version):
 	success = unzip(zip_location, home_addons_dir, destination_check)
 	delete_file(zip_location)
 	if not success: return ok_dialog(heading='Fen Light Updater', text='Error Updating.[CR]Please install new update manually')
-	ok_dialog(heading='Fen Light Updater', text='Success.[CR]Fen Light updated to version [B]%s[/B]' % new_version)
+	if action in (0, 4): ok_dialog(heading='Fen Light Updater', text='Success.[CR]Fen Light updated to version [B]%s[/B]' % new_version)
 	update_local_addons()
 	disable_enable_addon()
 	update_kodi_addons_db()

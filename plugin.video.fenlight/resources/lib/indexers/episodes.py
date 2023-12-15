@@ -5,7 +5,7 @@ from modules import kodi_utils, settings, watched_status as ws
 from modules.watched_status import get_hidden_progress_items
 from modules.metadata import tvshow_meta, episodes_meta, all_episodes_meta
 from modules.utils import jsondate_to_datetime, adjust_premiered_date, make_day, get_datetime, title_key, date_difference, make_thread_list_enumerate
-logger = kodi_utils.logger
+# logger = kodi_utils.logger
 
 set_view_mode, external, sys = kodi_utils.set_view_mode, kodi_utils.external, kodi_utils.sys
 add_items, set_content, set_sort_method, end_directory = kodi_utils.add_items, kodi_utils.set_content, kodi_utils.set_sort_method, kodi_utils.end_directory
@@ -173,32 +173,20 @@ def build_single_episode(list_type, params={}):
 			except: season_poster = show_poster
 			playcount, progress = get_watched_status(watched_info, string(tmdb_id), season, episode), get_progress_percent(bookmarks, tmdb_id, season, episode)
 			str_season_zfill2, str_episode_zfill2 = string(season).zfill(2), string(episode).zfill(2)
-
-
-
 			if display_format == 0: title_string = '%s: ' % title
 			else: title_string = ''
 			if display_format in (0, 1): seas_ep = '%sx%s - ' % (str_season_zfill2, str_episode_zfill2)
 			else: seas_ep = ''
-			# title_string = '%s: ' % title
-			# seas_ep = '%sx%s - ' % (str_season_zfill2, str_episode_zfill2)
-
-
-
 			if list_type_starts_with('next_'):
 				if playcount: return
-				highlight_color = 'darkgoldenrod' if unwatched else ''
-				if highlight_color: display = '%s: [COLOR%s]%sx%s - %s[/COLOR]' % \
-											(upper(title),highlight_color, str_season_zfill2, str_episode_zfill2, ep_name)
-				else:
-					if unaired:
-						if not include_unaired: return
-						if episode_date: display_premiered = '[B][%s][/B] ' % make_day_function(current_date, episode_date)
-						else: display_premiered = '[B][UNKNOWN][/B] '
-						highlight_start, highlight_end = '[COLOR red]', '[/COLOR]'
-					else: display_premiered, highlight_start, highlight_end = '', '', ''
-					display = '%s%s%s%s%s%s' % (display_premiered, title_string, highlight_start, seas_ep, ep_name, highlight_end)
-
+				if unwatched: display_premiered, highlight_start, highlight_end = '', '[COLOR darkgoldenrod]', '[/COLOR]'
+				elif unaired:
+					if not include_unaired: return
+					if episode_date: display_premiered = '[%s] ' % make_day_function(current_date, episode_date)
+					else: display_premiered = '[UNKNOWN] '
+					highlight_start, highlight_end = '[COLOR red]', '[/COLOR]'
+				else: display_premiered, highlight_start, highlight_end = '', '', ''
+				display = '%s%s%s%s%s%s' % (display_premiered, title_string, highlight_start, seas_ep, ep_name, highlight_end)
 			elif list_type_compare == 'trakt_calendar':
 				if episode_date: display_premiered = make_day_function(current_date, episode_date)
 				else: display_premiered = 'UNKNOWN'
