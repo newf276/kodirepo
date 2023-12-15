@@ -29,7 +29,7 @@ from resources.libs.common.config import CONFIG
 from resources.libs.common import logging
 from resources.libs.common import tools
 
-ORDER = ['exodusredux', 'fen', 'gaia', 'numbers', 'openmeta', 'premiumizer',
+ORDER = ['exodusredux', 'fenlight', 'gaia', 'numbers', 'openmeta', 'premiumizer',
          'realizer', 'scrubs', 'seren', 'shadow', 'thecrew', 'trakt', 'venom']
 
 TRAKTID = {
@@ -201,18 +201,18 @@ TRAKTID = {
         'default'  : 'trakt.management',
         'data'     : ['trakt.token', 'trakt.management'],
         'activate' : 'RunScript(plugin.video.themoviedb.helper, authenticate_trakt)'},
-    'fen': {
-        'name'     : 'Newf',
-        'plugin'   : 'plugin.video.newf',
-        'saved'    : 'fen',
-        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.newf'),
-        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.newf', 'icon.png'),
-        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.newf', 'fanart.png'),
-        'file'     : os.path.join(CONFIG.TRAKTFOLD, 'fen_trakt'),
-        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.newf', 'settings.xml'),
+    'fenlight': {
+        'name'     : 'Felight',
+        'plugin'   : 'plugin.video.fenlightlight',
+        'saved'    : 'fenlight',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.fenlightlight'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.fenlightlight', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.fenlightlight', 'fanart.png'),
+        'file'     : os.path.join(CONFIG.TRAKTFOLD, 'fenlight_trakt'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.fenlightlight', 'settings.xml'),
         'default'  : 'trakt_user',
         'data'     : ['trakt_user', 'trakt_access_token', 'trakt_refresh_token',  'trakt_expires_at'],
-        'activate' : 'RunPlugin(plugin://plugin.video.newf/?mode=trakt_authenticate)'}
+        'activate' : 'RunPlugin(plugin://plugin.video.fenlightlight/?mode=trakt_authenticate)'}
 }
 
 

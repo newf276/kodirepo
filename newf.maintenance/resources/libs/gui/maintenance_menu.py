@@ -144,7 +144,7 @@ class MaintenanceMenu:
                     {'mode': 'togglecache', 'name': 'includescrubs'}, icon=CONFIG.ICONMAINT, themeit=CONFIG.THEME3)
             if xbmc.getCondVisibility('System.HasAddon(plugin.video.seren)'):
                 directory.add_file(
-                    '--- Include Newf: {0}'.format(includeseren.replace('true', on).replace('false', off)),
+                    '--- Include Fenlight: {0}'.format(includeseren.replace('true', on).replace('false', off)),
                     {'mode': 'togglecache', 'name': 'includeseren'}, icon=CONFIG.ICONMAINT, themeit=CONFIG.THEME3)
             if xbmc.getCondVisibility('System.HasAddon(plugin.video.thecrew)'):
                 directory.add_file(

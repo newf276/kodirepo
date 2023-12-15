@@ -1,0 +1,31 @@
+
+[COLOR dodgerblue][B]Version 1.0.05[/B][/COLOR]
+- Added updating ability within the addon. Tools->"Check for Updates" will make Fen Light check online for an update for itself. If found, you can choose to install the update. This replaces Kodi's repository and addon management system. If all goes well, I will add an automatic update check on each Kodi start.
+- Added "Single Episode Display Format" setting in Navigation->Content. There is a setting for format within Fen Light, and one for Widgets.
+
+[COLOR dodgerblue][B]Version 1.0.05[/B][/COLOR]
+- Partial re-write of database handling.
+- Other changes/fixes.
+
+[COLOR dodgerblue][B]Version 1.0.04[/B][/COLOR]
+- Quick compatability fix for FENtastic skin.
+
+[COLOR dodgerblue][B]Version 1.0.03[/B][/COLOR]
+- Added option to see unaired episodes in Next Episodes.
+- Added functionality to assist in FENtastic skin integration.
+
+[COLOR dodgerblue][B]Version 1.0.01[/B][/COLOR]
+- Adjusted some meta list items so as to make them more uniform.
+- Other changes/fixes.
+
+
+[COLOR dodgerblue][B]Version 1.0.0[/B][/COLOR]
+- Initial Release
+- This is an English language only addon.
+
+
+
+
+
+
+++

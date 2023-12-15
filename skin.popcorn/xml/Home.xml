@@ -66,7 +66,7 @@
 						</include>
 						<include content="WidgetListPoster">
 							<param name="content_path" value="plugin://plugin.video.popcorn/?action=genericEndpoint&amp;endpoint=trending&amp;mediatype=movies"/>
-							<param name="widget_header" value="Tredning Now"/>
+							<param name="widget_header" value="Trending Now"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5200"/>
 						</include>
@@ -92,6 +92,7 @@
 						</include>
                         <include content="WidgetListEpisodes">
 							<param name="content_path" value="plugin://plugin.video.popcorn/?action=showsNextUp"/>
+                            <param name="sortby" value="recentlyplayed"/>
                             <param name="sortby" value="recentlyplayed"/>
 							<param name="sortorder" value="ascending"/>
 							<param name="widget_header" value="Next Episode"/>
