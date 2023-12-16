@@ -1611,7 +1611,6 @@
                     </item>
                     <item>
                         <visible>Container(2000).HasFocus(70)</visible>
-                        <visible>String.IsEqual(Window(10000).Property(fenlight.playback.volumecheck_enabled),true)</visible>
                         <label>Delay Before Running (secs)</label>
                         <property name="setting_type">numeric</property>
                         <property name="setting_value">$INFO[Window(10000).Property(fenlight.update.delay)]</property>

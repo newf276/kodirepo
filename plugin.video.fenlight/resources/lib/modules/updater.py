@@ -8,7 +8,7 @@ from modules import kodi_utils
 
 requests, addon_info, unzip, confirm_dialog, ok_dialog = kodi_utils.requests, kodi_utils.addon_info, kodi_utils.unzip, kodi_utils.confirm_dialog, kodi_utils.ok_dialog
 translate_path, osPath, delete_file, execute_builtin = kodi_utils.translate_path, kodi_utils.osPath, kodi_utils.delete_file, kodi_utils.execute_builtin
-update_local_addons, disable_enable_addon = kodi_utils.update_local_addons, kodi_utils.disable_enable_addon
+update_local_addons, disable_enable_addon, close_all_dialog = kodi_utils.update_local_addons, kodi_utils.disable_enable_addon, kodi_utils.close_all_dialog
 update_kodi_addons_db, notification = kodi_utils.update_kodi_addons_db, kodi_utils.notification
 
 packages_dir = translate_path('special://home/addons/packages/')
@@ -36,6 +36,7 @@ def update_check(action=4):
 	return update_addon(online_version, action)
 
 def update_addon(new_version, action):
+	close_all_dialog()
 	execute_builtin('ActivateWindow(Home)', True)
 	zip_name = 'plugin.video.fenlight-%s.zip' % new_version
 	url = 'https://gitlab.com/Tikipeter/Tikipeter.gitlab.io/raw/main/%s' % zip_name

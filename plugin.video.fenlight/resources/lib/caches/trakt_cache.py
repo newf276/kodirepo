@@ -122,7 +122,6 @@ def clear_all_trakt_cache_data(silent=False, refresh=True):
 		if not start: return False
 		for table in ('trakt_data', 'progress', 'watched', 'watched_status'): dbcon_main.execute(BASE_DELETE % table)
 		dbcon_main.execute('VACUUM')
-		dbcon_main.close()
 		if refresh:
 			from apis.trakt_api import trakt_sync_activities
 			Thread(target=trakt_sync_activities).start()

@@ -1,6 +1,6 @@
 ++
 
-[COLOR dodgerblue][B]Version 1.0.12/13[/B][/COLOR]
+[COLOR dodgerblue][B]Version 1.0.12/13/14[/B][/COLOR]
 - Added new startup updater to run on Kodi start.
 - 2 settings for startup updater in Manage Updates->Startup Update:
         
