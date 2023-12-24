@@ -30,6 +30,7 @@ class FenMonitor(xbmc_monitor):
 		try: service_functions.AutoRun().run()
 		except: pass
 		Thread(target=service_functions.DatabaseMaintenance().run).start()
+		service_functions.UpdateCheck().run()
 
 	def onSettingsChanged(self):
 		on_settings_changed_actions.run()

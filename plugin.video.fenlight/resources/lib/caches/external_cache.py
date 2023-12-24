@@ -11,16 +11,13 @@ FULL_DELETE = 'DELETE FROM results_data'
 CLEAN = 'DELETE from results_data WHERE CAST(expires AS INT) <= ?'
 
 class ExternalCache(object):
-	def __init__(self):
-		self.dbcon = connect_database('external_db')
-
 	def get(self, source, media_type, tmdb_id, title, year, season, episode):
 		result = None
 		try:
 			cache_data = self._execute(SELECT_RESULTS, (source, media_type, tmdb_id, title, year, season, episode)).fetchone()
 			if cache_data:
 				if cache_data[1] > get_timestamp(): result = eval(cache_data[0])
-				else: self.delete(source, media_type, title, year, tmdb_id, season, episode, dbcon)
+				else: self.delete(source, media_type, title, year, tmdb_id, season, episode)
 		except: pass
 		return result
 
@@ -31,7 +28,8 @@ class ExternalCache(object):
 		except: pass
 
 	def delete(self, source, media_type, tmdb_id, title, season, episode):
-		try: self._execute(DELETE_RESULTS, (source, media_type, tmdb_id, title, season, episode))
+		try:
+			self._execute(DELETE_RESULTS, (source, media_type, tmdb_id, title, season, episode))
 		except: return
 
 	def delete_cache(self, silent=False):
@@ -50,16 +48,21 @@ class ExternalCache(object):
 		except: return False
 
 	def _execute(self, command, params):
+		self.dbcon = connect_database('external_db')
 		return self.dbcon.execute(command, params)
 
 	def clean_database(self):
 		try:
-			self.dbcon.execute(CLEAN, (get_timestamp(),))
+			dbcon = connect_database('external_db')
+			dbcon.execute(CLEAN, (get_timestamp(),))
+			dbcon.close()
 			self._vacuum()
 			return True
 		except: return False
 
 	def _vacuum(self):
-		self.dbcon.execute('VACUUM')
+		dbcon = connect_database('external_db')
+		dbcon.execute('VACUUM')
+		dbcon.close()
 
 external_cache = ExternalCache()

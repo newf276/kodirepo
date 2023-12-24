@@ -11,9 +11,8 @@ from modules.utils import get_datetime, adjust_premiered_date, sort_for_article,
 sleep, progressDialogBG, Thread, get_video_database_path = kodi_utils.sleep, kodi_utils.progressDialogBG, kodi_utils.Thread, kodi_utils.get_video_database_path
 watched_indicators_function, lists_sort_order, date_offset = settings.watched_indicators, settings.lists_sort_order, settings.date_offset
 notification, kodi_refresh = kodi_utils.notification, kodi_utils.kodi_refresh
-trakt_database, watched_database = connect_database('trakt_db'), connect_database('watched_db')
 progress_db_string = 'fenlight_hidden_progress_items'
-indicators_dict = {0: watched_database, 1: trakt_database}
+indicators_dict = {0: 'watched_db', 1: 'trakt_db'}
 
 def get_hidden_progress_items(watched_indicators):
 	try:
@@ -25,12 +24,12 @@ def hide_unhide_progress_items(params):
 	action, tmdb_id = params['action'], int(params.get('media_id', '0'))
 	current_items = main_cache.get(progress_db_string) or []
 	if action == 'hide': current_items.append(tmdb_id)
-	else: current_items.remove(tmdb_id)#unhide
+	else: current_items.remove(tmdb_id)
 	main_cache.set(progress_db_string, current_items, 1825)
 	return kodi_refresh()
 
 def get_database(watched_indicators=None):
-	return indicators_dict[watched_indicators or watched_indicators_function()]
+	return connect_database(indicators_dict[watched_indicators or watched_indicators_function()])
 
 def get_next_episodes(watched_info):
 	seen = set()

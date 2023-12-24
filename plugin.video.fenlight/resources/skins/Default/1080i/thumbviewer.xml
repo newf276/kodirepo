@@ -88,10 +88,12 @@
                 </itemlayout>
                 <focusedlayout height="320" width="320">
                     <control type="group">
-                        <animation effect="zoom" start="100" end="105" time="200" tween="sine" easing="inout" center="auto">Focus</animation>
-                        <animation effect="zoom" start="105" end="100" time="200" tween="sine" easing="inout" center="auto">UnFocus</animation>
                         <control type="image">
-                            <animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+                            <animation effect="fade" start="100" end="60" condition="Control.HasFocus(2060)">Conditional</animation>
+                            <animation type="Focus" reversible="false">
+                                <effect type="zoom" end="105" time="75" tween="sine" easing="out" center="auto" />
+                                <effect type="zoom" end="95" time="225" tween="sine" delay="100" easing="out" center="auto" />
+                            </animation>
                             <left>0</left>
                             <top>0</top>
                             <width>320</width>

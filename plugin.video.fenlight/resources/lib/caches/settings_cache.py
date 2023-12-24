@@ -16,42 +16,45 @@ BASE_DELETE = 'DELETE FROM settings WHERE setting_id = ?'
 CLEAR_SETTINGS = 'DELETE FROM settings'
 
 class SettingsCache:
-	def __init__(self):
-		self.dbcon = connect_database('settings_db')
-
 	def get(self, setting_id):
 		try:
+			dbcon = connect_database('settings_db')
 			setting_id = setting_id.replace('fenlight.', '')
-			setting_value = self.dbcon.execute(BASE_GET, (setting_id,)).fetchone()[0]
+			setting_value = dbcon.execute(BASE_GET, (setting_id,)).fetchone()[0]
 			self.set_memory_cache(setting_id, setting_value)
 		except: setting_value = None
 		return setting_value
 
 	def remove_setting(self, setting_id):
-		self.dbcon.execute(BASE_DELETE, (setting_id,))
+		dbcon = connect_database('settings_db')
+		dbcon.execute(BASE_DELETE, (setting_id,))
 
 	def get_many(self, settings_list):
-		cache_data = self.dbcon.execute(GET_MANY % (', '.join('?' for _ in settings_list)), settings_list).fetchall()
+		dbcon = connect_database('settings_db')
+		cache_data = dbcon.execute(GET_MANY % (', '.join('?' for _ in settings_list)), settings_list).fetchall()
 
 	def get_all(self):
-		try: all_settings = dict(self.dbcon.execute(GET_ALL).fetchall())
+		dbcon = connect_database('settings_db')
+		try: all_settings = dict(dbcon.execute(GET_ALL).fetchall())
 		except: all_settings = {}
 		return all_settings
 
 	def set(self, setting_id, setting_value=None):
+		dbcon = connect_database('settings_db')
 		setting_info = default_setting_values(setting_id)
 		setting_type, setting_default = setting_info['setting_type'], setting_info['setting_default']
 		if setting_value is None: setting_value = setting_default
-		self.dbcon.execute(BASE_SET, (setting_id, setting_type, setting_default, setting_value))
+		dbcon.execute(BASE_SET, (setting_id, setting_type, setting_default, setting_value))
 		self.set_memory_cache(setting_id, setting_value)
 		if setting_type == 'action' and 'settings_options' in setting_info:
 			name_setting_id = '%s_name' % setting_id
 			name_setting_value = setting_info['settings_options'][setting_value]
-			self.dbcon.execute(BASE_SET, (name_setting_id, 'name', '', name_setting_value))
+			dbcon.execute(BASE_SET, (name_setting_id, 'name', '', name_setting_value))
 			self.set_memory_cache(name_setting_id, name_setting_value)
 
 	def set_many(self, settings_list):
-		self.dbcon.executemany(BASE_SET, settings_list)
+		dbcon = connect_database('settings_db')
+		dbcon.executemany(BASE_SET, settings_list)
 		for item in settings_list: self.set_memory_cache(item[0], item[3] or item[2])
 
 	def set_memory_cache(self, setting_id, setting_value):
@@ -65,7 +68,8 @@ class SettingsCache:
 
 	def clean_database(self):
 		try:
-			self.dbcon.execute('VACUUM')
+			dbcon = connect_database('settings_db')
+			dbcon.execute('VACUUM')
 			return True
 		except: return False
 
@@ -130,14 +134,15 @@ def set_numeric(params):
 	values_get = setting_values.get
 	min_value, max_value = int(values_get('min_value', '0')), int(values_get('max_value', '100000000000000'))
 	negative_included = any((n < 0 for n in [min_value, max_value]))
-	new_value = dialog.input('Range [B]%s - %s[/B].' % (min_value, max_value), type=numeric_input)
-	if not new_value: return
-	if negative_included and not new_value == '0':
+	if negative_included:
 		multiplier_values = [('Positive(+)', 1), ('Negative(-)', -1)]
 		list_items = [{'line1': item[0]} for item in multiplier_values]
-		kwargs = {'items': json.dumps(list_items), 'narrow_window': 'true'}
+		kwargs = {'items': json.dumps(list_items), 'narrow_window': 'true', 'heading': 'Will this be a positive or negative number?'}
 		multiplier = select_dialog(multiplier_values, **kwargs)
-		if multiplier: new_value = str(int(float(new_value) * multiplier[1]))
+	else: multiplier = None
+	new_value = dialog.input('Range [B]%s - %s[/B].' % (min_value, max_value), type=numeric_input)
+	if not new_value: return
+	if multiplier: new_value = str(int(float(new_value) * multiplier[1]))
 	if int(new_value) < min_value or int(new_value) > max_value:
 		ok_dialog(text='Please Choose Between the Range [B]%s - %s[/B].' % (min_value, max_value))
 		return set_numeric(params)
@@ -160,18 +165,14 @@ def set_from_list(params):
 def default_setting_values(setting_id):
 	return [i for i in default_settings() if i['setting_id'] == setting_id][0]
 
-# def replace_settings_list():
-# 	import re
-# 	default_file = kodi_utils.translate_path('special://home/addons/plugin.video.fenlight/resources/skins/Default/1080i/settings_manager.xml')
-# 	with kodi_utils.open_file(default_file) as f: content = f.read()
-# 	content = re.sub(r'<\!-- settings_values -->', '<test>this is a test</test>', content)
-# 	with kodi_utils.open_file(default_file, 'w') as f: f.write(content)
-
 def default_settings():
 	return [
 #===============================================================================#
 #====================================GENERAL====================================#
 #===============================================================================#
+#==================== Manage Updates
+{'setting_id': 'update.action', 'setting_type': 'action', 'setting_default': '2', 'settings_options': {'0': 'Prompt', '1': 'Automatic', '2': 'Notification', '3': 'Off'}},
+{'setting_id': 'update.delay', 'setting_type': 'action', 'setting_default': '45', 'min_value': '10', 'max_value': '300'},
 #==================== General
 {'setting_id': 'addon_fanart', 'setting_type': 'path', 'setting_default': addon_fanart, 'browse_mode': '2'},
 {'setting_id': 'use_skin_fonts', 'setting_type': 'boolean', 'setting_default': 'true'},
@@ -347,13 +348,6 @@ def default_settings():
 {'setting_id': 'playback.limit_resolve', 'setting_type': 'boolean', 'setting_default': 'false'},
 {'setting_id': 'playback.volumecheck_enabled', 'setting_type': 'boolean', 'setting_default': 'false'},
 {'setting_id': 'playback.volumecheck_percent', 'setting_type': 'action', 'setting_default': '50', 'min_value': '1', 'max_value': '100'},
-
-
-#=====================================================================================#
-#====================================MANAGE UPDATES===================================#
-#=====================================================================================#
-{'setting_id': 'update.action', 'setting_type': 'action', 'setting_default': '2', 'settings_options': {'0': 'Prompt', '1': 'Automatic', '2': 'Notification', '3': 'Off'}},
-{'setting_id': 'update.delay', 'setting_type': 'action', 'setting_default': '90', 'min_value': '10', 'max_value': '300'},
 
 
 #=========================================================================================#

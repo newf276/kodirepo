@@ -36,7 +36,7 @@ empty_poster, item_jump, nextpage = img_url % icons.box_office, img_url % icons.
 nextpage_landscape, item_jump_landscape = img_url % icons.nextpage_landscape, img_url % icons.item_jump_landscape
 tmdb_default_api = 'b370b60447737762ca38457bd77579b3'
 int_window_prop, pause_services_prop = 'fenlight.internal_results.%s', 'fenlight.pause_services'
-current_skin_prop, services_finished_prop = 'fenlight.current_skin', 'fenlight.services_finished'
+current_skin_prop = 'fenlight.current_skin'
 myvideos_db_paths = {19: '119', 20: '121', 21: '121'}
 sort_method_dict = {'episodes': 24, 'files': 5, 'label': 2}
 playlist_type_dict = {'music': 0, 'video': 1}
@@ -88,17 +88,6 @@ def add_dir(url_params, list_name, handle, iconImage='folder', fanartImage=None,
 	info_tag = listitem.getVideoInfoTag()
 	info_tag.setPlot(' ')
 	add_item(handle, url, listitem, isFolder)
-
-def empty_listing():
-	handle = int(sys.argv[1])
-	url = ''
-	listitem = make_listitem()
-	listitem.setLabel('')
-	listitem.setArt({'icon': empty_poster, 'poster': empty_poster, 'thumb': empty_poster, 'fanart': '', 'banner': ''})
-	info_tag = listitem.getVideoInfoTag()
-	info_tag.setPlot(' ')
-	add_item(handle, url, listitem, False)
-	end_directory(handle)
 
 def make_listitem():
 	return ListItem(offscreen=True)
@@ -420,7 +409,6 @@ def toggle_language_invoker():
 	invoker_instance.data = new_value
 	new_xml = str(root.toxml()).replace('<?xml version="1.0" ?>', '')
 	with open(addon_xml, 'w') as f: f.write(new_xml)
-	set_property(services_finished_prop, 'false')
 	execute_builtin('ActivateWindow(Home)', True)
 	update_local_addons()
 	disable_enable_addon()

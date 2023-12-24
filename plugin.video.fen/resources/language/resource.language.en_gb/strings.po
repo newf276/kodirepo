@@ -2349,6 +2349,10 @@ msgctxt "#32788"
 msgid "Open Options for Context Menu (Media)"
 msgstr ""
 
+msgctxt "#32789"
+msgid "Check for Updates"
+msgstr ""
+
 msgctxt "#32790"
 msgid "Settings Refreshed"
 msgstr ""
@@ -3898,8 +3902,44 @@ msgctxt "#33175"
 msgid "Rating (desc)"
 msgstr ""
 
+msgctxt "#33176"
+msgid "Fen Updater"
+msgstr ""
+
+msgctxt "#33177"
+msgid "Installed Version: [B]%s[/B][CR]Online Version: [B]%s[/B][CR][CR] "
+msgstr ""
+
+msgctxt "#33178"
+msgid "[B]No Update Available[/B]"
+msgstr ""
+
+msgctxt "#33179"
+msgid "[B]An Update is Available[/B][CR]Perform Update?"
+msgstr ""
+
 msgctxt "#33180"
 msgid "Sorting - Generic TV Show Lists"
+msgstr ""
+
+msgctxt "#33181"
+msgid "Fen Update Occuring"
+msgstr ""
+
+msgctxt "#33182"
+msgid "Fen Update Available"
+msgstr ""
+
+msgctxt "#33183"
+msgid "Error Updating.[CR]Please install new update manually"
+msgstr ""
+
+msgctxt "#33184"
+msgid "Success.[CR]Fen updated to version [B]%s[/B]"
+msgstr ""
+
+msgctxt "#33185"
+msgid "Manage Addon Updates"
 msgstr ""
 
 msgctxt "#33186"
@@ -3910,49 +3950,17 @@ msgctxt "#33187"
 msgid "First Aired (desc)"
 msgstr ""
 
+msgctxt "#33188"
+msgid "Update Action"
+msgstr ""
+
+msgctxt "#33189"
+msgid "Automatic"
+msgstr ""
+
+msgctxt "#33190"
+msgid "Delay Before Running (secs)"
+msgstr ""
+
 
 ###################################################################################################################################
-
-msgctxt "#32789"
-msgid ""
-msgstr ""
-
-msgctxt "#33176"
-msgid ""
-msgstr ""
-
-msgctxt "#33177"
-msgid ""
-msgstr ""
-
-msgctxt "#33178"
-msgid ""
-msgstr ""
-
-msgctxt "#33179"
-msgid ""
-msgstr ""
-
-msgctxt "#33181"
-msgid ""
-msgstr ""
-
-msgctxt "#33182"
-msgid ""
-msgstr ""
-
-msgctxt "#33183"
-msgid ""
-msgstr ""
-
-msgctxt "#33184"
-msgid ""
-msgstr ""
-
-msgctxt "#33185"
-msgid ""
-msgstr ""
-
-msgctxt "#33188"
-msgid ""
-msgstr ""

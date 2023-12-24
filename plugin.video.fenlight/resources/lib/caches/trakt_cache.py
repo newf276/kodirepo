@@ -14,23 +14,27 @@ BASE_DELETE = 'DELETE FROM %s'
 TC_BASE_GET = 'SELECT data FROM trakt_data WHERE id = ?'
 TC_BASE_SET = 'INSERT OR REPLACE INTO trakt_data (id, data) VALUES (?, ?)'
 TC_BASE_DELETE = 'DELETE FROM trakt_data WHERE id = ?'
-dbcon_main = connect_database('trakt_db')
 
 class TraktCache:	
 	def get(self, string):
 		result = None
 		try:
-			cache_data = dbcon_main.execute(TC_BASE_GET, (string,)).fetchone()
+			dbcon = connect_database('trakt_db')
+			cache_data = dbcon.execute(TC_BASE_GET, (string,)).fetchone()
 			if cache_data: result = eval(cache_data[0])
 		except: pass
 		return result
 
 	def set(self, string, data):
-		try: dbcon_main.execute(TC_BASE_SET, (string, repr(data)))
+		try:
+			dbcon = connect_database('trakt_db')
+			dbcon.execute(TC_BASE_SET, (string, repr(data)))
 		except: return None
 
 	def delete(self, string):
-		try: dbcon_main.execute(TC_BASE_DELETE, (string,))
+		try:
+			dbcon = connect_database('trakt_db')
+			dbcon.execute(TC_BASE_DELETE, (string,))
 		except: pass
 
 trakt_cache = TraktCache()
@@ -53,11 +57,13 @@ class TraktWatched():
 		self._executemany(PROGRESS_INSERT, insert_list)
 
 	def _executemany(self, command, insert_list):
-		dbcon_main.executemany(command, insert_list)
+		dbcon = connect_database('trakt_db')
+		dbcon.executemany(command, insert_list)
 
 	def _delete(self, command, args):
-		dbcon_main.execute(command, args)
-		dbcon_main.execute('VACUUM')
+		dbcon = connect_database('trakt_db')
+		dbcon.execute(command, args)
+		dbcon.execute('VACUUM')
 
 trakt_watched_cache = TraktWatched()
 
@@ -71,17 +77,20 @@ def cache_trakt_object(function, string, url):
 def reset_activity(latest_activities):
 	string = 'trakt_get_activity'
 	try:
-		data = dbcon_main.execute(TC_BASE_GET, (string,)).fetchone()
+		dbcon = connect_database('trakt_db')
+		data = dbcon.execute(TC_BASE_GET, (string,)).fetchone()
 		if data: cached_data = eval(data[0])
 		else: cached_data = default_activities()
-		dbcon_main.execute(DELETE, (string,))
+		dbcon.execute(DELETE, (string,))
 		trakt_cache.set(string, latest_activities)
 	except: cached_data = default_activities()
 	return cached_data
 
 def clear_trakt_hidden_data(list_type):
 	string = 'trakt_hidden_items_%s' % list_type
-	try: dbcon_main.execute(DELETE, (string,))
+	try:
+		dbcon = connect_database('trakt_db')
+		dbcon.execute(DELETE, (string,))
 	except: pass
 
 def clear_trakt_collection_watchlist_data(list_type, media_type):
@@ -89,39 +98,52 @@ def clear_trakt_collection_watchlist_data(list_type, media_type):
 	if media_type in ('tvshows', 'shows'): media_type = 'tvshow' 
 	string = 'trakt_%s_%s' % (list_type, media_type)
 	if media_type == 'movie': clear_trakt_movie_sets()
-	try: dbcon_main.execute(DELETE, (string,))
+	try:
+		dbcon = connect_database('trakt_db')
+		dbcon.execute(DELETE, (string,))
 	except: pass
 
 def clear_trakt_list_contents_data(list_type):
 	string = 'trakt_list_contents_' + list_type + '_%'
-	try: dbcon_main.execute(DELETE_LIKE % string)
+	try:
+		dbcon = connect_database('trakt_db')
+		dbcon.execute(DELETE_LIKE % string)
 	except: pass
 
 def clear_trakt_list_data(list_type):
 	string = 'trakt_%s' % list_type
-	try: dbcon_main.execute(DELETE, (string,))
+	try:
+		dbcon = connect_database('trakt_db')
+		dbcon.execute(DELETE, (string,))
 	except: pass
 
 def clear_trakt_calendar():
-	try: dbcon_main.execute(DELETE_LIKE % 'trakt_get_my_calendar_%')
+	try:
+		dbcon = connect_database('trakt_db')
+		dbcon.execute(DELETE_LIKE % 'trakt_get_my_calendar_%')
 	except: return
 
 def clear_trakt_recommendations(media_type):
 	string = 'trakt_recommendations_%s' % (media_type)
-	try: dbcon_main.execute(DELETE, (string,))
+	try:
+		dbcon = connect_database('trakt_db')
+		dbcon.execute(DELETE, (string,))
 	except: pass
 
 def clear_trakt_movie_sets():
 	string = 'trakt_movie_sets'
-	try: dbcon_main.execute(DELETE, (string,))
+	try:
+		dbcon = connect_database('trakt_db')
+		dbcon.execute(DELETE, (string,))
 	except: pass
 
 def clear_all_trakt_cache_data(silent=False, refresh=True):
 	try:
 		start = silent or confirm_dialog()
 		if not start: return False
-		for table in ('trakt_data', 'progress', 'watched', 'watched_status'): dbcon_main.execute(BASE_DELETE % table)
-		dbcon_main.execute('VACUUM')
+		dbcon = connect_database('trakt_db')
+		for table in ('trakt_data', 'progress', 'watched', 'watched_status'): dbcon.execute(BASE_DELETE % table)
+		dbcon.execute('VACUUM')
 		if refresh:
 			from apis.trakt_api import trakt_sync_activities
 			Thread(target=trakt_sync_activities).start()

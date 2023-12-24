@@ -244,4 +244,7 @@ def routing(sys):
 		return open_settings(_get('query', '0.0'), _get('addon', 'plugin.video.fen'))
 	if mode == 'hide_unhide_progress_items':
 		from modules.watched_status import hide_unhide_progress_items
-		hide_unhide_progress_items(params)
+		return hide_unhide_progress_items(params)
+	if mode == 'update_check':
+		from modules.updater import update_check
+		return update_check()

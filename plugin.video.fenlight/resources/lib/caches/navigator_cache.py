@@ -258,9 +258,6 @@ main_menus = {'RootList': root_list, 'MovieList': movie_list, 'TVShowList': tvsh
 main_menu_items = {'RootList': {'name': 'Root', 'iconImage': 'fenlight', 'mode': 'navigator.main', 'action': 'RootList'}, 'MovieList': root_list[0], 'TVShowList': root_list[1]}
 
 class NavigatorCache:
-	def __init__(self):
-		self.dbcon = connect_database('navigator_db')
-
 	def get_main_lists(self, list_name):
 		default_contents = self.get_memory_cache(list_name, 'default')
 		if not default_contents:
@@ -275,18 +272,22 @@ class NavigatorCache:
 
 	def get_list(self, list_name, list_type):
 		contents = None
-		try: contents = eval(self.dbcon.execute(GET_LIST, (list_name, list_type)).fetchone()[0])
+		try:
+			dbcon = connect_database('navigator_db')
+			contents = eval(dbcon.execute(GET_LIST, (list_name, list_type)).fetchone()[0])
 		except: pass
 		return contents
 
 	def set_list(self, list_name, list_type, list_contents):
-		self.dbcon.execute(SET_LIST, (list_name, list_type, repr(list_contents)))
+		dbcon = connect_database('navigator_db')
+		dbcon.execute(SET_LIST, (list_name, list_type, repr(list_contents)))
 		self.set_memory_cache(list_name, list_type, list_contents)
 
 	def delete_list(self, list_name, list_type):
-		self.dbcon.execute(DELETE_LIST, (list_name, list_type))
+		dbcon = connect_database('navigator_db')
+		dbcon.execute(DELETE_LIST, (list_name, list_type))
 		self.delete_memory_cache(list_name, list_type)
-		self.dbcon.execute('VACUUM')
+		dbcon.execute('VACUUM')
 	
 	def get_memory_cache(self, list_name, list_type):
 		try: return eval(get_property(self._get_list_prop(list_type) % list_name))
@@ -300,13 +301,16 @@ class NavigatorCache:
 
 	def get_shortcut_folders(self):
 		try:
-			folders = self.dbcon.execute(GET_FOLDERS, ('shortcut_folder',)).fetchall()
+			dbcon = connect_database('navigator_db')
+			folders = dbcon.execute(GET_FOLDERS, ('shortcut_folder',)).fetchall()
 			folders = sorted([(str(i[0]), eval(i[1])) for i in folders], key=lambda s: s[0].lower())
 		except: folders = []
 		return folders
 
 	def get_shortcut_folder_contents(self, list_name):
-		try: contents = eval(self.dbcon.execute(GET_FOLDER_CONTENTS, (list_name, 'shortcut_folder')).fetchone()[0])
+		try:
+			dbcon = connect_database('navigator_db')
+			contents = eval(dbcon.execute(GET_FOLDER_CONTENTS, (list_name, 'shortcut_folder')).fetchone()[0])
 		except: contents = []
 		return contents
 
@@ -316,7 +320,8 @@ class NavigatorCache:
 		return list_items
 
 	def rebuild_database(self):
-		self.dbcon = connect_database('navigator_db')
+		dbcon = connect_database('navigator_db')
+		dbcon = connect_database('navigator_db')
 		for list_name in default_menu_items: self.set_list(list_name, 'default', main_menus[list_name])
 
 	def _get_list_prop(self, list_type):

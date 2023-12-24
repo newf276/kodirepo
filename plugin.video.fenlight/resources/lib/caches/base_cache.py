@@ -21,7 +21,7 @@ metacache_db = translatePath(path_join(database_path_raw, 'metacache.db'))
 debridcache_db = translatePath(path_join(database_path_raw, 'debridcache.db'))
 external_db = translatePath(path_join(database_path_raw, 'external.db'))
 settings_db = translatePath(path_join(database_path_raw, 'settings.db'))
-database_timeout = 10
+database_timeout = 20
 database_locations = {
 'navigator_db': navigator_db, 'watched_db': watched_db, 'favorites_db': favorites_db, 'settings_db': settings_db, 'trakt_db': trakt_db,
 'maincache_db': maincache_db, 'metacache_db': metacache_db, 'debridcache_db': debridcache_db, 'lists_db': lists_db, 'external_db': external_db
@@ -78,27 +78,26 @@ BASE_GET = 'SELECT expires, data FROM %s WHERE id = ?'
 BASE_SET = 'INSERT OR REPLACE INTO %s(id, data, expires) VALUES (?, ?, ?)'
 BASE_DELETE = 'DELETE FROM %s WHERE id = ?'
 
-def connect_database(database_name, retry_performed=False):
-	try: dbcon = check_database(database_name)
-	except Exception as e:
-		logger('exception in connect_database', str(e))
-		try: dbcon.close()
-		except: pass
-		if retry_performed: return kodi_utils.logger('Unable to Process Database', database_name)
-		database_integrity_check(database_name)
-		return connect_database(database_name, retry_performed=True)
-	return dbcon
-
-def get_timestamp(offset=0):
-	return int(time.time()) + (offset*3600)# Offset is in HOURS multiply by 3600 to get seconds
-
-def check_database(database_name):
-	if not path_exists(databases_path): make_directory(databases_path)
-	dbcon = database.connect(database_locations[database_name], timeout=database_timeout, isolation_level=None, check_same_thread=False)
+def make_database(database_name):
+	dbcon = database.connect(database_locations[database_name])
 	for command in table_creators[database_name]: dbcon.execute(command)
+	dbcon.close()
+
+def make_databases():
+	if not path_exists(databases_path): make_directory(databases_path)
+	for database_name, database_location in database_locations.items():
+		dbcon = database.connect(database_location)
+		for command in table_creators[database_name]: dbcon.execute(command)
+
+def connect_database(database_name):
+	dbcon = database.connect(database_locations[database_name], timeout=database_timeout, isolation_level=None, check_same_thread=False)
 	dbcon.execute('PRAGMA synchronous = OFF')
 	dbcon.execute('PRAGMA journal_mode = OFF')
 	return dbcon
+
+def get_timestamp(offset=0):
+	# Offset is in HOURS multiply by 3600 to get seconds
+	return int(time.time()) + (offset*3600)
 
 def remove_old_databases():
 	try:
@@ -120,19 +119,6 @@ def clean_databases():
 	elif any(success): line1 = 'Success, with Errors'
 	else: line1 = 'Failed'
 	notification(line1, time=2000)
-
-def database_integrity_check(database_name):
-	command_base = 'SELECT * FROM %s LIMIT 1'
-	database_location, tables = integrity_check[database_name]
-	try:
-		dbcon = database.connect(database_location)
-		for db_table in tables: dbcon.execute(command_base % db_table)
-		dbcon.close()
-	except:
-		if path_exists(database_location):
-			try: dbcon.close()
-			except: pass
-			delete_file(database_location)
 
 def clear_cache(cache_type, silent=False):
 	def _confirm(): return silent or confirm_dialog()
@@ -215,7 +201,7 @@ def refresh_cached_data(meta):
 class BaseCache(object):
 	def __init__(self, dbfile, table):
 		self.table = table
-		self.dbcon = connect_database(dbfile)
+		self.dbfile = dbfile
 
 	def get(self, string):
 		result = None
@@ -223,7 +209,8 @@ class BaseCache(object):
 			current_time = get_timestamp()
 			result = self.get_memory_cache(string, current_time)
 			if result is None:
-				cache_data = self.dbcon.execute(BASE_GET % self.table, (string,)).fetchone()
+				dbcon = connect_database(self.dbfile)
+				cache_data = dbcon.execute(BASE_GET % self.table, (string,)).fetchone()
 				if cache_data:
 					if cache_data[0] > current_time:
 						result = eval(cache_data[1])
@@ -234,8 +221,9 @@ class BaseCache(object):
 
 	def set(self, string, data, expiration=720):
 		try:
+			dbcon = connect_database(self.dbfile)
 			expires = get_timestamp(expiration)
-			self.dbcon.execute(BASE_SET % self.table, (string, repr(data), int(expires)))
+			dbcon.execute(BASE_SET % self.table, (string, repr(data), int(expires)))
 			self.set_memory_cache(data, string, int(expires))
 		except: return None
 
@@ -258,9 +246,13 @@ class BaseCache(object):
 
 	def delete(self, string):
 		try:
-			self.dbcon.execute(BASE_DELETE % self.table, (string,))
+			dbcon = connect_database(self.dbfile)
+			dbcon.execute(BASE_DELETE % self.table, (string,))
 			self.delete_memory_cache(string)
 		except: pass
 
 	def delete_memory_cache(self, string):
 		clear_property(media_prop % string)
+
+	def manual_connect(self, dbfile):
+		return connect_database(dbfile)

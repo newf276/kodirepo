@@ -57,36 +57,6 @@ UNWANTED_TAGS = ('tamilrockers.com', 'www.tamilrockers.com', 'www.tamilrockers.w
 				'www.3movierulz.com', 'www.3movierulz.tv', 'www.3movierulz.ws', 'www.3movierulz.ms', 'www.7movierulz.pw', 'www.8movierulz.ws', 'mkvcinemas.live', 'www.bludv.tv',
 				'ramin.djawadi', 'extramovies.casa', 'extramovies.wiki', '13+', '18+', 'taht.oyunlar', 'crazy4tv.com', 'karibu', '989pa.com', 'best-torrents-net', '1-3-3-8.com',
 				'ssrmovies.club', 'va:', 'zgxybbs-fdns-uk', 'www.tamilblasters.mx', 'www.1tamilmv.work', 'www.xbay.me', 'crazy4tv-com', '(es)')
-def_host_dict = ['flashbit.cc', 'flashx.co', 'mega.nz', 'uploadfiles.eu', 'pandafiles.com', 'file4safe.com', 'nowvideo.club', 'flashx.pw', 'piecejointe.net', 'ulozto.sk',
-				'turbobit.cc', 'k2s.cc', 'mixdrop.sx', 'uloz.to', 'tenvoi.com', 'clicknupload.cc', 'filefox.cc', 'soundcloud.com', 'vidto-do.com', 'clicknupload.com',
-				'filefactory.com', 'catshare.net', 'mixloads.com', 'ul.to', 'worldbytez.com', 'vidoza.org', 'nitroflare.com', 'letsupload.to', 'voeunblck.com',
-				'adblockeronstreamtape.com', 'voe-un-block.com', 'wupfile.com', 'vk.com', 'uploader.link', 'nowvideo.pw', 'dailymotion.com', 'uploaded.net', 'rapidgator.asia',
-				'uploaded.to', 'megadl.fr', 'nitro.download', 'katfile.com', 'bdupload.asia', 'streamon.to', 'voeunblock1.com', 'reputationsheriffkennethsand.com',
-				'docs.google.com', 'isrbx.net', 'dropgalaxy.in', 'hexupload.net', '9xupload.asia', 'uploadgig.com', 'filedot.xyz', 'uploadcloud.pro', 'vivo.sx', 'keep2share.cc',
-				'uploadev.org', 'youtube.com', 'hotlink.cc', 'ulozto.net', 'upstore.net', '9xupload.info', 'upstream.to', 'letsupload.io', 'filerio.in', 'playvidto.com',
-				'ulozto.cz', 'voe-unblock.com', 'vidoza.net', 'tezfiles.com', 'yodbox.com', 'clicknupload.to', 'apkadmin.com', 'inclouddrive.com', 'fastclick.to', 'oboom.com',
-				'uploadbox.io', 'wipfiles.net', 'harefile.com', 'dl4free.com', 'turbobit.net', 'filesabc.com', 'cloudvideo.tv', 'anzfile.net', 'launchreliantcleaverriver.com',
-				'indishare.me', 'di.fm', 'feurl.com', 'rapidu.net', 'speed-down.org', 'voeunblock.com', 'fastbit.cc', 'archive.org', 'rutube.ru', 'clipwatching.com',
-				'clicknupload.club', 'down.fast-down.com', 'israbox-music.org', 'fileaxa.com', 'mega4upload.com', 'dfiles.ru', 'uptobox.com', 'ubiqfile.com', 'flashx.bz',
-				'flashx.cc', 'fshare.vn', 'strcloud.link', 'uploadrar.com', 'voeunbl0ck.com', 'voeun-block.net', 'upbam.org', 'cosmobox.org', 'example.net', '4shared.com',
-				'highstream.tv', 'un-block-voe.net', 'drop.download', 'fboom.me', 'filestore.to', 'dfichiers.com', 'jazzradio.com', 'wayupload.com', 'gigapeta.com', '1fichier.com',
-				'fastfile.cc', 'vivo.st', 'turb.pw', 'mp4upload.com', 'turbobit5.net', 'mixdrop.club', 'file.al', 'uploadev.com', 'audaciousdefaulthouse.com', 'thevideo.me',
-				'vipfile.cc', 'rapidrar.com', 'tvad.me', 'depositfiles.org', 'voe.sx', 'alfafile.net', 'hitf.to', 'upload-4ever.com', 'ddownload.com', 'youporn.com', 'mexa.sh',
-				'earn4files.com', 'uploadc.com', '2shared.com', 'sky.fm', 'radiotunes.com', 'strcloud.sx', 'solidfiles.com', 'turbo.to', 'mega4up.org', 'k2share.cc', 'hitf.cc',
-				'rg.to', 'sendit.cloud', 'v-o-e-unblock.com', 'dropapk.com', 'rapidfileshare.net', 'voeunblock2.com', 'mesfichiers.org', 'cornfile.com', 'uploadc.ch',
-				'upload42.com', 'dailyuploads.net', 'bayfiles.com', 'btafile.com', 'turb.to', '4downfiles.org', 'filer.net', 'uploadmx.com', 'uploadboy.me', 'userscloud.com',
-				'zachowajto.pl', 'datafilehost.com', 'classicalradio.com', 'fireget.com', 'world-files.com', 'mexashare.com', 'nelion.me', 'tusfiles.net', 'rockfile.co',
-				'uploadbank.com', 'salefiles.com', 'unibytes.com', 'goloady.com', 'drive.google.com', 'modsbase.com', 'rarefile.net', 'vev.io', 'hitfile.net', 'uptostream.com',
-				'daofile.com', 'dfiles.eu', 'userupload.net', 'turbobit.pw', 'turbobit.cloud', 'cjoint.net', 'clicknupload.me', 'file-up.org', 'flashx.tv', 'clicknupload.co',
-				'backin.net', 'filerio.com', 'hulkshare.com', 'keep2s.cc', 'icerbox.com', 'hot4share.com', 'douploads.net', 'clicknupload.link', 'redbunker.net', 'thevideo.io',
-				'israbox.ch', 'vidcloud.co', 'vimeo.com', 'thevideo.website', 'fileup.cc', 'letsupload.cc', 'turb.cc', 'desfichiers.com', 'tusfiles.com', 'uppit.com',
-				'file-upload.com', 'up-load.io', 'letsupload.co', 'extmatrix.com', 'dropapk.to', 'rapidgator.net', 'load.to', 'pjointe.com', 'voeunblk.com', 'prefiles.com',
-				'turbo-bit.net', 'europeup.com', 'vidlox.tv', 'mediafire.com', 'wdupload.com', 'ddl.to', 'simfileshare.net', 'vidtodo.com', 'sharemods.com', 'sendspace.com',
-				'voe-unblock.net', 'streamtape.com', 'mixdrop.co', 'pornfile.cz', 'alldebrid.com', 'mega.co.nz', 'scribd.com', 'rockfile.eu', 'faststore.org', 'redtube.com',
-				'vidcloud.ru', 'xubster.com', 'example.com', 'florenfile.com', 'dl.free.fr', 'brupload.net', 'easybytez.com', 'bdupload.in', 'depositfiles.com', 'down.mdiaload.com',
-				'uploadydl.com', 'clicknupload.org', 'videobin.co', 'wushare.com', 'zippyshare.com', 'isra.cloud', 'gulf-up.com', 'ex-load.com', 'letsupload.org', 'exload.com',
-				'uploadboy.com', 'alterupload.com', 'mixdrop.to', 'flashx.ws', 'fileupload.pw', 'gounlimited.to', 'usersdrive.com', 'filespace.com', 'filenext.com', 'ninjastream.to',
-				'takefile.link', 'filezip.cc', 'heroupload.com', 'vidoza.co', 'real-debrid.com', 'transfert.free.fr']
 audio_filter_choices = (('DOLBY DIGITAL', 'DD'), ('DOLBY DIGITAL PLUS', 'DD+'), ('DOLBY DIGITAL EX', 'DD-EX'), ('DOLBY ATMOS', 'ATMOS'), ('DOLBY TRUEHD', 'TRUEHD'), 
 					('DTS', 'DTS'), ('DTS-HD MASTER AUDIO', 'DTS-HD MA'), ('DTS-X', 'DTS-X'), ('DTS-HD', 'DTS-HD'), ('AAC', 'AAC'), ('OPUS', 'OPUS'), ('MP3', 'MP3'),
 					('8CH AUDIO', '8CH'), ('7CH AUDIO', '7CH'), ('6CH AUDIO', '6CH'), ('2CH AUDIO', '2CH'))
@@ -290,6 +260,7 @@ def get_info(title):
 	elif '.av1.' in title: info_append('[B]AV1[/B]')
 	elif any(i in title for i in CODEC_H265): info_append('[B]HEVC[/B]')
 	elif any(i in info for i in ('[B]HDR[/B]', '[B]D/VISION[/B]')): info_append('[B]HEVC[/B]')
+	if '.atvp' in title: info_append('APPLETV+')
 	elif any(i in title for i in CODEC_XVID): info_append('XVID')
 	elif any(i in title for i in CODEC_DIVX): info_append('DIVX')
 	if any(i in title for i in REMUX): info_append('REMUX')

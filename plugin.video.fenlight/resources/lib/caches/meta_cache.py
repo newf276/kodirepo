@@ -22,9 +22,6 @@ CLEAN = 'DELETE from %s WHERE CAST(expires AS INT) <= ?'
 string = str
 
 class MetaCache:
-	def __init__(self):
-		self.dbcon = connect_database('metacache_db')
-
 	def get(self, media_type, id_type, media_id, current_time=None):
 		meta = None
 		try:
@@ -32,7 +29,8 @@ class MetaCache:
 			if not current_time: current_time = get_timestamp()
 			meta = self.get_memory_cache(media_type, id_type, media_id, current_time)
 			if meta is None:
-				cache_data = self.dbcon.execute(GET_MOVIE_SHOW % id_type, (media_type, media_id)).fetchone()
+				dbcon = connect_database('metacache_db')
+				cache_data = dbcon.execute(GET_MOVIE_SHOW % id_type, (media_type, media_id)).fetchone()
 				if cache_data:
 					meta, expiry = eval(cache_data[0]), cache_data[1]
 					if expiry < current_time:
@@ -48,6 +46,7 @@ class MetaCache:
 			current_time = get_timestamp()
 			meta = self.get_memory_cache_season(prop_string, current_time)
 			if meta is None:
+				dbcon = connect_database('metacache_db')
 				cache_data = self.dbcon.execute(GET_SEASON, (prop_string,)).fetchone()
 				if cache_data:
 					meta, expiry = eval(cache_data[0]), cache_data[1]
@@ -60,31 +59,35 @@ class MetaCache:
 
 	def set(self, media_type, id_type, meta, expiration=168, current_time=None):
 		try:
+			dbcon = connect_database('metacache_db')
 			meta_get = meta.get
 			if current_time: expires = current_time + (expiration*3600)
 			else: expires = get_timestamp(expiration)
 			media_id = string(meta_get(id_type))
-			self.dbcon.execute(SET_MOVIE_SHOW, (media_type, string(meta_get('tmdb_id')), meta_get('imdb_id'), string(meta_get('tvdb_id')), repr(meta), expires))
+			dbcon.execute(SET_MOVIE_SHOW, (media_type, string(meta_get('tmdb_id')), meta_get('imdb_id'), string(meta_get('tvdb_id')), repr(meta), expires))
 		except: return None
 		self.set_memory_cache(media_type, id_type, meta, expires, media_id)
 
 	def set_season(self, prop_string, meta, expiration=168):
 		try:
+			dbcon = connect_database('metacache_db')
 			expires = get_timestamp(expiration)
-			self.dbcon.execute(SET_SEASON, (prop_string, repr(meta), int(expires)))
+			dbcon.execute(SET_SEASON, (prop_string, repr(meta), int(expires)))
 		except: return None
 		self.set_memory_cache_season(prop_string, meta, expires)
 
 	def delete(self, media_type, id_type, media_id, meta=None):
 		try:
-			self.dbcon.execute(DELETE_MOVIE_SHOW % id_type, (media_type, media_id))
+			dbcon = connect_database('metacache_db')
+			dbcon.execute(DELETE_MOVIE_SHOW % id_type, (media_type, media_id))
 			for item in id_types: self.delete_memory_cache(media_type, item, meta[item])
 			if media_type == 'tvshow': self.delete_all_seasons(media_id)
 		except: return
 
 	def delete_season(self, prop_string):
 		try:
-			self.dbcon.execute(DELETE_SEASON, (prop_string,))
+			dbcon = connect_database('metacache_db')
+			dbcon.execute(DELETE_SEASON, (prop_string,))
 			self.delete_memory_cache_season(prop_string)
 		except: return
 
@@ -132,18 +135,20 @@ class MetaCache:
 	def get_function(self, prop_string):
 		result = None
 		try:
+			dbcon = connect_database('metacache_db')
 			current_time = get_timestamp()
-			cache_data = self.dbcon.execute(GET_FUNCTION, (prop_string,))[0]
+			cache_data = dbcon.execute(GET_FUNCTION, (prop_string,))[0]
 			if cache_data:
 				if cache_data[2] > current_time: result = eval(cache_data[1])
-				else: self.dbcon.execute(DELETE_FUNCTION, (prop_string,))
+				else: dbcon.execute(DELETE_FUNCTION, (prop_string,))
 		except: pass
 		return result
 
 	def set_function(self, prop_string, result, expiration=24):
 		try:
+			dbcon = connect_database('metacache_db')
 			expires = get_timestamp(expiration)
-			self.dbcon.execute(SET_FUNCTION, (prop_string, repr(result), expires))
+			dbcon.execute(SET_FUNCTION, (prop_string, repr(result), expires))
 		except: return
 
 	def delete_all_seasons(self, media_id):
@@ -151,21 +156,23 @@ class MetaCache:
 
 	def delete_all(self):
 		try:
-			for i in self.dbcon.execute(GET_ALL):
+			dbcon = connect_database('metacache_db')
+			for i in dbcon.execute(GET_ALL):
 				try: self.delete_memory_cache(string(i[0]), 'tmdb_id', string(i[1]))
 				except: pass
-			for i in self.dbcon.execute(GET_ALL_SEASON):
+			for i in dbcon.execute(GET_ALL_SEASON):
 				try: self.delete_memory_cache_season(string(i[0]))
 				except: pass
-			for i in all_tables: self.dbcon.execute(DELETE_ALL % i)
-			self.dbcon.execute('VACUUM')
+			for i in all_tables: dbcon.execute(DELETE_ALL % i)
+			dbcon.execute('VACUUM')
 		except: return
 
 	def clean_database(self):
 		try:
+			dbcon = connect_database('metacache_db')
 			for table in ('metadata', 'function_cache', 'season_metadata'):
-				self.dbcon.execute(CLEAN % table, (get_timestamp(),))
-			self.dbcon.execute('VACUUM')
+				dbcon.execute(CLEAN % table, (get_timestamp(),))
+			dbcon.execute('VACUUM')
 			return True
 		except: return False
 

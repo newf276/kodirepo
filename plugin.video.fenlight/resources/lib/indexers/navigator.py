@@ -169,13 +169,13 @@ class Navigator:
 		self.end_directory()
 
 	def set_view_modes(self):
-		self.add({'mode': 'navigator.choose_view', 'view_type': 'view.main', 'content': ''}, 'Root', 'settings', False)
+		self.add({'mode': 'navigator.choose_view', 'view_type': 'view.main', 'content': '', 'name': 'menus'}, 'Menus', 'settings', False)
 		self.add({'mode': 'navigator.choose_view', 'view_type': 'view.movies', 'content': 'movies'}, 'Movies', 'settings', False)
 		self.add({'mode': 'navigator.choose_view', 'view_type': 'view.tvshows', 'content': 'tvshows'}, 'TV Shows', 'settings', False)
-		self.add({'mode': 'navigator.choose_view', 'view_type': 'view.seasons', 'content': 'seasons'}, 'Season', 'settings', False)
+		self.add({'mode': 'navigator.choose_view', 'view_type': 'view.seasons', 'content': 'seasons'}, 'Seasons', 'settings', False)
 		self.add({'mode': 'navigator.choose_view', 'view_type': 'view.episodes', 'content': 'episodes'}, 'Episodes', 'settings', False)
-		self.add({'mode': 'navigator.choose_view', 'view_type': 'view.episodes_single', 'content': 'episodes'}, 'Episodes Lists', 'settings', False)
-		self.add({'mode': 'navigator.choose_view', 'view_type': 'view.premium', 'content': 'files'}, 'Premium Files', 'settings', False)
+		self.add({'mode': 'navigator.choose_view', 'view_type': 'view.episodes_single', 'content': 'episodes', 'name': 'episode lists'}, 'Episode Lists', 'settings', False)
+		self.add({'mode': 'navigator.choose_view', 'view_type': 'view.premium', 'content': 'files', 'name': 'premium files'}, 'Premium Files', 'settings', False)
 		self.end_directory()
 
 	def changelog_utils(self):
@@ -309,15 +309,16 @@ class Navigator:
 
 	def choose_view(self):
 		view_type, content = self.params['view_type'], self.params['content']
+		name = self.params.get('name') or content
 		handle = int(sys.argv[1])
-		self.add({'mode': 'navigator.set_view', 'view_type': view_type, 'isFolder': 'false'}, 'Set view and then click here', 'settings', False)
+		self.add({'mode': 'navigator.set_view', 'view_type': view_type, 'name': name, 'isFolder': 'false'}, 'Set view and then click here', 'settings', False)
 		set_content(handle, content)
 		end_directory(handle)
 		set_view_mode(view_type, content, False)
 
 	def set_view(self):
 		set_setting(self.params['view_type'], str(current_window_object().getFocusId()))
-		notification(get_infolabel('Container.Viewmode').upper(), time=500)
+		notification('%s: %s' % (self.params['name'].upper(), get_infolabel('Container.Viewmode').upper()), time=500)
 
 	def folder_navigator(self):
 		from os.path import join as pjoin

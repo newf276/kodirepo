@@ -11,9 +11,10 @@ class ListsCache(BaseCache):
 
 	def delete_all_lists(self):
 		try:
-			for i in self.dbcon.execute(GET_ALL): self.delete_memory_cache(str(i[0]))
-			self.dbcon.execute(DELETE_ALL)
-			self.dbcon.execute('VACUUM')
+			dbcon = self.manual_connect('lists_db')
+			for i in dbcon.execute(GET_ALL): self.delete_memory_cache(str(i[0]))
+			dbcon.execute(DELETE_ALL)
+			dbcon.execute('VACUUM')
 		except: return
 
 lists_cache = ListsCache()

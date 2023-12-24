@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from windows.base_window import FontUtils
-from caches.base_cache import remove_old_databases
+from caches.base_cache import make_databases, remove_old_databases
 from caches.settings_cache import get_setting, sync_settings
 from apis.trakt_api import trakt_sync_activities
 from modules.updater import update_check
@@ -9,7 +9,7 @@ from modules.utils import jsondate_to_datetime, datetime_workaround
 
 get_infolabel, run_plugin, external = kodi_utils.get_infolabel, kodi_utils.run_plugin, kodi_utils.external
 pause_services_prop, xbmc_monitor, xbmc_player, userdata_path = kodi_utils.pause_services_prop, kodi_utils.xbmc_monitor, kodi_utils.xbmc_player, kodi_utils.userdata_path
-get_window_id, make_directories, path_exists = kodi_utils.get_window_id, kodi_utils.make_directories, kodi_utils.path_exists
+get_window_id, make_directories = kodi_utils.get_window_id, kodi_utils.make_directories
 logger, close_dialog = kodi_utils.logger, kodi_utils.close_dialog
 get_property, set_property, clear_property, get_visibility = kodi_utils.get_property, kodi_utils.set_property, kodi_utils.clear_property, kodi_utils.get_visibility
 kodi_refresh, current_skin_prop, notification = kodi_utils.kodi_refresh, kodi_utils.current_skin_prop, kodi_utils.notification
@@ -21,41 +21,38 @@ trakt_success_line_dict = {'success': 'Trakt Update Performed', 'no account': '(
 update_string = 'Next Update in %s minutes...'
 media_windows = (10000, 10025, 11121)
 
+class MakeDatabases:
+	def run(self):
+		logger('Fen Light', 'MakeDatabases Service Starting')
+		make_databases()
+		return logger('Fen Light', 'MakeDatabases Service Finished')
+
 class CheckSettings:
 	def run(self):
 		logger('Fen Light', 'CheckSettingsFile Service Starting')
-		if not path_exists(userdata_path): make_directories(userdata_path)
 		sync_settings()
 		return logger('Fen Light', 'CheckSettingsFile Service Finished')
 
-class TraktSync:
-	def run(self, skip_sync=False):
-		logger('Fen Light', 'TraktSync Starting')
-		wait_time = 1800
-		try:
-			sync_interval, wait_time = trakt_sync_interval()
-			next_update_string = update_string % sync_interval
-			if not skip_sync: 
+class TraktMonitor:
+	def run(self):
+		logger('Fen Light', 'TraktMonitor Service Starting')
+		monitor, player = xbmc_monitor(), xbmc_player()
+		wait_for_abort, is_playing = monitor.waitForAbort, player.isPlayingVideo
+		while not monitor.abortRequested():
+			while is_playing() or get_property(pause_services_prop) == 'true': wait_for_abort(10)
+			wait_time = 1800
+			try:
+				sync_interval, wait_time = trakt_sync_interval()
+				next_update_string = update_string % sync_interval
 				status = trakt_sync_activities()
 				if status == 'failed': logger('Fen Light', trakt_service_string % ('Failed. Error from Trakt', next_update_string))
 				else:
 					if status in ('success', 'no account'): logger('Fen Light', trakt_service_string % ('Success. %s' % trakt_success_line_dict[status], next_update_string))
 					else: logger('Fen Light', trakt_service_string % ('Success. No Changes Needed', next_update_string))# 'not needed'
 					if status == 'success' and get_setting('fenlight.trakt.refresh_widgets', 'false') == 'true': kodi_refresh()
-		except Exception as e: logger('Fen Light', trakt_service_string % ('Failed', 'The following Error Occured: %s' % str(e)))
-		logger('Fen Light', 'TraktSync Finished')
-		return wait_time
-
-class TraktMonitor:
-	def run(self):
-		logger('Fen Light', 'TraktMonitor Service Starting')
-		monitor, player, trakt_sync = xbmc_monitor(), xbmc_player(), TraktSync().run
-		wait_for_abort, is_playing = monitor.waitForAbort, player.isPlayingVideo
-		skip_sync = True
-		while not monitor.abortRequested():
-			while is_playing() or get_property(pause_services_prop) == 'true': wait_for_abort(10)
-			wait_for_abort(trakt_sync(skip_sync))
-			skip_sync = False
+			except Exception as e: logger('Fen Light', trakt_service_string % ('Failed', 'The following Error Occured: %s' % str(e)))
+			logger('Fen Light', 'TraktSync Finished')
+			wait_for_abort(wait_time)
 		try: del monitor
 		except: pass
 		try: del player

@@ -1,17 +1,14 @@
 # -*- coding: utf-8 -*-
-from modules.kodi_utils import external, empty_listing, parse_qsl, get_property, services_finished_prop
+from modules.kodi_utils import external, parse_qsl
 # from modules.kodi_utils import logger
 
 def sys_exit_check(): return external()
-
-def make_empty_listing(): return empty_listing()
 
 def routing(sys):
 	params = dict(parse_qsl(sys.argv[2][1:], keep_blank_values=True))
 	_get = params.get
 	mode = _get('mode', 'navigator.main')
 	if 'navigator.' in mode:
-		if get_property(services_finished_prop) != 'true': return make_empty_listing()
 		from indexers.navigator import Navigator
 		return exec('Navigator(params).%s()' % mode.split('.')[1])
 	if mode == 'set_view':
@@ -40,7 +37,6 @@ def routing(sys):
 		from apis import trakt_api
 		return exec('trakt_api.%s(params)' % mode.split('.')[1])
 	if 'build' in mode:
-		if get_property(services_finished_prop) != 'true': return make_empty_listing()
 		if mode == 'build_movie_list':
 			from indexers.movies import Movies
 			return Movies(params).fetch_list()

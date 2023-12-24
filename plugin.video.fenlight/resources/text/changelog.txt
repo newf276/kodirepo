@@ -1,5 +1,13 @@
 ++
 
+[COLOR dodgerblue][B]Version 1.0.15[/B][/COLOR]
+- Attempt to fix database issues.
+- Slight rework of entering numeric settings when negative numbers possible.
+- Moved update settings to General tab.
+- Changed default values for update action and update delay. Update Action default now "Notification". Update Delay now "45" seconds. This will only affect new installs of course.
+- Changes some custom window animations to fit better with  Fentastic skin.
+- Other changes/fixes.
+
 [COLOR dodgerblue][B]Version 1.0.12/13/14[/B][/COLOR]
 - Added new startup updater to run on Kodi start.
 - 2 settings for startup updater in Manage Updates->Startup Update:

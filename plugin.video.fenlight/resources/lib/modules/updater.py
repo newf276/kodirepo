@@ -16,7 +16,7 @@ home_addons_dir = translate_path('special://home/addons/')
 destination_check = translate_path('special://home/addons/plugin.video.fenlight/')
 
 def get_versions():
-	result = requests.get('https://gitlab.com/Tikipeter/Tikipeter.gitlab.io/raw/main/fen_light_version')
+	result = requests.get('https://github.com/Tikipeter/tikipeter.github.io/raw/main/packages/fen_light_version')
 	if result.status_code != 200: return
 	online_version = result.text.replace('\n', '')
 	current_version = addon_info('version')
@@ -39,7 +39,7 @@ def update_addon(new_version, action):
 	close_all_dialog()
 	execute_builtin('ActivateWindow(Home)', True)
 	zip_name = 'plugin.video.fenlight-%s.zip' % new_version
-	url = 'https://gitlab.com/Tikipeter/Tikipeter.gitlab.io/raw/main/%s' % zip_name
+	url = 'https://github.com/Tikipeter/tikipeter.github.io/raw/main/packages/%s' % zip_name
 	result = requests.get(url, stream=True)
 	if result.status_code != 200: return ok_dialog(heading='Fen Light Updater', text='Error Updating. Please install new update manually')
 	zip_location = osPath.join(packages_dir, zip_name)

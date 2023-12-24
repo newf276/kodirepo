@@ -14,24 +14,27 @@ class MainCache(BaseCache):
 
 	def delete_all(self):
 		try:
-			for i in self.dbcon.execute(GET_ALL): self.delete_memory_cache(str(i[0]))
-			self.dbcon.execute(DELETE_ALL)
-			self.dbcon.execute('VACUUM')
+			dbcon = self.manual_connect('maincache_db')
+			for i in dbcon.execute(GET_ALL): self.delete_memory_cache(str(i[0]))
+			dbcon.execute(DELETE_ALL)
+			dbcon.execute('VACUUM')
 		except: return
 
 	def delete_all_folderscrapers(self):
-		remove_list = [str(i[0]) for i in self.dbcon.execute(LIKE_SELECT % "'FOLDERSCRAPER_%'").fetchall()]
+		dbcon = self.manual_connect('maincache_db')
+		remove_list = [str(i[0]) for i in dbcon.execute(LIKE_SELECT % "'FOLDERSCRAPER_%'").fetchall()]
 		if not remove_list: return
 		try:
-			self.dbcon.execute(LIKE_DELETE % "'FOLDERSCRAPER_%'")
-			self.dbcon.execute('VACUUM')
+			dbcon.execute(LIKE_DELETE % "'FOLDERSCRAPER_%'")
+			dbcon.execute('VACUUM')
 			for item in remove_list: self.delete_memory_cache(str(item))
 		except: pass
 
 	def clean_database(self):
 		try:
-			self.dbcon.execute(CLEAN, (get_timestamp(),))
-			self.dbcon.execute('VACUUM')
+			dbcon = self.manual_connect('maincache_db')
+			dbcon.execute(CLEAN, (get_timestamp(),))
+			dbcon.execute('VACUUM')
 			return True
 		except: return False
 

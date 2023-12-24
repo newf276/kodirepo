@@ -9,7 +9,7 @@ from modules.utils import clean_file_name
 
 sleep, monitor, get_property, set_property, random = kodi_utils.sleep, kodi_utils.monitor, kodi_utils.get_property, kodi_utils.set_property, kodi_utils.random
 json, Thread, notification, hide_busy_dialog = kodi_utils.json, kodi_utils.Thread, kodi_utils.notification, kodi_utils.hide_busy_dialog
-normalize, get_file_info, pack_enable_check, def_host_dict = source_utils.normalize, source_utils.get_file_info, source_utils.pack_enable_check, source_utils.def_host_dict
+normalize, get_file_info, pack_enable_check = source_utils.normalize, source_utils.get_file_info, source_utils.pack_enable_check
 close_all_dialog, int_window_prop = kodi_utils.close_all_dialog, kodi_utils.int_window_prop
 pack_display = '%s (%s)'
 pack_check = ('Season', 'Show')
