@@ -232,6 +232,9 @@ def default_all_episodes():
 def widget_hide_next_page():
 	return get_setting('fenlight.widget_hide_next_page', 'false') == 'true'
 
+def widget_hide_watched():
+	return get_setting('fenlight.widget_hide_watched', 'false') == 'true'
+
 def calendar_sort_order():
 	return int(get_setting('fenlight.trakt.calendar_sort_order', '0'))
 
@@ -252,7 +255,7 @@ def nextep_include_unaired():
 	return get_setting('fenlight.nextep.include_unaired', 'false') == 'true'
 
 def update_delay():
-	return int(get_setting('update.delay', '90'))
+	return int(get_setting('fenlight.update.delay', '45'))
 
 def update_action():
-	return int(get_setting('update.action', '0'))
+	return int(get_setting('fenlight.update.action', '2'))

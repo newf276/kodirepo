@@ -741,6 +741,13 @@
                     </item>
                     <item>
                         <visible>Container(2000).HasFocus(30)</visible>
+                        <label>Hide Watched Items in Widgets</label>
+                        <property name="setting_type">boolean</property>
+                        <property name="setting_value">$INFO[Window(10000).Property(fenlight.widget_hide_watched)]</property>
+                        <onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=settings_manager.set_boolean&amp;setting_id=widget_hide_watched)</onclick>
+                    </item>
+                    <item>
+                        <visible>Container(2000).HasFocus(30)</visible>
                         <label>Hide Next Page Item in Widgets</label>
                         <property name="setting_type">boolean</property>
                         <property name="setting_value">$INFO[Window(10000).Property(fenlight.widget_hide_next_page)]</property>

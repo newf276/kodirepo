@@ -120,16 +120,6 @@ class RemoveOldDatabases:
 		remove_old_databases()
 		return logger('Fen Light', 'RemoveOldDatabases Service Finished')
 
-class OnNotificationActions:
-	def run(self, sender, method, data):
-		if sender == 'xbmc':
-			if method in ('GUI.OnScreensaverActivated', 'System.OnSleep'):
-				set_property(pause_services_prop, 'true')
-				logger('OnNotificationActions', 'PAUSING Fen Light Services Due to Device Sleep')
-			elif method in ('GUI.OnScreensaverDeactivated', 'System.OnWake'):
-				clear_property(pause_services_prop)
-				logger('OnNotificationActions', 'UNPAUSING Fen Light Services Due to Device Awake')
-
 class UpdateCheck:
 	def run(self):
 		logger('Fen Light', 'UpdateCheck Service Starting')
@@ -145,3 +135,13 @@ class UpdateCheck:
 		try: del player
 		except: pass
 		return logger('Fen Light', 'UpdateCheck Service Finished')
+
+class OnNotificationActions:
+	def run(self, sender, method, data):
+		if sender == 'xbmc':
+			if method in ('GUI.OnScreensaverActivated', 'System.OnSleep'):
+				set_property(pause_services_prop, 'true')
+				logger('OnNotificationActions', 'PAUSING Fen Light Services Due to Device Sleep')
+			elif method in ('GUI.OnScreensaverDeactivated', 'System.OnWake'):
+				clear_property(pause_services_prop)
+				logger('OnNotificationActions', 'UNPAUSING Fen Light Services Due to Device Awake')
