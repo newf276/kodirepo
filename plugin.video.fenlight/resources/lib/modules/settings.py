@@ -51,6 +51,9 @@ def tv_show_directory():
 def download_directory(media_type):
 	return translate_path(get_setting(download_directories_dict[media_type]))
 
+def auto_start_fenlight():
+	return get_setting('fenlight.auto_start_fenlight', 'false') == 'true'
+
 def source_folders_directory(media_type, source):
 	setting = 'fenlight.%s.movies_directory' % source if media_type == 'movie' else 'fenlight.%s.tv_shows_directory' % source
 	if get_setting(setting) not in ('', 'None', None): return translate_path( get_setting(setting))
