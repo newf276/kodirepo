@@ -1303,6 +1303,41 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
 	</extension>
 </addon>
 
+<addon id="script.game.yahtzee" name="Yahtzee Game" version="3.0.2" provider-name="Mark König">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.script" library="game.py"/>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en">Yahtzee</summary>
+        <summary lang="de">Yahtzee</summary>
+        <description lang="en">Yahtzee is a popular game. The goal of the game is to score most point by rolling five dice. Every turn you can dice 3 times. A game has 13 rounds and every round you have to choose a comination. Once a combination is used, you cannot use this one again.</description>
+        <description lang="de">Yahtzee ist ein popul&#228;res Spiel. Das Ziel ist es, die meisten Punkte mit 5 W&#252;rfel zu machen. Jede Runde darf man 3 mal w&#252;rfeln. Ein Spiel hat 13 Runden und jede Runde muss ein Kombination eingetragen werden. Wurde ein Kombination benutzt, ist sie nicht mehr verf&#252;gbar.</description>
+        <license>GPL 2.0</license>
+	<platform>all</platform>
+	<language>en,de</language>
+	<email>mark.koening@kleiner-schelm.de</email>
+	<website>https://www.kodinerds.net</website>
+        <source>https://github.com/mking2203/script.game.yahtzee</source>
+        <assets>
+	    <icon>icon.png</icon>
+	    <fanart>fanart.png</fanart>
+	    <screenshot>resources/screenshot001.jpg</screenshot>
+	    <screenshot>resources/screenshot002.jpg</screenshot>
+	    <screenshot>resources/screenshot003.jpg</screenshot>
+	    <screenshot>resources/screenshot004.jpg</screenshot>
+        </assets>
+		<news>
+- 3.0.2
+ fix bonus rule upper part
+ stop threading on exit
+- 3.0.1 new Matrix version
+        </news>
+
+    </extension>
+</addon>
+
 <addon id="skin.seren" version="5.0.10" name="Seren-Estuary" provider-name="phil65, Ichabod Fletchman, Newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>

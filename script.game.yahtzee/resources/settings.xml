@@ -1,0 +1,24 @@
+<?xml version ="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+  <category label="30000">
+    <setting id="ply1" type="text" label="30001" default="James"/>
+    <setting id="ply2" type="text" label="30002" default="Olivia"/>
+    <setting id="ply3" type="text" label="30003" default="Logan"/>
+    <setting id="ply4" type="text" label="30004" default="Sophia"/>
+    <setting type="sep" />
+	<setting id="speed" type="select" label="30010" lvalues="30011|30012|30013" />
+	<setting type="sep" />
+	<setting id="notify" type="bool" label="30014" default="true"/>
+	<setting type="sep" />
+    <setting id="hi1" type="text" label="hi1" visible="false"/>
+    <setting id="hi2" type="text" label="hi2" visible="false"/>
+    <setting id="hi3" type="text" label="hi3" visible="false"/>
+    <setting id="hi4" type="text" label="hi4" visible="false"/>
+    <setting id="hi5" type="text" label="hi5" visible="false"/>
+    <setting id="hi6" type="text" label="hi6" visible="false"/>
+    <setting id="hi7" type="text" label="hi7" visible="false"/>
+    <setting id="hi8" type="text" label="hi8" visible="false"/>
+    <setting id="hi9" type="text" label="hi9" visible="false"/>
+    <setting id="hi10" type="text" label="hi10" visible="false"/>
+  </category>
+</settings>

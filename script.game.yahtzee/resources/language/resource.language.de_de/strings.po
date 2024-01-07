@@ -1,0 +1,259 @@
+# Kodi Media Center language file
+# Addon Name: Yahtzee
+# Addon id: plugin.script.game.yahtzee
+# Addon Provider: Mark König
+
+msgid ""
+msgstr ""
+
+"Project-Id-Version: Kodi Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@kodi.org\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-addons/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#30000"
+msgid "General"
+msgstr "Allgemein"
+
+msgctxt "#30001"
+msgid "Name player 1"
+msgstr "Name Spieler 1"
+
+msgctxt "#30002"
+msgid "Name player 2"
+msgstr "Name Spieler 2"
+
+msgctxt "#30003"
+msgid "Name player 3"
+msgstr "Name Spieler 3"
+
+msgctxt "#30004"
+msgid "Name player 4"
+msgstr "Name Spieler 4"
+
+msgctxt "#30010"
+msgid "Game speed"
+msgstr "Spiel Geschwindigkeit"
+
+msgctxt "#30011"
+msgid "fast"
+msgstr "schnell"
+
+msgctxt "#30012"
+msgid "medium"
+msgstr "mittel"
+
+msgctxt "#30013"
+msgid "slow"
+msgstr "langsam"
+
+msgctxt "#30014"
+msgid "show notification"
+msgstr "Zeige Hinweise"
+
+msgctxt "#30020"
+msgid "Loading values, please wait!"
+msgstr "Lade berechnete Werte, bitte warten!"
+
+msgctxt "#31001"
+msgid "New Game"
+msgstr "Neues Spiel"
+
+msgctxt "#31002"
+msgid "Player:"
+msgstr "Spieler:"
+
+msgctxt "#31003"
+msgid "Computer:"
+msgstr "Computer:"
+
+msgctxt "#31004"
+msgid "Sounds"
+msgstr "Sound"
+
+msgctxt "#31005"
+msgid "GAME OVER"
+msgstr "GAME OVER"
+
+msgctxt "#31006"
+msgid "Player"
+msgstr "Spieler"
+
+msgctxt "#31007"
+msgid "Dice"
+msgstr "Wurf"
+
+msgctxt "#31008"
+msgid "from"
+msgstr "von"
+
+msgctxt "#31009"
+msgid "Dice !"
+msgstr "Würfel!"
+
+msgctxt "#31010"
+msgid "Give me a hint !"
+msgstr "Gib mir einen Tip!"
+
+msgctxt "#31011"
+msgid "What's this ?"
+msgstr "Was ist das ?"
+
+msgctxt "#31012"
+msgid "Hold"
+msgstr "Halten"
+
+msgctxt "#31013"
+msgid "Aces"
+msgstr "Einer"
+
+msgctxt "#31014"
+msgid "Twos"
+msgstr "Zweier"
+
+msgctxt "#31015"
+msgid "Threes"
+msgstr "Dreier"
+
+msgctxt "#31016"
+msgid "Fours"
+msgstr "Vierer"
+
+msgctxt "#31017"
+msgid "Fives"
+msgstr "Fünfer"
+
+msgctxt "#31018"
+msgid "Sixes"
+msgstr "Sechser"
+
+msgctxt "#31019"
+msgid "Upper total"
+msgstr "Gesamt oben"
+
+msgctxt "#31020"
+msgid "Three-Of-A-Kind"
+msgstr "3er Pasch"
+
+msgctxt "#31021"
+msgid "Four-Of-A-Kind"
+msgstr "4er Pasch"
+
+msgctxt "#31022"
+msgid "Full House"
+msgstr "Full House"
+
+msgctxt "#31023"
+msgid "Small Straight"
+msgstr "Kleine Strasse"
+
+msgctxt "#31024"
+msgid "Large Straight"
+msgstr "Große Strasse"
+
+msgctxt "#31025"
+msgid "Yahtzee"
+msgstr "Yahtzee"
+
+msgctxt "#31026"
+msgid "Chance"
+msgstr "Chance"
+
+msgctxt "#31027"
+msgid "Total"
+msgstr "Gesamt"
+
+msgctxt "#31028"
+msgid "Forecast"
+msgstr "Endwert"
+
+msgctxt "#31029"
+msgid "Select a field"
+msgstr "Wähle ein Feld"
+
+msgctxt "#31030"
+msgid "Change Mode"
+msgstr "Modus ändern"
+
+msgctxt "#31031"
+msgid "Do you really want to change the"
+msgstr "Möchten Sie wirklich den Modus"
+
+msgctxt "#31032"
+msgid "mode of the game ? The game will"
+msgstr "ändern ? Das Spiel wird dann"
+
+msgctxt "#31033"
+msgid "be restarted."
+msgstr "zurückgesetzt."
+
+msgctxt "#31034"
+msgid "New Game"
+msgstr "Neues Spiel"
+
+msgctxt "#31035"
+msgid "Do you really want to start"
+msgstr "Möchten Sie wirklich ein"
+
+msgctxt "#31036"
+msgid "a new game ?"
+msgstr "neues Spiel beginnen ?"
+
+msgctxt "#31037"
+msgid "Best combination:"
+msgstr "Beste Kombination:"
+
+msgctxt "#31038"
+msgid "hold"
+msgstr "halte"
+
+msgctxt "#31039"
+msgid "Calculated final score:"
+msgstr "Berechneter Endwert:"
+
+msgctxt "#31040"
+msgid "Best selection:"
+msgstr "Bester Eintrag:"
+
+msgctxt "#31041"
+msgid "You need to dice first !"
+msgstr "Sie müssen erst würfeln !"
+
+msgctxt "#31042"
+msgid "Discard"
+msgstr "Streichen"
+
+msgctxt "#31043"
+msgid "Do you really want to"
+msgstr "Möchten Sie wirklich"
+
+msgctxt "#31044"
+msgid "discard this field ?"
+msgstr "dieses Feld streichen ?"
+
+msgctxt "#31045"
+msgid "Do you really want to"
+msgstr "Möchten Sie wirklich"
+
+msgctxt "#31046"
+msgid "exit the game ?"
+msgstr "das Spiel beenden ?"
+
+msgctxt "#31050"
+msgid "Yahtzee is a popular game. The goal of the game is to score most point by rolling five dice. Every turn you can dice 3 times. A game has 13 rounds and every round you have to choose a comination. Once a combination is used, you cannot use this one again."
+msgstr "Yahtzee ist ein populäres Spiel. Das Ziel ist es, die meisten Punkte mit 5 Würfel zu machen. Jede Runde darf man 3 mal würfeln. Ein Spiel hat 13 Runden und jede Runde muss ein Kombination eingetragen werden. Wurde ein Kombination benutzt, ist sie nicht mehr verfügbar."
+
+msgctxt "#31051"
+msgid "WIN"
+msgstr "Gewinner"
+
+msgctxt "#31052"
+msgid "DRAW"
+msgstr "Unentschieden"

@@ -1,0 +1,259 @@
+# Kodi Media Center language file
+# Addon Name: Yahtzee
+# Addon id: plugin.script.game.yahtzee
+# Addon Provider: Mark König
+
+msgid ""
+msgstr ""
+
+"Project-Id-Version: Kodi Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@kodi.org\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-addons/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#30000"
+msgid "General"
+msgstr ""
+
+msgctxt "#30001"
+msgid "Name player 1"
+msgstr ""
+
+msgctxt "#30002"
+msgid "Name player 2"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Name player 3"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Name player 4"
+msgstr ""
+
+msgctxt "#30010"
+msgid "Game speed"
+msgstr ""
+
+msgctxt "#30011"
+msgid "fast"
+msgstr ""
+
+msgctxt "#30012"
+msgid "medium"
+msgstr ""
+
+msgctxt "#30013"
+msgid "slow"
+msgstr ""
+
+msgctxt "#30014"
+msgid "show notification"
+msgstr ""
+
+msgctxt "#30020"
+msgid "Loading values, please wait!"
+msgstr ""
+
+msgctxt "#31001"
+msgid "New Game"
+msgstr ""
+
+msgctxt "#31002"
+msgid "Player:"
+msgstr ""
+
+msgctxt "#31003"
+msgid "Computer:"
+msgstr ""
+
+msgctxt "#31004"
+msgid "Sounds"
+msgstr ""
+
+msgctxt "#31005"
+msgid "GAME OVER"
+msgstr ""
+
+msgctxt "#31006"
+msgid "Player"
+msgstr ""
+
+msgctxt "#31007"
+msgid "Dice"
+msgstr ""
+
+msgctxt "#31008"
+msgid "from"
+msgstr ""
+
+msgctxt "#31009"
+msgid "Dice !"
+msgstr ""
+
+msgctxt "#31010"
+msgid "Give me a hint !"
+msgstr ""
+
+msgctxt "#31011"
+msgid "What's this ?"
+msgstr ""
+
+msgctxt "#31012"
+msgid "Hold"
+msgstr ""
+
+msgctxt "#31013"
+msgid "Aces"
+msgstr ""
+
+msgctxt "#31014"
+msgid "Twos"
+msgstr ""
+
+msgctxt "#31015"
+msgid "Threes"
+msgstr ""
+
+msgctxt "#31016"
+msgid "Fours"
+msgstr ""
+
+msgctxt "#31017"
+msgid "Fives"
+msgstr ""
+
+msgctxt "#31018"
+msgid "Sixes"
+msgstr ""
+
+msgctxt "#31019"
+msgid "Upper total"
+msgstr ""
+
+msgctxt "#31020"
+msgid "Three-Of-A-Kind"
+msgstr ""
+
+msgctxt "#31021"
+msgid "Four-Of-A-Kind"
+msgstr ""
+
+msgctxt "#31022"
+msgid "Full House"
+msgstr ""
+
+msgctxt "#31023"
+msgid "Small Straight"
+msgstr ""
+
+msgctxt "#31024"
+msgid "Large Straight"
+msgstr ""
+
+msgctxt "#31025"
+msgid "Yahtzee"
+msgstr ""
+
+msgctxt "#31026"
+msgid "Chance"
+msgstr ""
+
+msgctxt "#31027"
+msgid "Total"
+msgstr ""
+
+msgctxt "#31028"
+msgid "Forecast"
+msgstr ""
+
+msgctxt "#31029"
+msgid "Select a field"
+msgstr ""
+
+msgctxt "#31030"
+msgid "Change Mode"
+msgstr ""
+
+msgctxt "#31031"
+msgid "Do you really want to change the"
+msgstr ""
+
+msgctxt "#31032"
+msgid "mode of the game ? The game will"
+msgstr ""
+
+msgctxt "#31033"
+msgid "be restarted."
+msgstr ""
+
+msgctxt "#31034"
+msgid "New Game"
+msgstr ""
+
+msgctxt "#31035"
+msgid "Do you really want to start"
+msgstr ""
+
+msgctxt "#31036"
+msgid "a new game ?"
+msgstr ""
+
+msgctxt "#31037"
+msgid "Best combination:"
+msgstr ""
+
+msgctxt "#31038"
+msgid "hold"
+msgstr ""
+
+msgctxt "#31039"
+msgid "Calculated final score:"
+msgstr ""
+
+msgctxt "#31040"
+msgid "Best selection:"
+msgstr ""
+
+msgctxt "#31041"
+msgid "You need to dice first !"
+msgstr ""
+
+msgctxt "#31042"
+msgid "Discard"
+msgstr ""
+
+msgctxt "#31043"
+msgid "Do you really want to"
+msgstr ""
+
+msgctxt "#31044"
+msgid "discard this field ?"
+msgstr ""
+
+msgctxt "#31045"
+msgid "Do you really want to"
+msgstr ""
+
+msgctxt "#31046"
+msgid "exit the game ?"
+msgstr ""
+
+msgctxt "#31050"
+msgid "Yahtzee is a popular game. The goal of the game is to score most point by rolling five dice. Every turn you can dice 3 times. A game has 13 rounds and every round you have to choose a comination. Once a combination is used, you cannot use this one again."
+msgstr ""
+
+msgctxt "#31051"
+msgid "WIN"
+msgstr ""
+
+msgctxt "#31052"
+msgid "DRAW"
+msgstr ""
