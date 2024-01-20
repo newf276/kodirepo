@@ -48,7 +48,7 @@ class Sources():
 		self.progress_dialog = None
 		self.playing_filename = ''
 		self.count_tuple = (('sources_4k', '4K', self._quality_length), ('sources_1080p', '1080p', self._quality_length), ('sources_720p', '720p', self._quality_length),
-							('sources_sd', '', self._quality_length_sd), ('sources_total', '', self.quality_length_final))
+							('sources_sd', '', self._quality_length_sd), ('sources_total', '', self._quality_length_final))
 
 	def playback_prep(self, params=None):
 		hide_busy_dialog()
@@ -90,7 +90,7 @@ class Sources():
 		self.hybrid_allowed = self.filter_hdr in (0, 2)
 		self.include_unknown_size = get_setting('fenlight.results.include.unknown.size', 'false') == 'true'
 		self.include_3D_results = get_setting('fenlight.include_3d_results', 'true') == 'true'
-		self.search_info()
+		self.make_search_info()
 		if self.autoscrape: self.autoscrape_nextep_handler()
 		else: return self.get_sources()
 
@@ -456,7 +456,7 @@ class Sources():
 			except: pass
 		self.meta.update({'media_type': self.media_type, 'background': self.background, 'custom_title': self.custom_title, 'custom_year': self.custom_year})
 
-	def search_info(self):
+	def make_search_info(self):
 		title, year, season, episode, ep_name = self.get_search_title(), self.get_search_year(), self.get_season(), self.get_episode(), self.get_ep_name()
 		aliases = make_alias_dict(self.meta, title)
 		expiry_times = get_cache_expiry(self.media_type, self.meta, self.season)
@@ -743,5 +743,5 @@ class Sources():
 	def _quality_length_sd(self, items, dummy):
 		return len([i for i in items if i['quality'] in sd_check])
 
-	def quality_length_final(self, items, dummy):
+	def _quality_length_final(self, items, dummy):
 		return len(items)

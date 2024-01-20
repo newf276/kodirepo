@@ -1,8 +1,16 @@
 ++
 
+[COLOR dodgerblue][B]Version 1.0.19[/B][/COLOR]
+- Added "Providers" menu items for Movies and TV Shows. For TV Shows, you will need to navigate into TV Shows and select "Check for New Menu Items" from the context menu. Then you can add the new "Providers" menu item to your TV Show list. If that does not work, you will need to instead select "Restore Menu". For Movies, the "Providers" menu item is replacing the "Networks" menu item. So you will need to either remove the "Networks" menu item and add the Providers menu item the same way as for TV Shows, or you can simply select "Restore Menu" and that will happen automatically.
+- Added "Discover" menu item to Main Menu. Here you can make your own custom lists using filters. Browse them from the Discover menu, or add them to any of Fen Light's main menus by using the menu editor. To see the new Discover menu item, follow the steps from above, except from the Main Menu.
+- Added Settings->General->Manage Addon Updates-> "Check Test Repository for Updates". There is now a test repository, and enablng this setting will allow Fen Light to update from the test repository. THIS IS NOT ADVISED, as the builds within the test repo may not be stable.
+- Improved resolving accuracy with RD sources.
+- Quick fix for rounding down of small TV Show progress floats.
+- Other changes/fixes.
+
 [COLOR dodgerblue][B]Version 1.0.18[/B][/COLOR]
 - Added Info for all settings within Fen Light. Found at the bottom of the settings window when browsing the settings.
-- Re-added "Autostart FenLight when Kodi Starts" to Settings->General. Removed temporarily whilst database issues were being resolved.
+- Re-added "Autostart Fen Light when Kodi Starts" to Settings->General. Removed temporarily whilst database issues were being resolved.
 - Re-added "Check for Corrupt databases" to Tools->Database & Cache Maintenance. Removed temporarily whilst database issues were being resolved.
 - Other changes/fixes.
 

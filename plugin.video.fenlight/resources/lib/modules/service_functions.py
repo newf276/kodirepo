@@ -17,7 +17,7 @@ trakt_sync_interval, auto_start, update_action, update_delay = settings.trakt_sy
 auto_start_fenlight = settings.auto_start_fenlight
 window_top_str, listitem_property_str = 'Window.IsTopMost(%s)', 'ListItem.Property(%s)'
 movieinformation_str, contextmenu_str = 'movieinformation', 'contextmenu'
-trakt_service_string = 'TraktSync Service Update %s - %s'
+trakt_service_string = 'TraktMonitor Service Update %s - %s'
 trakt_success_line_dict = {'success': 'Trakt Update Performed', 'no account': '(Unauthorized) Trakt Update Performed'}
 update_string = 'Next Update in %s minutes...'
 media_windows = (10000, 10025, 11121)
@@ -51,7 +51,6 @@ class CustomActions:
 					run_custom = True
 					self.wait_for_abort(0.25)
 				else:
-					run_custom = False
 					self.wait_for_abort(1); continue
 				context_visible, info_visible = get_visibility(window_top_str % contextmenu_str), get_visibility(window_top_str % movieinformation_str)
 			try:
@@ -113,7 +112,6 @@ class TraktMonitor:
 					else: logger('Fen Light', trakt_service_string % ('Success. No Changes Needed', next_update_string))# 'not needed'
 					if status == 'success' and get_setting('fenlight.trakt.refresh_widgets', 'false') == 'true': kodi_refresh()
 			except Exception as e: logger('Fen Light', trakt_service_string % ('Failed', 'The following Error Occured: %s' % str(e)))
-			logger('Fen Light', 'TraktSync Finished')
 			wait_for_abort(wait_time)
 		try: del monitor
 		except: pass

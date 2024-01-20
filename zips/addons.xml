@@ -78,7 +78,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
   </extension>
 </addon>
 
-<addon id="plugin.video.fenlight" name="Fen Light" provider-name="Tikipeter" version="1.0.18">
+<addon id="plugin.video.fenlight" name="Fen Light" provider-name="Tikipeter" version="1.0.20">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>
@@ -651,7 +651,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
     </extension>
 </addon>
 
-<addon id="plugin.video.fen" name="Fen" provider-name="Tikipeter" version="3.2.17">
+<addon id="plugin.video.fen" name="Fen" provider-name="Tikipeter" version="3.2.19">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>
@@ -831,7 +831,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
 	</extension>
 </addon>
 
-<addon id="repository.newf" name="Repository Newf" version="1.0.6" provider-name="newf276">
+<addon id="repository.newf" name="Repository Newf" version="1.0.7" provider-name="newf276">
     <extension point="xbmc.addon.repository" name="Repository Newf">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/newf276/kodirepo/master/zips/addons.xml</info>
