@@ -20,16 +20,9 @@
                     <item>
 						<label>Search Fen</label>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick condition="System.AddonIsEnabled(plugin.video.fen)">ActivateWindow(10025,&quot;plugin://plugin.video.fen/?action=searchMenu&amp;from_widget=false&quot;,return)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.fen)">ActivateWindow(10025,"plugin://plugin.video.fen/?iconImage=search&amp;mode=navigator.search&amp;name=Search",return)</onclick>
                         <onclick condition="System.HasAddon(plugin.video.fen) + !System.AddonIsEnabled(plugin.video.fen)">EnableAddon(plugin.video.fen)</onclick>
 						<onclick condition="!System.HasAddon(plugin.video.fen)">InstallAddon(plugin.video.fen)</onclick>
-					</item>
-					<item>
-						<label>$LOCALIZE[31113]</label>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick condition="System.AddonIsEnabled(script.globalsearch)">RunScript(script.globalsearch)</onclick>
-						<onclick condition="System.HasAddon(script.globalsearch) + !System.AddonIsEnabled(script.globalsearch)">EnableAddon(script.globalsearch)</onclick>
-						<onclick condition="!System.HasAddon(script.globalsearch)">InstallAddon(script.globalsearch)</onclick>
 					</item>
 					<item>
 						<label>$LOCALIZE[31145]</label>

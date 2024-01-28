@@ -37,46 +37,9 @@ class Navigator:
 		self.end_directory()
 
 	def discover(self):
-		self.add({'mode': 'navigator.discover_content', 'media_type': 'movie'}, 'Discover Movies', 'movies')
-		self.add({'mode': 'navigator.discover_content', 'media_type': 'tvshow'}, 'Discover TV Shows', 'tv')
+		self.add({'mode': 'navigator.discover_contents', 'media_type': 'movie'}, 'Discover Movies', 'movies')
+		self.add({'mode': 'navigator.discover_contents', 'media_type': 'tvshow'}, 'Discover TV Shows', 'tv')
 		self.end_directory()
-
-	def discover_content(self):
-		from caches.discover_cache import discover_cache
-		action, media_type = self.params_get('action', ''), self.params_get('media_type')
-		if not action:
-			self.add({'mode': 'discover_choice', 'media_type': media_type, 'isFolder': 'false'}, '[I]Make New Discover List...[/I]', 'new')
-			results = discover_cache.get_all(media_type)
-			if media_type == 'movie': mode, action = 'build_movie_list', 'tmdb_movies_discover'
-			else: mode, action = 'build_tvshow_list', 'tmdb_tv_discover'
-			def _builder():
-				for item in results:
-					listitem = make_listitem()
-					name = item['id']
-					url_params = {'mode': mode, 'action': action, 'name': name, 'url': item['data']}
-					url = build_url(url_params)
-					if not self.is_home:
-						cm = []
-						cm.append(('[B]Remove from history[/B]', 'RunPlugin(%s)' % build_url({'mode': 'navigator.discover_content', 'action':'delete_one', 'name': name})))
-						cm.append(('[B]Clear All History[/B]', 'RunPlugin(%s)' % build_url({'mode': 'navigator.discover_content', 'action':'delete_all', 'media_type': media_type})))
-						listitem.addContextMenuItems(cm)
-					listitem.setLabel(name)
-					listitem.setArt({'icon': icon, 'poster': icon, 'thumb': icon, 'fanart': fanart, 'banner': icon})
-					info_tag = listitem.getVideoInfoTag()
-					# info_tag.setMediaType('video')
-					info_tag.setPlot(' ')
-					yield (url, listitem, True)
-			handle = int(sys.argv[1])
-			icon = get_icon('discover')
-			add_items(handle, list(_builder()))
-			set_content(handle, 'files')
-			set_category(handle, 'Discover')
-			end_directory(handle)
-			set_view_mode('view.main')
-		else:
-			if action == 'delete_one': discover_cache.delete_one(self.params_get('name'))
-			elif action == 'delete_all': discover_cache.delete_all(media_type)
-			container_refresh()
 
 	def premium(self):
 		if authorized_debrid_check('rd'): self.add({'mode': 'navigator.real_debrid'}, 'Real Debrid', 'realdebrid')
@@ -118,6 +81,7 @@ class Navigator:
 			self.add({'mode': 'navigator.trakt_watchlists'}, 'Trakt Watchlist', 'trakt')
 			self.add({'mode': 'trakt.list.get_trakt_lists', 'list_type': 'my_lists', 'build_list': 'true', 'category_name': 'My Lists'}, 'Trakt My Lists', 'trakt')
 			self.add({'mode': 'trakt.list.get_trakt_lists', 'list_type': 'liked_lists', 'build_list': 'true', 'category_name': 'Liked Lists'}, 'Trakt Liked Lists', 'trakt')
+			self.add({'mode': 'navigator.trakt_favorites', 'category_name': 'Favorites'}, 'Trakt Favorites', 'trakt')
 			self.add({'mode': 'navigator.trakt_recommendations', 'category_name': 'Recommended'}, 'Trakt Recommended', 'trakt')
 			self.add({'mode': 'build_my_calendar'}, 'Trakt Calendar', 'trakt')
 		self.add({'mode': 'trakt.list.get_trakt_trending_popular_lists', 'list_type': 'trending', 'category_name': 'Trending User Lists'}, 'Trending User Lists', 'trakt')
@@ -155,6 +119,12 @@ class Navigator:
 		self.category_name = 'Recommended'
 		self.add({'mode': 'build_movie_list', 'action': 'trakt_recommendations', 'new_page': 'movies', 'category_name': 'Recommended Movies'}, 'Movies', 'trakt')
 		self.add({'mode': 'build_tvshow_list', 'action': 'trakt_recommendations', 'new_page': 'shows', 'category_name': 'Recommended TV Shows'}, 'TV Shows', 'trakt')
+		self.end_directory()
+
+	def trakt_favorites(self):
+		self.category_name = 'Favorites'
+		self.add({'mode': 'build_movie_list', 'action': 'trakt_favorites', 'category_name': 'Favorite Movies'}, 'Movies', 'trakt')
+		self.add({'mode': 'build_tvshow_list', 'action': 'trakt_favorites', 'category_name': 'Favorite TV Shows'}, 'TV Shows', 'trakt')
 		self.end_directory()
 
 	def people(self):
@@ -450,6 +420,43 @@ class Navigator:
 		if contents: add_items(int(sys.argv[1]), list(_process()))
 		else: self.add({'mode': 'menu_editor.shortcut_folder_add', 'name': list_name, 'isFolder': 'false'}, '[I]Add Content...[/I]', 'new', False)
 		self.end_directory()
+
+	def discover_contents(self):
+		from caches.discover_cache import discover_cache
+		action, media_type = self.params_get('action', ''), self.params_get('media_type')
+		if not action:
+			self.add({'mode': 'discover_choice', 'media_type': media_type, 'isFolder': 'false'}, '[I]Make New Discover List...[/I]', 'new')
+			results = discover_cache.get_all(media_type)
+			if media_type == 'movie': mode, action = 'build_movie_list', 'tmdb_movies_discover'
+			else: mode, action = 'build_tvshow_list', 'tmdb_tv_discover'
+			def _builder():
+				for item in results:
+					listitem = make_listitem()
+					name = item['id']
+					url_params = {'mode': mode, 'action': action, 'name': name, 'url': item['data']}
+					url = build_url(url_params)
+					if not self.is_home:
+						cm = []
+						cm.append(('[B]Remove from history[/B]', 'RunPlugin(%s)' % build_url({'mode': 'navigator.discover_contents', 'action':'delete_one', 'name': name})))
+						cm.append(('[B]Clear All History[/B]', 'RunPlugin(%s)' % build_url({'mode': 'navigator.discover_contents', 'action':'delete_all', 'media_type': media_type})))
+						listitem.addContextMenuItems(cm)
+					listitem.setLabel(name)
+					listitem.setArt({'icon': icon, 'poster': icon, 'thumb': icon, 'fanart': fanart, 'banner': icon})
+					info_tag = listitem.getVideoInfoTag()
+					# info_tag.setMediaType('video')
+					info_tag.setPlot(' ')
+					yield (url, listitem, True)
+			handle = int(sys.argv[1])
+			icon = get_icon('discover')
+			add_items(handle, list(_builder()))
+			set_content(handle, 'files')
+			set_category(handle, 'Discover')
+			end_directory(handle)
+			set_view_mode('view.main')
+		else:
+			if action == 'delete_one': discover_cache.delete_one(self.params_get('name'))
+			elif action == 'delete_all': discover_cache.delete_all(media_type)
+			container_refresh()
 
 	def exit_media_menu(self):
 		params = get_property('fenlight.exit_params')

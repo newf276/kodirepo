@@ -674,6 +674,5 @@ def media_extra_info_choice(params):
 	except: return notification('Error', 2000)
 	return '[CR][CR]'.join(listings)
 
-
 def discover_choice(params):
 	open_window(('windows.discover', 'Discover'), 'discover.xml', media_type=params['media_type'])

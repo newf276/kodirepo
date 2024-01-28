@@ -1,5 +1,5 @@
 # Kodi Media Center language file
-# Addon Name: Fen
+# Addon Name: Skin-Fen
 # Addon id: skin.fen
 # Addon Provider: Team Kodi
 msgid ""
@@ -731,26 +731,6 @@ msgstr "Медиа"
 msgctxt "#31611"
 msgid "System"
 msgstr "Система"
-
-#. Video version dialog button
-msgctxt "#31612"
-msgid "Add version"
-msgstr ""
-
-#. Video version dialog button
-msgctxt "#31613"
-msgid "Add extras"
-msgstr ""
-
-#. Video version dialog button
-msgctxt "#31614"
-msgid "Set default"
-msgstr ""
-
-#. Video version dialog button
-msgctxt "#31615"
-msgid "Extras"
-msgstr ""
 
 #~ msgctxt "#31059"
 #~ msgid "Select + X"

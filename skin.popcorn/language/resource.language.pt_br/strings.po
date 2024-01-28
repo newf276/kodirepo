@@ -5,17 +5,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Main\n"
-"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-06-25 09:43+0000\n"
-"Last-Translator: Wanilton Campos <campos.wanilton@gmail.com>\n"
+"PO-Revision-Date: 2023-12-04 09:42+0000\n"
+"Last-Translator: Christian Gade <gade@kodi.tv>\n"
 "Language-Team: Portuguese (Brazil) <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-popcorn/pt_br/>\n"
 "Language: pt_br\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.18\n"
+"X-Generator: Weblate 5.2.1\n"
 
 msgctxt "Addon Summary"
 msgid "Popcorn skin by phil65. (Kodi's default skin)"
@@ -248,14 +248,6 @@ msgstr "Mostrar tela de login ao inicializar"
 msgctxt "#31058"
 msgid "Automatic Login on startup"
 msgstr "Login automático ao inicializar"
-
-msgctxt "#31059"
-msgid "Select + X"
-msgstr "Selecionar + X"
-
-msgctxt "#31060"
-msgid "Select + Start"
-msgstr "Selecione + Iniciar"
 
 msgctxt "#31061"
 msgid "Main menu items"
@@ -647,7 +639,7 @@ msgstr "Ajustes relacionados as artes."
 #. Label for OSD settings category
 msgctxt "#31170"
 msgid "On screen display"
-msgstr ""
+msgstr "Na tela OSD"
 
 #. Helper text for the label of OSD settings category
 msgctxt "#31171"
@@ -667,17 +659,17 @@ msgstr "Tempo de fechamento automático do vídeo OSD (segundos)"
 #. Setting to control what happens when clicking a music album on the home screen
 msgctxt "#31174"
 msgid "Default select action for albums on the home screen"
-msgstr ""
+msgstr "Ação de seleção padrão para álbuns na tela inicial"
 
 #. Setting to control what happens when clicking a TV show on the home screen
 msgctxt "#31175"
 msgid "Default select action for TV shows on the home screen"
-msgstr ""
+msgstr "Ação de seleção padrão para seriados na tela inicial"
 
 #. Setting to control what happens when clicking a movie set on the home screen
 msgctxt "#31176"
 msgid "Default select action for movie sets on the home screen"
-msgstr ""
+msgstr "Ação de seleção padrão para coletâneas na tela inicial"
 
 # empty strings from id 31170 to 31599
 #. Label to show the video codec name
@@ -739,6 +731,18 @@ msgstr "Mídia"
 msgctxt "#31611"
 msgid "System"
 msgstr "Sistema"
+
+#~ msgctxt "#31615"
+#~ msgid "Extras"
+#~ msgstr "Extras"
+
+#~ msgctxt "#31059"
+#~ msgid "Select + X"
+#~ msgstr "Selecionar + X"
+
+#~ msgctxt "#31060"
+#~ msgid "Select + Start"
+#~ msgstr "Selecione + Iniciar"
 
 #~ msgctxt "#31137"
 #~ msgid "PVR info"

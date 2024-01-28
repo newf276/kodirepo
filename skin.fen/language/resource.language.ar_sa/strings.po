@@ -1,6 +1,6 @@
 # Kodi Media Center language file
-# Addon Name: Fen
-# Addon id: skin.fen
+# Addon Name: Fenlight
+# Addon id: skin.fenlight
 # Addon Provider: Team Kodi
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2023-01-29 21:15+0000\n"
 "Last-Translator: psp2111-ADSLGATE <psp100000@hotmail.com>\n"
-"Language-Team: Arabic (Saudi Arabia) <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-fen/ar_sa/>\n"
+"Language-Team: Arabic (Saudi Arabia) <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-fenlight/ar_sa/>\n"
 "Language: ar_sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Weblate 4.15.2\n"
 
 msgctxt "Addon Summary"
-msgid "Fen skin by phil65. (Kodi's default skin)"
-msgstr "مظهر Fen بواسطة phil65. ( مظهر كودي الافتراضي )"
+msgid "Fenlight skin by phil65. (Kodi's default skin)"
+msgstr "مظهر Fenlight بواسطة phil65. ( مظهر كودي الافتراضي )"
 
 msgctxt "Addon Description"
-msgid "Fen is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "Fen هو المظهر الافتراضي ل كودي الإصدار 17.0 و أعلى. يطمح بأن يكون سهل الاستخدام والفهم لمستخدمين كودي الجدد."
+msgid "Fenlight is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Fenlight هو المظهر الافتراضي ل كودي الإصدار 17.0 و أعلى. يطمح بأن يكون سهل الاستخدام والفهم لمستخدمين كودي الجدد."
 
 msgctxt "Addon Disclaimer"
-msgid "Fen is the default skin for Kodi, removing it may cause issues"
-msgstr "Fen هو المظهر الافتراضي ل كودي, إزالته قد تسبب بعض المشاكل"
+msgid "Fenlight is the default skin for Kodi, removing it may cause issues"
+msgstr "Fenlight هو المظهر الافتراضي ل كودي, إزالته قد تسبب بعض المشاكل"
 
 msgctxt "#31000"
 msgid "Now playing"
@@ -743,26 +743,6 @@ msgstr "الوسائط"
 msgctxt "#31611"
 msgid "System"
 msgstr "النظام"
-
-#. Video version dialog button
-msgctxt "#31612"
-msgid "Add version"
-msgstr ""
-
-#. Video version dialog button
-msgctxt "#31613"
-msgid "Add extras"
-msgstr ""
-
-#. Video version dialog button
-msgctxt "#31614"
-msgid "Set default"
-msgstr ""
-
-#. Video version dialog button
-msgctxt "#31615"
-msgid "Extras"
-msgstr ""
 
 #~ msgctxt "#31059"
 #~ msgid "Select + X"

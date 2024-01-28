@@ -450,12 +450,11 @@
                     </item>
                     <item>
                         <visible>Container(2000).HasFocus(10)</visible>
-                        <visible>!String.IsEqual(Window(10000).Property(fenlight.update.action),3)</visible>
-                        <label>    - Check Test Repository for Updates (Warning!!!)</label>
+                        <label>Use Test Repository for Updates (Warning!!!)</label>
                         <property name="setting_type">boolean</property>
-                        <property name="setting_value">$INFO[Window(10000).Property(fenlight.update.check_test)]</property>
-                        <property name="setting_description">Enable this and Fen Light will check the Tikipeter Test Repository for any test version updates. It is STRONGLY advised to NOT enable this setting</property>
-                        <onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=settings_manager.set_boolean&amp;setting_id=update.check_test)</onclick>
+                        <property name="setting_value">$INFO[Window(10000).Property(fenlight.update.use_test_repo)]</property>
+                        <property name="setting_description">Enable this and Fen Light will update from the Tikipeter Test Repository. It is STRONGLY advised to NOT enable this setting, but if you like to live life on the edge....</property>
+                        <onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=settings_manager.set_boolean&amp;setting_id=update.use_test_repo)</onclick>
                     </item>
             <!-- General -->
                     <item>
