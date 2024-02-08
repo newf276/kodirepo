@@ -28,7 +28,7 @@
                 <control type="image">
                     <width>1333</width>
                     <height>943</height>
-                    <texture border="16" colordiffuse="FF302F2F">fen_common/dialog.png</texture>
+                    <texture border="16" colordiffuse="FF1F2020">fen_common/dialog.png</texture>
                 </control>
                 <control type="image">
                     <left>15</left>

@@ -450,7 +450,8 @@ class Sources():
 			try:
 				episode_data = [i for i in episodes_data if i['episode'] == self.episode][0]
 				ep_thumb = episode_data.get('thumb', None) or self.meta.get('fanart') or ''
-				self.meta.update({'season': episode_data['season'], 'episode': episode_data['episode'], 'premiered': episode_data['premiered'],
+				episode_type = episode_data.get('episode_type', '')
+				self.meta.update({'season': episode_data['season'], 'episode': episode_data['episode'], 'premiered': episode_data['premiered'], 'episode_type': episode_type,
 								'ep_name': episode_data['title'], 'ep_thumb': ep_thumb, 'plot': episode_data['plot'], 'tvshow_plot': self.meta['plot'],
 								'custom_season': self.custom_season, 'custom_episode': self.custom_episode})
 			except: pass

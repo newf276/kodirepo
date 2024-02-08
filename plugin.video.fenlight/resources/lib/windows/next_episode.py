@@ -4,7 +4,19 @@ from windows.base_window import BaseDialog
 # from modules.kodi_utils import logger
 
 pause_time_before_end, hold_pause_time = 10, 900
-button_actions = {'autoplay_nextep': {10: 'close', 11: 'play', 12: 'cancel'}, 'autoscrape_nextep': {10: 'play', 11: 'close', 12: 'cancel'}}
+episode_flag_base = 'fenlight_flags/episodes/%s.png'
+button_actions = {
+'autoplay_nextep': {10: 'close', 11: 'play', 12: 'cancel'},
+'autoscrape_nextep': {10: 'play', 11: 'close', 12: 'cancel'}
+		}
+episode_status_dict = {
+'season_premiere': 'b30385b5',
+'mid_season_premiere': 'b385b503',
+'series_finale': 'b38503b5',
+'season_finale': 'b3b50385',
+'mid_season_finale': 'b3b58503',
+'':  ''
+		}
 
 class NextEpisode(BaseDialog):
 	def __init__(self, *args, **kwargs):
@@ -38,10 +50,13 @@ class NextEpisode(BaseDialog):
 		self.close()
 
 	def set_properties(self):
+		episode_type = self.meta.get('episode_type', '')
 		self.setProperty('play_type', self.play_type)
 		self.setProperty('thumb', self.meta.get('ep_thumb', None) or self.meta.get('fanart', ''))
 		self.setProperty('clearlogo', self.meta.get('clearlogo', ''))
 		self.setProperty('episode_label', '%s[B] | [/B]%02dx%02d[B] | [/B]%s' % (self.meta['title'], self.meta['season'], self.meta['episode'], self.meta['ep_name']))
+		self.setProperty('episode_status.highlight', episode_status_dict[episode_type])
+		self.setProperty('episode_status.flag', episode_flag_base % episode_type)
 
 	def monitor(self):
 		total_time = self.player.getTotalTime()

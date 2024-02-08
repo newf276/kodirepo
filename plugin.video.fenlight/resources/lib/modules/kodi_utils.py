@@ -32,8 +32,8 @@ colorpalette_path = path_join(userdata_path, 'color_palette/')
 colorpalette_zip_path = path_join(addon_path,'resources', 'media', 'color_palette.zip')
 img_url = 'https://i.imgur.com/%s.png'
 invoker_switch_dict = {'true': 'false', 'false': 'true'}
-empty_poster, item_jump, nextpage = img_url % icons.box_office, img_url % icons.item_jump, img_url % icons.nextpage
-nextpage_landscape, item_jump_landscape = img_url % icons.nextpage_landscape, img_url % icons.item_jump_landscape
+empty_poster, nextpage = img_url % icons.box_office, img_url % icons.nextpage
+nextpage_landscape = img_url % icons.nextpage_landscape
 tmdb_default_api = 'b370b60447737762ca38457bd77579b3'
 int_window_prop, pause_services_prop, firstrun_update_prop = 'fenlight.internal_results.%s', 'fenlight.pause_services', 'firstrun_update'
 current_skin_prop, current_font_prop = 'fenlight.current_skin', 'fenlight.current_font'
@@ -457,3 +457,14 @@ def upload_logfile(params):
 		else: ok_dialog(text='Error. Log Upload Failed')
 	except: ok_dialog(text='Error. Log Upload Failed')
 	hide_busy_dialog()
+
+def fetch_kodi_imagecache(image):
+	import sqlite3 as database
+	result = None
+	try:
+		dbcon = database.connect(translate_path('special://database/Textures13.db'), timeout=40.0)
+		dbcur = dbcon.cursor()
+		dbcur.execute("SELECT cachedurl FROM texture WHERE url = ?", (image,))
+		result = dbcur.fetchone()[0]
+	except: pass
+	return result
