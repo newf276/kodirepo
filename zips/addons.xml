@@ -25,7 +25,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.fenlight" name="Fen Light" provider-name="Tikipeter" version="1.0.26">
+<addon id="plugin.video.fenlight" name="Fen Light" provider-name="Tikipeter" version="1.0.30c">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>
@@ -44,7 +44,7 @@
         <license/>
         <assets>
             <icon>resources/media/fenlight_icon.png</icon>
-            <fanart>resources/media/fenlight_fanart.jpg</fanart>
+            <fanart>resources/media/fenlight_fanart2.jpg</fanart>
         </assets>
         <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>
@@ -916,7 +916,7 @@
 	</extension>
 </addon>
 
-<addon id="repository.newf" name="Repository Newf" version="1.2.2" provider-name="newf276">
+<addon id="repository.newf" name="Repository Newf" version="1.3.2" provider-name="newf276">
     <extension point="xbmc.addon.repository" name="Repository Newf">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/newf276/kodirepo/master/zips/addons.xml</info>
@@ -1045,7 +1045,7 @@
 
 <addon id="skin.fenlight" version="4.0.0" name="Estuary-Fenlight" provider-name="newf276,phil65, Ichabod Fletchman">
 	<requires>
-		<import addon="xbmc.gui" version="5.16.0"/>
+		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false">
 		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
