@@ -874,7 +874,7 @@
 						</item>
 						<item>
 							<label>$LOCALIZE[342]</label>
-                            <onclick>ActivateWindow(10025,"plugin://plugin.video.popcorn/?action=moviesMyWatchlist",return)</onclick>
+                            <onclick>ActivateWindow(10025,"plugin://plugin.video.popcorn/?action=moviesMyCollection",return)</onclick>
 							<property name="menu_id">$NUMBER[5000]</property>
 							<thumb>icons/sidemenu/movies.png</thumb>
 							<property name="id">movies</property>

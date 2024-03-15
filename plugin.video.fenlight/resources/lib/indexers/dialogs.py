@@ -393,12 +393,7 @@ def results_sorting_choice(params={}):
 		set_setting('results.sort_order', choice[1])
 
 def results_format_choice(params={}):
-	xml_choices = [
-					('List',      img_url % 'rcgKRWk'),
-					('Rows',      img_url % 'wHvaixs'),
-					('WideList',  img_url % '4UwfSLy')
-					]
-	choice = open_window(('windows.sources', 'SourcesChoice'), 'sources_choice.xml', xml_choices=xml_choices)
+	choice = open_window(('windows.sources', 'SourcesChoice'), 'sources_choice.xml')
 	if choice: set_setting('results.list_format', choice)
 
 def clear_favorites_choice(params={}):
