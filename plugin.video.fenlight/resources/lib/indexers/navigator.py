@@ -194,6 +194,7 @@ class Navigator:
 		self.add({'mode': 'clear_cache', 'cache': 'rd_cloud', 'isFolder': 'false'}, 'Clear Real Debrid Cache', 'settings')
 		self.add({'mode': 'clear_cache', 'cache': 'pm_cloud', 'isFolder': 'false'}, 'Clear Premiumize Cache', 'settings')
 		self.add({'mode': 'clear_cache', 'cache': 'ad_cloud', 'isFolder': 'false'}, 'Clear All Debrid Cache', 'settings')
+		self.add({'mode': 'clear_cache', 'cache': 'resolved', 'isFolder': 'false'}, 'Clear Resolved Sources', 'settings')
 		self.end_directory()
 
 	def set_view_modes(self):
@@ -360,11 +361,11 @@ class Navigator:
 			results = discover_cache.get_all(media_type)
 			if media_type == 'movie': mode, action = 'build_movie_list', 'tmdb_movies_discover'
 			else: mode, action = 'build_tvshow_list', 'tmdb_tv_discover'
-			for count, item in enumerate(results, 1):
+			for item in results:
 				name = item['id']
 				cm_items = [('[B]Remove from history[/B]', 'RunPlugin(%s)' % build_url({'mode': 'navigator.discover_contents', 'action':'delete_one', 'name': name})),
 							('[B]Clear All History[/B]', 'RunPlugin(%s)' % build_url({'mode': 'navigator.discover_contents', 'action':'clear_cache', 'media_type': media_type}))]
-				self.add({'mode': mode, 'action': action, 'name': name, 'url': item['data']}, '%s. %s' % (count, name), 'discover', cm_items=cm_items)
+				self.add({'mode': mode, 'action': action, 'name': name, 'url': item['data']}, name, 'discover', cm_items=cm_items)
 			self.end_directory()
 		else:
 			if action == 'delete_one': discover_cache.delete_one(self.params_get('name'))
@@ -383,9 +384,9 @@ class Navigator:
 		tips_append = tips_list.append
 		for item in files:
 			tip = item.replace('.txt', '')[4:]
-			if '!!HELP!!' in tip: tip, sort_order = tip.replace('!!HELP!!', '[COLOR crimson]HELP!!![/COLOR] '), 0
-			elif '!!NEW!!' in tip: tip, sort_order = tip.replace('!!NEW!!', '[COLOR chartreuse]NEW!![/COLOR] '), 1
-			elif '!!SPOTLIGHT!!' in tip: tip, sort_order = tip.replace('!!SPOTLIGHT!!', '[COLOR orange]SPOTLIGHT![/COLOR] '), 2
+			if '!!HELP!!' in tip: tip, sort_order = tip.replace('!!HELP!!', '[COLOR crimson][B]HELP!!![/B][/COLOR] '), 0
+			elif '!!NEW!!' in tip: tip, sort_order = tip.replace('!!NEW!!', '[COLOR chartreuse][B]NEW!![/B][/COLOR] '), 1
+			elif '!!SPOTLIGHT!!' in tip: tip, sort_order = tip.replace('!!SPOTLIGHT!!', '[COLOR orange][B]SPOTLIGHT![/B][/COLOR] '), 2
 			else: sort_order = 3
 			action = {'mode': 'show_text', 'heading': tip, 'file': tp(tips_location % item), 'font_size': 'large', 'isFolder': 'false'}
 			tips_append((action, tip, sort_order))
@@ -394,8 +395,8 @@ class Navigator:
 		self.end_directory()
 
 	def because_you_watched(self):
-		media_type = self.params_get('menu_type')
-		mode, action = ('build_movie_list', 'tmdb_movies_recommendations') if media_type == 'movie' else ('build_tvshow_list', 'tmdb_tv_recommendations')
+		if self.params_get('menu_type') == 'movie': mode, action, media_type = 'build_movie_list', 'tmdb_movies_recommendations', 'movie'
+		else: mode, action, media_type = 'build_tvshow_list', 'tmdb_tv_recommendations', 'episode'
 		recently_watched = get_recently_watched(media_type, short_list=0)
 		for item in recently_watched:
 			if media_type == 'movie': name, tmdb_id = item['title'], item['media_id']

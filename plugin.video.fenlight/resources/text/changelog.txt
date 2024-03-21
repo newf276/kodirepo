@@ -1,5 +1,23 @@
 ++
 
+[COLOR dodgerblue][B]Version 1.0.39[/B][/COLOR]
+- Added settings for Trakt Calendar in Settings->Navigation. Choose previous/future days and sort order.
+
+[COLOR dodgerblue][B]Version 1.0.38[/B][/COLOR]
+- Added settings for maximum size for Movies or Episodes. Changed from a single setting for both. Found at Results->Sorting & Filtering.
+- Added Playback->Utilities->"Remember Previous Successful Resolves". Enable this and Fen Light will remember the last successful resolve for a Movie or TV Show and sort it to the top of the results list. The highlight color can be set in Results->Results Color Highlights when the setting is enabled.
+- Neutralized activation code colors when authorizing debrid providers or Trakt so as to assist colorblind people in seeing the code.
+- Other changes/fixes.
+
+[COLOR dodgerblue][B]Version 1.0.36/37[/B][/COLOR]
+- Couple of quick fixes.
+
+[COLOR dodgerblue][B]Version 1.0.35[/B][/COLOR]
+- Added "Sort Type" and "Sort Order" and "Include Airdate in Title" to Next Episode settings.
+- Added "Next Episode Alert Method" setting to Autoplay Next Episode Settings. Choose between "Window" and "Notification".
+- Added "Autoscrape Next Episode" to Episode playback settings. Notification will show when next episode sources are found and are ready to choose from.
+- Fixed scrolling issue in select dialog. List items will scroll when highlighted.
+- Other changes/fixes.
 
 [COLOR dodgerblue][B]Version 1.0.34[/B][/COLOR]
 - Quick fix for Extra Info in Extras window.

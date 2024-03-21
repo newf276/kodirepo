@@ -226,8 +226,15 @@ def default_settings():
 {'setting_id': 'single_ep_display_widget', 'setting_type': 'action', 'setting_default': '1', 'settings_options': {'0': 'TITLE: SxE - EPISODE', '1': 'SxE - EPISODE', '2': 'EPISODE'}},
 {'setting_id': 'meta_filter', 'setting_type': 'boolean', 'setting_default': 'false'},
 {'setting_id': 'use_minimal_media_info', 'setting_type': 'boolean', 'setting_default': 'false'},
+#======+============= Trakt Calendar
+{'setting_id': 'trakt.calendar_sort_order', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Descending', '1': 'Ascending'}},
+{'setting_id': 'trakt.calendar_previous_days', 'setting_type': 'action', 'setting_default': '7', 'min_value': '0', 'max_value': '14'},
+{'setting_id': 'trakt.calendar_future_days', 'setting_type': 'action', 'setting_default': '7', 'min_value': '0', 'max_value': '14'},
 #==================== Next Episodes
+{'setting_id': 'nextep.sort_type', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Recently Watched', '1': 'Airdate', '2': 'Title'}},
+{'setting_id': 'nextep.sort_order', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Descending', '1': 'Ascending'}},
 {'setting_id': 'nextep.include_unwatched', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'None', '1': 'Watchlist', '2': 'Favorites', '3': 'Both'}},
+{'setting_id': 'nextep.include_airdate', 'setting_type': 'boolean', 'setting_default': 'false'},
 {'setting_id': 'nextep.airing_today', 'setting_type': 'boolean', 'setting_default': 'false'},
 {'setting_id': 'nextep.include_unaired', 'setting_type': 'boolean', 'setting_default': 'false'},
 #==================== Widgets
@@ -310,7 +317,8 @@ def default_settings():
 {'setting_id': 'results.sort_order_display', 'setting_type': 'string', 'setting_default': 'Quality, Size, Provider'},
 {'setting_id': 'results.filter_size_method', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Off', '1': 'Use Line Speed', '2': 'Use Size'}},
 {'setting_id': 'results.line_speed', 'setting_type': 'action', 'setting_default': '25', 'min_value': '1'},
-{'setting_id': 'results.size_max', 'setting_type': 'action', 'setting_default': '10000', 'min_value': '1'},
+{'setting_id': 'results.movie_size_max', 'setting_type': 'action', 'setting_default': '10000', 'min_value': '1'},
+{'setting_id': 'results.episode_size_max', 'setting_type': 'action', 'setting_default': '3000', 'min_value': '1'},
 {'setting_id': 'results.size_min', 'setting_type': 'action', 'setting_default': '0', 'min_value': '0'},
 {'setting_id': 'results.size_unknown', 'setting_type': 'boolean', 'setting_default': 'true'},
 {'setting_id': 'results.include.unknown.size', 'setting_type': 'boolean', 'setting_default': 'true'},
@@ -325,6 +333,7 @@ def default_settings():
 {'setting_id': 'filter_audio', 'setting_type': 'string', 'setting_default': 'empty_setting'},
 #==================== Results Color Highlights
 {'setting_id': 'highlight.type', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Provider', '1': 'Quality', '2': 'Single Color'}},
+{'setting_id': 'provider.previous_resolved_highlight', 'setting_type': 'string', 'setting_default': 'FFB40047'},
 {'setting_id': 'provider.easynews_highlight', 'setting_type': 'string', 'setting_default': 'FF00B3B2'},
 {'setting_id': 'provider.debrid_cloud_highlight', 'setting_type': 'string', 'setting_default': 'FF7A01CC'},
 {'setting_id': 'provider.folders_highlight', 'setting_type': 'string', 'setting_default': 'FFB36B00'},
@@ -352,11 +361,16 @@ def default_settings():
 {'setting_id': 'autoplay_quality_episode', 'setting_type': 'string', 'setting_default': 'SD, 720p, 1080p, 4K'},
 {'setting_id': 'autoplay_next_episode', 'setting_type': 'boolean', 'setting_default': 'false'},
 {'setting_id': 'autoplay_default_action', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Play', '1': 'Cancel', '2': 'Pause & Wait'}},
+{'setting_id': 'autoplay_alert_method', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Window', '1': 'Notification'}},
 {'setting_id': 'autoplay_next_window_percentage', 'setting_type': 'action', 'setting_default': '95', 'min_value': '75', 'max_value': '99'},
 {'setting_id': 'autoplay_use_chapters', 'setting_type': 'boolean', 'setting_default': 'true'},
+{'setting_id': 'autoscrape_next_episode', 'setting_type': 'boolean', 'setting_default': 'false'},
+{'setting_id': 'autoscrape_next_window_percentage', 'setting_type': 'action', 'setting_default': '95', 'min_value': '75', 'max_value': '99'},
+{'setting_id': 'autoscrape_use_chapters', 'setting_type': 'boolean', 'setting_default': 'true'},
 {'setting_id': 'auto_resume_episode', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Never', '1': 'Always', '2': 'Autoplay Only'}},
 #==================== Playback Utilities
 {'setting_id': 'playback.limit_resolve', 'setting_type': 'boolean', 'setting_default': 'false'},
+{'setting_id': 'playback.remember_resolve', 'setting_type': 'boolean', 'setting_default': 'false'},
 {'setting_id': 'playback.volumecheck_enabled', 'setting_type': 'boolean', 'setting_default': 'false'},
 {'setting_id': 'playback.volumecheck_percent', 'setting_type': 'action', 'setting_default': '50', 'min_value': '1', 'max_value': '100'},
 
