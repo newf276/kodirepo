@@ -188,7 +188,7 @@ class TVShows:
 		self.all_episodes, self.open_extras = default_all_episodes(), extras_open_action('tvshow')
 		self.is_folder = False if self.open_extras else True
 		self.watched_indicators = watched_indicators()
-		self.watched_info, self.watched_title = get_media_info(self.watched_indicators, 'episode', include_progress=False), 'Trakt' if self.watched_indicators == 1 else 'Fen Light'
+		self.watched_info, self.watched_title = get_media_info(self.watched_indicators, 'episode'), 'Trakt' if self.watched_indicators == 1 else 'Fen Light'
 		if self.custom_order:
 			threads = list(make_thread_list_multi_arg(self.build_tvshow_content, self.list))
 			[i.join() for i in threads]

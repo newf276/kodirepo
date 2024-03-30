@@ -126,7 +126,7 @@ def build_next_episode_manager():
 	list_items = []
 	append = list_items.append
 	indicators = watched_indicators()
-	show_list = get_next_episodes(get_media_info(indicators, 'episode', include_progress=False))
+	show_list = get_next_episodes(get_media_info(indicators, 'episode', remove_hidden=False))
 	hidden_list = get_hidden_progress_items(indicators)
 	if indicators == 0: icon, mode = get_icon('folder'), 'hide_unhide_progress_items'
 	else: icon, mode = get_icon('trakt'), 'trakt.hide_unhide_progress_items'

@@ -12,7 +12,7 @@ CLIENT_ID, CLIENT_SECRET = '1038ef327e86e7f6d39d80d2eb5479bff66dd8394e813c5e0e38
 json, monitor, sleep, random = kodi_utils.json, kodi_utils.monitor, kodi_utils.sleep, kodi_utils.random
 logger, notification, player, confirm_dialog, get_property = kodi_utils.logger, kodi_utils.notification, kodi_utils.player, kodi_utils.confirm_dialog, kodi_utils.get_property
 dialog, unquote, addon_installed, addon_enabled, addon = kodi_utils.dialog, kodi_utils.unquote, kodi_utils.addon_installed, kodi_utils.addon_enabled, kodi_utils.addon
-path_check, get_icon = kodi_utils.path_check, kodi_utils.get_icon, 
+path_check, get_icon, clear_property = kodi_utils.path_check, kodi_utils.get_icon, kodi_utils.clear_property
 requests, execute_builtin, select_dialog, kodi_refresh = kodi_utils.requests, kodi_utils.execute_builtin, kodi_utils.select_dialog, kodi_utils.kodi_refresh
 progress_dialog, external = kodi_utils.progress_dialog, kodi_utils.external
 lists_sort_order = settings.lists_sort_order
@@ -764,6 +764,8 @@ def get_trakt(params):
 	return result[0] if params.get('pagination', True) else result
 
 def trakt_sync_activities(force_update=False):
+	def clear_watched_progress_properties(media_type):
+		for item in ((True, True), (True, False), (False, True), (False, False)): clear_property('1_%s_%s_%s_watched' % (media_type, item[0], item[1]))
 	def _get_timestamp(date_time):
 		return int(time.mktime(date_time.timetuple()))
 	def _compare(latest, cached):
@@ -792,9 +794,15 @@ def trakt_sync_activities(force_update=False):
 	if _compare(latest_episodes['collected_at'], cached_episodes['collected_at']): clear_trakt_collection_watchlist_data('collection', 'tvshow')
 	if _compare(latest_movies['watchlisted_at'], cached_movies['watchlisted_at']): clear_trakt_collection_watchlist_data('watchlist', 'movie')
 	if _compare(latest_shows['watchlisted_at'], cached_shows['watchlisted_at']): clear_trakt_collection_watchlist_data('watchlist', 'tvshow')
-	if _compare(latest_shows['hidden_at'], cached_shows['hidden_at']): clear_trakt_hidden_data('progress_watched')
-	if _compare(latest_movies['watched_at'], cached_movies['watched_at']): trakt_indicators_movies()
-	if _compare(latest_episodes['watched_at'], cached_episodes['watched_at']): trakt_indicators_tv()
+	if _compare(latest_shows['hidden_at'], cached_shows['hidden_at']):
+		clear_watched_progress_properties('episode')
+		clear_trakt_hidden_data('progress_watched')
+	if _compare(latest_movies['watched_at'], cached_movies['watched_at']):
+		clear_watched_progress_properties('movie')
+		trakt_indicators_movies()
+	if _compare(latest_episodes['watched_at'], cached_episodes['watched_at']):
+		clear_watched_progress_properties('episode')
+		trakt_indicators_tv()
 	if _compare(latest_movies['paused_at'], cached_movies['paused_at']): refresh_movies_progress = True
 	if _compare(latest_episodes['paused_at'], cached_episodes['paused_at']): refresh_shows_progress = True
 	if _compare(latest_lists['updated_at'], cached_lists['updated_at']):
@@ -805,8 +813,12 @@ def trakt_sync_activities(force_update=False):
 		lists_actions.append('liked_lists')
 	if refresh_movies_progress or refresh_shows_progress:
 		progress_info = trakt_playback_progress()
-		if refresh_movies_progress: trakt_progress_movies(progress_info)
-		if refresh_shows_progress: trakt_progress_tv(progress_info)
+		if refresh_movies_progress:
+			clear_watched_progress_properties('movie')
+			trakt_progress_movies(progress_info)
+		if refresh_shows_progress:
+			clear_watched_progress_properties('episode')
+			trakt_progress_tv(progress_info)
 	if clear_list_contents:
 		for item in lists_actions:
 			clear_trakt_list_data(item)

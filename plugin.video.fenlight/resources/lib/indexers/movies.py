@@ -171,7 +171,7 @@ class Movies:
 
 	def worker(self):
 		self.current_date, self.current_time, self.watched_indicators = get_datetime(), get_current_timestamp(), watched_indicators()
-		(self.watched_info, self.bookmarks), self.watched_title = get_media_info(self.watched_indicators, 'movie'), 'Trakt' if self.watched_indicators == 1 else 'Fen Light'
+		(self.watched_info, self.bookmarks), self.watched_title = get_media_info(self.watched_indicators, 'movie', True), 'Trakt' if self.watched_indicators == 1 else 'Fen Light'
 		self.open_extras = extras_open_action('movie')
 		self.use_minimal_media = use_minimal_media_info()
 		if self.custom_order:
