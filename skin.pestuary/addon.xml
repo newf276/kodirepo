@@ -22,5 +22,6 @@
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
 		</assets>
+        <description>Pestuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with Popcorn Addon (My Seren Fork) with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search popcorn in file) within the addon folder yourself if you want to change the items to Watchlist vice Collection items or change the widget links for what you prefer.</description>
 	</extension>
 </addon>

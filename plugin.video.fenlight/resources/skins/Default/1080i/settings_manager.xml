@@ -504,14 +504,6 @@
                         <property name="setting_description">Choose the provider that keeps track of the Movies and Episodes you have watched within Fen Light. Options are the built in method of Fen Light or your Trakt account</property>
                         <onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=settings_manager.set_from_list&amp;setting_id=watched_indicators)</onclick>
                     </item>
-                    <item>
-                        <visible>Container(2000).HasFocus(10)</visible>
-                        <label>Truncate Watched Data</label>
-                        <property name="setting_type">boolean</property>
-                        <property name="setting_value">$INFO[Window(10000).Property(fenlight.watched_indicators.truncate)]</property>
-                        <property name="setting_description">Enable this and Fen Light will limit the amount of data it uses for Watched and Progress history. Limit of last 50 Movies and last 20 TV Shows will be used</property>
-                        <onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=settings_manager.set_boolean&amp;setting_id=watched_indicators.truncate)</onclick>
-                    </item>
             <!-- Trakt Cache -->
                     <item>
                         <visible>Container(2000).HasFocus(10)</visible>

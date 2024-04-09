@@ -1,7 +1,9 @@
 ++
 
 [COLOR dodgerblue][B]Version 1.0.41[/B][/COLOR]
-- Added "Truncate Watched Data" to General->Watched Indicators. Enable this and Fen Light will limit the amount of data it uses for Watched and Progress history. Limit of last 50 Movies and last 20 TV Shows will be used.
+- Added "Rollback to a Previous Version" to Tools. Use this to "rollback" to any version still on the github. Useful if an update is causing issues. I will commit to having at least the previous version available on the github site moving forward.
+- Added assignment for "landscape" artwork. Metadata cache will need to be cleared to begin seeing the landscape artwork.
+- Added "Random Recommended Movies" and "Random Recommended TV Shows" to the Random Lists section.
 - Added context menu listing to delete items in debrid clouds when browsing through My Services.
 - Other changes/fixes.
 

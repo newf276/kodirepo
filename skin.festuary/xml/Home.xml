@@ -59,14 +59,14 @@
 							<param name="list_id" value="5900"/>
 						</include>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.fenlight/?action=tmdb_movies_oscar_winners&iconImage=https://i.imgur.com/AMg9mQS.png&mode=build_movie_list&name=Oscar Winners&random_support=true"/>
-							<param name="widget_header" value="Oscar Winners"/>
+							<param name="content_path" value="plugin://plugin.video.fenlight/?action=tmdb_movies_latest_releases&amp;iconImage=dvd.png&amp;mode=build_movie_list&amp;name=32461"/>
+							<param name="widget_header" value="Latest Releases"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5100"/>
 						</include>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.fenlight/?name=Blockbusters&amp;iconImage=most_voted&amp;mode=build_movie_list&amp;action=tmdb_movies_blockbusters&amp;random_support=true"/>
-							<param name="widget_header" value="Blockbusters"/>
+							<param name="content_path" value="plugin://plugin.video.fenlight/?action=tmdb_movies_premieres&amp;iconImage=fresh.png&amp;mode=build_movie_list&amp;name=32460"/>
+							<param name="widget_header" value="Premieres"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5200"/>
 						</include>

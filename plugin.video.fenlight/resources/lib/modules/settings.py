@@ -258,9 +258,6 @@ def watched_indicators():
 	if get_setting('fenlight.trakt.user') in ('empty_setting', ''): return 0
 	return int(get_setting('fenlight.watched_indicators', '0'))
 
-def truncate_watched():
-	return get_setting('fenlight.watched_indicators.truncate', 'false') == 'true'
-
 def nextep_include_unwatched():
 	return int(get_setting('fenlight.nextep.include_unwatched', '0'))
 

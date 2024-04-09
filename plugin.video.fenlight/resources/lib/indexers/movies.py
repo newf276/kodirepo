@@ -120,7 +120,7 @@ class Movies:
 			premiered = meta_get('premiered')
 			title, year = meta_get('title'), meta_get('year') or '2050'
 			tmdb_id, imdb_id = meta_get('tmdb_id'), meta_get('imdb_id')
-			poster, fanart, clearlogo = meta_get('poster') or poster_empty, meta_get('fanart') or fanart_empty, meta_get('clearlogo') or ''
+			poster, fanart, clearlogo, landscape = meta_get('poster') or poster_empty, meta_get('fanart') or fanart_empty, meta_get('clearlogo') or '', meta_get('landscape') or ''
 			first_airdate = jsondate_to_datetime(premiered, '%Y-%m-%d', True)
 			if not first_airdate or self.current_date < first_airdate: unaired = True
 			else: unaired = False
@@ -164,7 +164,7 @@ class Movies:
 				set_properties({'WatchedProgress': progress})
 			listitem.setLabel(title)
 			listitem.addContextMenuItems(cm)
-			listitem.setArt({'poster': poster, 'fanart': fanart, 'icon': poster, 'clearlogo': clearlogo})
+			listitem.setArt({'poster': poster, 'fanart': fanart, 'icon': poster, 'clearlogo': clearlogo, 'landscape': landscape, 'thumb': landscape})
 			set_properties({'fenlight.extras_params': extras_params, 'fenlight.options_params': options_params})
 			self.append(((url_params, listitem, False), _position))
 		except: pass
@@ -188,7 +188,8 @@ class Movies:
 		try:
 			random_results = []
 			if self.action in main: threads = list(make_thread_list(lambda x: random_results.extend(function(x)['results']), range(1, 6)))
-			elif self.action in trakt_main: threads = list(make_thread_list(lambda x: random_results.extend(function(x)), range(1, 6)))
+			elif self.action in trakt_main:
+				threads = list(make_thread_list(lambda x: random_results.extend(function(x)), ['movies',] if self.action == 'trakt_recommendations' else range(1, 6)))
 			else:
 				info = random.choice(meta_list_dict[self.action])
 				self.category_name = 'Random %s' % info['name']

@@ -188,6 +188,9 @@ def routing(sys):
 	if 'downloader.' in mode:
 		from modules import downloader
 		return exec('downloader.%s(params)' % mode.split('.')[1])
+	if 'updater' in mode:
+		from modules import updater
+		return exec('updater.%s()' % mode.split('.')[1])
 	##EXTRA modes##
 	if mode == 'set_view':
 		from modules.kodi_utils import set_view
@@ -225,9 +228,6 @@ def routing(sys):
 	if mode == 'hide_unhide_progress_items':
 		from modules.watched_status import hide_unhide_progress_items
 		hide_unhide_progress_items(params)
-	if mode == 'update_check':
-		from modules.updater import update_check
-		return update_check()
 	if mode == 'open_external_scraper_settings':
 		from modules.kodi_utils import external_scraper_settings
 		return external_scraper_settings()
