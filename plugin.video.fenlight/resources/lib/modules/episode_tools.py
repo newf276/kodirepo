@@ -3,7 +3,7 @@ from datetime import date
 from modules import kodi_utils, settings
 from modules.sources import Sources
 from modules.metadata import episodes_meta, all_episodes_meta
-from modules.watched_status import get_next_episodes, get_hidden_progress_items
+from modules.watched_status import get_next_episodes, get_hidden_progress_items, watched_info_episode, get_next
 from modules.utils import adjust_premiered_date, get_datetime, make_thread_list, title_key
 # logger = kodi_utils.logger
 
@@ -26,13 +26,11 @@ class EpisodeTools:
 			current_date = get_datetime()
 			season_data = self.meta_get('season_data')
 			current_season, current_episode = int(self.meta_get('season')), int(self.meta_get('episode'))
-			curr_season_data = [i for i in season_data if i['season_number'] == current_season][0]
-			season = current_season if current_episode < curr_season_data['episode_count'] else current_season + 1
-			episode = current_episode + 1 if current_episode < curr_season_data['episode_count'] else 1
+			season, episode = get_next(current_season, current_episode, watched_info_episode(self.meta_get('tmdb_id')), season_data, 0)
 			ep_data = episodes_meta(season, self.meta)
 			if not ep_data: return 'no_next_episode'
-			try: ep_data = [i for i in ep_data if i['episode'] == episode][0]
-			except: return 'no_next_episode'
+			ep_data = next((i for i in ep_data if i['episode'] == episode), None)
+			if not ep_data: return 'no_next_episode'
 			airdate = ep_data['premiered']
 			d = airdate.split('-')
 			episode_date = date(int(d[0]), int(d[1]), int(d[2]))
@@ -126,7 +124,7 @@ def build_next_episode_manager():
 	list_items = []
 	append = list_items.append
 	indicators = watched_indicators()
-	show_list = get_next_episodes()
+	show_list = get_next_episodes(0)
 	hidden_list = get_hidden_progress_items(indicators)
 	if indicators == 0: icon, mode = get_icon('folder'), 'hide_unhide_progress_items'
 	else: icon, mode = get_icon('trakt'), 'trakt.hide_unhide_progress_items'
