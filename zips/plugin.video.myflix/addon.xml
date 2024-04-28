@@ -10,7 +10,7 @@
     <extension library="resources/lib/" point="xbmc.python.module"/>
     <extension point="xbmc.addon.metadata">
         <assets>
-            <icon>myflix_icon.png</icon>
+            <icon>icon.png</icon>
             <fanart>myflix_fanart2.jpg</fanart>
         </assets>
         <platform>all</platform>
