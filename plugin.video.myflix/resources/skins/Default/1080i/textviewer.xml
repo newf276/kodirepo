@@ -84,7 +84,6 @@
                     <height>820</height>
                     <texturesliderbackground colordiffuse="FF1F2020">myflix_common/white.png</texturesliderbackground>
                     <texturesliderbar colordiffuse="FF555556">myflix_common/white.png</texturesliderbar>
-                    <texturesliderbarfocus colordiffuse="FFCCCCCC">myflix_common/white.png</texturesliderbarfocus>
                     <onleft>2060</onleft>
                     <onright>2060</onright>
                     <showonepage>false</showonepage>
@@ -98,7 +97,6 @@
                     <height>820</height>
                     <texturesliderbackground colordiffuse="FF1F2020">myflix_common/white.png</texturesliderbackground>
                     <texturesliderbar colordiffuse="FF555556">myflix_common/white.png</texturesliderbar>
-                    <texturesliderbarfocus colordiffuse="FFCCCCCC">myflix_common/white.png</texturesliderbarfocus>
                     <onleft>2061</onleft>
                     <onright>2061</onright>
                     <showonepage>false</showonepage>
