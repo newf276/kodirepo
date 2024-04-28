@@ -364,7 +364,7 @@ class Extras(BaseDialog):
 					yield listitem
 				except: pass
 		try:
-			all_images = [(self.get_attribute(self, i), '%s %s' % (self.title, i.capitalize())) for i in ('poster', 'fanart', 'clearlogo')]
+			all_images = [(self.get_attribute(self, i), '%s %s' % (self.title, i.capitalize())) for i in ('poster', 'fanart', 'landscape', 'clearlogo')]
 			all_images = [i for i in all_images if not i[0] in missing_image_check]
 			if not all_images: return
 			self.all_media_images = [(change_image_resolution(i[0], 'original'), i[1]) for i in all_images]
@@ -431,16 +431,18 @@ class Extras(BaseDialog):
 		self.nextep_season, self.nextep_episode = None, None
 		value, curr_season_data, episode_date = '', [], None
 		try:
-			nextep_content = nextep_method()
-			ep_list = get_next_episodes(nextep_content)
-			ep_data = next((i for i in ep_list if i['media_ids']['tmdb'] == self.tmdb_id), None)
-			orig_season, orig_episode = ep_data.get('season'), ep_data.get('episode')
+			try:
+				nextep_content = nextep_method()
+				ep_list = get_next_episodes(nextep_content)
+				ep_data = next((i for i in ep_list if i['media_ids']['tmdb'] == self.tmdb_id), None)
+				orig_season, orig_episode = ep_data.get('season'), ep_data.get('episode')
+			except: orig_season, orig_episode = 1, 0
 			season_data = self.meta_get('season_data')
 			watched_info = watched_info_episode(self.tmdb_id, get_database(watched_indicators()))
 			nextep_season, nextep_episode = get_next(orig_season, orig_episode, watched_info, season_data, nextep_content)
 			if not nextep_season: return
 			episodes_data = episodes_meta(nextep_season, self.meta)
-			item = next((i for i in episodes_data if i['episode'] == orig_episode), None)
+			item = next((i for i in episodes_data if i['episode'] == nextep_episode), None)
 			item_get = item.get
 			episode_date, premiered = adjust_premiered_date(item_get('premiered'), date_offset())
 			if episode_date and get_datetime() >= episode_date:
@@ -516,7 +518,7 @@ class Extras(BaseDialog):
 		return _images({'mode': 'imdb_image_results', 'imdb_id': self.imdb_id, 'media_title': self.rootname, 'page_no': 1, 'rolling_count_list': [0]})
 
 	def show_media_images(self):
-		all_images = [(self.get_attribute(self, i), '%s %s' % (self.title, i)) for i in ('poster', 'fanart', 'clearlogo')]
+		all_images = [(self.get_attribute(self, i), '%s %s' % (self.title, i)) for i in ('poster', 'fanart', 'landscape', 'clearlogo')]
 		all_images = [i for i in all_images if not i[0] in missing_image_check]
 		if not all_images: return self.notification('No Media Images to Display')
 		all_images = [(i[0], change_image_resolution(i[0], 'original'), i[1]) for i in all_images]
@@ -619,6 +621,7 @@ class Extras(BaseDialog):
 		self.poster = self.meta_get('poster') or empty_poster
 		self.fanart = self.meta_get('fanart') or addon_fanart
 		self.clearlogo = self.meta_get('clearlogo') or ''
+		self.landscape = self.meta_get('landscape') or ''
 		self.rating = str(round(self.meta_get('rating'), 1)) if self.meta_get('rating') not in (0, 0.0, None) else None
 		self.mpaa, self.genre, self.network = self.meta_get('mpaa'), self.meta_get('genre'), self.meta_get('studio') or ''
 		self.status, self.duration_data = self.extra_info_get('status', '').replace(' Series', ''), int(float(self.meta_get('duration'))/60)
