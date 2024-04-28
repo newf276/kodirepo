@@ -65,7 +65,7 @@
         <platform>all</platform>
         <assets>
             <icon>icon.png</icon>
-            <fanart>fanart.png</fanart>
+            <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
 </addon>

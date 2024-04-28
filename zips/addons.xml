@@ -25,7 +25,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="700.0.5+beta.1+matrix.unofficial.1" provider-name="anxdpanic, bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="700.0.6+beta.1+matrix.unofficial.1" provider-name="anxdpanic, bromix">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.27.1"/>
@@ -42,8 +42,8 @@
     </extension>
     <extension point="xbmc.addon.metadata">
         <assets>
-            <icon>resources/media/icon.png</icon>
-            <fanart>resources/media/fanart.jpg</fanart>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
         </assets>
         <platform>all</platform>
         <license>GPL-2.0-only</license>
@@ -51,80 +51,7 @@
         <website>https://www.youtube.com</website>
         <source>https://github.com/anxdpanic/plugin.video.youtube</source>
         <reuselanguageinvoker>true</reuselanguageinvoker>
-        <summary lang="bg_BG">Добавка за YouTube</summary>
-        <summary lang="cs_CZ">Plugin pro YouTube</summary>
-        <summary lang="da_DK">Plugin til YouTube</summary>
-        <summary lang="de_DE">Plugin für YouTube</summary>
-        <summary lang="el_GR">Πρόσθετο YouTube</summary>
         <summary lang="en_GB">Plugin for YouTube</summary>
-        <summary lang="es_ES">Plugin para YouTube</summary>
-        <summary lang="es_MX">Complemento para YouTube</summary>
-        <summary lang="fi_FI">YouTube-lisäosa</summary>
-        <summary lang="fr_FR">Plugin pour YouTube</summary>
-        <summary lang="he_IL">תוסף עבור YouTube</summary>
-        <summary lang="hr_HR">Dodatak za YouTube</summary>
-        <summary lang="hu_HU">YouTube kiegészítő</summary>
-        <summary lang="id_ID">Pengaya untuk YouTube</summary>
-        <summary lang="it_IT">Plugin per YouTube</summary>
-        <summary lang="ko_KR">유튜브 플러그인</summary>
-        <summary lang="nb_NO">Tillegg for YouTube</summary>
-        <summary lang="nl_NL">Plugin voor YouTube</summary>
-        <summary lang="pl_PL">Wtyczka YouTube</summary>
-        <summary lang="ru_RU">Видеодополнение YouTube</summary>
-        <summary lang="sk_SK">Doplnok pre YouTube</summary>
-        <summary lang="sv_SE">Plugin för YouTube</summary>
-        <summary lang="tr_TR">YouTube için eklenti</summary>
-        <summary lang="vi_VN">Plugin dành cho YouTube</summary>
-        <summary lang="zh_CN">油管插件</summary>
-        <summary lang="zh_TW">YouTube附加元件</summary>
-        <description lang="bg_BG">YouTube е един от най-големите уеб сайтове за споделяне на видео в целия свят.</description>
-        <description lang="cs_CZ">YouTube je jedna z největších webových stránek světa sdílející video.</description>
-        <description lang="da_DK">YouTube er et af verdens største videodelingswebsteder.</description>
-        <description lang="de_DE">YouTube ist eines der größten Video-Sharing-Websites der Welt.</description>
-        <description lang="el_GR">Το YouTube είναι μία από τις μεγαλύτερες ιστοσελίδες διαμοιρασμού βίντεο στον κόσμο.</description>
-        <description lang="en_GB">YouTube is one of the biggest video-sharing websites of the world.</description>
-        <description lang="es_ES">YouTube es uno de los sitios web más grande del mundo para compartir vídeos.</description>
-        <description lang="es_MX">YouTube es uno de los más grandes sitios web de intercambio de videos del mundo.</description>
-        <description lang="fi_FI">YouTube on yksi maailman suurimmista videoiden jakosivustoista.</description>
-        <description lang="fr_FR">YouTube est l'un des plus grands sites de partage vidéos du monde.</description>
-        <description lang="he_IL">YouTube הוא אחד מאתרי שיתוף הווידאו הגדולים בעולם.</description>
-        <description lang="hr_HR">YouTube je jedna od najvećih stranica za dijeljenje video sadržaja na svijetu.</description>
-        <description lang="hu_HU">A YouTube világ egyik legnagyobb videómegosztó weboldala.</description>
-        <description lang="id_ID">YouTube adalah salah satu situs web berbagi video terbesar di dunia.</description>
-        <description lang="it_IT">YouTube è uno dei più grandi siti di condivisione video del mondo.</description>
-        <description lang="ko_KR">유튜브는 세상에서 가장 큰 동영상 공유 사이트 중의 하나입니다.</description>
-        <description lang="nb_NO">YouTube er en av verdens største nettsider for videodeling.</description>
-        <description lang="nl_NL">YouTube is een van de grootste videodelenwebsite in de hele wereld.</description>
-        <description lang="pl_PL">YouTube jest jednym z największych na świecie serwisów udostępniania wideo.</description>
-        <description lang="ru_RU">YouTube - популярнейший видеохостинговый сайт, предоставляющий пользователям услуги хранения, доставки и показа видео.</description>
-        <description lang="sk_SK">YouTube je jednou z najväčších stránok na zdieľanie videa na svete.</description>
-        <description lang="sv_SE">YouTube är en av de största videodelningssajterna i världen.</description>
-        <description lang="tr_TR">YouTube, dünya üzerindeki en büyük video paylaşma platformlarından birisidir.</description>
-        <description lang="vi_VN">YouTube là một trong những trang web chia sẻ video lớn nhất trên thế giới.</description>
-        <description lang="zh_CN">油管是世界上最大的视频分享网站之一。</description>
-        <description lang="zh_TW">Youtube 是全世界最大的影片分享網站。</description>
-        <disclaimer lang="cs_CZ">Tento plugin není schválen společností Google</disclaimer>
-        <disclaimer lang="da_DK">Dette plugin er ikke godkendt af Google</disclaimer>
-        <disclaimer lang="de_DE">Dieses Plugin ist nicht von Google befürwortet</disclaimer>
-        <disclaimer lang="el_GR">Η παρούσα μικροεφαρμογή δεν έχει υϊοθετηθεί από την Google</disclaimer>
-        <disclaimer lang="en_GB">This plugin is not endorsed by Google</disclaimer>
-        <disclaimer lang="es_ES">Este add-on no está respaldado por Google</disclaimer>
-        <disclaimer lang="es_MX">Este complemento no está respaldado por Google</disclaimer>
-        <disclaimer lang="fi_FI">Google ei tue tätä lisäosaa</disclaimer>
-        <disclaimer lang="fr_FR">Ce module n'est pas validé par Google</disclaimer>
-        <disclaimer lang="hr_HR">Ovaj dodatak nije podržan od strane Googlea</disclaimer>
-        <disclaimer lang="id_ID">Plugin ini tidak didukung oleh Google</disclaimer>
-        <disclaimer lang="it_IT">Questo plugin non è approvato da Google</disclaimer>
-        <disclaimer lang="ko_KR">이 플러그인은 Google의 허가를 받지 않았습니다</disclaimer>
-        <disclaimer lang="nl_NL">Deze plug-in wordt niet door Google ondersteund</disclaimer>
-        <disclaimer lang="pl_PL">Ta wtyczka nie jest zatwierdzona przez Google</disclaimer>
-        <disclaimer lang="ru_RU">Плагин не поддерживается Google</disclaimer>
-        <disclaimer lang="sk_SK">Tento doplnok nie je schválený spoločnosťou Google</disclaimer>
-        <disclaimer lang="sv_SE">Detta plugin är inte godkänt av Google</disclaimer>
-        <disclaimer lang="tr_TR">Bu eklenti Google tarafından üretilmemiştir</disclaimer>
-        <disclaimer lang="vi_VN">Plugin này không được xác nhận bởi Google</disclaimer>
-        <disclaimer lang="zh_CN">此插件未被谷歌认可</disclaimer>
-        <disclaimer lang="zh_TW">此附加元件未由Google支持</disclaimer>
     <news>## v7.0.5+beta.1
 ### Fixed
 - Try to prevent Kodi freezing when settings are updated and container is reloaded
@@ -167,8 +94,8 @@
 		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
         <license/>
         <assets>
-            <icon>resources/media/fenlight_icon.png</icon>
-            <fanart>resources/media/fenlight_fanart2.jpg</fanart>
+            <icon>fenlight_icon.png</icon>
+            <fanart>fenlight_fanart2.jpg</fanart>
         </assets>
         <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>
@@ -229,8 +156,8 @@
             information on these external websites.
         </disclaimer>
         <assets>
-            <icon>resources/images/ico-popcorn-3.png</icon>
-            <fanart>resources/images/fanart-popcorn-3.png</fanart>
+            <icon>ico-popcorn-3.png</icon>
+            <fanart>fanart-popcorn-3.png</fanart>
             <clearlogo>resources/images/logo-popcorn-3.png</clearlogo>
             <poster>resources/images/poster-popcorn-3.png</poster>
             <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
@@ -260,14 +187,14 @@
 		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
         <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
         <assets>
-            <icon>resources/media/fen_icon.png</icon>
-            <fanart>resources/media/fen_fanart.png</fanart>
+            <icon>fen_icon.png</icon>
+            <fanart>fen_fanart.png</fanart>
         </assets>
         <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>
 </addon>
 
-<addon id="skin.sestuary" version="1.0.0" name="Sestuary" provider-name="newf276">
+<addon id="skin.sestuary" version="1.0.1" name="Sestuary" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -282,13 +209,14 @@
 		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
+        <summary lang="en">estuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets.</summary>
 		<platform>all</platform>
 		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
 		<forum>http://forum.kodi.tv/</forum>
 		<source></source>
 		<assets>
-			<icon>resources/icon.png</icon>
-			<fanart>resources/fanart.jpg</fanart>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
 		</assets>
         <description>Sestuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with Seren Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search seren in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
 	</extension>
@@ -492,7 +420,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.seren" version="5.0.1" name="Seren" provider-name="Nixgates,Newf276">
+<addon id="plugin.video.seren" version="5.0.2" name="Seren" provider-name="Nixgates,Newf276">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.0" />
@@ -548,8 +476,8 @@
             information on these external websites.
         </disclaimer>
         <assets>
-            <icon>resources/images/ico-seren-3.png</icon>
-            <fanart>resources/images/fanart-seren-3.png</fanart>
+            <icon>ico-seren-3.png</icon>
+            <fanart>fanart-seren-3.png</fanart>
             <clearlogo>resources/images/logo-seren-3.png</clearlogo>
             <poster>resources/images/poster-seren-3.png</poster>
             <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
@@ -723,7 +651,7 @@
   </extension>
 </addon>
 
-<addon id="skin.festuary" version="1.0.0" name="Festuary" provider-name="newf276">
+<addon id="skin.festuary" version="1.0.1" name="Festuary" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -738,19 +666,20 @@
 		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
+        <summary lang="en">Festuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets.</summary>
 		<platform>all</platform>
 		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
 		<forum>http://forum.kodi.tv/</forum>
 		<source></source>
 		<assets>
-			<icon>resources/icon.png</icon>
-			<fanart>resources/fanart.jpg</fanart>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
 		</assets>
-        <description>Festuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with FenLight Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search fenlight in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
+        <description>Festuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with FenLight Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search myflix in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
 	</extension>
 </addon>
 
-<addon id="skin.pestuary" version="1.0.0" name="Pestuary" provider-name="newf276">
+<addon id="skin.pestuary" version="1.0.1" name="Pestuary" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -765,19 +694,20 @@
 		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
+        <summary lang="en">Pestuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets.</summary>
 		<platform>all</platform>
 		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
 		<forum>http://forum.kodi.tv/</forum>
 		<source></source>
 		<assets>
-			<icon>resources/icon.png</icon>
-			<fanart>resources/fanart.jpg</fanart>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
 		</assets>
-        <description>Pestuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with Popcorn Addon (My Seren Fork) with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search popcorn in file) within the addon folder yourself if you want to change the items to Watchlist vice Collection items or change the widget links for what you prefer.</description>
+        <description>Pestuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with FenLight Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search myflix in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
 	</extension>
 </addon>
 
-<addon id="skin.flixestuary" version="1.0.0" name="Flixestuary" provider-name="newf276">
+<addon id="skin.flixestuary" version="1.0.1" name="Flixestuary" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -792,13 +722,14 @@
 		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
+        <summary lang="en">Flixestuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets.</summary>
 		<platform>all</platform>
 		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
 		<forum>http://forum.kodi.tv/</forum>
 		<source></source>
 		<assets>
-			<icon>resources/icon.png</icon>
-			<fanart>resources/fanart.jpg</fanart>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
 		</assets>
         <description>Flixestuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with FenLight Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search myflix in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
 	</extension>
