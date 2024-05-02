@@ -1,0 +1,26 @@
+<addon id="script.bcleaner" name="Newfs Bloat Cleaner" provider-name="Newf276" version="1.0.0">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+  <extension library="default.py" point="xbmc.python.pluginsource">
+        <provides>executable</provides>
+  </extension>
+  <extension library="service.py" point="xbmc.service" />
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <website></website>
+    <summary lang="en_GB">Clean up temporary files in Kodi.</summary>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <description lang="en_GB">Clean up temporary files in Kodi.</description>
+    <news>Initial Version 1.0.0</news>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshot-01.jpg</screenshot>
+        <screenshot>resources/screenshot-02.jpg</screenshot>
+        <screenshot>resources/screenshot-03.jpg</screenshot>
+        <banner>resources/banner.jpg</banner>
+        <clearlogo>resources/logo.png</clearlogo>
+    </assets>
+  </extension>
+</addon>
