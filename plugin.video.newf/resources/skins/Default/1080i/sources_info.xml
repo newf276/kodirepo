@@ -15,8 +15,8 @@
             </animation>
             <centerleft>50%</centerleft>
             <centertop>50%</centertop>
-            <width>1152</width>
-            <height>868</height>
+            <width>1252</width>
+            <height>968</height>
             <control type="group">
                 <control type="image">
                     <texture colordiffuse="80343434">common/white.png</texture>

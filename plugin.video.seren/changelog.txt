@@ -1,3 +1,8 @@
+Changelog 3.0.1
+[BUG] Update database versions for Kodi 21.0 Omega
+[PERFORMANCE] Compressed icons from 3.53 MB to 1.34
+[FEATURE] Update background color to Black for 3.0.1
+
 Changelog 3.0.0
 [PERFORMANCE] Drop support for Python 2.x (Kodi Leia and below)
 [PERFORMANCE] Optimize codebase for Python 3.x (Kodi Matrix and above)
@@ -23,7 +28,7 @@ Changelog 3.0.0
 [FEATURE] Support package and provider icons
 [FEATURE] Add Hebrew localizations
 [FEATURE] Update pytz to 2022.7
-[BUG] Improve Player resiliency and error handling (re-factor)
+Improve Player resiliency and error handling (re-factor)
 [BUG] Fix Multiple issues with player up next popup and track watched reported
 [BUG] Fix Task Done error (re-write Threadpool)
 [BUG] Fix Smartplay not working after 2nd episode watched

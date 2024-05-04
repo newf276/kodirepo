@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.seren" version="5.0.2" name="Seren" provider-name="Nixgates,Newf276">
+<addon id="plugin.video.seren" version="3.0.1" name="Seren" provider-name="Nixgates">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" version="2.27.0" />
         <import addon="script.module.beautifulsoup4" version="4.9.3"/>
-        <import addon="context.seren" version="5.0.1"/>
+        <import addon="context.seren" version="2.2.0"/>
         <import addon="script.module.inputstreamhelper" version="0.5.10" optional="true"/>
         <import addon="script.module.unidecode" version="1.1.1"/>
         <import addon="script.module.myconnpy" version="8.0.18"/>
@@ -27,7 +27,7 @@
         <website>https://github.com/nixgates/plugin.video.seren</website>
         <source>https://github.com/nixgates/plugin.video.seren</source>
         <disclaimer lang="en">
-            Last updated: 15 March 2024 to fix Kodi video DB
+            Last updated: September 09, 2019.
             The information contained within the Seren software (the "Service") is for general information purposes
             only.
             The author assumes no responsibility for errors, omissions in the contents on the Service, nor does it
@@ -55,8 +55,8 @@
             information on these external websites.
         </disclaimer>
         <assets>
-            <icon>icon.jpg</icon>
-            <fanart>fanart-seren-3.jpg</fanart>
+            <icon>resources/images/ico-seren-3.png</icon>
+            <fanart>resources/images/fanart-seren-3.jpg</fanart>
             <clearlogo>resources/images/logo-seren-3.png</clearlogo>
             <poster>resources/images/poster-seren-3.png</poster>
             <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
@@ -64,6 +64,5 @@
             <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
             <screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
         </assets>
-        <news>Changelog 5.0.1, to fix Kodi video DB</news>
     </extension>
 </addon>
