@@ -23,55 +23,26 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="700.0.6+beta.1+matrix.unofficial.1" provider-name="anxdpanic, bromix">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
-        <import addon="script.module.requests" version="2.27.1"/>
-        <import addon="inputstream.adaptive" version="19.0.0"/>
-        <import addon="script.module.inputstreamhelper" version="0.2.2" optional="true"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="resources/lib/plugin.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.service" library="resources/lib/service.py"/>
-    <extension point="xbmc.python.module" library="resources/lib/"/>
-    <extension point="xbmc.python.script" library="resources/lib/script.py">
-        <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-        <platform>all</platform>
-        <license>GPL-2.0-only</license>
-        <forum>https://ytaddon.panicked.xyz/forum</forum>
-        <website>https://www.youtube.com</website>
-        <source>https://github.com/anxdpanic/plugin.video.youtube</source>
-        <reuselanguageinvoker>true</reuselanguageinvoker>
-        <summary lang="en_GB">Plugin for YouTube</summary>
-    <news>## v7.0.5+beta.1
-### Fixed
-- Try to prevent Kodi freezing when settings are updated and container is reloaded
-- Fix lockups when using xbmc.executebuiltin #653
-- Fix searching for preferred language subtitles not using non-region specific subtitles
-- Fix not being able to set custom watch later history playlist per user
-- Update workarounds for multiple busy dialog crashes #649
-- Fix playing incorrect video when player request is blocked
-
-### Changed
-- Display search history as list rather than videos
-- Update Setup Wizard
-  - Add settings for Rasberry Pi 3 class devices (1080p30, VP9 enabled)
-  - Update settings for Rasberry Pi 4 class devices (1080p60, VP9 enabled)
-  - Move option to disable list details to last step in wizard
-- Shared playlist play using default order without prompting
-- Removed dependency on script.module.infotagger
-- Removed Nexus specific releases
-  - Matrix releases will now work in Kodi v19+
-  - Leia releases will work, but are unsupported, for Kodi v18 only
-- Updated client versions used for player requests
-  - Use iOS client as fallback for default client selection</news></extension>
+<addon id="plugin.video.youtube" name="YouTube for Trailers" provider-name="SlyGuy" version="999.0.10">
+  <requires>
+    <import addon="script.module.slyguy"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py" provides="video">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <description lang="en">A drop-in replacement over official Kodi YouTube add-on to allow for trailers playback without login / api key
+NOTE: Does not allow browsing YouTube content. Simply for playback.</description>
+    <reuselanguageinvoker>true</reuselanguageinvoker>
+    <license></license>
+    <language></language>
+    <website></website>
+    <news>Allow setting Native Android Playback App ID</news>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
 </addon>
 
 <addon id="plugin.video.fenlight" name="Fen Light" provider-name="Tikipeter" version="1.0.51">
@@ -357,11 +328,6 @@
             <info compressed="false">https://slyguy.uk/.repo/repository.slyguy.inputstreamhelper/addons.xml</info>
             <checksum>https://slyguy.uk/.repo/repository.slyguy.inputstreamhelper/addons.xml.md5</checksum>
             <datadir zip="true">https://slyguy.uk/.repo/repository.slyguy.inputstreamhelper/</datadir>
-        </dir>
-        <dir>
-            <info compressed="false">https://slyguy.uk/.repo/repository.slyguy.youtube/addons.xml</info>
-            <checksum>https://slyguy.uk/.repo/repository.slyguy.youtube/addons.xml.md5</checksum>
-            <datadir zip="true">https://slyguy.uk/.repo/repository.slyguy.youtube/</datadir>
         </dir>
         <dir>
             <info>https://raw.githubusercontent.com/newt-sc/a4kSubtitles/master/packages/addons.xml</info>
