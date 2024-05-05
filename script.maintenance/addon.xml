@@ -9,7 +9,7 @@
   <extension point="xbmc.service" library="service.py" start="startup" />
   <extension point="xbmc.addon.metadata">
 	<summary>A Streamlined Utility Tool for Kodi</summary>
-	<description>No Bloatware, no Nonsense! Just Keep your Kodi sharp and clean.</description>
+	<description>No Bloatware, no Nonsense! Just Keep your Kodi sharp and clean. Has built in Network Speed Test and Backup/Restore ability to your folder of choice</description>
     <language></language>
     <platform>all</platform>
     <license>The MIT License</license>
