@@ -1,50 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="context.popcorn" version="3.4.0" name="Popcorn - Global Context Menu Items" provider-name="Newf276">
+<addon id="context.popcorn" version="1.0.0" name="Popcorn - Global Context Menu Items" provider-name="Newf276">
 	<requires>
 		<import addon="xbmc.addon" version="17.9.910" />
 		<import addon="xbmc.python" version="3.0.0" />
 	</requires>
 	<extension point="kodi.context.item">
 		<menu id="kodi.core.main">
-			<item library="context.py" args="quickRresume">
-				<label>$ADDON[context.popcorn 30000]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.quickResume)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
-			</item>
-			<item library="context.py" args="shuffle">
-				<label>$ADDON[context.popcorn 30001]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.shuffle)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,episode)]</visible>
-			</item>
-			<item library="context.py" args="playFromRandomPoint">
-				<label>$ADDON[context.popcorn 30002]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.playFromRandomPoint)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
-			</item>
-			<item library="context.py" args="rescrape">
-				<label>$ADDON[context.popcorn 30003]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.rescrape)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			<item library="context.py" args="traktManager">
+				<label>$ADDON[context.popcorn 30008]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.traktManager)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
 			</item>
 			<item library="context.py" args="rescrape_ss">
 				<label>$ADDON[context.popcorn 30010]</label>
 				<visible>String.IsEmpty(Window(home).Property(context.popcorn.rescrape_ss)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
 			</item>
-			<item library="context.py" args="sourceSelect">
-				<label>$ADDON[context.popcorn 30004]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.sourceSelect)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-			</item>
 			<item library="context.py" args="findSimilar">
 				<label>$ADDON[context.popcorn 30005]</label>
 				<visible>String.IsEmpty(Window(home).Property(context.popcorn.findSimilar)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-			</item>
-			<item library="context.py" args="browseShow">
-				<label>$ADDON[context.popcorn 30006]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.browseShow)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,tvshow)]</visible>
-			</item>
-			<item library="context.py" args="browseSeason">
-				<label>$ADDON[context.popcorn 30007]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.browseSeason)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)]</visible>
-			</item>
-			<item library="context.py" args="traktManager">
-				<label>$ADDON[context.popcorn 30008]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.traktManager)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
 			</item>
 		</menu>
 	</extension>

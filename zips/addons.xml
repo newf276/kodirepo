@@ -70,13 +70,13 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
     </extension>
 </addon>
 
-<addon id="plugin.video.popcorn" version="5.0.1" name="Popcorn" provider-name="Newf276,Nixgates">
+<addon id="plugin.video.popcorn" version="1.0.1" name="Popcorn" provider-name="Newf276,Nixgates">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" version="2.27.0" />
         <import addon="script.module.beautifulsoup4" version="4.9.3"/>
-        <import addon="context.popcorn" version="3.4.0"/>
+        <import addon="context.popcorn" version="1.0.0"/>
         <import addon="script.module.inputstreamhelper" version="0.5.10" optional="true"/>
         <import addon="script.module.unidecode" version="1.1.1"/>
         <import addon="script.module.myconnpy" version="8.0.18"/>
@@ -94,8 +94,8 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
         </description>
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-        <website>https://github.com/newf276/repository.newf/tree/main/</website>
-        <source>https://github.com/newf276/repository.newf/tree/main/plugin.video.popcorn</source>
+        <website>https://newf276.github.io</website>
+        <source>https://github.com/newf276/kodirepo/tree/main/plugin.video.popcorn</source>
         <disclaimer lang="en">
             Last updated: 15 March 2024 to fix Kodi video DB
             The information contained within the Popcorn software (the "Service") is for general information purposes
@@ -191,52 +191,24 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
 	</extension>
 </addon>
 
-<addon id="context.popcorn" version="3.4.0" name="Popcorn - Global Context Menu Items" provider-name="Newf276">
+<addon id="context.popcorn" version="1.0.0" name="Popcorn - Global Context Menu Items" provider-name="Newf276">
 	<requires>
 		<import addon="xbmc.addon" version="17.9.910" />
 		<import addon="xbmc.python" version="3.0.0" />
 	</requires>
 	<extension point="kodi.context.item">
 		<menu id="kodi.core.main">
-			<item library="context.py" args="quickRresume">
-				<label>$ADDON[context.popcorn 30000]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.quickResume)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
-			</item>
-			<item library="context.py" args="shuffle">
-				<label>$ADDON[context.popcorn 30001]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.shuffle)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,episode)]</visible>
-			</item>
-			<item library="context.py" args="playFromRandomPoint">
-				<label>$ADDON[context.popcorn 30002]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.playFromRandomPoint)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
-			</item>
-			<item library="context.py" args="rescrape">
-				<label>$ADDON[context.popcorn 30003]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.rescrape)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			<item library="context.py" args="traktManager">
+				<label>$ADDON[context.popcorn 30008]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.traktManager)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
 			</item>
 			<item library="context.py" args="rescrape_ss">
 				<label>$ADDON[context.popcorn 30010]</label>
 				<visible>String.IsEmpty(Window(home).Property(context.popcorn.rescrape_ss)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
 			</item>
-			<item library="context.py" args="sourceSelect">
-				<label>$ADDON[context.popcorn 30004]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.sourceSelect)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-			</item>
 			<item library="context.py" args="findSimilar">
 				<label>$ADDON[context.popcorn 30005]</label>
 				<visible>String.IsEmpty(Window(home).Property(context.popcorn.findSimilar)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-			</item>
-			<item library="context.py" args="browseShow">
-				<label>$ADDON[context.popcorn 30006]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.browseShow)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,tvshow)]</visible>
-			</item>
-			<item library="context.py" args="browseSeason">
-				<label>$ADDON[context.popcorn 30007]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.browseSeason)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)]</visible>
-			</item>
-			<item library="context.py" args="traktManager">
-				<label>$ADDON[context.popcorn 30008]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.traktManager)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
 			</item>
 		</menu>
 	</extension>
@@ -297,7 +269,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
 	</extension>
 </addon>
 
-<addon id="repository.newf" name="[COLOR deepskyblue]Repository Newf[/COLOR]" version="1.4.1" provider-name="[COLOR deepskyblue]Newf276[/COLOR]">
+<addon id="repository.newf" name="[COLOR deepskyblue]Repository Newf[/COLOR]" version="1.4.2" provider-name="[COLOR deepskyblue]Newf276[/COLOR]">
     <extension point="xbmc.addon.repository" name="[COLOR deepskyblue]Repository Newf[/COLOR]">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/newf276/kodirepo/master/zips/addons.xml</info>
@@ -418,13 +390,13 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
 	</extension>
 </addon>
 
-<addon id="plugin.video.seren" version="3.0.1" name="Seren" provider-name="Nixgates">
+<addon id="plugin.video.seren" version="6.0.0" name="Seren" provider-name="Newf276">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" version="2.27.0" />
         <import addon="script.module.beautifulsoup4" version="4.9.3"/>
-        <import addon="context.seren" version="3.4.0"/>
+        <import addon="context.seren" version="1.0.0"/>
         <import addon="script.module.inputstreamhelper" version="0.5.10" optional="true"/>
         <import addon="script.module.unidecode" version="1.1.1"/>
         <import addon="script.module.myconnpy" version="8.0.18"/>
@@ -486,52 +458,24 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
     </extension>
 </addon>
 
-<addon id="context.seren" version="3.4.0" name="Seren - Global Context Menu Items" provider-name="Nixgates">
+<addon id="context.seren" version="1.0.0" name="Seren - Global Context Menu Items" provider-name="Nixgates">
 	<requires>
 		<import addon="xbmc.addon" version="17.9.910" />
 		<import addon="xbmc.python" version="3.0.0" />
 	</requires>
 	<extension point="kodi.context.item">
 		<menu id="kodi.core.main">
-			<item library="context.py" args="quickRresume">
-				<label>$ADDON[context.seren 30000]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.quickResume)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
-			</item>
-			<item library="context.py" args="shuffle">
-				<label>$ADDON[context.seren 30001]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.shuffle)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,episode)]</visible>
-			</item>
-			<item library="context.py" args="playFromRandomPoint">
-				<label>$ADDON[context.seren 30002]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.playFromRandomPoint)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
-			</item>
-			<item library="context.py" args="rescrape">
-				<label>$ADDON[context.seren 30003]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.rescrape)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+            <item library="context.py" args="traktManager">
+				<label>$ADDON[context.seren 30008]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.seren.traktManager)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
 			</item>
 			<item library="context.py" args="rescrape_ss">
 				<label>$ADDON[context.seren 30010]</label>
 				<visible>String.IsEmpty(Window(home).Property(context.seren.rescrape_ss)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
 			</item>
-			<item library="context.py" args="sourceSelect">
-				<label>$ADDON[context.seren 30004]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.sourceSelect)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-			</item>
 			<item library="context.py" args="findSimilar">
 				<label>$ADDON[context.seren 30005]</label>
 				<visible>String.IsEmpty(Window(home).Property(context.seren.findSimilar)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-			</item>
-			<item library="context.py" args="browseShow">
-				<label>$ADDON[context.seren 30006]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.browseShow)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,tvshow)]</visible>
-			</item>
-			<item library="context.py" args="browseSeason">
-				<label>$ADDON[context.seren 30007]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.browseSeason)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)]</visible>
-			</item>
-			<item library="context.py" args="traktManager">
-				<label>$ADDON[context.seren 30008]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.traktManager)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
 			</item>
 		</menu>
 	</extension>
