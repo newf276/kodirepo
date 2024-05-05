@@ -1,9 +1,3 @@
-[![Kodi version](https://img.shields.io/badge/kodi%20versions-19--20-blue)](https://kodi.tv/)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-![CI](https://github.com/PopcornKodi/PopcornDevelopment/workflows/CI/badge.svg?branch=v2-Development)
-[![codecov](https://codecov.io/gh/PopcornKodi/PopcornDevelopment/branch/v2-Development/graph/badge.svg?token=LCX9WOPJ2M)](https://codecov.io/gh/PopcornKodi/PopcornDevelopment)
-[![License: GPL3](https://img.shields.io/badge/License-GPL3-yellow.svg)](https://opensource.org/licenses/GPL-3.0)
 
 # Popcorn (plugin.video.popcorn)
 
@@ -42,11 +36,3 @@ You can often find help from users in the Addons4Kodi subreddit or you are alway
 ## License
 
 Licensed under The GPL License.
-
-
-## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) Recent activity [![Time period](https://images.repography.com/31557107/PopcornKodi/PopcornDevelopment/recent-activity/54b09eb47a7d1f063e1adf376fe18f03_badge.svg)](https://repography.com)
-[![Timeline graph](https://images.repography.com/31557107/PopcornKodi/PopcornDevelopment/recent-activity/54b09eb47a7d1f063e1adf376fe18f03_timeline.svg)](https://github.com/PopcornKodi/PopcornDevelopment/commits)
-[![Issue status graph](https://images.repography.com/31557107/PopcornKodi/PopcornDevelopment/recent-activity/54b09eb47a7d1f063e1adf376fe18f03_issues.svg)](https://github.com/PopcornKodi/PopcornDevelopment/issues)
-[![Pull request status graph](https://images.repography.com/31557107/PopcornKodi/PopcornDevelopment/recent-activity/54b09eb47a7d1f063e1adf376fe18f03_prs.svg)](https://github.com/PopcornKodi/PopcornDevelopment/pulls)
-[![Trending topics](https://images.repography.com/31557107/PopcornKodi/PopcornDevelopment/recent-activity/54b09eb47a7d1f063e1adf376fe18f03_words.svg)](https://github.com/PopcornKodi/PopcornDevelopment/commits)
-

@@ -5,7 +5,7 @@
 			<group id="1" label="30591">
 				<setting id="searchHistory" type="boolean" label="30161" help="">
 					<level>0</level>
-					<default>false</default>
+					<default>true</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="general.hideSpecials" type="boolean" label="30172" help="">
@@ -15,7 +15,7 @@
 				</setting>
 				<setting id="general.hideUnAired" type="boolean" label="30170" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="general.hideWatched" type="boolean" label="30451" help="">
@@ -47,7 +47,7 @@
 				</setting>
 				<setting id="general.widget.hide_next" type="boolean" label="30452" help="">
 					<level>0</level>
-					<default>false</default>
+					<default>true</default>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -59,7 +59,7 @@
 				</setting>
 				<setting id="general.showRemainingUnwatched" type="boolean" label="30445" help="">
 					<level>0</level>
-					<default>false</default>
+					<default>true</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="general.appendepisodegeneral" type="integer" label="30467" help="">
@@ -77,7 +77,7 @@
 				</setting>
 				<setting id="general.appendtitles" type="integer" label="30143" help="">
 					<level>0</level>
-					<default>3</default>
+					<default>0</default>
 					<constraints>
 						<options>
 							<option label="30356">0</option>
@@ -92,7 +92,7 @@
 			<group id="3" label="30593">
 				<setting id="nextup.sort" type="integer" label="30088" help="">
 					<level>0</level>
-					<default>0</default>
+					<default>1</default>
 					<constraints>
 						<options>
 							<option label="30089">0</option>
@@ -108,7 +108,7 @@
 				</setting>
 				<setting id="general.sortcollection" type="integer" label="30537" help="">
 					<level>0</level>
-					<default>0</default>
+					<default>1</default>
 					<constraints>
 						<options>
 							<option label="30538">0</option>
@@ -119,12 +119,12 @@
 				</setting>
 				<setting id="general.paginatetraktlists" type="boolean" label="30324" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="general.paginatecollection" type="boolean" label="30444" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="general.appendListTitles" type="integer" label="30361" help="">
@@ -147,7 +147,7 @@
 				</setting>
 				<setting id="item.limit" type="integer" label="30092" help="">
 					<level>0</level>
-					<default>20</default>
+					<default>100</default>
 					<constraints>
 						<minimum>10</minimum>
 						<maximum>100</maximum>
@@ -332,7 +332,7 @@
 			<group id="2" label="30199">
 				<setting id="skin.updateAutomatic" type="boolean" label="30338" help="">
 					<level>0</level>
-					<default>True</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="skin.active" type="string" label="30200" help="">
@@ -381,7 +381,7 @@
 			<group id="1" label="30597">
 				<setting id="general.metalocation" type="integer" label="30091" help="">
 					<level>0</level>
-					<default>1</default>
+					<default>0</default>
 					<constraints>
 						<options>
 							<option label="30129">0</option>
@@ -964,7 +964,7 @@
 				</setting>
 				<setting id="premiumize.hosters" type="boolean" label="30154" help="" parent="">
 					<level>0</level>
-					<default>false</default>
+					<default>true</default>
 					<dependencies>
 						<dependency type="visible">
 							<condition operator="is" setting="premiumize.enabled">true</condition>
@@ -1088,7 +1088,7 @@
 				</setting>
 				<setting id="rd.hosters" type="boolean" label="30154" help="" parent="">
 					<level>0</level>
-					<default>false</default>
+					<default>true</default>
 					<dependencies>
 						<dependency type="visible">
 							<condition operator="is" setting="realdebrid.enabled">true</condition>
@@ -1239,7 +1239,7 @@
 				</setting>
 				<setting id="general.timeout" type="integer" label="30112" help="">
 					<level>0</level>
-					<default>60</default>
+					<default>10</default>
 					<constraints>
 						<minimum>10</minimum>
 						<maximum>180</maximum>
@@ -1284,7 +1284,7 @@
 			<group id="3" label="30113">
 				<setting id="general.autocache" type="boolean" label="30114" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="general.cacheAssistMode" type="integer" label="30115" help="" parent="general.autocache">
@@ -1305,7 +1305,7 @@
 				</setting>
 				<setting id="general.cachelocation" type="integer" label="30116" help="" parent="general.autocache">
 					<level>0</level>
-					<default>0</default>
+					<default>1</default>
 					<constraints>
 						<options>
 							<option label="30134">0</option>
@@ -1324,7 +1324,7 @@
 			<group id="4" label="30121">
 				<setting id="preem.enabled" type="boolean" label="30122" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="preem.movieres" type="integer" label="30123" help="" parent="preem.enabled">
@@ -1483,7 +1483,7 @@
 				</setting>
 				<setting id="general.sizelimit.movie" type="integer" label="30192" help="" parent="general.enablesizelimit">
 					<level>0</level>
-					<default>10</default>
+					<default>17</default>
 					<constraints>
 						<minimum>0</minimum>
 						<step>1</step>
@@ -1500,7 +1500,7 @@
 				</setting>
 				<setting id="general.sizelimit.episode" type="integer" label="30119" help="" parent="general.enablesizelimit">
 					<level>0</level>
-					<default>10</default>
+					<default>12</default>
 					<constraints>
 						<minimum>0</minimum>
 						<step>1</step>
@@ -1901,7 +1901,7 @@
 			<group id="1" label="30084">
 				<setting id="general.playstyleMovie" type="integer" label="30191" help="">
 					<level>0</level>
-					<default>0</default>
+					<default>1</default>
 					<constraints>
 						<options>
 							<option label="30086">0</option>
@@ -1912,7 +1912,7 @@
 				</setting>
 				<setting id="general.playstyleEpisodes" type="integer" label="30085" help="">
 					<level>0</level>
-					<default>0</default>
+					<default>1</default>
 					<constraints>
 						<options>
 							<option label="30086">0</option>
@@ -1962,12 +1962,12 @@
 			<group id="4" label="30604">
 				<setting id="smartplay.playlistcreate" type="boolean" label="30106" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="smartPlay.preScrape" type="boolean" label="30108" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<dependencies>
 						<dependency type="visible">
 							<condition operator="is" setting="smartplay.playlistcreate">true</condition>
@@ -2210,7 +2210,7 @@
 				</setting>
 				<setting id="general.force.widget.refresh.playback" type="boolean" label="30477" help="">
 					<level>0</level>
-					<default>false</default>
+					<default>true</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="skin.testmenu" type="boolean" label="30545" help="">
