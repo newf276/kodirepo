@@ -151,7 +151,7 @@
         <!-- Top Logo/picture  -->
         <control type="image" id="1001">
             <top>-935</top>
-            <left>575</left>
+            <left>595</left>
             <width>280</width>
             <aspectratio>keep</aspectratio>
             <texture background="true">$INFO[Window().Property(item.art.clearlogo)]</texture>

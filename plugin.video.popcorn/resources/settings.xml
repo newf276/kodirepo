@@ -312,7 +312,7 @@
 			<group id="1" label="30595">
 				<setting id="general.displayColor" type="string" label="30103" help="">
 					<level>0</level>
-					<default>None</default>
+					<default>deepskyblue</default>
 					<enable>false</enable>
 					<control type="edit" format="string">
 						<heading>30103</heading>

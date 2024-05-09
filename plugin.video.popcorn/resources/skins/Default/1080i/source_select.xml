@@ -154,7 +154,7 @@
         <!-- Top Logo/picture  -->
         <control type="image" id="1001">
             <top>-935</top>
-            <left>575</left>
+            <left>595</left>
             <width>280</width>
             <aspectratio>keep</aspectratio>
             <texture background="true">$INFO[Window().Property(item.art.clearlogo)]</texture>
@@ -212,6 +212,7 @@
                     <align>left</align>
                     <aligny>center</aligny>
                     <label>[B][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/B]</label>
+
                 </control>
                 <control type="label">
                     <top>70</top>
@@ -226,7 +227,7 @@
                     </label>
                 </control>
                 <control type="label">
-                    <top>700</top>
+                    <top>100</top>
                     <left>400</left>
                     <width>450</width>
                     <height>0</height>
