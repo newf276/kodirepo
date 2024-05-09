@@ -83,7 +83,7 @@
             <left>1400</left>
             <control type="label">
                 <top>-900</top>
-                <width>400</width>
+                <width>500</width>
                 <font>font12</font>
                 <textcolor>AAFFFFFF</textcolor>
                 <align>center</align>
@@ -92,7 +92,7 @@
                 <label>Season: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.season)] [/COLOR] | Episode: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.episode)][/COLOR]</label>
             </control>
             <control type="image">
-                <width>400</width>
+                <width>500</width>
                 <height>600</height>
                 <top>50</top>
                 <texture background="true">$INFO[Window().Property(item.art.poster)]</texture>
@@ -101,9 +101,9 @@
             <control type="group">
                 <top>420</top>
                 <control type="label">
-                    <top>20</top>
-                    <width>400</width>
-                    <font>font14</font>
+                    <top>30</top>
+                    <width>500</width>
+                    <font>font12</font>
                     <textcolor>AAFFFFFF</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
@@ -122,7 +122,7 @@
                 </control>
                 <control type="label">
                     <top>120</top>
-                    <width>400</width>
+                    <width>500</width>
                     <font>font12</font>
                     <textcolor>AAFFFFFF</textcolor>
                     <align>center</align>
@@ -134,22 +134,23 @@
                 <control type="textbox">
                     <wrapmultiline>true</wrapmultiline>
                     <top>360</top>
-                    <left>-70</left>
+                    <left>-20</left>
                     <height min="20" max="123">auto</height>
                     <width>550</width>
                     <font>font12</font>
                     <textcolor>AAFFFFFF</textcolor>
                     <align>center</align>
+                    <aligny>center</aligny>
                     <label>$INFO[Window().Property(item.info.plot)]</label>
-             </control>
+                </control>
             </control>
         </control>
 
         <!-- Top Logo/picture  -->
         <control type="image" id="1001">
             <top>-935</top>
-            <left>550</left>
-            <width>400</width>
+            <left>575</left>
+            <width>280</width>
             <aspectratio>keep</aspectratio>
             <texture background="true">$INFO[Window().Property(item.art.clearlogo)]</texture>
         </control>
@@ -158,8 +159,8 @@
         <!-- Seren Ico -->
         <control type="image" id="1001">
             <top>-250</top>
-            <left>700</left>
-            <width>100</width>
+            <left>670</left>
+            <width>130</width>
             <aspectratio>keep</aspectratio>
             <texture>$INFO[Window().Property(seren.logo)]</texture>
         </control>

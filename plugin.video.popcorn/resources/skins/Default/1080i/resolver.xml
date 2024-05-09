@@ -1,5 +1,5 @@
 <window type="dialog">
-<onload>Skin.SetString(serenfile,$INFO[Window().Property(release_title)])</onload>
+<onload>Skin.SetString(popcornfile,$INFO[Window().Property(release_title)])</onload>
     <defaultcontrol>2</defaultcontrol>
     <coordinates>
         <left>0</left>
@@ -78,13 +78,13 @@
         </control>
 
 
-        <!-- Seren Logo -->
+        <!-- Popcorn Logo -->
         <control type="image" id="1001">
             <top>-50</top>
             <left>880</left>
             <width>100</width>
             <aspectratio>keep</aspectratio>
-            <texture>$INFO[Window().Property(seren.logo)]</texture>
+            <texture>$INFO[Window().Property(popcorn.logo)]</texture>
         </control>
         <control>
             <top>600</top>
