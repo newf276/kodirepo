@@ -22,8 +22,8 @@ class Premiumize:
     Wrapper to handle calls to Premiumize API
     """
 
-    client_id = "662875953"
-    client_secret = "xmg33m74n6t6x8phun"
+    client_id = "284888557"
+    client_secret = ""
 
     def __init__(self):
         self.headers = {
