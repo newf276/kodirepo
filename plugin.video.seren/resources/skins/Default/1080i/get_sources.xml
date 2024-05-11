@@ -93,7 +93,7 @@
                 <label>Season: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.season)] [/COLOR] | Episode: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.episode)][/COLOR]</label>
             </control>
             <control type="image">
-                <width>500</width>
+                <width>475</width>
                 <height>600</height>
                 <top>50</top>
                 <texture background="true">$INFO[Window().Property(item.art.poster)]</texture>
@@ -112,7 +112,7 @@
                 </control>
                 <control type="label">
                     <top>150</top>
-                    <width>400</width>
+                    <width>500</width>
                     <font>font12</font>
                     <textcolor>AAFFFFFF</textcolor>
                     <align>center</align>
@@ -137,7 +137,7 @@
                     <top>360</top>
                     <left>-20</left>
                     <height min="20" max="123">auto</height>
-                    <width>550</width>
+                    <width>500</width>
                     <font>font12</font>
                     <textcolor>AAFFFFFF</textcolor>
                     <align>center</align>
