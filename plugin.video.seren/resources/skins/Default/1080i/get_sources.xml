@@ -84,7 +84,7 @@
             <left>1400</left>
             <control type="label">
                 <top>-900</top>
-                <width>500</width>
+                <width>400</width>
                 <font>font12</font>
                 <textcolor>AAFFFFFF</textcolor>
                 <align>center</align>
@@ -93,7 +93,7 @@
                 <label>Season: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.season)] [/COLOR] | Episode: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.episode)][/COLOR]</label>
             </control>
             <control type="image">
-                <width>475</width>
+                <width>400</width>
                 <height>600</height>
                 <top>50</top>
                 <texture background="true">$INFO[Window().Property(item.art.poster)]</texture>
@@ -102,9 +102,9 @@
             <control type="group">
                 <top>420</top>
                 <control type="label">
-                    <top>30</top>
-                    <width>500</width>
-                    <font>font12</font>
+                    <top>20</top>
+                    <width>400</width>
+                    <font>font14</font>
                     <textcolor>AAFFFFFF</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
@@ -112,7 +112,7 @@
                 </control>
                 <control type="label">
                     <top>150</top>
-                    <width>500</width>
+                    <width>400</width>
                     <font>font12</font>
                     <textcolor>AAFFFFFF</textcolor>
                     <align>center</align>
@@ -123,7 +123,7 @@
                 </control>
                 <control type="label">
                     <top>120</top>
-                    <width>500</width>
+                    <width>400</width>
                     <font>font12</font>
                     <textcolor>AAFFFFFF</textcolor>
                     <align>center</align>
@@ -135,41 +135,32 @@
                 <control type="textbox">
                     <wrapmultiline>true</wrapmultiline>
                     <top>360</top>
-                    <left>-20</left>
-                    <height min="20" max="123">auto</height>
-                    <width>500</width>
+                    <left>-70</left>
+                    <height min="20" max="130">auto</height>
+                    <width>550</width>
                     <font>font12</font>
                     <textcolor>AAFFFFFF</textcolor>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <label>$INFO[Window().Property(item.info.plot)]</label>
-					<autoscroll delay="2000" time="800" repeat="1000">!Control.HasFocus(13)</autoscroll>
-                </control>
+             </control>
             </control>
         </control>
 
-        <!-- Top Logo/picture  -->
-        <control type="image" id="1001">
-            <top>-935</top>
-            <left>595</left>
-            <width>280</width>
-            <aspectratio>keep</aspectratio>
-            <texture background="true">$INFO[Window().Property(item.art.clearlogo)]</texture>
-        </control>
 
-        <!-- Seren Ico -->
+
+        <!-- Popcorn Logo -->
         <control type="image" id="1001">
-            <top>-250</top>
-            <left>670</left>
-            <width>130</width>
+            <top>-210</top>
+            <left>580</left>
+            <width>350</width>
             <aspectratio>keep</aspectratio>
-            <texture>$INFO[Window().Property(seren.logo)]</texture>
+            <texture>$INFO[Window().Property(popcorn.logo)]</texture>
         </control>
 
         <control type="label">
-            <left>-0</left>
+            <left>-200</left>
             <top>10</top>
-            <width>120%</width>
+            <width>100%</width>
             <font>font12</font>
             <align>center</align>
             <aligny>center</aligny>
@@ -365,7 +356,7 @@
                 <aligny>center</aligny>
                 <width>auto</width>
                 <textcolor>FFDDDDDD</textcolor>
-                <label>Torrents: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(torrents_total)][/COLOR] | Cached: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(torrentsCached_total)][/COLOR] | Hosters: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(hosters_total)][/COLOR] | CloudFiles: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(cloudFiles_total)][/COLOR]</label>
+                <label>Torrents: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(totals_total)][/COLOR] | Cached: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(torrentsCached_total)][/COLOR] | Hosters: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(hosters_total)][/COLOR] | CloudFiles: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(cloudFiles_total)][/COLOR]</label>
             </control>
 
             <control type="label">
@@ -377,7 +368,7 @@
                 <aligny>center</aligny>
                 <width>auto</width>
                 <textcolor>FFDDDDDD</textcolor>
-                <label>4k: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(torrentsCached_4K)][/COLOR] | 1080p: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(torrentsCached_1080p)][/COLOR] | 720p: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(torrentsCached_720p)][/COLOR] | SD: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(torrentsCached_SD)][/COLOR]</label>
+                <label>4k: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(totals_4K)][/COLOR] | 1080p: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(totals_1080p)][/COLOR] | 720p: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(totals_720p)][/COLOR] | SD: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(totals_SD)][/COLOR]</label>
             </control>
 
             <control type="label">
