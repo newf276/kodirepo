@@ -148,13 +148,13 @@
 
 
 
-        <!-- Popcorn Logo -->
+        <!-- Seren Logo -->
         <control type="image" id="1001">
             <top>-210</top>
-            <left>580</left>
-            <width>350</width>
+            <left>620</left>
+            <width>250</width>
             <aspectratio>keep</aspectratio>
-            <texture>$INFO[Window().Property(popcorn.logo)]</texture>
+            <texture>$INFO[Window().Property(seren.logo)]</texture>
         </control>
 
         <control type="label">

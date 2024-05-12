@@ -316,7 +316,7 @@
                     <scrollspeed>150</scrollspeed>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label>[B][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/B]</label>
+                    <label>[B][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/B]</label>  
                 </control>
                 <control type="label">
                     <top>70</top>
