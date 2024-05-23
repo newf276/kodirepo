@@ -1,7 +1,8 @@
-<addon id="plugin.video.finder" name="Finder" provider-name="Newf276" version="1.0.3">
+<addon id="plugin.video.finder" name="Finder" provider-name="Newf276" version="1.0.4">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>
+        <import addon="script.module.cocoscrapers" version="1.0.0"/>
     </requires>
     <extension library="resources/lib/finder.py" point="xbmc.python.pluginsource">
         <provides>video</provides>
@@ -15,10 +16,7 @@
         <platform>all</platform>
 		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
         <license/>
-        <assets>
-            <icon>resources/media/finder_icon.png</icon>
-            <fanart>resources/media/finder_fanart2.jpg</fanart>
-        </assets>
-        <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
+        <assets><icon>finder_icon.png</icon><fanart>finder_fanart2.png</fanart></assets>
+        <news>For latest changes see Changelog within Tools of add-on.</news>
     </extension>
 </addon>

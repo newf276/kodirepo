@@ -443,7 +443,7 @@
                         <property name="setting_label">Use Test Repository for Updates (Warning!!!)</property>
                         <property name="setting_type">boolean</property>
                         <property name="setting_value">$INFO[Window(10000).Property(finder.update.use_test_repo)]</property>
-                        <property name="setting_description">Enable this and Finder will update from the Newf276 Repository. It is STRONGLY advised to NOT enable this setting, but if you like to live life on the edge....</property>
+                        <property name="setting_description">Enable this and Finder will update from the Newf276 Kodi test Repository. It is STRONGLY advised to NOT enable this setting, but if you like to live life on the edge....</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_boolean&amp;setting_id=update.use_test_repo)</onclick>
                     </item>
             <!-- General -->
