@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="screensaver.weather" name="Weather Screensaver" version="3.0.0" provider-name="Newf276">
-    <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <extension point="xbmc.ui.screensaver" library="default.py"/>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Weather Screensaver</summary>
-        <description lang="en">Screensaver that displays the weather.</description>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-        <website>https://github.com/newf276/repository.newf/tree/main/</website>
-        <source>https://github.com/newf276/repository.newf/tree/main/screensaver.weather</source>
-        <license>See LICENSE.txt</license>
-        <news>Kodi python 3 compatable</news>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
+<addon id="screensaver.weather" name="Weather Screesaver" version="10.0.0" provider-name="Newf276">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+  <extension point="xbmc.ui.screensaver" library="default.py"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">just display the weather dialog</summary>
+    <description lang="en_GB">just display the weather dialog
+    </description>
+    <language>en</language>
+    <platform>all</platform>
+    <license>MIT</license>
+    <source>https://newf276.github.io/r</source>
+    <news>Icon Changed</news>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
 </addon>
