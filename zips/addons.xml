@@ -19,8 +19,8 @@
             Last updated: December 30, 2022.
         </disclaimer>
         <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.png</fanart>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
         </assets>
     </extension>
 </addon>
@@ -43,7 +43,7 @@
     <source>https://newf276.github.io</source>
     <assets>
 	    <icon>icon.png</icon>
-	    <fanart>fanart.png</fanart>
+	    <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
 </addon>
@@ -70,7 +70,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
   </extension>
 </addon>
 
-<addon id="plugin.video.fenlight" name="Fen Light" provider-name="Tikipeter" version="1.0.52">
+<addon id="plugin.video.fenlight" name="Fen Light" provider-name="Tikipeter" version="1.0.54">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>
@@ -88,8 +88,8 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
 		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
         <license/>
         <assets>
-            <icon>resources/media/fenlight_icon.png</icon>
-            <fanart>resources/media/fenlight_fanart2.jpg</fanart>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
         </assets>
         <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>
@@ -178,8 +178,8 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
             information on these external websites.
         </disclaimer>
         <assets>
-            <icon>ico-popcorn-3.png</icon>
-            <fanart>fanart-popcorn-3.png</fanart>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
             <clearlogo>resources/images/logo-popcorn-3.png</clearlogo>
             <poster>resources/images/poster-popcorn-3.png</poster>
             <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
@@ -253,8 +253,8 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
 		<source></source>
 		<disclaimer lang="en"></disclaimer>
 		<assets>
-			<icon>resources/images/ico-popcorn-3.png</icon>
-			<fanart>fanart-popcorn-3.png</fanart>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
 			<clearlogo>resources/images/logo-popcorn-3.png</clearlogo>
 			<poster>resources/images/poster-popcorn-3.png</poster>
 		</assets>
@@ -343,7 +343,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
         <platform>all</platform>
         <assets>
             <icon>icon.png</icon>
-            <fanart>fanart.png</fanart>
+            <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
 </addon>
@@ -363,7 +363,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
         <license>See LICENSE.txt</license>
         <news>Kodi python 3 compatable</news>
         <assets>
-            <icon>icon.jpg</icon>
+            <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
@@ -382,7 +382,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
         <platform>all</platform>
         <reuselanguageinvoker>true</reuselanguageinvoker>
         <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-        <assets><icon>icon.png</icon><fanart>fanart.png</fanart></assets>
+        <assets><icon>icon.png</icon><fanart>fanart.jpg</fanart></assets>
         <summary>The position from which something or someone is observed.[CR]</summary>
         <description lang="en">This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</description>
         <disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
@@ -522,8 +522,8 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
             information on these external websites.
         </disclaimer>
         <assets>
-            <icon>resources/images/ico-seren-3.png</icon>
-            <fanart>resources/images/fanart-seren-3.jpg</fanart>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
             <clearlogo>resources/images/logo-seren-3.png</clearlogo>
             <poster>resources/images/poster-seren-3.png</poster>
             <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
@@ -568,8 +568,8 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
 		<source></source>
 		<disclaimer lang="en"></disclaimer>
 		<assets>
-			<icon>resources/images/ico-seren-3.png</icon>
-			<fanart>fanart-seren-3.jpg</fanart>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
 			<clearlogo>resources/images/logo-seren-3.png</clearlogo>
 			<poster>resources/images/poster-seren-3.png</poster>
 		</assets>
@@ -632,7 +632,8 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
     <license>Apache-2.0</license>
     <news>Fix for Omega</news>
     <assets>
-      <icon>resources/media/icon.png</icon>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
       <screenshot>resources/media/screenshot01.jpg</screenshot>
       <screenshot>resources/media/screenshot02.jpg</screenshot>
       <screenshot>resources/media/screenshot03.jpg</screenshot>
@@ -666,8 +667,8 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
         <source>https://github.com/newf276/repository.newf/tree/main/plugin.audio.iheart</source>
     <news>v2.0.2 (01/30/2022)</news>
     <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
     </assets>
   </extension>
 </addon>
@@ -750,7 +751,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
 		<disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
 		<assets>
 			<icon>icon.png</icon>
-			<fanart>fanart.png</fanart>
+			<fanart>fanart.jpg</fanart>
 			<screenshot></screenshot>
 		</assets>
 		<news></news>
@@ -775,7 +776,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
         <platform>all</platform>
 		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
         <license/>
-        <assets><icon>finder_icon.png</icon><fanart>finder_fanart2.png</fanart></assets>
+        <assets><icon>icon.png</icon><fanart>fanart.jpg</fanart></assets>
         <news>For latest changes see Changelog within Tools of add-on.</news>
     </extension>
 </addon>

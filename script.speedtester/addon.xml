@@ -15,7 +15,8 @@
     <license>Apache-2.0</license>
     <news>Fix for Omega</news>
     <assets>
-      <icon>resources/media/icon.png</icon>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
       <screenshot>resources/media/screenshot01.jpg</screenshot>
       <screenshot>resources/media/screenshot02.jpg</screenshot>
       <screenshot>resources/media/screenshot03.jpg</screenshot>

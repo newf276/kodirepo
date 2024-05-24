@@ -18,8 +18,8 @@
             Last updated: December 30, 2022.
         </disclaimer>
         <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.png</fanart>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
         </assets>
     </extension>
 </addon>

@@ -25,8 +25,8 @@
         <source>https://github.com/newf276/repository.newf/tree/main/plugin.audio.iheart</source>
     <news>v2.0.2 (01/30/2022)</news>
     <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
     </assets>
   </extension>
 </addon>

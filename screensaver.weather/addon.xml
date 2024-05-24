@@ -14,7 +14,7 @@
         <license>See LICENSE.txt</license>
         <news>Kodi python 3 compatable</news>
         <assets>
-            <icon>icon.jpg</icon>
+            <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>

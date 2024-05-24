@@ -54,8 +54,8 @@
             information on these external websites.
         </disclaimer>
         <assets>
-            <icon>ico-popcorn-3.png</icon>
-            <fanart>fanart-popcorn-3.png</fanart>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
             <clearlogo>resources/images/logo-popcorn-3.png</clearlogo>
             <poster>resources/images/poster-popcorn-3.png</poster>
             <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
