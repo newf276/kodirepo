@@ -4,9 +4,9 @@ zip="https://github.com/newf276/kodirepo/raw/master/zips/plugin.program.cleaner/
 
 name="Newf"
 version="1.0"
-url="https://www.dropbox.com/scl/fi/djkneps6334dynozx1ax9/newf.zip?rlkey=2btl5imppmqfl3xgt2zy10edn&dl=0"
+url="https://raw.githubusercontent.com/newf276/wizard/master/newf.zip"
 minor="http://"
-gui="https://www.dropbox.com/scl/fi/nk3d9k6g4ssvnvg1pie8p/newf_guisettings.zip?rlkey=ys979mr86v727xus2bux4nts2&dl=0"
+gui="https://raw.githubusercontent.com/newf276/wizard/master/newf_guisettings.zip"
 kodi="21.0"
 theme="http://"
 icon="https://raw.githubusercontent.com/newf276/wizard/master/Build%20Artwork/newf.png"

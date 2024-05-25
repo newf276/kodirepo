@@ -15,7 +15,7 @@ ART = os.path.join(PATH, 'resources', 'media')
 #########################################################
 ADDONTITLE = '[COLOR deepskyblue][B]Kodi[/B][/COLOR]Cleaner'
 BUILDERNAME = 'Newf276'
-EXCLUDES = [ADDON_ID, 'repository.newf']
+EXCLUDES = [ADDON_ID, 'newf276.github.io']
 # Text File with build info in it. Please read https://github.com/a4k-openproject/plugin.program.openwizard/wiki/Installing-Builds
 BUILDFILE = 'https://raw.githubusercontent.com/newf276/wizard/master/builds.txt'
 # How often you would like it to check for build updates in days
@@ -61,7 +61,7 @@ SPACER = '='
 # You can edit these however you want, just make sure that you have a %s in each of the
 # THEME's so it grabs the text from the menu item
 COLOR1 = 'white'
-COLOR2 = 'white'
+COLOR2 = 'deepskyblue'
 # Primary menu items   / {0} is the menu item and is required
 THEME1 = u'[COLOR {color1}][I][COLOR {color1}][/COLOR][COLOR {color2}][COLOR {color1}][/I][/COLOR] [COLOR {color2}]{{}}[/COLOR]'.format(color1=COLOR1, color2=COLOR2)
 # Build Names          / {0} is the menu item and is required
@@ -100,7 +100,7 @@ REPOID = 'repository.newf'
 # Url to Addons.xml file in your repo folder(this is so we can get the latest version)
 REPOADDONXML = 'https://raw.githubusercontent.com/newf276/kodirepo/master/zips/addons.xml'
 # Url to folder zip is located in
-REPOZIPURL = 'https://github.com/newf276/kodirepo/raw/master/zips/plugin.program.cleaner/plugin.program.cleaner-1.0.0.zip'
+REPOZIPURL = 'https://github.com/newf276/kodirepo/raw/master/zips/repository.newf/repository.newf-1.4.4.zip'
 #########################################################
 
 #########################################################
