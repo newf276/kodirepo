@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="screensaver.weather" name="Weather Screesaver" version="10.0.1" provider-name="Newf276">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+  <extension point="xbmc.ui.screensaver" library="default.py"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">just display the weather dialog</summary>
+    <description lang="en_GB">just display the weather dialog
+    </description>
+    <language>en</language>
+    <platform>all</platform>
+    <license>MIT</license>
+    <source>https://newf276.github.io/r</source>
+    <news>Icon Changed</news>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
