@@ -160,31 +160,6 @@
 	</extension>
 </addon>
 
-<addon id="newf.maintenance" version="3.1.0" name="Newf Maintenance" provider-name="Newf276">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" />
-        <import addon="script.module.six" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.service" library="startup.py" start="startup" />
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Newf Maintenance</summary>
-        <description lang="en">Newf Maintenance offers many maintenance features, selective add-on data saving, and automated build installs.</description>
-        <platform>all</platform>
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-        <disclaimer lang="en">
-            Last updated: December 30, 2022.
-        </disclaimer>
-        <assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-</addon>
-
 <addon id="plugin.audio.iheart"
        name="iHeartRadio"
        version="2.0.2"
@@ -470,6 +445,34 @@
     </extension>
 </addon>
 
+<addon id="plugin.video.xumoplay" name="Xumo Play" version="2024.04.10" provider-name="MetalChris">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.requests" version="2.9.1"/>
+    <import addon="script.module.inputstreamhelper"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Xumo Play</summary>
+    <description lang="en">Xumo Play is your destination for free LIVE and on-demand streaming channels ranging from sports highlights to fun recipes to music and festival coverage to stand up comedy.</description>
+    <disclaimer lang="en"></disclaimer>
+    <language></language>
+    <platform>all</platform>
+    <license>GPL(v2 or later)</license>
+    <forum></forum>
+    <website>https://play.xumo.com</website>
+    <email></email>
+    <source></source>
+    <news>Fix for limit of 25 items on VOD categories.</news>
+    <assets>
+        <icon>resources/media/icon.png</icon>
+        <fanart>resources/media/fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+
 <addon id="plugin.video.youtube" name="YouTube for Trailers" provider-name="SlyGuy" version="999.0.10">
   <requires>
     <import addon="script.module.slyguy"/>
@@ -492,7 +495,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
   </extension>
 </addon>
 
-<addon id="repository.newf" name="[COLOR deepskyblue]Repository Newf[/COLOR]" version="1.4.2" provider-name="[COLOR deepskyblue]Newf276[/COLOR]">
+<addon id="repository.newf" name="[COLOR deepskyblue]Repository Newf[/COLOR]" version="1.4.3" provider-name="[COLOR deepskyblue]Newf276[/COLOR]">
     <extension point="xbmc.addon.repository" name="[COLOR deepskyblue]Repository Newf[/COLOR]">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/newf276/kodirepo/master/zips/addons.xml</info>
@@ -543,7 +546,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
     </extension>
 </addon>
 
-<addon id="screensaver.weather" name="Weather Screesaver" version="10.0.0" provider-name="Newf276">
+<addon id="screensaver.weather" name="Weather Screesaver" version="10.0.1" provider-name="Newf276">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
