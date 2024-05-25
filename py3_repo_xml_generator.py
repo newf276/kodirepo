@@ -1,18 +1,43 @@
-#!/usr/bin/env python3
-#""" downloaded from http://xbmc-addons.googlecode.com/svn/addons/ """
-#""" This is a modded version of the original addons.xml generator """
-#
-#""" Put this version in the root folder of your repo and it will """
-#""" zip up all add-on folders, create a new zip in your zips folder """
-#""" and then update the md5 and addons.xml file """
-#
-#""" Recoded by whufclee (info@totalrevolution.tv) """
+""" downloaded from http://xbmc-addons.googlecode.com/svn/addons/ """
+""" This is a modded version of the original addons.xml generator """
+
+""" Put this version in the root folder of your repo and it will """
+""" zip up all add-on folders, create a new zip in your zips folder """
+""" and then update the md5 and addons.xml file """
+
+""" Recoded by whufclee (info@totalrevolution.tv) """
 
 import re
 import os
 import shutil
 import hashlib
 import zipfile
+
+from xml.etree import ElementTree
+
+SCRIPT_VERSION = 5
+KODI_VERSIONS = ["matrix", "nexus", "repo"]
+IGNORE = [
+    ".git",
+    ".github",
+    ".gitignore",
+    ".DS_Store",
+    "thumbs.db",
+    ".idea",
+    "venv",
+]
+_COLOR_ESCAPE = "\x1b[{}m"
+_COLORS = {
+    "black": "30",
+    "red": "31",
+    "green": "4;32",
+    "yellow": "3;33",
+    "blue": "34",
+    "magenta": "35",
+    "cyan": "1;36",
+    "grey": "37",
+    "endc": "0",
+}
 
 class Generator:
     """
@@ -44,9 +69,9 @@ class Generator:
             print("NEW ADD-ON - Creating zip for: {0} v.{1}".format(addon_id, version))
             zip = zipfile.ZipFile(final_zip, 'w', compression=zipfile.ZIP_DEFLATED )
             root_len = len(os.path.dirname(os.path.abspath(addon_id)))
-            
+
             ignore = ['.git', '.github', '.gitignore', '.DS_Store', 'thumbs.db', '.idea', 'venv']
-            
+
             for root, dirs, files in os.walk(addon_id):
                 # remove any unneeded git artifacts
                 for i in ignore:
@@ -61,16 +86,16 @@ class Generator:
                                 files.remove(f)
                             except:
                                 pass
-                
+
                 archive_root = os.path.abspath(root)[root_len:]
 
                 for f in files:
                     fullpath = os.path.join(root, f)
                     archive_name = os.path.join(archive_root, f)
                     zip.write(fullpath, archive_name, zipfile.ZIP_DEFLATED)
-            
+
             zip.close()
-            
+
             # Copy over the icon, fanart and addon.xml to the zip directory
             copyfiles = ['icon.png', 'fanart.jpg', 'addon.xml']
             files = os.listdir(addon_id)
@@ -78,25 +103,32 @@ class Generator:
                 if file in copyfiles:
                     shutil.copy(os.path.join(addon_id, file), addon_folder)
 
-# Remove any instances of pyc or pyo files
+# Remove All instances of .pyc or .pyo files and __pycache__ folders
     def _remove_binaries(self):
         for parent, dirnames, filenames in os.walk('.'):
             for fn in filenames:
                 if fn.lower().endswith('pyo') or fn.lower().endswith('pyc'):
                     compiled = os.path.join(parent, fn)
-                    py_file = compiled.replace('.pyo', '.py').replace('.pyc', '.py')
-                    if os.path.exists(py_file):
-                        try:
-                            os.remove(compiled)
-                            print("Removed compiled python file:")
-                            print(compiled)
-                            print('-----------------------------')
-                        except:
-                            print("Failed to remove compiled python file:")
-                            print(compiled)
-                            print('-----------------------------')
-                    else:
-                        print("Compiled python file found but no matching .py file exists:")
+                    try:
+                        os.remove(compiled)
+                        print("Removed compiled python file:")
+                        print(compiled)
+                        print('-----------------------------')
+                    except:
+                        print("Failed to remove compiled python file:")
+                        print(compiled)
+                        print('-----------------------------')
+            for dir in dirnames:
+                if "pycache" in dir.lower():
+                    compiled = os.path.join(parent, dir)
+                    try:
+                        # os.rmdir(compiled) # only removes empty dir's. play it safe with shutil.rmtree()
+                        shutil.rmtree(compiled)
+                        print("Removed __pycache__ cache folder:")
+                        print(compiled)
+                        print('-----------------------------')
+                    except:
+                        print("Failed to remove __pycache__ cache folder:")
                         print(compiled)
                         print('-----------------------------')
 
@@ -127,7 +159,7 @@ class Generator:
                     addon_xml += line.rstrip() + "\n"
                 addons_xml += addon_xml.rstrip() + "\n\n"
 
-                # Create the zip files                
+                # Create the zip files
                 self._create_zips(addon, version)
 
             except Exception as e:
