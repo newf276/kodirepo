@@ -17,7 +17,7 @@ ADDONTITLE = '[COLOR deepskyblue][B]Kodi[/B][/COLOR]Cleaner'
 BUILDERNAME = 'Newf276'
 EXCLUDES = [ADDON_ID, 'repository.newf']
 # Text File with build info in it. Please read https://github.com/a4k-openproject/plugin.program.openwizard/wiki/Installing-Builds
-BUILDFILE = 'https://raw.githubusercontent.com/newf276/kodirepo/master/builds.txt'
+BUILDFILE = 'https://raw.githubusercontent.com/newf276/wizard/master/builds.txt'
 # How often you would like it to check for build updates in days
 # 0 being every startup of kodi
 UPDATECHECK = 0
@@ -94,13 +94,13 @@ AUTOUPDATE = 'Yes'
 #        Auto Install Repo If Not Installed             #
 #########################################################
 # Enable Auto Install 'Yes' or 'No'
-AUTOINSTALL = 'No'
+AUTOINSTALL = 'yes'
 # Addon ID for the repository
 REPOID = 'repository.newf'
 # Url to Addons.xml file in your repo folder(this is so we can get the latest version)
-REPOADDONXML = 'https://'
+REPOADDONXML = 'https://raw.githubusercontent.com/newf276/kodirepo/master/zips/addons.xml'
 # Url to folder zip is located in
-REPOZIPURL = 'https://'
+REPOZIPURL = 'https://github.com/newf276/kodirepo/raw/master/zips/plugin.program.cleaner/plugin.program.cleaner-1.0.0.zip'
 #########################################################
 
 #########################################################
