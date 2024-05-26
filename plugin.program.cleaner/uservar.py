@@ -13,7 +13,7 @@ ART = os.path.join(PATH, 'resources', 'media')
 #########################################################
 #        User Edit Variables                            #
 #########################################################
-ADDONTITLE = '[COLOR deepskyblue][B]Kodi[/B][/COLOR]Cleaner'
+ADDONTITLE = '[COLOR deepskyblue][B]Kodi Cleaner[/B][/COLOR]'
 BUILDERNAME = 'Newf276'
 EXCLUDES = [ADDON_ID, 'newf276.github.io']
 # Text File with build info in it. Please read https://github.com/a4k-openproject/plugin.program.openwizard/wiki/Installing-Builds
@@ -63,7 +63,7 @@ SPACER = '='
 COLOR1 = 'white'
 COLOR2 = 'deepskyblue'
 # Primary menu items   / {0} is the menu item and is required
-THEME1 = u'[COLOR {color1}][I][COLOR {color1}][/COLOR][COLOR {color2}][COLOR {color1}][/I][/COLOR] [COLOR {color2}]{{}}[/COLOR]'.format(color1=COLOR1, color2=COLOR2)
+THEME1 = u'[COLOR {color1}]{{}}[/COLOR]'.format(color1=COLOR1)
 # Build Names          / {0} is the menu item and is required
 THEME2 = u'[COLOR {color1}]{{}}[/COLOR]'.format(color1=COLOR1)
 # Alternate items      / {0} is the menu item and is required
@@ -75,7 +75,7 @@ THEME5 = u'[COLOR {color1}]Current Theme:[/COLOR] [COLOR {color2}]{{}}[/COLOR]'.
 
 # Message for Contact Page
 # Enable 'Contact' menu item 'Yes' hide or 'No' dont hide
-HIDECONTACT = 'No'
+HIDECONTACT = 'Yes'
 # You can add \n to do line breaks
 CONTACT = 'Thank you for choosing Kodi Cleaner.'
 # Images used for the contact window.  http:// for default icon and fanart
@@ -94,7 +94,7 @@ AUTOUPDATE = 'Yes'
 #        Auto Install Repo If Not Installed             #
 #########################################################
 # Enable Auto Install 'Yes' or 'No'
-AUTOINSTALL = 'yes'
+AUTOINSTALL = 'Yes'
 # Addon ID for the repository
 REPOID = 'repository.newf'
 # Url to Addons.xml file in your repo folder(this is so we can get the latest version)
@@ -114,7 +114,7 @@ NOTIFICATION = 'https://github.com/newf276/kodirepo/raw/master/plugin.program.cl
 HEADERTYPE = 'Text'
 # Font size of header
 FONTHEADER = 'Font14'
-HEADERMESSAGE = '[COLOR deepskyblue][B]Kodi/B][/COLOR]Cleaner'
+HEADERMESSAGE = '[COLOR deepskyblue][B]Kodi Cleaner[/B][/COLOR] by Newf276'
 # url to image if using Image 424x180
 HEADERIMAGE = 'https://github.com/newf276/kodirepo/raw/master/icon.png'
 # Font for Notification Window
