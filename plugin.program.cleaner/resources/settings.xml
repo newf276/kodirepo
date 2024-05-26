@@ -7,12 +7,12 @@
         <setting id="buildtheme" type="text" label="Current Theme: " enable="false" default=""/>
         <setting id="latestversion" type="text" label="Latest Version: " enable="false" default=""/>
         <setting id="nextbuildcheck" type="text" label="Next check for build update: " enable="false" default="2019-01-01 00:00:00" />
-        <setting id="disableupdate" type="bool" label="Disable Update Notification" default="false"/>
+        <setting id="disableupdate" type="bool" label="Disable Update Notification" default="true"/>
         <setting type="lsep" label="Show Builds:"/>
         <setting id="show21" type="bool" label="Show Omega (v21.0) Builds" default="true"/>
         <setting id="show20" type="bool" label="Show Nexus (v20.0) Builds" default="true"/>
-        <setting id="show19" type="bool" label="Show Matrix (v19.0) Builds" default="true"/>
-        <setting id="separate" type="bool" label="Do not separate based off version" default="false"/>
+        <setting id="show19" type="bool" label="Show Matrix (v19.0) Builds" default="false"/>
+        <setting id="separate" type="bool" label="Do not separate based off version" default="true"/>
         
         <!-- Hidden Settings -->
         <setting id="first_install" type="bool" label="First Install" visible="false" default="true" />
@@ -44,11 +44,11 @@
         <setting type="lsep" label="Maintenance Menu: "/>
         <setting id="path" type="folder" label="Choose Backup Storage Location" default="special://home/"/>
         <setting type="lsep" label="Auto Clean On Startup:"/>
-        <setting id="autoclean" type="bool" label="Enable Auto Clean" default="false"/>
-        <setting id="clearcache" type="bool" label="Clear Cache on Startup" default="false" enable="!eq(-1,false)"/>
-        <setting id="clearpackages" type="bool" label="Clear Packages on Startup" default="false" enable="!eq(-2,false)"/>
-        <setting id="clearthumbs" type="bool" label="Clear Week Old Thumbnails on Startup" default="false" enable="!eq(-3,false)"/>
-        <setting id="autocleanfreq" type="enum" label="How often would you like to Auto Clean on Startup?" values="Always|Daily|3 Days|Weekly|Monthly" default="3" enable="!eq(-4,false)"/>
+        <setting id="autoclean" type="bool" label="Enable Auto Clean" default="true"/>
+        <setting id="clearcache" type="bool" label="Clear Cache on Startup" default="true" enable="!eq(-1,false)"/>
+        <setting id="clearpackages" type="bool" label="Clear Packages on Startup" default="true" enable="!eq(-2,false)"/>
+        <setting id="clearthumbs" type="bool" label="Clear Week Old Thumbnails on Startup" default="true" enable="!eq(-3,false)"/>
+        <setting id="autocleanfreq" type="enum" label="How often would you like to Auto Clean on Startup?" values="Always|Daily|3 Days|Weekly|Monthly" default="1" enable="!eq(-4,false)"/>
         <setting id="nextautocleanup" type="text" label="Next Auto Clean Up: " enable="false" visible="false" default="2019-01-01 00:00:00" />
         <setting type="lsep" label="Clearing Video Cache:"/>
         <setting id="includevideo" type="bool" label="Include Video Addons in Clear Cache: " default="true"/>
@@ -161,19 +161,19 @@
         <setting type="action" label="Open Kodi Android Updater Settings" action="RunPlugin(plugin://plugin.program.cleaner/?mode=fmchoose)" option="close" />
         <setting id="apk_path" type="folder" label="Choose Download Location" default="/storage/emulated/0/Download/"/>
         <setting type="lsep" label="Save Data When Installing Build:"/>
-        <setting id="keeptrakt" type="bool" label="Keep My Trakt Data" default="true"/>
+        <setting id="keeptrakt" type="bool" label="Keep My Trakt Data" default="false"/>
         <setting id="traktnextsave" type="text" label="Last Time Trakt Data Saved:" visible="!eq(-1, false)" enable="false" default="2019-01-01 00:00:00"/>
-        <setting id="keepdebrid" type="bool" label="Keep My Debrid Data" default="true"/>
+        <setting id="keepdebrid" type="bool" label="Keep My Debrid Data" default="false"/>
         <setting id="debridnextsave" type="text" label="Last Time Debrid Data Saved:" visible="!eq(-1, false)" enable="false" default="2019-01-01 00:00:00"/>
         <setting id="keeplogin" type="bool" label="Keep My Login Data" default="true"/>
         <setting id="loginnextsave" type="text" label="Last Time Login Data Saved:" visible="!eq(-1, false)" enable="false" default="2019-01-01 00:00:00"/>
         <setting type="lsep" label="Keep Settings When Installing Build:"/>
-        <setting id="keepfavourites" type="bool" label="Keep My Favourites" default="true"/>
-        <setting id="keepsources" type="bool" label="Keep My Sources" default="true"/>
+        <setting id="keepfavourites" type="bool" label="Keep My Favourites" default="false"/>
+        <setting id="keepsources" type="bool" label="Keep My Sources" default="false"/>
         <setting id="keepprofiles" type="bool" label="Keep My Profiles" default="false"/>
         <setting id="keepplayercore" type="bool" label="Keep My playercorefactory.xml" default="false"/>
         <setting id="keepguisettings" type="bool" label="Keep My guisettings.xml" default="false"/>
-        <setting id="keepadvanced" type="bool" label="Keep My AdvancedSettings.xml" default="true"/>
+        <setting id="keepadvanced" type="bool" label="Keep My AdvancedSettings.xml" default="false"/>
         <setting id="keeprepos" type="bool" label="Keep Installed Repositories" default="false"/>
         <setting id="keepsuper" type="bool" label="Keep Super Favourites" default="false"/>
         <setting id="keepwhitelist" type="bool" label="Keep My Whitelist Addons" default="false"/>
@@ -182,7 +182,7 @@
     <category label="View Settings">
         <setting id="developer" type="bool" label="Show Developer Menu: " enable="true" default=""/>
         <setting id="adult" type="bool" label="Show Adult Addons: " enable="true" default="false"/>
-        <setting id="auto-view" type="bool" label="Enable Auto View" default="true"/>
+        <setting id="auto-view" type="bool" label="Enable Auto View" default="false"/>
         <setting id="viewType" type="number" label="View Type" default="50" visible="!eq(-1, false)" enable="!eq(-1,false)"/>
         <setting type="lsep" label="Notification Window on Startup:"/>
         <setting id="notify" type="bool" label="Disable Notification on Startup" default="false" />
