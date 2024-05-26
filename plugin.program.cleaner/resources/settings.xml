@@ -193,7 +193,7 @@
     <category label="Logging Settings">
         <setting type="lsep" label="Event Logging in the Wizard:"/>
         <setting id="debuglevel" type="enum" label="What level would you like the wizard to log?" values="No Logging|Normal Logging|Full Logging" default="1"/>
-        <setting id="wizardlog" type="bool" label="Enable Wizard Logging:" default="true"/>
+        <setting id="wizardlog" type="bool" label="Enable Wizard Logging:" default="false"/>
         <setting id="autocleanwiz" type="bool" label="Automatically Clean up Wizard Log: " visible="!eq(-1,false)" default="true"/>
         <setting id="wizlogcleanby" type="enum" label="How would you like to clean up wizard.log?" visible="!eq(-2,false)+!eq(-1,false)" values="By Days|By Size|By Lines" default="1"/>
         <setting id="wizlogcleandays" type="enum" subsetting="true" label="Keep how many days of wizard.log?" enable="!eq(-2,false)" visible="eq(-1,0)+!eq(-2,false)+!eq(-3,false)" values="1 Day|2 Days|3 Days|7 Days" default="2"/>
