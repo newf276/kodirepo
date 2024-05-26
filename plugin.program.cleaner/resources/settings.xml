@@ -165,7 +165,7 @@
         <setting id="traktnextsave" type="text" label="Last Time Trakt Data Saved:" visible="!eq(-1, false)" enable="false" default="2019-01-01 00:00:00"/>
         <setting id="keepdebrid" type="bool" label="Keep My Debrid Data" default="false"/>
         <setting id="debridnextsave" type="text" label="Last Time Debrid Data Saved:" visible="!eq(-1, false)" enable="false" default="2019-01-01 00:00:00"/>
-        <setting id="keeplogin" type="bool" label="Keep My Login Data" default="true"/>
+        <setting id="keeplogin" type="bool" label="Keep My Login Data" default="false"/>
         <setting id="loginnextsave" type="text" label="Last Time Login Data Saved:" visible="!eq(-1, false)" enable="false" default="2019-01-01 00:00:00"/>
         <setting type="lsep" label="Keep Settings When Installing Build:"/>
         <setting id="keepfavourites" type="bool" label="Keep My Favourites" default="false"/>
