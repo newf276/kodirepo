@@ -109,16 +109,16 @@ REPOZIPURL = 'https://github.com/newf276/kodirepo/raw/master/zips/repository.new
 # Enable Notification screen Yes or No
 ENABLE = 'Yes'
 # Url to notification file
-NOTIFICATION = 'http://'
+NOTIFICATION = 'https://github.com/newf276/kodirepo/raw/master/plugin.program.cleaner/resources/text/notify.txt'
 # Use either 'Text' or 'Image'
 HEADERTYPE = 'Text'
 # Font size of header
 FONTHEADER = 'Font14'
 HEADERMESSAGE = '[COLOR deepskyblue][B]Kodi/B][/COLOR]Cleaner'
 # url to image if using Image 424x180
-HEADERIMAGE = 'http://'
+HEADERIMAGE = 'https://github.com/newf276/kodirepo/raw/master/icon.png'
 # Font for Notification Window
 FONTSETTINGS = 'Font13'
 # Background for Notification Window
-BACKGROUND = 'http://'
+BACKGROUND = 'https://github.com/newf276/kodirepo/raw/master/fanart.jpg'
 #########################################################
