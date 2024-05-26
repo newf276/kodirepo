@@ -4,7 +4,7 @@ zip="https://github.com/newf276/kodirepo/raw/master/zips/plugin.program.cleaner/
 
 name="Newf-Finder"
 version="1.1"
-url="https://www.dropbox.com/scl/fi/vtwm4bgyuwk9a1r53fg5n/Newf.zip?rlkey=fb1jf7khp6zaqc6qxp50ok4fm&st=xlpqy3rn&dl=1"
+url="https://www.dropbox.com/scl/fi/vtwm4bgyuwk9a1r53fg5n/Newf.zip?rlkey=fb1jf7khp6zaqc6qxp50ok4fm&st=14cbl70i&dl=1"
 minor="http://"
 gui="https://www.dropbox.com/scl/fi/3wl47mkyleapha9x1m7dh/Newf_guisettings.zip?rlkey=vo5nnshn4mo1n30st8c3d1575&st=7qmpy7tf&dl=1"
 kodi="21.0"
