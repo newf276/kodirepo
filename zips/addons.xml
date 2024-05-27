@@ -34,12 +34,12 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
     </extension>
     <extension point="xbmc.service" library="startup.py" start="startup" />
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">[COLOR deepskyblue]Newf's[/COLOR] Wizard and [COLOR deepskyblue]Kodi Crap[/COLOR]Cleaner</summary>
-        <description lang="en">[COLOR deepskyblue]Newf's[/COLOR] Wizard and [COLOR deepskyblue]Kodi Crap[/COLOR]Cleaner offers many maintenance features, selective add-on data saving, and automated build installs.</description>
+        <summary lang="en">[COLOR deepskyblue]Newf's Wizard[/COLOR] + Cache Cleaner</summary>
+        <description lang="en">[COLOR deepskyblue]Newf's Wizard[/COLOR] + Cache Cleaner offers many maintenance features, selective add-on data saving, and automated build installs.</description>
         <platform>all</platform>
         <reuselanguageinvoker>false</reuselanguageinvoker>
         <source>https://newf276.github.io/</source>
-        <news>1.0.0 - Initial Commit</news>
+        <news>Version 1.0.0 - Initial Commit</news>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
