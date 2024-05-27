@@ -13,7 +13,7 @@ ART = os.path.join(PATH, 'resources', 'media')
 #########################################################
 #        User Edit Variables                            #
 #########################################################
-ADDONTITLE = '[COLOR deepskyblue][B]Kodi Cleaner[/B][/COLOR]'
+ADDONTITLE = '[COLOR deepskyblue][B]Newfs[/B][/COLOR] Wizard'
 BUILDERNAME = 'Newf276'
 EXCLUDES = [ADDON_ID, 'newf276.github.io']
 # Text File with build info in it. Please read https://github.com/a4k-openproject/plugin.program.openwizard/wiki/Installing-Builds
@@ -114,7 +114,7 @@ NOTIFICATION = 'https://github.com/newf276/kodirepo/raw/master/plugin.program.cl
 HEADERTYPE = 'Text'
 # Font size of header
 FONTHEADER = 'Font14'
-HEADERMESSAGE = '[COLOR deepskyblue][B]Kodi Cleaner[/B][/COLOR] by Newf276'
+HEADERMESSAGE = '[COLOR deepskyblue][B]Newfs[/B][/COLOR] Wizard'
 # url to image if using Image 424x180
 HEADERIMAGE = 'https://github.com/newf276/kodirepo/raw/master/icon.png'
 # Font for Notification Window
