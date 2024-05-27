@@ -25,22 +25,20 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
 <addon id="plugin.program.cleaner" name="[COLOR deepskyblue]Newf's[/COLOR] Wizard" version="1.0.0" provider-name="Newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.speedtester" version="10.0.1" />
         <import addon="script.module.requests" />
         <import addon="script.module.six" />
     </requires>
-
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>executable</provides>
     </extension>
-
     <extension point="xbmc.service" library="startup.py" start="startup" />
-
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">[COLOR deepskyblue]Kodi[/COLOR]Cleaner</summary>
-        <description lang="en">[COLOR deepskyblue]Kodi[/COLOR]Cleaner offers many maintenance features, selective add-on data saving, and automated build installs.</description>
+        <summary lang="en">[COLOR deepskyblue]Newf's[/COLOR] Wizard and [COLOR deepskyblue]Kodi Crap[/COLOR]Cleaner</summary>
+        <description lang="en">[COLOR deepskyblue]Newf's[/COLOR] Wizard and [COLOR deepskyblue]Kodi Crap[/COLOR]Cleaner offers many maintenance features, selective add-on data saving, and automated build installs.</description>
         <platform>all</platform>
         <reuselanguageinvoker>false</reuselanguageinvoker>
-        <source>https://github.com/newf276/kodirepo/plugin.program.cleaner/</source>
+        <source>https://newf276.github.io/</source>
         <news>1.0.0 - Initial Commit</news>
         <assets>
             <icon>icon.png</icon>
@@ -327,25 +325,25 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
     </extension>
 </addon>
 
-<addon id="screensaver.weather" name="Weather Screensaver" version="3.0.0" provider-name="Newf276">
-    <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <extension point="xbmc.ui.screensaver" library="default.py"/>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Weather Screensaver</summary>
-        <description lang="en">Screensaver that displays the weather.</description>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-        <website>https://github.com/newf276/kodirepo/tree/main/</website>
-        <source>https://github.com/newf276/kodirepo/tree/main/screensaver.weather</source>
-        <license>See LICENSE.txt</license>
-        <news>Kodi python 3 compatable</news>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
+<addon id="screensaver.weather" name="Weather Screensaver" version="10.0.0" provider-name="Newf276">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+  <extension point="xbmc.ui.screensaver" library="default.py"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Display the weather dialog as screensaver</summary>
+    <description lang="en_GB">Display the weather dialog as screensaver</description>
+    <language>en</language>
+    <platform>all</platform>
+    <license>MIT</license>
+    <website>https://newf276.github.io/</website>
+    <source>https://github.com/newf276/kodirepo/screensaver.weather</source>
+    <news>v10.0.0 (2024-05-25) - initial version</news>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
 </addon>
 
 <addon id="plugin.video.newf" version="4.04.25" name="Newf" provider-name="newf276">
@@ -623,7 +621,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
 	</extension>
 </addon>
 
-<addon id="script.speedtester" name="Speed Tester" version="100.2" provider-name="newf276">
+<addon id="script.speedtester" name="Speed Tester" version="10.0.1" provider-name="newf276">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>

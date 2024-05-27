@@ -2,22 +2,20 @@
 <addon id="plugin.program.cleaner" name="[COLOR deepskyblue]Newf's[/COLOR] Wizard" version="1.0.0" provider-name="Newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.speedtester" version="10.0.1" />
         <import addon="script.module.requests" />
         <import addon="script.module.six" />
     </requires>
-    
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>executable</provides>
     </extension>
-    
     <extension point="xbmc.service" library="startup.py" start="startup" />
-    
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">[COLOR deepskyblue]Kodi[/COLOR]Cleaner</summary>
-        <description lang="en">[COLOR deepskyblue]Kodi[/COLOR]Cleaner offers many maintenance features, selective add-on data saving, and automated build installs.</description>
+        <summary lang="en">[COLOR deepskyblue]Newf's[/COLOR] Wizard and [COLOR deepskyblue]Kodi Crap[/COLOR]Cleaner</summary>
+        <description lang="en">[COLOR deepskyblue]Newf's[/COLOR] Wizard and [COLOR deepskyblue]Kodi Crap[/COLOR]Cleaner offers many maintenance features, selective add-on data saving, and automated build installs.</description>
         <platform>all</platform>
         <reuselanguageinvoker>false</reuselanguageinvoker>
-        <source>https://github.com/newf276/kodirepo/plugin.program.cleaner/</source>
+        <source>https://newf276.github.io/</source>
         <news>1.0.0 - Initial Commit</news>
         <assets>
             <icon>icon.png</icon>
