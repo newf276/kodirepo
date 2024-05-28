@@ -103,8 +103,8 @@ def show_text_box(title, msg):
             self.scrollbar = 103
             self.closebutton = 201
             
-            self.setProperty('texture.color1', CONFIG.COLOR1)
-            self.setProperty('texture.color2', CONFIG.COLOR2)
+            self.setProperty('texture.color2', CONFIG.COLOR1)
+            self.setProperty('texture.color1', CONFIG.COLOR2)
             self.setProperty('message.title', title)
             self.setProperty('message.msg', msg)
 
