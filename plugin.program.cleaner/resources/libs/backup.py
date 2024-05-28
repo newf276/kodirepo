@@ -69,7 +69,7 @@ def cleanup_backup():
                            "[COLOR {0}]Clean Up Cancelled![/COLOR]".format(CONFIG.COLOR2))
     elif selected == 0:
         if dialog.yesno(CONFIG.ADDONTITLE, "[COLOR {0}]Would you like to clean up all items in your 'My_Builds' folder?[/COLOR]".format(CONFIG.COLOR2) + '\n' + "[COLOR {0}]{1}[/COLOR]".format(CONFIG.COLOR1, CONFIG.MYBUILDS),
-                        yeslabel="[B][COLOR springgreen]Clean Up[/COLOR][/B]",
+                        yeslabel="[B][COLOR deepskyblue]Clean Up[/COLOR][/B]",
                         nolabel="[B][COLOR deepskyblue]No Cancel[/COLOR][/B]"):
             clearedfiles, clearedfolders = tools.clean_house(CONFIG.MYBUILDS)
             logging.log_notify(CONFIG.ADDONTITLE,
@@ -83,7 +83,7 @@ def cleanup_backup():
         passed = False
 
         if dialog.yesno(CONFIG.ADDONTITLE, "[COLOR {0}]Would you like to remove [COLOR {1}]{2}[/COLOR] from the 'My_Builds' folder?[/COLOR]".format(CONFIG.COLOR2, CONFIG.COLOR1, list[selected]) + '\n' + "[COLOR {0}]{1}[/COLOR]".format(CONFIG.COLOR1, path),
-                        yeslabel="[B][COLOR springgreen]Clean Up[/COLOR][/B]",
+                        yeslabel="[B][COLOR deepskyblue]Clean Up[/COLOR][/B]",
                         nolabel="[B][COLOR deepskyblue]No Cancel[/COLOR][/B]"):
             if os.path.isfile(path):
                 try:
@@ -120,7 +120,7 @@ class Backup:
         if self.dialog.yesno(CONFIG.ADDONTITLE,
                              "[COLOR {0}]Are you sure you wish to create an Addon Pack?[/COLOR]".format(CONFIG.COLOR2),
                              nolabel="[B][COLOR deepskyblue]Cancel Backup[/COLOR][/B]",
-                             yeslabel="[B][COLOR springgreen]Create Pack[/COLOR][/B]"):
+                             yeslabel="[B][COLOR deepskyblue]Create Pack[/COLOR][/B]"):
             if name == "":
                 name = tools.get_keyboard("", "Please enter a name for the add-on pack zip")
                 if not name:
@@ -139,7 +139,7 @@ class Backup:
                     logging.log("Unable to create {0}.zip".format(name), level=xbmc.LOGERROR)
                     if self.dialog.yesno(CONFIG.ADDONTITLE,
                                          "[COLOR {0}]We are unable to write to the current backup directory, would you like to change the location?[/COLOR]".format(CONFIG.COLOR2),
-                                         yeslabel="[B][COLOR springgreen]Change Directory[/COLOR][/B]",
+                                         yeslabel="[B][COLOR deepskyblue]Change Directory[/COLOR][/B]",
                                          nolabel="[B][COLOR deepskyblue]Cancel[/COLOR][/B]"):
                         CONFIG.open_settings()
                         return
@@ -208,7 +208,7 @@ class Backup:
 
     def backup_build(self, name=""):
         if self.dialog.yesno(CONFIG.ADDONTITLE,
-                             "[COLOR {0}]Are you sure you wish to backup the current build?[/COLOR]".format(CONFIG.COLOR2), nolabel="[B][COLOR deepskyblue]Cancel Backup[/COLOR][/B]", yeslabel="[B][COLOR springgreen]Backup Build[/COLOR][/B]"):
+                             "[COLOR {0}]Are you sure you wish to backup the current build?[/COLOR]".format(CONFIG.COLOR2), nolabel="[B][COLOR deepskyblue]Cancel Backup[/COLOR][/B]", yeslabel="[B][COLOR deepskyblue]Backup Build[/COLOR][/B]"):
             if name == "":
                 name = tools.get_keyboard("", "Please enter a name for the build zip")
                 if not name:
@@ -223,7 +223,7 @@ class Backup:
             ITEM = []
             exclude_dirs = CONFIG.EXCLUDE_DIRS
 
-            if not self.dialog.yesno(CONFIG.ADDONTITLE, "[COLOR {0}]Do you want to include your addon_data folder?".format(CONFIG.COLOR2) + '\n' + "This contains [COLOR {0}]ALL[/COLOR] add-on settings including passwords but may also contain important information such as skin shortcuts. We recommend [COLOR {0}]MANUALLY[/COLOR] removing the addon_data folders that aren\'t required.".format(CONFIG.COLOR1, CONFIG.COLOR1) + '\n' + "[COLOR {0}]{1}[/COLOR] addon_data is ignored[/COLOR]".format(CONFIG.COLOR1, CONFIG.ADDON_ID), yeslabel='[B][COLOR springgreen]Include data[/COLOR][/B]',nolabel='[B][COLOR deepskyblue]Don\'t Include[/COLOR][/B]'):
+            if not self.dialog.yesno(CONFIG.ADDONTITLE, "[COLOR {0}]Do you want to include your addon_data folder?".format(CONFIG.COLOR2) + '\n' + "This contains [COLOR {0}]ALL[/COLOR] add-on settings including passwords but may also contain important information such as skin shortcuts. We recommend [COLOR {0}]MANUALLY[/COLOR] removing the addon_data folders that aren\'t required.".format(CONFIG.COLOR1, CONFIG.COLOR1) + '\n' + "[COLOR {0}]{1}[/COLOR] addon_data is ignored[/COLOR]".format(CONFIG.COLOR1, CONFIG.ADDON_ID), yeslabel='[B][COLOR deepskyblue]Include data[/COLOR][/B]',nolabel='[B][COLOR deepskyblue]Don\'t Include[/COLOR][/B]'):
                 exclude_dirs.append('addon_data')
 
             tools.convert_special(CONFIG.HOME, True)
@@ -238,7 +238,7 @@ class Backup:
                     logging.log("Unable to create {0}.zip".format(name), level=xbmc.LOGERROR)
                     if self.dialog.yesno(CONFIG.ADDONTITLE,
                                          "[COLOR {0}]We are unable to write to the current backup directory, would you like to change the location?[/COLOR]".format(CONFIG.COLOR2),
-                                         yeslabel="[B][COLOR springgreen]Change Directory[/COLOR][/B]",
+                                         yeslabel="[B][COLOR deepskyblue]Change Directory[/COLOR][/B]",
                                          nolabel="[B][COLOR deepskyblue]Cancel[/COLOR][/B]"):
                         CONFIG.open_settings()
                         return
@@ -486,7 +486,7 @@ class Backup:
                 except:
                     logging.log("Unable to create {0}_guisettings.zip".format(guiname), level=xbmc.LOGERROR)
                     if self.dialog.yesno(CONFIG.ADDONTITLE, "[COLOR {0}]We are unable to write to the current backup directory, would you like to change the location?[/COLOR]".format(CONFIG.COLOR2),
-                                         yeslabel="[B][COLOR springgreen]Change Directory[/COLOR][/B]",
+                                         yeslabel="[B][COLOR deepskyblue]Change Directory[/COLOR][/B]",
                                          nolabel="[B][COLOR deepskyblue]Cancel[/COLOR][/B]"):
                         CONFIG.open_settings()
                         return
@@ -500,7 +500,7 @@ class Backup:
                     fd = os.path.split(fold[:-1])[1]
                     if fd not in ['skin.confluence', 'skin.estuary', 'skin.estouchy']:
                         if self.dialog.yesno(CONFIG.ADDONTITLE, "[COLOR {0}]Would you like to add the following skin folder to the GUI Fix Zip File?[/COLOR]".format(CONFIG.COLOR2) + '\n' + "[COLOR {0}]{1}[/COLOR]".format(CONFIG.COLOR1, fd),
-                                             yeslabel="[B][COLOR springgreen]Add Skin[/COLOR][/B]",
+                                             yeslabel="[B][COLOR deepskyblue]Add Skin[/COLOR][/B]",
                                              nolabel="[B][COLOR deepskyblue]Skip Skin[/COLOR][/B]"):
                             for base, dirs, files in os.walk(os.path.join(CONFIG.ADDON_DATA, fold)):
                                 files[:] = [f for f in files if f not in CONFIG.EXCLUDE_FILES]
@@ -535,7 +535,7 @@ class Backup:
 
     def backup_theme(self, name=""):
         if not self.dialog.yesno(CONFIG.ADDONTITLE + '[COLOR {0}]: Theme Backup[/COLOR]'.format(CONFIG.COLOR2), "[COLOR {0}]Would you like to create a theme backup?[/COLOR]".format(CONFIG.COLOR2),
-                                 yeslabel="[B][COLOR springgreen]Continue[/COLOR][/B]",
+                                 yeslabel="[B][COLOR deepskyblue]Continue[/COLOR][/B]",
                                  nolabel="[B][COLOR deepskyblue]No Cancel[/COLOR][/B]"):
             logging.log_notify("Theme Backup", "Cancelled!")
             return False
@@ -557,7 +557,7 @@ class Backup:
             except:
                 logging.log("Unable to create {0}.zip".format(themename), level=xbmc.LOGERROR)
                 if self.dialog.yesno(CONFIG.ADDONTITLE, "[COLOR {0}]We are unable to write to the current backup directory, would you like to change the location?[/COLOR]".format(CONFIG.COLOR2),
-                                     yeslabel="[B][COLOR springgreen]Change Directory[/COLOR][/B]",
+                                     yeslabel="[B][COLOR deepskyblue]Change Directory[/COLOR][/B]",
                                      nolabel="[B][COLOR deepskyblue]Cancel[/COLOR][/B]"):
                     CONFIG.open_settings()
                     return
@@ -571,11 +571,11 @@ class Backup:
                 match2 = glob.glob(os.path.join(skinfold, '*.xbt'))
                 if len(match2) > 1:
                     if self.dialog.yesno(CONFIG.ADDONTITLE + '[COLOR {0}]: Theme Backup[/COLOR]'.format(CONFIG.COLOR2) + '\n' + "[COLOR {0}]Would you like to go through the Texture Files for?[/COLOR]".format(CONFIG.COLOR2) + '\n' + "[COLOR {0}]{1}[/COLOR]".format(CONFIG.COLOR1, CONFIG.SKIN),
-                                         yeslabel="[B][COLOR springgreen]Add Textures[/COLOR][/B]",
+                                         yeslabel="[B][COLOR deepskyblue]Add Textures[/COLOR][/B]",
                                          nolabel="[B][COLOR deepskyblue]Skip Textures[/COLOR][/B]"):
                         for xbt in match2:
                             if self.dialog.yesno(CONFIG.ADDONTITLE + '[COLOR {0}]: Theme Backup[/COLOR]'.format(CONFIG.COLOR2), "[COLOR {0}]Would you like to add the Texture File [COLOR {1}]{2}[/COLOR]?".format(CONFIG.COLOR1, CONFIG.COLOR2, xbt.replace(skinfold, "")[1:]) + '\n' + "from [COLOR {0}]{1}[/COLOR][/COLOR]".format(CONFIG.COLOR1, CONFIG.SKIN),
-                                    yeslabel="[B][COLOR springgreen]Add Textures[/COLOR][/B]",
+                                    yeslabel="[B][COLOR deepskyblue]Add Textures[/COLOR][/B]",
                                     nolabel="[B][COLOR deepskyblue]Skip Textures[/COLOR][/B]"):
                                 fn = xbt
                                 fn2 = fn.replace(CONFIG.HOME, "")
@@ -583,7 +583,7 @@ class Backup:
                 else:
                     for xbt in match2:
                         if self.dialog.yesno(CONFIG.ADDONTITLE + '[COLOR {0}]: Theme Backup[/COLOR]'.format(CONFIG.COLOR2), "[COLOR {0}]Would you like to add the Texture File [COLOR {1}]{2}[/COLOR]?".format(CONFIG.COLOR2, CONFIG.COLOR1, xbt.replace(skinfold, "")[1:]) + '\n' + "from [COLOR {0}]{1}[/COLOR][/COLOR]".format(CONFIG.COLOR1, CONFIG.SKIN),
-                                yeslabel="[B][COLOR springgreen]Add Textures[/COLOR][/B]",
+                                yeslabel="[B][COLOR deepskyblue]Add Textures[/COLOR][/B]",
                                 nolabel="[B][COLOR deepskyblue]Skip Textures[/COLOR][/B]"):
                             fn = xbt
                             fn2 = fn.replace(CONFIG.HOME, "")
@@ -592,7 +592,7 @@ class Backup:
                 if os.path.exists(ad_skin):
                     if self.dialog.yesno(CONFIG.ADDONTITLE + '[COLOR {0}]: Theme Backup[/COLOR]'.format(CONFIG.COLOR2), "[COLOR {0}]Would you like to go add the [COLOR {1}]settings.xml[/COLOR] in [COLOR {2}]/addon_data/[/COLOR] for?".format(
                                              CONFIG.COLOR2, CONFIG.COLOR1, CONFIG.COLOR1) + '\n'+ "[COLOR {0}]{1}[/COLOR]".format(CONFIG.COLOR1, CONFIG.SKIN),
-                                         yeslabel="[B][COLOR springgreen]Add Settings[/COLOR][/B]",
+                                         yeslabel="[B][COLOR deepskyblue]Add Settings[/COLOR][/B]",
                                          nolabel="[B][COLOR deepskyblue]Skip Settings[/COLOR][/B]"):
                         ad_skin2 = ad_skin.replace(CONFIG.HOME, "")
                         zipf.write(ad_skin, ad_skin2, zipfile.ZIP_DEFLATED)
@@ -600,7 +600,7 @@ class Backup:
                                         ret='addon')
                 if 'script.skinshortcuts' in match:
                     if self.dialog.yesno(CONFIG.ADDONTITLE + '[COLOR {0}]: Theme Backup[/COLOR]'.format(CONFIG.COLOR2), "[COLOR {0}]Would you like to go add the [COLOR {1}]settings.xml[/COLOR] for [COLOR {2}]script.skinshortcuts[/COLOR]?".format(CONFIG.COLOR2, CONFIG.COLOR1, CONFIG.COLOR1),
-                                         yeslabel="[B][COLOR springgreen]Add Settings[/COLOR][/B]",
+                                         yeslabel="[B][COLOR deepskyblue]Add Settings[/COLOR][/B]",
                                          nolabel="[B][COLOR deepskyblue]Skip Settings[/COLOR][/B]"):
                         for base, dirs, files in os.walk(os.path.join(CONFIG.ADDON_DATA, 'script.skinshortcuts')):
                             files[:] = [f for f in files if f not in CONFIG.EXCLUDE_FILES]
@@ -610,7 +610,7 @@ class Backup:
             if self.dialog.yesno(CONFIG.ADDONTITLE + '[COLOR {0}]: Theme Backup[/COLOR]'.format(CONFIG.COLOR2),
                                  "[COLOR {0}]Would you like to include a [COLOR {1}]Backgrounds[/COLOR] folder?[/COLOR]".format(
                                      CONFIG.COLOR2, CONFIG.COLOR1),
-                                 yeslabel="[B][COLOR springgreen]Yes Include[/COLOR][/B]",
+                                 yeslabel="[B][COLOR deepskyblue]Yes Include[/COLOR][/B]",
                                  nolabel="[B][COLOR deepskyblue]No Continue[/COLOR][/B]"):
                 fn = self.dialog.browse(0, 'Select location of backgrounds', 'files', '', True, False, CONFIG.HOME,
                                         False)
@@ -629,13 +629,13 @@ class Backup:
                 if self.dialog.yesno(CONFIG.ADDONTITLE + '[COLOR {0}]: Theme Backup[/COLOR]'.format(CONFIG.COLOR2),
                                      "[COLOR {0}]Would you like to include the [COLOR {1}]{2}[/COLOR]?[/COLOR]".format(
                                          CONFIG.COLOR2, CONFIG.COLOR1, text),
-                                     yeslabel="[B][COLOR springgreen]Yes Include[/COLOR][/B]",
+                                     yeslabel="[B][COLOR deepskyblue]Yes Include[/COLOR][/B]",
                                      nolabel="[B][COLOR deepskyblue]No Continue[/COLOR][/B]"):
                     zipf.write(os.path.join(CONFIG.DATABASE, text), '/userdata/Database/{0}'.format(text),
                                zipfile.ZIP_DEFLATED)
             if self.dialog.yesno(CONFIG.ADDONTITLE + '[COLOR {0}]: Theme Backup[/COLOR]'.format(CONFIG.COLOR2),
                                  "[COLOR {0}]Would you like to include any addons?[/COLOR]".format(CONFIG.COLOR2),
-                                 yeslabel="[B][COLOR springgreen]Yes Include[/COLOR][/B]",
+                                 yeslabel="[B][COLOR deepskyblue]Yes Include[/COLOR][/B]",
                                  nolabel="[B][COLOR deepskyblue]No Continue[/COLOR][/B]"):
                 fold = glob.glob(os.path.join(CONFIG.ADDONS, '*/'))
                 addonnames = []
@@ -691,7 +691,7 @@ class Backup:
             if self.dialog.yesno(CONFIG.ADDONTITLE + '[COLOR {0}]: Theme Backup[/COLOR]'.format(CONFIG.COLOR2),
                                  "[COLOR {0}]Would you like to include the [COLOR {1}]guisettings.xml[/COLOR]?[/COLOR]".format(
                                      CONFIG.COLOR2, CONFIG.COLOR1),
-                                 yeslabel="[B][COLOR springgreen]Yes Include[/COLOR][/B]",
+                                 yeslabel="[B][COLOR deepskyblue]Yes Include[/COLOR][/B]",
                                  nolabel="[B][COLOR deepskyblue]No Continue[/COLOR][/B]"):
                 zipf.write(CONFIG.GUISETTINGS, '/userdata/guisettings.xml', zipfile.ZIP_DEFLATED)
         except Exception as e:
@@ -723,7 +723,7 @@ class Backup:
                              "[COLOR {0}]Are you sure you wish to backup the current addon_data?[/COLOR]".format(
                                  CONFIG.COLOR2),
                              nolabel="[B][COLOR deepskyblue]Cancel Backup[/COLOR][/B]",
-                             yeslabel="[B][COLOR springgreen]Backup Addon_Data[/COLOR][/B]"):
+                             yeslabel="[B][COLOR deepskyblue]Backup Addon_Data[/COLOR][/B]"):
             if name == "":
                 name = tools.get_keyboard("", "Please enter a name for the addon_data zip")
                 if not name:
@@ -743,7 +743,7 @@ class Backup:
                     if self.dialog.yesno(CONFIG.ADDONTITLE,
                                          "[COLOR {0}]We are unable to write to the current backup directory, would you like to change the location?[/COLOR]".format(
                                              CONFIG.COLOR2),
-                                         yeslabel="[B][COLOR springgreen]Change Directory[/COLOR][/B]",
+                                         yeslabel="[B][COLOR deepskyblue]Change Directory[/COLOR][/B]",
                                          nolabel="[B][COLOR deepskyblue]Cancel[/COLOR][/B]"):
                         CONFIG.open_settings()
                         return
