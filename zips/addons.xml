@@ -25,9 +25,9 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
 <addon id="plugin.program.cleaner" name="[COLOR deepskyblue]Newf's[/COLOR] Wizard" version="1.0.0" provider-name="Newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.speedtester" version="10.0.1" />
         <import addon="script.module.requests" />
         <import addon="script.module.six" />
+        <import addon="script.speedtester" version="10.0.1" optional="true"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>executable</provides>
