@@ -72,7 +72,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
     </extension>
 </addon>
 
-<addon id="skin.finder" version="1.0.1" name="Finder Skin" provider-name="newf276">
+<addon id="skin.finder" version="1.0.2" name="Finder Skin" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -168,7 +168,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
     </extension>
 </addon>
 
-<addon id="skin.sestuary" version="1.0.1" name="Sestuary" provider-name="newf276">
+<addon id="skin.sestuary" version="1.0.2" name="Sestuary" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -415,7 +415,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
     </extension>
 </addon>
 
-<addon id="skin.newf" version="1.0.1" name="Newf Skin" provider-name="newf276">
+<addon id="skin.newf" version="1.0.2" name="Newf Skin" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -678,7 +678,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
   </extension>
 </addon>
 
-<addon id="skin.festuary" version="1.0.1" name="Festuary" provider-name="newf276">
+<addon id="skin.festuary" version="1.0.2" name="Festuary" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -706,7 +706,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
 	</extension>
 </addon>
 
-<addon id="skin.pestuary" version="1.0.1" name="Pestuary" provider-name="newf276">
+<addon id="skin.pestuary" version="1.0.2" name="Pestuary" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>

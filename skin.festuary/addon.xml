@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.festuary" version="1.0.1" name="Festuary" provider-name="newf276">
+<addon id="skin.festuary" version="1.0.2" name="Festuary" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
