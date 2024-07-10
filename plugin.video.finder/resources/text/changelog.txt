@@ -1,3 +1,0 @@
-- Finder first fork of Fen Light
-
-Version 1.0.0

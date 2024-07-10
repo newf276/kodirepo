@@ -622,6 +622,14 @@
                         <property name="setting_description">Choose this and the individual lists within the Extras window will each utilize a scrollbar when needed</property>
                         <onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=settings_manager.set_boolean&amp;setting_id=extras.enable_scrollbars)</onclick>
                     </item>
+                    <item>
+                        <visible>Container(2000).HasFocus(20)</visible>
+                        <property name="setting_label">Default Extras Video Playback Quality</property>
+                        <property name="setting_type">action</property>
+                        <property name="setting_value">$INFO[Window(10000).Property(fenlight.extras.videos_default_name)]</property>
+                        <property name="setting_description">Choose the default quality to play videos from the videos section of Extras. Includes an option to always choose which quality per video. If quality is unavailable, then the choices will be shown to decide</property>
+                        <onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=settings_manager.set_from_list&amp;setting_id=extras.videos_default)</onclick>
+                    </item>
             <!-- Custom Actions -->
                     <item>
                         <visible>Container(2000).HasFocus(20)</visible>
@@ -759,14 +767,6 @@
                         <property name="setting_value">$INFO[Window(10000).Property(fenlight.use_viewtypes)]</property>
                         <property name="setting_description">Enable this and Fen Light will control view types used within the addon. This can be disabled if the skin you are using has a helper that provides a "lock view" type function. If enabled, views can be set in Tools->Set Views within the addon</property>
                         <onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=settings_manager.set_boolean&amp;setting_id=use_viewtypes)</onclick>
-                    </item>
-                    <item>
-                        <visible>Container(2000).HasFocus(30)</visible>
-                        <property name="setting_label">Shuffle Appearance Order of Personal/Liked Trakt Lists</property>
-                        <property name="setting_type">boolean</property>
-                        <property name="setting_value">$INFO[Window(10000).Property(fenlight.shuffle_trakt_personal)]</property>
-                        <property name="setting_description">Randomize the order that Trakt Personal and Liked lists present within Fen Light</property>
-                        <onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=settings_manager.set_boolean&amp;setting_id=shuffle_trakt_personal)</onclick>
                     </item>
             <!-- Trakt Calendar -->
                     <item>
