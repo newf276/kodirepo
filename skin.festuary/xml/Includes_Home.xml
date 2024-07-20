@@ -149,7 +149,7 @@
 	</include>
 	<include name="WidgetListEpisodes">
 		<param name="main_label">$INFO[ListItem.Title]</param>
-		<param name="sub_label">[B][COLOR silver]$INFO[ListItem.TVShowTitle][/COLOR][/B]</param>
+		<param name="sub_label">[B][COLOR deepskyblue]$INFO[ListItem.TVShowTitle][/COLOR][/B]</param>
 		<param name="thumb_label">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode]</param>
 		<param name="sortby"></param>
 		<param name="visible">True</param>
