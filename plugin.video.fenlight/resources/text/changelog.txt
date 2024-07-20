@@ -1,4 +1,23 @@
-++
+[COLOR darkgoldenrod]GOD BLESS HIM AND KEEP HIM SAFE.[/COLOR]
+
+[COLOR dodgerblue][B]Version 1.0.62[/B][/COLOR]
+- Added "belongs_to_collection" listitem property to movie items. Skins can use this to display whether listitem is part of a collection.
+- Other changes/fixes.
+
+[COLOR dodgerblue][B]Version 1.0.61[/B][/COLOR]
+- Quick fix for pagination when using shuffled Trakt personal lists.
+- Other changes/fixes.
+
+[COLOR dodgerblue][B]Version 1.0.60[/B][/COLOR]
+- Couple of changes.
+- God Bless him and keep him safe.
+
+[COLOR dodgerblue][B]Version 1.0.59[/B][/COLOR]
+- Added "Trakt Lists Manager", "Favorites Manager" and "Browse Recommended" to Movie and TV Show context menus.
+- Added "Shufflle Contents Trakt My Lists" and "Shufflle Contents Trakt Liked Lists" to Random Lists->Trakt. Select the wanted list, and it will present the contents shuffled randomly.
+- Added "Browse Movie Set" to Movies context menu. Select this to load a browsable list of all movies belonging to the same Movie Set as the currently selected item. This menu will not appear if the currently selected item is not part of a Movie Set.
+- Removed Custom Actions from Settings->Features.
+- Other changes/fixes.
 
 [COLOR dodgerblue][B]Version 1.0.58[/B][/COLOR]
 - Added setting Features->Extras->"Default Extras Video Playback Quality". Choose a default quality to play back videos from the Extras menu. Or choose "Choose" to be prompted for quality for each video selected.
