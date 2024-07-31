@@ -1,0 +1,302 @@
+# Kodi Media Center language file
+# Addon Name: CBC Olympics
+# Addon id: plugin.video.cbcolympics
+msgid ""
+msgstr ""
+
+# General
+msgctxt "#30999"
+msgid "CBC Olympics"
+msgstr ""
+
+# Sport names
+msgctxt "#30000"
+msgid "Archery"
+msgstr ""
+
+msgctxt "#30001"
+msgid "Artistic Swimming"
+msgstr ""
+
+msgctxt "#30002"
+msgid "Athletics"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Badminton"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Basketball"
+msgstr ""
+
+msgctxt "#30005"
+msgid "3x3 Basketball"
+msgstr ""
+
+msgctxt "#30006"
+msgid "Beach Volleyball"
+msgstr ""
+
+msgctxt "#30007"
+msgid "Boxing"
+msgstr ""
+
+msgctxt "#30008"
+msgid "Breaking"
+msgstr ""
+
+msgctxt "#30009"
+msgid "Canoe"
+msgstr ""
+
+msgctxt "#30010"
+msgid "Cycling"
+msgstr ""
+
+msgctxt "#30011"
+msgid "Diving"
+msgstr ""
+
+msgctxt "#30012"
+msgid "Equestrian"
+msgstr ""
+
+msgctxt "#30013"
+msgid "Fencing"
+msgstr ""
+
+msgctxt "#30014"
+msgid "Field Hockey"
+msgstr ""
+
+msgctxt "#30015"
+msgid "Golf"
+msgstr ""
+
+msgctxt "#30016"
+msgid "Gymnastics (Artistic)"
+msgstr ""
+
+msgctxt "#30017"
+msgid "Gymnastics (Rhythmic)"
+msgstr ""
+
+msgctxt "#30018"
+msgid "Gymnastics (Trampoline)"
+msgstr ""
+
+msgctxt "#30019"
+msgid "Handball"
+msgstr ""
+
+msgctxt "#30020"
+msgid "Judo"
+msgstr ""
+
+msgctxt "#30021"
+msgid "Modern Pentathlon"
+msgstr ""
+
+msgctxt "#30022"
+msgid "Rowing"
+msgstr ""
+
+msgctxt "#30023"
+msgid "Rugby"
+msgstr ""
+
+msgctxt "#30024"
+msgid "Sailing"
+msgstr ""
+
+msgctxt "#30025"
+msgid "Shooting"
+msgstr ""
+
+msgctxt "#30026"
+msgid "Skateboarding"
+msgstr ""
+
+msgctxt "#30027"
+msgid "Soccer"
+msgstr ""
+
+msgctxt "#30028"
+msgid "Sport Climbing"
+msgstr ""
+
+msgctxt "#30029"
+msgid "Surfing"
+msgstr ""
+
+msgctxt "#30030"
+msgid "Swimming"
+msgstr ""
+
+msgctxt "#30031"
+msgid "Table Tennis"
+msgstr ""
+
+msgctxt "#30032"
+msgid "Taekwondo"
+msgstr ""
+
+msgctxt "#30033"
+msgid "Tennis"
+msgstr ""
+
+msgctxt "#30034"
+msgid "Triathlon"
+msgstr ""
+
+msgctxt "#30035"
+msgid "Volleyball"
+msgstr ""
+
+msgctxt "#30036"
+msgid "Water Polo"
+msgstr ""
+
+msgctxt "#30037"
+msgid "Weightlifting"
+msgstr ""
+
+msgctxt "#30038"
+msgid "Wrestling"
+msgstr ""
+
+# Static categories
+msgctxt "#30200"
+msgid "Live Now & Upcoming"
+msgstr ""
+
+msgctxt "#30201"
+msgid "Replays"
+msgstr ""
+
+msgctxt "#30202"
+msgid "Sports"
+msgstr ""
+
+msgctxt "#30203"
+msgid "Highlights"
+msgstr ""
+
+msgctxt "#30204"
+msgid "Team Canada"
+msgstr ""
+
+msgctxt "#30205"
+msgid "Feature: Breakthrough"
+msgstr ""
+
+msgctxt "#30206"
+msgid "Feature: Make or Break"
+msgstr ""
+
+msgctxt "#30207"
+msgid "Feature: Faster Higher Stronger"
+msgstr ""
+
+msgctxt "#30208"
+msgid "Feature: Spotlight"
+msgstr ""
+
+msgctxt "#30209"
+msgid "Feature: Feed the Dream"
+msgstr ""
+
+msgctxt "#30210"
+msgid "Feature: Betcha Didn't Know"
+msgstr ""
+
+msgctxt "#30211"
+msgid "Feature: Medal Moments"
+msgstr ""
+
+msgctxt "#30212"
+msgid "Feature: Fly the Flag"
+msgstr ""
+
+msgctxt "#30213"
+msgid "Feature: Lumières sur Paris"
+msgstr ""
+
+msgctxt "#30214"
+msgid "Feature: Celebrating Women in Sport"
+msgstr ""
+
+msgctxt "#30215"
+msgid "Feature: Real Magic"
+msgstr ""
+
+msgctxt "#30216"
+msgid "Feature: Paris Tonight"
+msgstr ""
+
+msgctxt "#30217"
+msgid "Feature: While You Were Sleeping"
+msgstr ""
+
+msgctxt "#30218"
+msgid "Feature: Road To The Olympic Games"
+msgstr ""
+
+# General
+msgctxt "#30300"
+msgid ""
+msgstr ""
+
+msgctxt "#30301"
+msgid "General"
+msgstr ""
+
+msgctxt "#30302"
+msgid "Bit rate limit (kbit/s)"
+msgstr ""
+
+msgctxt "#30303"
+msgid "Upcoming at {0}"
+msgstr ""
+
+msgctxt "#30304"
+msgid "Live since {0}"
+msgstr ""
+
+msgctxt "#30305"
+msgid "Replay"
+msgstr ""
+
+msgctxt "#30306"
+msgid "{0} page {1}..."
+msgstr ""
+
+# Errors
+msgctxt "#30900"
+msgid "No URL or ID provided for video"
+msgstr ""
+
+msgctxt "#30901"
+msgid "Invalid paramstring: {0}"
+msgstr ""
+
+msgctxt "#30902"
+msgid "The server did not return a valid stream. Please try again later."
+msgstr ""
+
+msgctxt "#30903"
+msgid "The server has denied the request. This is typically due to geoblocking. Be sure that you're on a Canadian IP address."
+msgstr ""
+
+msgctxt "#30904"
+msgid "The stream for this upcoming event is not yet available. Please wait and try again closer to its scheduled start time."
+msgstr ""
+
+msgctxt "#30905"
+msgid "This stream was not found."
+msgstr ""
+
+msgctxt "#30906"
+msgid "HTTP error {0}: {1}"
+msgstr ""
