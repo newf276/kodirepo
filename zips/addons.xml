@@ -156,7 +156,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.fenlight" name="Fen Light" provider-name="Tikipeter" version="1.0.63">
+<addon id="plugin.video.fenlight" name="Fen Light" provider-name="Tikipeter" version="1.0.64">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>
@@ -284,39 +284,6 @@
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
     </assets>
-  </extension>
-</addon>
-
-<addon id="plugin.video.cbc"
-       name="CBC Gem"
-       version="5.0.19+matrix.1"
-       provider-name="micahg,t1m,smf007,oshanrube">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
-    <import addon="script.module.requests" version="2.22.0"/>
-    <import addon="script.module.inputstreamhelper" version="0.5.6"/>
-    <import addon="script.module.routing" version="0.2.3+matrix.1"/>
-    <import addon="script.module.beautifulsoup4" version="4.9.3+matrix.1"/>
-    <import addon="script.module.unidecode" version="1.1.1+matrix.2"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-	<provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
-    </assets>
-    <summary lang="en_GB">CBC TV Kodi Plugin</summary>
-    <description lang="en_GB">View online content from the Canadian Broadcasting Corporation.</description>
-    <platform>all</platform>
-    <language>en</language>
-    <disclaimer lang="en_GB">For bugs, requests or general questions visit the CBC TV thread on the Kodi forum.</disclaimer>
-    <license>GPL-2.0-or-later</license>
-    <forum>https://forum.kodi.tv/showthread.php?tid=328421</forum>
-    <website>https://watch.cbc.ca/</website>
-    <source>https://github.com/micahg/plugin.video.cbc</source>
-    <news>- Fix live channels and IPTV</news>
   </extension>
 </addon>
 
@@ -607,55 +574,6 @@
     <language></language>
     <website></website>
     <news>Brand new settings!</news>
-    <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
-    </assets>
-  </extension>
-</addon>
-
-<addon id="plugin.video.cbcolympics"
-       name="CBC Olympics"
-       version="2.3.1"
-       provider-name="fourpointsix">
-  <requires>
-    <!-- Enable this for Kodi 16.x through 18.x -->
-    <!--<import addon="xbmc.python" version="2.24.0"/>-->
-    <!-- Enable this for Kodi 19.x and newer -->
-    <import addon="xbmc.python" version="3.0.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">CBC Olympics</summary>
-    <description lang="en_GB">Paris 2024 Summer Olympics streams from the CBC. Streams are geo-blocked so you must be on a Canadian IP for this to work.</description>
-    <platform>all</platform>
-    <language>en_GB</language>
-    <license>GPL-3.0-only</license>
-    <source>https://github.com/fourpointsix/plugin.video.cbcolympics</source>
-    <news>v2.0.0 (2021-07-29)
-- Re-written for Tokyo 2020
-
-v2.1.0 (2021-08-04)
-- Better handling of M3U8 files and bitrate selection since 7 Mbit 1080p streams were added.
-- More consistent handling of URLs containing Unicode characters
-- Added five more "features" categories
-
-v2.2.0 (2022-01-28)
-- Updated for Beijing 2022
-
-v2.3.0 (2024-07-27)
-- Updated for Paris 2024
-
-v2.3.1 (2024-07-28)
-- Added event durations
-- Limited past events to those that are within the last year to eliminate leftover Tokyo clips
-- Limited future events to those that are less than 4 hours away
-- Fixed "next pages" always being replays
-- Removed custom bitrate selection as it caused some streams to have no audio
-- Bitrate selection now the responsibility of Kodi
-- In-player program selection and audio track selection now work on streams that support them</news>
     <assets>
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
