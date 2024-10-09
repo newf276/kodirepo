@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addons>
+<addon id="plugin.program.cleaner" name="[COLOR deepskyblue]Newf's[/COLOR] Wizard" version="1.0.0" provider-name="Newf276">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.six" />
+        <import addon="script.speedtester" version="10.0.1" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="startup.py" start="startup" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">[COLOR deepskyblue]Newf's Wizard[/COLOR] + Cache Cleaner</summary>
+        <description lang="en">[COLOR deepskyblue]Newf's Wizard[/COLOR] + Cache Cleaner offers many maintenance features, selective add-on data saving, and automated build installs.</description>
+        <platform>all</platform>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <source>https://newf276.github.io/</source>
+        <news>Version 1.0.0 - Initial Commit</news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="plugin.video.fenlight" name="Fen Light" provider-name="Tikipeter" version="1.0.84">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.19.1"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="resources/lib/fenlight.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="resources/lib/service.py"/>
+    <extension point="xbmc.python.module" library="resources/lib/"/>
+    <extension point="xbmc.addon.metadata">
+        <reuselanguageinvoker>true</reuselanguageinvoker>
+        <summary lang="en">Access your content from Easynews and Debrid Clouds.</summary>
+        <description lang="en">This add-on is intended for advanced Kodi users only. You must own the content of any media you play through this addon. This is an English language only add-on.</description>
+        <platform>all</platform>
+		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
+        <license/>
+        <assets>
+            <icon>resources/media/fenlight_icon.png</icon>
+            <fanart>resources/media/fenlight_fanart2.jpg</fanart>
+        </assets>
+        <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
+    </extension>
+</addon>
+
+<addon id="skin.finder" version="1.0.2" name="Finder Skin" provider-name="newf276">
+	<requires>
+		<import addon="xbmc.gui" version="5.17.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
+		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+        <summary lang="en">Made for Finder-Finder is basically estuary with minmal changes to the Movie and TVShow Menu widgets.</summary>
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<forum>http://forum.kodi.tv/</forum>
+		<source></source>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+        <description>Finder is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with FenLight Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search myflix in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
+	</extension>
+</addon>
+
+<addon id="plugin.video.fen" name="Fen" provider-name="Tikipeter" version="3.2.29">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.19.1"/>
+    </requires>
+    <extension library="resources/lib/fen.py" point="xbmc.python.pluginsource">
+        <provides>video</provides>
+    </extension>
+    <extension library="resources/lib/service.py" point="xbmc.service"/>
+    <extension library="resources/lib/" point="xbmc.python.module"/>
+    <extension point="xbmc.addon.metadata">
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <summary lang="en">Access your content from Furk, Easynews and Debrid Clouds.</summary>
+        <description lang="en">This add-on is intended for advanced Kodi users only. You must own the content of any media you play through this addon.</description>
+        <platform>all</platform>
+		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+        <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
+    </extension>
+</addon>
+
+<addon id="skin.sestuary" version="1.0.2" name="Skin Sestuary" provider-name="newf276">
+	<requires>
+		<import addon="xbmc.gui" version="5.17.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
+		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+        <summary lang="en">estuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets.</summary>
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<forum>http://forum.kodi.tv/</forum>
+		<source></source>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+        <description>Sestuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with Seren Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search seren in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
+	</extension>
+</addon>
+
+<addon id="repository.newf" name="[COLOR deepskyblue]Repository Newf[/COLOR]" version="1.4.9" provider-name="[COLOR deepskyblue]Newf276[/COLOR]">
+    <extension point="xbmc.addon.repository" name="[COLOR deepskyblue]Repository Newf[/COLOR]">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/newf276/kodirepo/master/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/newf276/kodirepo/master/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/newf276/kodirepo/master/zips/</datadir>
+        </dir>
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/CocoJoe2411/repository.cocoscrapers/master/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/CocoJoe2411/repository.cocoscrapers/master/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/CocoJoe2411/repository.cocoscrapers/master/zips/</datadir>
+        </dir>
+		<dir>
+	        <info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
+	        <checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
+	        <datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
+		</dir>
+        <dir>
+			<info compressed="false">https://raw.githubusercontent.com/dobbelina/repository.dobbelina/master/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/dobbelina/repository.dobbelina/master/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/dobbelina/repository.dobbelina/master/</datadir>
+        </dir>
+        <dir>
+            <info>https://raw.githubusercontent.com/newt-sc/a4kSubtitles/master/packages/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/newt-sc/a4kSubtitles/master/packages/addons.xml.crc</checksum>
+            <datadir>https://github.com/newt-sc/a4kSubtitles/archive</datadir>
+            <artdir>https://github.com/a4k-openproject/a4kSubtitles/releases/download/v0.0.13</artdir>
+        </dir>
+        <dir>
+            <info compressed="false">https://slyguy.uk/.repo/repository.slyguy/addons.xml</info>
+            <checksum>https://slyguy.uk/.repo/repository.slyguy/addons.xml.md5</checksum>
+            <datadir zip="true">https://slyguy.uk/.repo/repository.slyguy/</datadir>
+        </dir>
+        <dir>
+            <info compressed="false">https://slyguy.uk/.repo/repository.slyguy.inputstreamhelper/addons.xml</info>
+            <checksum>https://slyguy.uk/.repo/repository.slyguy.inputstreamhelper/addons.xml.md5</checksum>
+            <datadir zip="true">https://slyguy.uk/.repo/repository.slyguy.inputstreamhelper/</datadir>
+        </dir>
+        <dir>
+            <info compressed="false">https://slyguy.uk/.repo/repository.slyguy.youtube/addons.xml</info>
+            <checksum>https://slyguy.uk/.repo/repository.slyguy.youtube/addons.xml.md5</checksum>
+            <datadir zip="true">https://slyguy.uk/.repo/repository.slyguy.youtube/</datadir>
+        </dir>
+            <dir minversion="20.90.0" maxversion="22.9.9">
+            <info compressed="false">https://raw.githubusercontent.com/nebulous42069/Omega/master/omega/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/nebulous42069/Omega/master/omega/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/nebulous42069/Omega/master/omega/zips/</datadir>
+        </dir>
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/Zaxxon709/zaxxon/main/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/Zaxxon709/zaxxon/main/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/Zaxxon709/zaxxon/main/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>kodirepo</summary>
+        <description>Newfs kodi stuff</description>
+        <disclaimer></disclaimer>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="screensaver.weather" name="Weather Screensaver" version="10.0.0" provider-name="Newf276">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+  <extension point="xbmc.ui.screensaver" library="default.py"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Display the weather dialog as screensaver</summary>
+    <description lang="en_GB">Display the weather dialog as screensaver</description>
+    <language>en</language>
+    <platform>all</platform>
+    <license>MIT</license>
+    <website>https://newf276.github.io/</website>
+    <source>https://github.com/newf276/kodirepo/screensaver.weather</source>
+    <news>v10.0.0 (2024-05-25) - initial version</news>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="skin.fen" version="1.0.2" name="Skin Fen" provider-name="newf276">
+	<requires>
+		<import addon="xbmc.gui" version="5.17.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
+		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+        <summary lang="en">Made for Fen, it is basically estuary with minmal changes to the Movie and TVShow Menu widgets.</summary>
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<forum>http://forum.kodi.tv/</forum>
+		<source></source>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+        <description>Fen Skin is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with FenLight Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search myflix in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
+	</extension>
+</addon>
+
+<addon id="plugin.video.xumoplay" name="Xumo Play" version="1.0.0" provider-name="MetalChris">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.requests" version="2.9.1"/>
+    <import addon="script.module.inputstreamhelper"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Xumo Play</summary>
+    <description lang="en">Xumo Play is your destination for free LIVE and on-demand streaming channels ranging from sports highlights to fun recipes to music and festival coverage to stand up comedy.</description>
+    <disclaimer lang="en"></disclaimer>
+    <language></language>
+    <platform>all</platform>
+    <license>GPL(v2 or later)</license>
+    <forum></forum>
+    <website>https://play.xumo.com</website>
+    <email></email>
+    <source></source>
+    <news>Fix for limit of 25 items on VOD categories.</news>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="plugin.video.seren" version="6.0.3" name="Seren" provider-name="Newf276">
+    <requires>
+        <import addon="xbmc.addon" version="17.9.910" />
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" version="2.27.0" />
+        <import addon="script.module.beautifulsoup4" version="4.9.3"/>
+        <import addon="context.seren" version="1.0.0"/>
+        <import addon="script.module.inputstreamhelper" version="0.5.10" optional="true"/>
+        <import addon="script.module.unidecode" version="1.1.1"/>
+        <import addon="script.module.myconnpy" version="8.0.18"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="seren.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py"/>
+    <extension point="xbmc.addon.metadata">
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <summary lang="en">Seren - Modular Multi-source Addon</summary>
+        <description lang="en">Seren is a modular provider based, cloud service streaming software that is tightly
+            interwoven with Trakt. Seren provides the freedom to view media from a single menu system from service
+            providers of the users choosing. Please Note: This addon requires the use of a compatible cloud service.
+        </description>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <forum/>
+        <website>https://github.com/nixgates/plugin.video.seren</website>
+        <source>https://github.com/nixgates/plugin.video.seren</source>
+        <disclaimer lang="en">
+            Last updated: September 09, 2019.
+            The information contained within the Seren software (the "Service") is for general information purposes
+            only.
+            The author assumes no responsibility for errors, omissions in the contents on the Service, nor does it
+            assume responsibility for any material provided by any external services.
+            The use of the Service does not author the user to engage in any kind of illegal, criminal or tortious
+            activity through the use of the software, including infringement of any third party intellectual property
+            rights (including without limitation copyright, trade marks, patent, trade secrets and confidential
+            information), fraud, child pornography, trafficking in obscene material, violation of applicable export
+            restrictions, drug dealing, gambling, harassment, stalking, spamming, hacking, sending of viruses or other
+            harmful files or illegal posting of computer passwords or computer code.
+            The user is responsible for all their activity in connection with the use of the Service and the author
+            reserves the right to report any potentially criminal activity to appropriate law enforcement agencies.
+            The user must not transmit to or via the Service, any material that may infringe the intellectual property
+            rights of any third party, or any defamatory, derogatory or offensive material or publication.
+            In no event shall the author of this software be liable for any special, direct, indirect, consequential, or
+            incidental damages or any damages whatsoever, whether in an action of contract, negligence or other tort,
+            arising out of or in connection with the use of the Service or the contents of the Service.
+            The author reserves the right to make additions, deletions, or modification to the contents on the Service
+            at any time without prior notice.
+            The author of this software does not warrant that the software is free of viruses or other harmful
+            components.
+            Seren may contain links to external websites that are not provided or maintained by or in any way affiliated
+            with the author.
+            Please note that the author does not guarantee the accuracy, relevance, timeliness, or completeness of any
+            information on these external websites.
+        </disclaimer>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <clearlogo>resources/images/logo-seren-3.png</clearlogo>
+            <poster>resources/images/poster-seren-3.png</poster>
+            <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
+            <screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
+            <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
+            <screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="context.seren" version="1.0.0" name="Seren - Global Context Menu Items" provider-name="Nixgates">
+	<requires>
+		<import addon="xbmc.addon" version="17.9.910" />
+		<import addon="xbmc.python" version="3.0.0" />
+	</requires>
+	<extension point="kodi.context.item">
+		<menu id="kodi.core.main">
+            <item library="context.py" args="traktManager">
+				<label>$ADDON[context.seren 30008]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.seren.traktManager)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+			<item library="context.py" args="rescrape_ss">
+				<label>$ADDON[context.seren 30010]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.seren.rescrape_ss)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+			<item library="context.py" args="findSimilar">
+				<label>$ADDON[context.seren 30005]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.seren.findSimilar)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+		</menu>
+	</extension>
+	<extension point="xbmc.service" library="service.py" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Seren - Global Context Menu Items</summary>
+		<summary lang="nl">Seren - Algemene contextmenu-items</summary>
+		<description lang="en">Adds Context Menu items for Seren menu items throughout Kodi</description>
+		<description lang="nl">Voegt contextmenu-items toe voor Seren-menu-items in Kodi</description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<forum></forum>
+		<website></website>
+		<source></source>
+		<disclaimer lang="en"></disclaimer>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<clearlogo>resources/images/logo-seren-3.png</clearlogo>
+			<poster>resources/images/poster-seren-3.png</poster>
+		</assets>
+		<news>
+			Changelog 3.0.2
+			Compressed icons from 3.53 MB to 1.34
+			Update background color to Black
+
+			Changelog 3.0.1
+			Fix Shuffle play copy pasta mix up
+			Resolve settings not showing in Kodi
+
+			Changelog 3.0.0
+			Re-write of context menu addon, supporting py3 only (Matrix and above)
+			Update icons to match Seren 3.0.0 release
+			Update language support set to match Seren (add auto-translated Hebrew)
+
+			Changelog 2.2.0
+			Added "Rescrape and Source Select" context menu item.
+
+			Changelog 2.1.2
+			Added Polish translation
+
+			Changelog 2.1.1:
+			Implemented a workaround for broken future.backports module method (fixes Leia issues)
+
+			Changelog 2.1.0:
+			Refactored code to modern standards
+			Use backported URL lib for py2 to ensure unicode compatibility
+			Extracted out common functions and reused
+			Add settings to enable/disable individual items
+			Add more localizations
+			Add GitHub issue templates
+
+			Changelog 2.0.2:
+			Make python version agnostic
+
+			Changelog 2.0.1:
+			Fixed addon icons/fanart
+
+			Changelog 2.0.0:
+			Rework for Seren 2.0
+		</news>
+	</extension>
+</addon>
+
+<addon id="plugin.video.daddylive" name="Daddylive" version="4.19" provider-name="THE CREW">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" />
+        <import addon="script.module.inputstreamhelper" />
+        <import addon="script.module.six"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <description lang="pl">1.2</description>
+        <disclaimer lang="pl">test
+        </disclaimer>
+        <summary lang="en">Live TV and Sports</summary>
+        <description lang="en">Live TV and Sports</description>
+        <disclaimer lang="en">test
+        </disclaimer>
+        <language>pl</language>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+        <website></website>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="script.speedtester" name="Speed Tester" version="10.0.1" provider-name="newf276">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.python.script" library="resources/lib/addon_entry.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en_GB">Test your Internet Speed</summary>
+    <description lang="en_GB">This add-on tests your Internet bandwith and reports both download and upload speeds and latency from within Kodi. Use this if you are experiencing streaming issues and you suspect your network to be the cause.</description>
+    <disclaimer lang="en_GB">Speed Tester is powered by speedtest.net</disclaimer>
+    <language>en</language>
+    <license>Apache-2.0</license>
+    <news>Fix for Omega</news>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      <screenshot>resources/media/screenshot01.jpg</screenshot>
+      <screenshot>resources/media/screenshot02.jpg</screenshot>
+      <screenshot>resources/media/screenshot03.jpg</screenshot>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="plugin.audio.iheart"
+       name="iHeartRadio"
+       version="2.0.2"
+       provider-name="newf276">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.requests" version="2.22.0+matrix.1"/>
+    <import addon="script.common.plugin.cache" version="2.6.1.1"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>audio</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_US">Live radio over the internet</summary>
+    <description lang="en_US">
+    Listen to more than 1,500 live radio stations from coast-to-coast including pop, country, urban, rock, talk, and college.[CR]
+    Browse radio stations by music genre and location.[CR]
+    Read more: http://news.iheart.com/about/
+    </description>
+    <platform>all</platform>
+    <language>en_US</language>
+    <license>GPL-2.0-or-later</license>
+        <website>https://github.com/newf276/repository.newf/tree/main/</website>
+        <source>https://github.com/newf276/repository.newf/tree/main/plugin.audio.iheart</source>
+    <news>v2.0.2 (01/30/2022)</news>
+    <assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+
+<addon  id="plugin.video.embycon"
+        name="EmbyCon"
+        version="1.11.30"
+        provider-name="Team B">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.pil" version="1.1.7"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video audio</provides>
+        <medialibraryscanpath content="movies">library/movies</medialibraryscanpath>
+  </extension>
+  <extension point="xbmc.service" library="service.py" start="login"/>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <language>en</language>
+    <license>GPL-2.0-only</license>
+    <forum>https://github.com/faush01/plugin.video.embycon/issues</forum>
+    <website>https://github.com/faush01/plugin.video.embycon/wiki</website>
+    <source>https://github.com/faush01/plugin.video.embycon</source>
+    <summary lang="en_GB">Browse and play your Emby server media library.</summary>
+    <description lang="en_GB">An addon to allow you to browse and playback your Emby (www.emby.media) Movie, TV Show and Music collections.</description>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="skin.festuary" version="1.0.2" name="Skin Festuary" provider-name="newf276">
+	<requires>
+		<import addon="xbmc.gui" version="5.17.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
+		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+        <summary lang="en">Made for Fenlight-Festuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets.</summary>
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<forum>http://forum.kodi.tv/</forum>
+		<source></source>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+        <description>Festuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with FenLight Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search myflix in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
+	</extension>
+</addon>
+
+<addon id="plugin.video.finder" name="Finder" provider-name="Newf276" version="1.0.84">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.19.1"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="resources/lib/finder.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="resources/lib/service.py"/>
+    <extension point="xbmc.python.module" library="resources/lib/"/>
+    <extension point="xbmc.addon.metadata">
+        <reuselanguageinvoker>true</reuselanguageinvoker>
+        <summary lang="en">Access your content from Easynews and Debrid Clouds.</summary>
+        <description lang="en">This add-on is intended for advanced Kodi users only. You must own the content of any media you play through this addon. This is an English language only add-on.</description>
+        <platform>all</platform>
+		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
+        <license/>
+        <assets>
+            <icon>resources/media/finder_icon.png</icon>
+            <fanart>resources/media/finder_fanart2.jpg</fanart>
+        </assets>
+        <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
+    </extension>
+</addon>
+</addons>
