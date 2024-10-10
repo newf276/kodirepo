@@ -25,7 +25,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.fenlight" name="Fen Light" provider-name="Tikipeter" version="1.0.84">
+<addon id="plugin.video.fenlight" name="Fen Light" provider-name="Tikipeter" version="1.0.85">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>
@@ -50,84 +50,26 @@
     </extension>
 </addon>
 
-<addon id="skin.finder" version="1.0.2" name="Finder Skin" provider-name="newf276">
+<addon id="weather.multi2" name="Multi Weather 2" version="420" provider-name="ronie">
 	<requires>
-		<import addon="xbmc.gui" version="5.17.0"/>
+		<import addon="xbmc.python" version="3.0.0"/>
+		<import addon="script.openweathermap.maps" version="1.0.4"/>
+		<import addon="script.module.requests" version="2.22.0+matrix.1"/>
+		<import addon="script.module.dateutil" version="2.8.1+matrix.1"/>
 	</requires>
-	<extension point="xbmc.gui.skin" debugging="false">
-		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
-		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
-		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
-		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
-		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
-		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
-		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
-		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
-	</extension>
+	<extension point="xbmc.python.weather" library="default.py"/>
 	<extension point="xbmc.addon.metadata">
-        <summary lang="en">Made for Finder-Finder is basically estuary with minmal changes to the Movie and TVShow Menu widgets.</summary>
+		<summary lang="en_GB">Weather forecast from several providers</summary>
+		<description lang="en_GB">Weather forecast provided by Yahoo, Weatherbit and Openweathermap</description>
 		<platform>all</platform>
-		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
-		<forum>http://forum.kodi.tv/</forum>
-		<source></source>
+		<license>GPL-2.0-only</license>
+		<forum>https://forum.kodi.tv/showthread.php?tid=352028</forum>
+		<source>https://gitlab.com/ronie/weather.multi2/</source>
 		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
 		</assets>
-        <description>Finder is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with FenLight Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search myflix in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
-	</extension>
-</addon>
-
-<addon id="plugin.video.fen" name="Fen" provider-name="Tikipeter" version="3.2.29">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
-        <import addon="script.module.requests" version="2.19.1"/>
-    </requires>
-    <extension library="resources/lib/fen.py" point="xbmc.python.pluginsource">
-        <provides>video</provides>
-    </extension>
-    <extension library="resources/lib/service.py" point="xbmc.service"/>
-    <extension library="resources/lib/" point="xbmc.python.module"/>
-    <extension point="xbmc.addon.metadata">
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-        <summary lang="en">Access your content from Furk, Easynews and Debrid Clouds.</summary>
-        <description lang="en">This add-on is intended for advanced Kodi users only. You must own the content of any media you play through this addon.</description>
-        <platform>all</platform>
-		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-        <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
-    </extension>
-</addon>
-
-<addon id="skin.sestuary" version="1.0.2" name="Skin Sestuary" provider-name="newf276">
-	<requires>
-		<import addon="xbmc.gui" version="5.17.0"/>
-	</requires>
-	<extension point="xbmc.gui.skin" debugging="false">
-		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
-		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
-		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
-		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
-		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
-		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
-		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
-		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
-	</extension>
-	<extension point="xbmc.addon.metadata">
-        <summary lang="en">estuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets.</summary>
-		<platform>all</platform>
-		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
-		<forum>http://forum.kodi.tv/</forum>
-		<source></source>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-		</assets>
-        <description>Sestuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with Seren Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search seren in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
+		<news>- fix yahoo weather again</news>
 	</extension>
 </addon>
 
@@ -218,7 +160,7 @@
   </extension>
 </addon>
 
-<addon id="skin.fen" version="1.0.2" name="Skin Fen" provider-name="newf276">
+<addon id="skin.fenlight" version="1.0.2" name="Skin Fenlight" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -233,7 +175,7 @@
 		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
-        <summary lang="en">Made for Fen, it is basically estuary with minmal changes to the Movie and TVShow Menu widgets.</summary>
+        <summary lang="en">Made for Fenlight-Fenlight is basically estuary with minmal changes to the Movie and TVShow Menu widgets.</summary>
 		<platform>all</platform>
 		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
 		<forum>http://forum.kodi.tv/</forum>
@@ -242,7 +184,7 @@
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
 		</assets>
-        <description>Fen Skin is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with FenLight Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search myflix in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
+        <description>Fenlight is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with FenLight Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search myflix in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
 	</extension>
 </addon>
 
@@ -272,6 +214,34 @@
         <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
+</addon>
+
+<addon id="skin.seren" version="1.0.2" name="Skin Seren" provider-name="newf276">
+	<requires>
+		<import addon="xbmc.gui" version="5.17.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
+		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+        <summary lang="en">estuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets.</summary>
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<forum>http://forum.kodi.tv/</forum>
+		<source></source>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+        <description>Seren is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with Seren Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search seren in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
+	</extension>
 </addon>
 
 <addon id="plugin.video.seren" version="6.0.3" name="Seren" provider-name="Newf276">
@@ -537,58 +507,5 @@
         <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
-</addon>
-
-<addon id="skin.festuary" version="1.0.2" name="Skin Festuary" provider-name="newf276">
-	<requires>
-		<import addon="xbmc.gui" version="5.17.0"/>
-	</requires>
-	<extension point="xbmc.gui.skin" debugging="false">
-		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
-		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
-		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
-		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
-		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
-		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
-		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
-		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
-	</extension>
-	<extension point="xbmc.addon.metadata">
-        <summary lang="en">Made for Fenlight-Festuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets.</summary>
-		<platform>all</platform>
-		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
-		<forum>http://forum.kodi.tv/</forum>
-		<source></source>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-		</assets>
-        <description>Festuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with FenLight Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search myflix in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
-	</extension>
-</addon>
-
-<addon id="plugin.video.finder" name="Finder" provider-name="Newf276" version="1.0.84">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
-        <import addon="script.module.requests" version="2.19.1"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="resources/lib/finder.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.service" library="resources/lib/service.py"/>
-    <extension point="xbmc.python.module" library="resources/lib/"/>
-    <extension point="xbmc.addon.metadata">
-        <reuselanguageinvoker>true</reuselanguageinvoker>
-        <summary lang="en">Access your content from Easynews and Debrid Clouds.</summary>
-        <description lang="en">This add-on is intended for advanced Kodi users only. You must own the content of any media you play through this addon. This is an English language only add-on.</description>
-        <platform>all</platform>
-		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
-        <license/>
-        <assets>
-            <icon>resources/media/finder_icon.png</icon>
-            <fanart>resources/media/finder_fanart2.jpg</fanart>
-        </assets>
-        <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
-    </extension>
 </addon>
 </addons>
