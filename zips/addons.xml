@@ -426,35 +426,6 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.daddylive" name="Daddylive" version="4.19" provider-name="THE CREW">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
-        <import addon="script.module.requests" />
-        <import addon="script.module.inputstreamhelper" />
-        <import addon="script.module.six"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="addon.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <description lang="pl">1.2</description>
-        <disclaimer lang="pl">test
-        </disclaimer>
-        <summary lang="en">Live TV and Sports</summary>
-        <description lang="en">Live TV and Sports</description>
-        <disclaimer lang="en">test
-        </disclaimer>
-        <language>pl</language>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-        <website></website>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-</addon>
-
 <addon id="script.speedtester" name="Speed Tester" version="10.0.1" provider-name="newf276">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
@@ -508,35 +479,6 @@
     <assets>
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
-    </assets>
-  </extension>
-</addon>
-
-<addon  id="plugin.video.embycon"
-        name="EmbyCon"
-        version="1.11.30"
-        provider-name="Team B">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
-    <import addon="script.module.pil" version="1.1.7"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video audio</provides>
-        <medialibraryscanpath content="movies">library/movies</medialibraryscanpath>
-  </extension>
-  <extension point="xbmc.service" library="service.py" start="login"/>
-  <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
-    <language>en</language>
-    <license>GPL-2.0-only</license>
-    <forum>https://github.com/faush01/plugin.video.embycon/issues</forum>
-    <website>https://github.com/faush01/plugin.video.embycon/wiki</website>
-    <source>https://github.com/faush01/plugin.video.embycon</source>
-    <summary lang="en_GB">Browse and play your Emby server media library.</summary>
-    <description lang="en_GB">An addon to allow you to browse and playback your Emby (www.emby.media) Movie, TV Show and Music collections.</description>
-    <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
 </addon>
