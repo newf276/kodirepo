@@ -28,26 +28,6 @@
             <artdir>https://github.com/a4k-openproject/a4kSubtitles/releases/download/v0.0.13</artdir>
         </dir>
         <dir>
-            <info compressed="false">https://slyguy.uk/.repo/repository.slyguy/addons.xml</info>
-            <checksum>https://slyguy.uk/.repo/repository.slyguy/addons.xml.md5</checksum>
-            <datadir zip="true">https://slyguy.uk/.repo/repository.slyguy/</datadir>
-        </dir>
-        <dir>
-            <info compressed="false">https://slyguy.uk/.repo/repository.slyguy.inputstreamhelper/addons.xml</info>
-            <checksum>https://slyguy.uk/.repo/repository.slyguy.inputstreamhelper/addons.xml.md5</checksum>
-            <datadir zip="true">https://slyguy.uk/.repo/repository.slyguy.inputstreamhelper/</datadir>
-        </dir>
-        <dir>
-            <info compressed="false">https://slyguy.uk/.repo/repository.slyguy.youtube/addons.xml</info>
-            <checksum>https://slyguy.uk/.repo/repository.slyguy.youtube/addons.xml.md5</checksum>
-            <datadir zip="true">https://slyguy.uk/.repo/repository.slyguy.youtube/</datadir>
-        </dir>
-        <dir>
-			<info compressed="false">https://raw.githubusercontent.com/zomboided/xbmc.zomboided.plugins/master/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/zomboided/xbmc.zomboided.plugins/master/addons.xml.md5</checksum>
-			<datadir zip="true">https://github.com/zomboided/xbmc.zomboided.plugins/raw/master/plugins/</datadir>
-		</dir>
-        <dir>
           <info compressed="false">https://repo.jellyfin.org/releases/client/kodi/addons.xml</info>
           <checksum>https://repo.jellyfin.org/releases/client/kodi/addons.xml.md5</checksum>
           <datadir zip="true">https://repo.jellyfin.org/releases/client/kodi</datadir>
