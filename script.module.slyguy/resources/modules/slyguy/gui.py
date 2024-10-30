@@ -4,7 +4,7 @@ import traceback
 import time
 from contextlib import contextmanager
 
-from six.moves.urllib_parse import quote, urlparse
+from six.moves.urllib_parse import urlparse
 from kodi_six import xbmcgui, xbmc
 
 from . import settings
@@ -12,7 +12,12 @@ from .constants import *
 from .router import add_url_args
 from .language import _
 from .smart_urls import get_dns_rewrites
-from .util import fix_url, set_kodi_string, hash_6
+from .util import fix_url, set_kodi_string, hash_6, get_url_headers, get_headers_from_url
+from .session import Session
+
+
+if KODI_VERSION >= 20:
+    from .listitem import ListItemInfoTag
 
 def _make_heading(heading=None):
     return heading if heading else ADDON_NAME
@@ -27,9 +32,29 @@ def redirect(location):
 def get_view_id():
     return xbmcgui.Window(xbmcgui.getCurrentWindowId()).getFocusId()
 
+def get_art_url(url, headers=None):
+    if not url or not url.lower().startswith(('http', 'plugin')):
+        return url
+
+    if url.lower().startswith('http'):
+        url = url.replace(' ', '%20')
+
+    _headers = {'user-agent': DEFAULT_USERAGENT}
+    _headers.update(headers or {})
+    _headers.update(get_headers_from_url(url))
+
+    if settings.common_settings.getBool('proxy_enabled', True):
+        proxy_path = settings.common_settings.get('_proxy_path')
+        if proxy_path:
+            _headers.update({'session_type': 'art', 'session_addonid': ADDON_ID})
+            if not url.lower().startswith(proxy_path.lower()):
+                url = proxy_path + url
+
+    return url.split('|')[0] + '|' + get_url_headers(_headers)
+
 def exception(heading=None):
     if not heading:
-        heading = _(_.PLUGIN_EXCEPTION, addon=ADDON_NAME, version=ADDON_VERSION)
+        heading = _(_.PLUGIN_EXCEPTION, addon=ADDON_NAME, version=ADDON_VERSION, common_version=COMMON_ADDON.getAddonInfo('version'))
 
     exc_type, exc_value, exc_traceback = sys.exc_info()
 
@@ -117,9 +142,8 @@ def progress(message='', heading=None, percent=0, background=False):
 
 def notification(message, heading=None, icon=None, time=3000, sound=False):
     heading = _make_heading(heading)
-    icon    = ADDON_ICON if not icon else icon
-
-    xbmcgui.Dialog().notification(heading, message, icon, time, sound)
+    icon = ADDON_ICON if not icon else icon
+    xbmcgui.Dialog().notification(heading, message, get_art_url(icon), time, sound)
 
 def select(heading=None, options=None, autoclose=None, multi=False, **kwargs):
     heading = _make_heading(heading)
@@ -233,20 +257,7 @@ class Item(object):
     def is_folder(self, value):
         self._is_folder = value
 
-    def get_url_headers(self, headers=None, cookies=None):
-        string = ''
-        if headers:
-            for key in headers:
-                string += u'{0}={1}&'.format(key, quote(u'{}'.format(headers[key]).encode('utf8')))
-
-        if cookies:
-            string += 'Cookie='
-            for key in cookies:
-                string += u'{0}%3D{1}; '.format(key, quote(u'{}'.format(cookies[key]).encode('utf8')))
-
-        return string.strip().strip('&')
-
-    def get_li(self):
+    def get_li(self, playing=False):
         proxy_path = settings.common_settings.get('_proxy_path')
 
         if KODI_VERSION < 18:
@@ -254,18 +265,13 @@ class Item(object):
         else:
             li = xbmcgui.ListItem(offscreen=True)
 
+        info = self.info.copy()
         if self.label:
             li.setLabel(self.label)
-            if not (self.info.get('plot') or '').strip():
-                self.info['plot'] = '[B][/B]'
 
-            if not self.info.get('title'):
-                self.info['title'] = self.label
-
-        if self.info:
-            info = self.info.copy()
-            if info.get('mediatype') in ('tvshow','season') and settings.common_settings.getBool('show_series_folders', False):
-                info.pop('mediatype')
+        if info:
+            if not info.get('title') and self.label and info.get('mediatype'):
+                info['title'] = self.label
 
             if info.get('mediatype') == 'movie':
                 info.pop('season', None)
@@ -276,6 +282,7 @@ class Item(object):
             aired = info.get('aired') or ''
             premiered = info.get('premiered') or ''
             date_added = info.get('dateadded') or ''
+            date = info.get('date') or ''
 
             if not aired and premiered:
                 info['aired'] = aired = premiered
@@ -292,6 +299,26 @@ class Item(object):
             if not date_added and aired:
                 info['dateadded'] = date_added = '{} 12:00:00'.format(aired)
 
+            if not date and aired:
+                info['date'] = aired
+
+        # there is a kodi bug that wont resume from favourites if you dont call one of a methods on the li
+        # see https://forum.kodi.tv/showthread.php?tid=374491&pid=3167595#pid3167595
+        # Therefore, always calling the below even with empty info
+        if KODI_VERSION >= 20:
+            if info.get('date'):
+                try: li.setDateTime(info.pop('date'))
+                except: pass
+            #TODO: do own 20+ wrapper layer
+            ListItemInfoTag(li, 'video').set_info(info)
+        else:
+            if info.get('date'):
+                try: info['date'] = '{}.{}.{}'.format(info['date'][8:10], info['date'][5:7], info['date'][0:4])
+                except: pass
+
+            if info.get('cast'):
+                try: info['cast'] = [(member['name'], member['role']) for member in info['cast']]
+                except: pass
             li.setInfo('video', info)
 
         if self.specialsort:
@@ -299,30 +326,27 @@ class Item(object):
 
         if self.video:
             li.addStreamInfo('video', self.video)
-
         if self.audio:
             li.addStreamInfo('audio', self.audio)
 
         if self.art:
             defaults = {
-                'poster':    'thumb',
+                'poster': 'thumb',
                 'landscape': 'thumb',
-                'icon':      'thumb',
+                'icon': 'thumb',
             }
 
-            for key in defaults:
-                if key not in self.art:
-                    self.art[key] = self.art.get(defaults[key])
-
+            art = {}
             for key in self.art:
-                if self.art[key] and self.art[key].lower().startswith('http'):
-                    self.art[key] = self.art[key].replace(' ', '%20')
-                elif self.art[key] and self.art[key].lower().startswith('plugin'):
-                    self.art[key] = proxy_path + self.art[key]
+                art[key] = get_art_url(self.art[key])
 
-            li.setArt(self.art)
+            for key in defaults:
+                if key not in art:
+                    art[key] = art.get(defaults[key])
 
-        if self.playable:
+            li.setArt(art)
+
+        if self.playable and not playing:
             li.setProperty('IsPlayable', 'true')
             if self.path:
                 self.path = add_url_args(self.path, _play=1)
@@ -347,17 +371,26 @@ class Item(object):
             if 'referer' not in [x.lower() for x in self.headers]:
                 self.headers['referer'] = '%20'
 
-        headers = self.get_url_headers(self.headers, self.cookies)
+        headers = get_url_headers(self.headers, self.cookies)
         mimetype = self.mimetype
         if not mimetype and self.inputstream:
             mimetype = self.inputstream.mimetype
 
+        def is_http(url):
+            return url.lower().startswith('http://') or url.lower().startswith('https://')
+
         def get_url(url):
             _url = url.lower()
 
-            if _url.startswith('plugin://') or (_url.startswith('http') and self.use_proxy and not _url.startswith(proxy_path)) and settings.common_settings.getBool('proxy_enabled', True):
+            if os.path.exists(xbmc.translatePath(url)) or _url.startswith('special://') or _url.startswith('plugin://') or (is_http(_url) and self.use_proxy and not _url.startswith(proxy_path)) and settings.common_settings.getBool('proxy_enabled', True):
                 url = u'{}{}'.format(proxy_path, url)
 
+            return url
+
+        def redirect_url(url):
+            parse = urlparse(url.lower())
+            if parse.netloc in REDIRECT_HOSTS and is_http(url):
+                url = Session().head(url).headers.get('location') or url
             return url
 
         license_url = None
@@ -366,6 +399,18 @@ class Item(object):
                 li.setProperty('inputstreamaddon', self.inputstream.addon_id)
             else:
                 li.setProperty('inputstream', self.inputstream.addon_id)
+
+            # li.setProperty('inputstream', 'inputstream.ffmpegdirect')
+            # li.setProperty('mimetype', 'application/x-mpegURL')
+            # li.setProperty('inputstream.ffmpegdirect.is_realtime_stream', 'true')
+            # li.setProperty('inputstream.ffmpegdirect.manifest_type', 'hls')
+            # li.setProperty('inputstream.ffmpegdirect.stream_mode', 'timeshift')
+            # li.setProperty('inputstream.ffmpegdirect.open_mode', 'curl')
+
+            self.inputstream.set_setting('HDCPOVERRIDE', 'true')
+
+            if self.inputstream.server_certificate and not self.inputstream.flags:
+                self.inputstream.flags = 'persistent_storage'
 
             li.setProperty('{}.manifest_type'.format(self.inputstream.addon_id), self.inputstream.manifest_type)
 
@@ -380,12 +425,16 @@ class Item(object):
 
             if headers:
                 li.setProperty('{}.stream_headers'.format(self.inputstream.addon_id), headers)
+                li.setProperty('{}.manifest_headers'.format(self.inputstream.addon_id), headers)
+
+            if 'original_language' in self.proxy_data:
+                li.setProperty('{}.original_audio_language'.format(self.inputstream.addon_id), self.proxy_data['original_language'])
 
             if self.inputstream.license_key:
                 license_url = self.inputstream.license_key
-                license_headers = self.get_url_headers(self.inputstream.license_headers) if self.inputstream.license_headers else headers
+                license_headers = get_url_headers(self.inputstream.license_headers) if self.inputstream.license_headers else headers
                 li.setProperty('{}.license_key'.format(self.inputstream.addon_id), u'{url}|Content-Type={content_type}{headers}|{challenge}|{response}'.format(
-                    url = get_url(self.inputstream.license_key),
+                    url = get_url(redirect_url(fix_url(self.inputstream.license_key))),
                     content_type = self.inputstream.content_type,
                     headers = '&' + license_headers if license_headers else '',
                     challenge = self.inputstream.challenge,
@@ -429,72 +478,123 @@ class Item(object):
 
             return u'{}{}'.format(proxy_path, proxy_url)
 
-        if self.path and (self.path.lower().startswith('http://') or self.path.lower().startswith('https://')):
-            if not mimetype:
-                parse = urlparse(self.path.lower())
-                if parse.path.endswith('.m3u') or parse.path.endswith('.m3u8'):
-                    mimetype = 'application/vnd.apple.mpegurl'
-                elif parse.path.endswith('.mpd'):
-                    mimetype = 'application/dash+xml'
-                elif parse.path.endswith('.ism'):
-                    mimetype = 'application/vnd.ms-sstr+xml'
+        if self.path and playing:
+            self.path = redirect_url(fix_url(self.path))
+            final_path = get_url(self.path)
+            if is_http(final_path):
+                if not mimetype:
+                    parse = urlparse(self.path.lower())
+                    if parse.path.endswith('.m3u') or parse.path.endswith('.m3u8'):
+                        mimetype = 'application/vnd.apple.mpegurl'
+                    elif parse.path.endswith('.mpd'):
+                        mimetype = 'application/dash+xml'
+                    elif parse.path.endswith('.ism'):
+                        mimetype = 'application/vnd.ms-sstr+xml'
 
-            self.path = fix_url(self.path)
+                proxy_data = {
+                    'manifest': self.path,
+                    'slug': '{}-{}'.format(ADDON_ID, sys.argv[2]),
+                    'license_url': license_url,
+                    'session_id': hash_6(time.time()),
+                    'audio_whitelist': settings.get('audio_whitelist', ''),
+                    'subs_whitelist':  settings.get('subs_whitelist', ''),
+                    'audio_description': settings.getBool('audio_description', True),
+                    'subs_forced': settings.getBool('subs_forced', True),
+                    'subs_non_forced': settings.getBool('subs_non_forced', True),
+                    'remove_framerate': False,
+                    'subtitles': [],
+                    'path_subs': {},
+                    'addon_id': ADDON_ID,
+                    'quality': QUALITY_DISABLED,
+                    'middleware': {},
+                    'type': None,
+                    'skip_next_channel': settings.common_settings.getBool('skip_next_channel', False),
+                    'h265': settings.common_settings.getBool('h265', False),
+                    'vp9': settings.common_settings.getBool('vp9', False),
+                    'av1': settings.common_settings.getBool('av1', False),
+                    'hdr10': settings.common_settings.getBool('hdr10', False),
+                    'dolby_vision': settings.common_settings.getBool('dolby_vision', False),
+                    'dolby_atmos': settings.common_settings.getBool('dolby_atmos', False),
+                    'ac3': settings.common_settings.getBool('ac3', False),
+                    'ec3': settings.common_settings.getBool('ec3', False),
+                    'verify': settings.common_settings.getBool('verify_ssl', True),
+                    'timeout': settings.common_settings.getInt('http_timeout', 30),
+                    'dns_rewrites': get_dns_rewrites(self.dns_rewrites),
+                    'proxy_server': settings.get('proxy_server') or settings.common_settings.get('proxy_server'),
+                    'max_width': settings.common_settings.getInt('max_width', 0),
+                    'max_height': settings.common_settings.getInt('max_width', 0),
+                    'max_channels': settings.common_settings.getInt('max_channels', 0),
+                }
 
-            proxy_data = {
-                'manifest': self.path,
-                'slug': '{}-{}'.format(ADDON_ID, sys.argv[2]),
-                'license_url': license_url,
-                'session_id': hash_6(time.time()),
-                'audio_whitelist': settings.get('audio_whitelist', ''),
-                'subs_whitelist':  settings.get('subs_whitelist', ''),
-                'audio_description': settings.getBool('audio_description', True),
-                'subs_forced': settings.getBool('subs_forced', True),
-                'subs_non_forced': settings.getBool('subs_non_forced', True),
-                'remove_framerate': False,
-                'subtitles': [],
-                'path_subs': {},
-                'addon_id': ADDON_ID,
-                'quality': QUALITY_DISABLED,
-                'middleware': {},
-                'type': None,
-                'verify': settings.common_settings.getBool('verify_ssl', True),
-                'timeout': settings.common_settings.getInt('http_timeout', 30),
-                'dns_rewrites': get_dns_rewrites(self.dns_rewrites),
-                'proxy_server': settings.get('proxy_server') or settings.common_settings.get('proxy_server'),
-            }
+                #######################################
+                ## keep old setting values working until new settings system implemented
+                legacy_map = {
+                    'vp9': [],
+                    'av1': [],
+                    'h265': ['hevc','enable_h265',],
+                    'hdr10': ['enable_hdr',],
+                    'dolby_vision': [],
+                    'dolby_atmos': ['atmos_enabled',],
+                    'ac3': ['ac3_enabled',],
+                    'ec3': ['ec3_enabled',],
+                }
 
-            if mimetype == 'application/vnd.apple.mpegurl':
-                proxy_data['type'] = 'm3u8'
-            elif mimetype == 'application/dash+xml':
-                proxy_data['type'] = 'mpd'
+                for key in legacy_map:
+                    #add ourself so addon can override common
+                    legacy_map[key].append(key)
+                    for old_key in legacy_map[key]:
+                        val = settings.getBool(old_key, None)
+                        if val is not None:
+                            proxy_data[key] = val
+                            break
+                #########################################
 
-            proxy_data.update(self.proxy_data)
+                if mimetype == 'application/vnd.apple.mpegurl':
+                    proxy_data['type'] = 'm3u8'
+                elif mimetype == 'application/dash+xml':
+                    proxy_data['type'] = 'mpd'
 
-            for key in ['default_language', 'default_subtitle']:
-                value = settings.get(key, '')
-                if value:
-                    proxy_data[key] = value
+                if settings.common_settings.getBool('ignore_display_resolution', False) is False:
+                    screen_width = int(xbmc.getInfoLabel('System.ScreenWidth') or 0)
+                    screen_height = int(xbmc.getInfoLabel('System.ScreenHeight') or 0)
+                    if screen_width:
+                        if not proxy_data['max_width']:
+                            proxy_data['max_width'] = screen_width
+                        else:
+                            proxy_data['max_width'] = min(screen_width, proxy_data['max_width'])
+                    if screen_height:
+                        if not proxy_data['max_height']:
+                            proxy_data['max_height'] = screen_height
+                        else:
+                            proxy_data['max_height'] = min(screen_height, proxy_data['max_height'])
 
-            if self.subtitles:
-                subs = []
-                for sub in self.subtitles:
-                    if type(sub) == str:
-                        sub = make_sub(sub)
-                    elif type(sub) == list:
-                        sub = make_sub(*sub)
-                    else:
-                        sub = make_sub(**sub)
-                    if sub:
-                        subs.append(sub)
+                proxy_data.update(self.proxy_data)
 
-                li.setSubtitles(list(subs))
+                for key in ['default_language', 'default_subtitle']:
+                    value = settings.get(key, '')
+                    if value:
+                        proxy_data[key] = value
 
-            set_kodi_string('_slyguy_quality', json.dumps(proxy_data))
+                if self.subtitles:
+                    subs = []
+                    for sub in self.subtitles:
+                        if type(sub) == str:
+                            sub = make_sub(sub)
+                        elif type(sub) == list:
+                            sub = make_sub(*sub)
+                        else:
+                            sub = make_sub(**sub)
+                        if sub:
+                            subs.append(sub)
 
-            self.path = get_url(self.path)
-            if headers and '|' not in self.path:
-                self.path = u'{}|{}'.format(self.path, headers)
+                    li.setSubtitles(list(subs))
+
+                set_kodi_string('_slyguy_proxy_data', json.dumps(proxy_data))
+
+                if headers and '|' not in final_path:
+                    final_path = u'{}|{}'.format(final_path, headers)
+
+            self.path = final_path
 
         if mimetype:
             li.setMimeType(mimetype)

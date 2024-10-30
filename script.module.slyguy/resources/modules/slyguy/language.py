@@ -96,7 +96,6 @@ class BaseLanguage(object):
     QUALITY_BEST                = 32043
     HTTP_TIMEOUT                = 32044
     HTTP_RETRIES                = 32045
-    CHUNK_SIZE                  = 32046
 
     QUALITY_SKIP                = 32048
     NO_AUTOPLAY_FOUND           = 32049
@@ -199,6 +198,9 @@ class BaseLanguage(object):
     WV_ISSUES_CONFIRM           = 32146
     PROXY_SERVER                = 32147
     TRAILER_NOT_FOUND           = 32148
+    CONNECTION_ERROR            = 32149
+    CONNECTION_ERROR_PROXY      = 32150
+    UPDATES_REQUIRED            = 32151
 
     # Kodi strings
     LANGUAGE                    = 304
