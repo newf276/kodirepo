@@ -25,9 +25,9 @@
     </extension>
 </addon>
 
-<addon id="slyguy.samsung.tv.plus" name="Samsung TV Plus" provider-name="SlyGuy" version="100.1.13">
+<addon id="slyguy.samsung.tv.plus" name="Samsung TV Plus" provider-name="SlyGuy" version="10.1.8">
   <requires>
-    <import addon="script.module.slyguy" version="0.63.1"/>
+    <import addon="script.module.slyguy"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py" provides="video">
     <provides>video</provides>
@@ -38,7 +38,7 @@
     <license></license>
     <language></language>
     <website></website>
-    <news>Hide Widevine channels</news>
+    <news>Move EPG url into Playlist</news>
     <assets>
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
@@ -46,9 +46,9 @@
   </extension>
 </addon>
 
-<addon id="plugin.program.iptv.merge" name="IPTV Merge" provider-name="SlyGuy" version="100.25.5">
+<addon id="plugin.program.iptv.merge" name="Newf TV Merge" provider-name="Newf276" version="10.22.6">
   <requires>
-    <import addon="script.module.slyguy" version="0.63.1"/>
+    <import addon="script.module.slyguy"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>executable</provides>
@@ -58,9 +58,9 @@
     <description lang="en">Easily merge multiple IPTV playlists &amp; EPGs from remote, local or supported add-on sources.</description>
     <reuselanguageinvoker>true</reuselanguageinvoker>
     <license></license>
-    <language></language>
+    <language/>
     <website></website>
-    <news>Added http method for pvr simple 21.7.0 and up</news>
+    <news>Add setting to do merge at specific hour each day</news>
     <assets>
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
@@ -93,9 +93,9 @@
     </extension>
 </addon>
 
-<addon id="slyguy.plex.live" name="Plex Live" provider-name="SlyGuy" version="100.1.0">
+<addon id="slyguy.plex.live" name="Plex Live" provider-name="SlyGuy" version="10.0.8">
   <requires>
-    <import addon="script.module.slyguy" version="0.63.1"/>
+    <import addon="script.module.slyguy"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py" provides="video">
     <provides>video</provides>
@@ -106,28 +106,10 @@
     <license></license>
     <language></language>
     <website></website>
-    <news>add My Channels</news>
+    <news>Move EPG into Playlist</news>
     <assets>
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
-    </assets>
-  </extension>
-</addon>
-
-<addon id="script.module.inputstreamhelper" name="InputStream Helper Newf" provider-name="SlyGuy" version="199.0.12">
-	<requires>
-		<import addon="repository.slyguy.inputstreamhelper"/>
-	</requires>
-  <extension point="xbmc.python.script" library="default.py">
-    <provides>executable</provides>
-  </extension>
-  <extension point="xbmc.python.module" library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <description lang="en">Replaces Inputstream Helper with Slyguy DRM Helper</description>
-    <reuselanguageinvoker>true</reuselanguageinvoker>
-    <news></news>
-    <assets>
-      <icon>icon.png</icon>
     </assets>
   </extension>
 </addon>
@@ -157,7 +139,7 @@
     </extension>
 </addon>
 
-<addon id="repository.newf" name="[COLOR deepskyblue]Repository Newf[/COLOR]" version="1.4.9" provider-name="[COLOR deepskyblue]Newf276[/COLOR]">
+<addon id="repository.newf" name="[COLOR deepskyblue]Repository Newf[/COLOR]" version="1.5.0" provider-name="[COLOR deepskyblue]Newf276[/COLOR]">
     <extension point="xbmc.addon.repository" name="[COLOR deepskyblue]Repository Newf[/COLOR]">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/newf276/kodirepo/master/zips/addons.xml</info>
@@ -184,11 +166,6 @@
             <checksum>https://raw.githubusercontent.com/newt-sc/a4kSubtitles/master/packages/addons.xml.crc</checksum>
             <datadir>https://github.com/newt-sc/a4kSubtitles/archive</datadir>
             <artdir>https://github.com/a4k-openproject/a4kSubtitles/releases/download/v0.0.13</artdir>
-        </dir>
-        <dir>
-          <info compressed="false">https://repo.jellyfin.org/releases/client/kodi/addons.xml</info>
-          <checksum>https://repo.jellyfin.org/releases/client/kodi/addons.xml.md5</checksum>
-          <datadir zip="true">https://repo.jellyfin.org/releases/client/kodi</datadir>
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
@@ -259,17 +236,16 @@
 	</extension>
 </addon>
 
-<addon id="slyguy.dependencies" name="SlyGuy Dependencies" provider-name="SlyGuy" version="100.0.17">
-  <requires>
-  </requires>
+<addon id="slyguy.dependencies" name="Newf Dependencies" provider-name="Newf276" version="10.0.7">
+  <requires></requires>
   <extension point="xbmc.python.module" library="resources/modules" />
   <extension point="xbmc.addon.metadata">
-    <description lang="en">Dependencies required by all Slyguy add-ons</description>
+    <description lang="en">Dependencies required by all Newf add-ons</description>
     <reuselanguageinvoker>true</reuselanguageinvoker>
     <license></license>
     <language></language>
     <website></website>
-    <news></news>
+    <news>Add dnspython 1.16.0</news>
     <assets>
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
@@ -540,23 +516,20 @@
   </extension>
 </addon>
 
-<addon id="script.module.slyguy" name="SlyGuy Common" provider-name="SlyGuy" version="100.78.1">
+<addon id="script.module.slyguy" name="Newf TV Common" provider-name="Newf276" version="10.56.4">
   <requires>
-    <import addon="slyguy.dependencies" version="0.0.8"/>
+    <import addon="slyguy.dependencies"/>
   </requires>
-  <extension point="xbmc.python.script" library="script.py">
-    <provides>executable</provides>
-  </extension>
-  <extension point="xbmc.python.pluginsource" library="default.py" />
   <extension point="xbmc.service" library="service.py" start="login" />
+  <extension point="xbmc.python.pluginsource" library="default.py" />
   <extension point="xbmc.python.module" library="resources/modules" />
   <extension point="xbmc.addon.metadata">
-    <description lang="en">Common code, proxy and settings required by all Slyguy add-ons</description>
+    <description lang="en">Common code required by all Newf add-ons</description>
     <reuselanguageinvoker>true</reuselanguageinvoker>
     <license></license>
     <language></language>
     <website></website>
-    <news></news>
+    <news>Added ability to set dns resolvers in smart urls</news>
     <assets>
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
@@ -564,9 +537,9 @@
   </extension>
 </addon>
 
-<addon id="slyguy.pluto.tv.provider" name="Pluto TV" provider-name="SlyGuy" version="100.6.4">
+<addon id="slyguy.pluto.tv.provider" name="Pluto TV" provider-name="SlyGuy" version="10.5.6">
   <requires>
-    <import addon="script.module.slyguy" version="0.63.1"/>
+    <import addon="script.module.slyguy"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py" provides="video">
     <provides>video</provides>
@@ -577,7 +550,7 @@
     <license></license>
     <language></language>
     <website></website>
-    <news>Channel fanart</news>
+    <news>Fix Adverts</news>
     <assets>
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>

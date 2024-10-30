@@ -691,7 +691,6 @@ class HTTPConnectionPool(ConnectionPool, RequestMethods):
             timeout_obj = self._get_timeout(timeout)
             conn = self._get_conn(timeout=pool_timeout)
 
-
             conn.timeout = timeout_obj.connect_timeout
 
             is_new_proxy_conn = self.proxy is not None and not getattr(
@@ -710,7 +709,7 @@ class HTTPConnectionPool(ConnectionPool, RequestMethods):
                 headers=headers,
                 chunked=chunked,
             )
-            
+
             # If we're going to release the connection in ``finally:``, then
             # the response doesn't need to know about the connection. Otherwise
             # it will also try to release it and we'll have a double-release

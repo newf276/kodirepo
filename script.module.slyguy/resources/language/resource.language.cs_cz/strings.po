@@ -274,8 +274,8 @@ msgid "No Results"
 msgstr "Žádné výsledky"
 
 msgctxt "#32032"
-msgid "{addon} ({version}/{common_version}) - Unexpected Error"
-msgstr "{addon} ({version}/{common_version}) - Neočekávaná chyba"
+msgid "{addon} ({version}) - Unexpected Error"
+msgstr "{addon} ({version}) - Neočekávaná chyba"
 
 msgctxt "#32033"
 msgid "Failed to download required file: {filename}"
@@ -331,6 +331,10 @@ msgstr ""
 
 msgctxt "#32045"
 msgid "HTTP Retries"
+msgstr ""
+
+msgctxt "#32046"
+msgid "Chunksize"
 msgstr ""
 
 msgctxt "#32047"
@@ -680,8 +684,12 @@ msgstr "Tato verze Widevine byla zrušena společností Google\n"
 "Pro instalaci přesto, zvolte Ano"
 
 msgctxt "#32124"
-msgid "Widevine license request failed"
-msgstr "Žádost o licenci Widevine se nezdařila"
+msgid "Widevine license request failed\n"
+"Usual cause is Google revoking older Widevine versions\n"
+"Select Yes to check for new Widevine versions"
+msgstr "Žádost o licenci Widevine se nezdařila\n"
+"Obvyklou příčinou je odvolání starších verzí Widevine společností Google\n"
+"Zvolte Ano pro kontrolu nových verzí Widevine"
 
 msgctxt "#32125"
 msgid "tvOS does not support Widevine playback on Kodi"
@@ -748,7 +756,7 @@ msgid "Look & Feel"
 msgstr "Chování"
 
 msgctxt "#32140"
-msgid "Donate at [B]https://donate.slyguy.uk[/B]"
+msgid "Donate at [B]www.matthuisman.nz/donate[/B]"
 msgstr ""
 
 msgctxt "#32141"

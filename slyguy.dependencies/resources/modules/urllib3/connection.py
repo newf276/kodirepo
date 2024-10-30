@@ -122,7 +122,6 @@ class HTTPConnection(_HTTPConnection, object):
         #: The socket options provided by the user. If no options are
         #: provided, we use the default options.
         self.socket_options = kw.pop("socket_options", self.default_socket_options)
-        self.getaddrinfo = socket.getaddrinfo
 
         # Proxy options provided by the user.
         self.proxy = kw.pop("proxy", None)
@@ -170,8 +169,6 @@ class HTTPConnection(_HTTPConnection, object):
 
         if self.socket_options:
             extra_kw["socket_options"] = self.socket_options
-
-        extra_kw['getaddrinfo'] = self.getaddrinfo
 
         try:
             conn = connection.create_connection(
@@ -361,8 +358,6 @@ class HTTPSConnection(HTTPConnection):
         self.sock = conn = self._new_conn()
         hostname = self.host
         tls_in_tls = False
-
-      #  print(self.sock.cipher())
 
         if self._is_using_tunnel():
             if self.tls_in_tls_required:

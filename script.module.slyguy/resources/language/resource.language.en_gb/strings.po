@@ -108,78 +108,13 @@ msgctxt "#30021"
 msgid "Show News"
 msgstr ""
 
-msgctxt "#30022"
-msgid "Ignore Display Resolution"
-msgstr ""
 
 msgctxt "#30023"
-msgid "Video view for media"
+msgid "Video view for all content"
 msgstr ""
 
 msgctxt "#30024"
 msgid "Folders for TV Show and Seasons"
-msgstr ""
-
-msgctxt "#30025"
-msgid "Max Width"
-msgstr ""
-
-msgctxt "#30026"
-msgid "Max Height"
-msgstr ""
-
-msgctxt "#30027"
-msgid "H265/HEVC"
-msgstr ""
-
-msgctxt "#30028"
-msgid "HDR10"
-msgstr ""
-
-msgctxt "#30029"
-msgid "Dolby Vision"
-msgstr ""
-
-msgctxt "#30030"
-msgid "Dolby Atmos"
-msgstr ""
-
-msgctxt "#30031"
-msgid "Dolby Digital (AC-3)"
-msgstr ""
-
-msgctxt "#30032"
-msgid "Dolby Digital Plus (EC-3)"
-msgstr ""
-
-msgctxt "#30033"
-msgid "Max Audio Channels"
-msgstr ""
-
-msgctxt "#30034"
-msgid "PVR: Autoskip Bad Channels"
-msgstr ""
-
-msgctxt "#30036"
-msgid "WARNING: System architecture change detected ({old} -> {new})\n"
-"This may cause issues with binary addons as Kodi repo will still use {old}\n"
-"If you have issues, try revert back to Kodi {old}"
-msgstr ""
-
-msgctxt "#30037"
-msgid "Video view for menus"
-msgstr ""
-
-msgctxt "#30038"
-msgid "VP9"
-msgstr ""
-
-msgctxt "#30039"
-msgid "AV1"
-msgstr ""
-
-msgctxt "#30040"
-msgid "Fast Updates"
 msgstr ""
 
 ## COMMON ##
@@ -323,7 +258,7 @@ msgid "No Results"
 msgstr ""
 
 msgctxt "#32032"
-msgid "{addon} ({version}/{common_version}) - Unexpected Error"
+msgid "{addon} ({version}) - Unexpected Error"
 msgstr ""
 
 msgctxt "#32033"
@@ -379,6 +314,12 @@ msgstr ""
 msgctxt "#32045"
 msgid "HTTP Retries"
 msgstr ""
+
+msgctxt "#32046"
+msgid "Chunksize"
+msgstr ""
+
+
 
 msgctxt "#32048"
 msgid "Bypass"
@@ -704,7 +645,9 @@ msgid "This Widevine versions has been revoked by Google\n"
 msgstr ""
 
 msgctxt "#32124"
-msgid "Widevine license request failed"
+msgid "Widevine license request failed\n"
+"Usual cause is Google revoking older Widevine versions\n"
+"Select Yes to check for new Widevine versions"
 msgstr ""
 
 msgctxt "#32125"
@@ -763,7 +706,7 @@ msgid "Your OS does not yet support this version of Widevine\n"
 msgstr ""
 
 msgctxt "#32138"
-msgid "Supporters"
+msgid "Donations"
 msgstr ""
 
 msgctxt "#32139"
@@ -771,8 +714,7 @@ msgid "Look & Feel"
 msgstr ""
 
 msgctxt "#32140"
-msgid "Donate at [B]https://donate.slyguy.uk[/B]\n"
-"to unlock the below supporter only settings"
+msgid "Donate at [B]www.matthuisman.nz/donate[/B]"
 msgstr ""
 
 msgctxt "#32141"
@@ -791,7 +733,7 @@ msgid "Pagination Multiplier"
 msgstr ""
 
 msgctxt "#32144"
-msgid "Check Kodi log for more info"
+msgid "Check log for more info"
 msgstr ""
 
 msgctxt "#32145"
@@ -810,19 +752,4 @@ msgstr ""
 
 msgctxt "#32148"
 msgid "Trailer not found"
-msgstr ""
-
-msgctxt "#32149"
-msgid "Failed to connect to host: {host}\n"
-"Check your internet connection"
-msgstr ""
-
-msgctxt "#32150"
-msgid "Failed to connect to host: {host}\n"
-"Check your proxy and internet connections"
-msgstr ""
-
-msgctxt "#32151"
-msgid "The below SlyGuy addons are outdated and must be updated or no support will be given\n"
-"{updates_required}"
 msgstr ""

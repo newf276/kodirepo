@@ -19,7 +19,7 @@ HDCP_3_0 = 30
 HDCP_LEVELS = [AUTO, HDCP_NONE, HDCP_1, HDCP_2_2, HDCP_3_0]
 
 # List of system ids that use fake L1
-FAKE_L1 = ['7011','6077']
+FAKE_L1 = ['7011',]
 
 def is_wv_secure():
     return widevine_level() == WV_L1
@@ -71,14 +71,13 @@ def set_drm_level():
                         wv_level = int(wv_level.lower().lstrip('l'))
 
                         try:
-                            system_id = crypto.GetPropertyString('systemId')
+                            if wv_level == WV_L1:
+                                system_id = crypto.GetPropertyString('systemId')
+                                if system_id in FAKE_L1:
+                                    log.debug('Detected fake L1 systemID {}. Downgrading to L3'.format(system_id))
+                                    wv_level = WV_L3
                         except:
-                            system_id = 'N/A'
-
-                        log.info("Widevine System ID: {}".format(system_id))
-                        if wv_level == WV_L1 and system_id in FAKE_L1:
-                            log.info('Detected fake L1 System ID {}. Downgrading to L3'.format(system_id))
-                            wv_level = WV_L3
+                            pass
 
                 if not hdcp_level:
                     hdcp_level = crypto.GetPropertyString('hdcpLevel')

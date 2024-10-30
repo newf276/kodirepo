@@ -259,8 +259,8 @@ msgid "No Results"
 msgstr "Keine Ergebnisse"
 
 msgctxt "#32032"
-msgid "{addon} ({version}/{common_version}) - Unexpected Error"
-msgstr "{addon} ({version}/{common_version}) - Unerwarteter Fehler"
+msgid "{addon} ({version}) - Unexpected Error"
+msgstr "{addon} ({version}) - Unerwarteter Fehler"
 
 msgctxt "#32033"
 msgid "Failed to download required file: {filename}"
@@ -322,6 +322,10 @@ msgstr "Beste"
 
 #msgctxt "#32045"
 #msgid "HTTP Retries"
+#msgstr ""
+
+#msgctxt "#32046"
+#msgid "Chunksize"
 #msgstr ""
 
 msgctxt "#32047"
@@ -684,8 +688,12 @@ msgstr "Diese Version von Widevine wurde von Google widerrufen\n"
 "Wähle JA aus, um diese Version dennoch zu installieren"
 
 msgctxt "#32124"
-msgid "Widevine license request failed"
-msgstr "Widevine Lizenzabfrage fehlgeschlagen"
+msgid "Widevine license request failed\n"
+"Usual cause is Google revoking older Widevine versions\n"
+"Select Yes to check for new Widevine versions"
+msgstr "Widevine Lizenzabfrage fehlgeschlagen\n"
+"Die Ursache ist in der Regel, dass Google alte Widevine Versionen widerruft\n"
+"Wähle JA, um nach neuen Widevine Versionen zu suchen"
 
 msgctxt "#32125"
 msgid "tvOS does not support Widevine playback on Kodi"

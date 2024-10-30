@@ -167,7 +167,7 @@ msgid "No Results"
 msgstr "Aucun résultat"
 
 msgctxt "#32032"
-msgid "{addon} ({version}/{common_version}) - Unexpected Error"
+msgid "{addon} ({version}) - Unexpected Error"
 msgstr ""
 
 msgctxt "#32033"
@@ -223,6 +223,10 @@ msgstr "Délai d'attente HTTP (secondes)"
 msgctxt "#32045"
 msgid "HTTP Retries"
 msgstr "Nombre d'essais HTTP"
+
+msgctxt "#32046"
+msgid "Chunksize"
+msgstr "Taille des blocs"
 
 msgctxt "#32047"
 msgid "{label} (LATEST)"
@@ -540,7 +544,9 @@ msgid "This Widevine versions has been revoked by Google\n"
 msgstr ""
 
 msgctxt "#32124"
-msgid "Widevine license request failed"
+msgid "Widevine license request failed\n"
+"Usual cause is Google revoking older Widevine versions\n"
+"Select Yes to check for new Widevine versions"
 msgstr ""
 
 msgctxt "#32125"

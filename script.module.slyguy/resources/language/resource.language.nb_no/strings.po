@@ -156,8 +156,8 @@ msgid "No Results"
 msgstr "Ingen søketreff"
 
 msgctxt "#32032"
-msgid "{addon} ({version}/{common_version}) - Unexpected Error"
-msgstr "{addon} ({version}/{common_version}) - Uventet feil"
+msgid "{addon} ({version}) - Unexpected Error"
+msgstr "{addon} ({version}) - Uventet feil"
 
 msgctxt "#32033"
 msgid "Failed to download required file: {filename}"
@@ -214,6 +214,10 @@ msgstr "HTTP-timeout (sekunder)"
 msgctxt "#32045"
 msgid "HTTP Retries"
 msgstr "HTTP reforsøk"
+
+msgctxt "#32046"
+msgid "Chunksize"
+msgstr "Bufferstørrelse"
 
 msgctxt "#32047"
 msgid "{label} (LATEST)"

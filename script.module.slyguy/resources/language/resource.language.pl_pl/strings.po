@@ -64,7 +64,7 @@ msgstr "Automatycznie"
 
 msgctxt "#30009"
 msgid "L1 (Secure)"
-msgstr "L1 (Zabezpieczony)"
+msgstr "L1"
 
 msgctxt "#30010"
 msgid "L3"
@@ -114,69 +114,14 @@ msgctxt "#30021"
 msgid "Show News"
 msgstr "Pokaż wiadomości"
 
-msgctxt "#30022"
-msgid "Ignore Display Resolution"
-msgstr "Ignoruj rozdzielczość wyświetlacza"
 
 msgctxt "#30023"
-msgid "Video view for media"
-msgstr "Widok wideo dla mediów"
+msgid "Video view for all content"
+msgstr "Widok wideo dla wszystkich treści"
 
 msgctxt "#30024"
 msgid "Folders for TV Show and Seasons"
-msgstr "Foldery dla seriali i sezonów"
-
-msgctxt "#30025"
-msgid "Max Width"
-msgstr "Maksymalna szerokość"
-
-msgctxt "#30026"
-msgid "Max Height"
-msgstr "Maksymalna wysokość"
-
-msgctxt "#30027"
-msgid "H265/HEVC"
-msgstr "H265/HEVC"
-
-msgctxt "#30028"
-msgid "HDR10"
-msgstr "HDR10"
-
-msgctxt "#30029"
-msgid "Dolby Vision"
-msgstr "Dolby Vision"
-
-msgctxt "#30030"
-msgid "Dolby Atmos"
-msgstr "Dolby Atmos"
-
-msgctxt "#30031"
-msgid "Dolby Digital (AC-3)"
-msgstr "Dolby Digital (AC-3)"
-
-msgctxt "#30032"
-msgid "Dolby Digital Plus (EC-3)"
-msgstr "Dolby Digital Plus (EC-3)"
-
-msgctxt "#30033"
-msgid "Max Audio Channels"
-msgstr "Maksymalna liczba kanałów audio"
-
-msgctxt "#30034"
-msgid "PVR: Autoskip Bad Channels"
-msgstr "PVR: Autopomijanie błędnych kanałów"
-
-msgctxt "#30036"
-msgid "WARNING: System architecture change detected ({old} -> {new})\n"
-"This may cause issues with binary addons as Kodi repo will still use {old}\n"
-"If you have issues, try revert back to Kodi {old}"
-msgstr "OSTRZEŻENIE: Wykryto zmianę architektury systemu ({old} -> {new})\n"
-"Może to powodować problemy z dodatkami binarnymi, ponieważ repozytorium Kodi nadal będzie używać {old}\n".
-"Jeśli masz problemy, spróbuj powrócić do Kodi {old}".
-
-msgctxt "#30037"
-msgid "Video view for menus"
-msgstr "Widok wideo dla menu"
+msgstr "Foldery na programy TV i sezony"
 
 ## COMMON ##
 
@@ -327,8 +272,8 @@ msgid "No Results"
 msgstr "Brak wyników"
 
 msgctxt "#32032"
-msgid "{addon} ({version}/{common_version}) - Unexpected Error"
-msgstr "{addon} ({version}/{common_version}) - Niespodziewany błąd"
+msgid "{addon} ({version}) - Unexpected Error"
+msgstr "{addon} ({version}) - Niespodziewany błąd"
 
 msgctxt "#32033"
 msgid "Failed to download required file: {filename}"
@@ -384,6 +329,12 @@ msgstr "Limit czasu HTTP (sekundy)"
 msgctxt "#32045"
 msgid "HTTP Retries"
 msgstr "Ponowienie HTTP"
+
+msgctxt "#32046"
+msgid "Chunksize"
+msgstr "Rozmiar fragmentu"
+
+
 
 msgctxt "#32048"
 msgid "Bypass"
@@ -709,7 +660,7 @@ msgstr "Próba zainstalowania Inputstream Adaptive z apt..."
 
 msgctxt "#32120"
 msgid "(Tv Show Folders setting moved to SlyGuy Common Settings)"
-msgstr "(Ustawienia folderów seriali zostało przeniesione do ustawień wspólnych SlyGuy)"
+msgstr "(Ustawienie folderów programu telewizyjnego zostało przeniesione do ustawień wspólnych SlyGuy)"
 
 msgctxt "#32121"
 msgid "Default Subtitle"
@@ -728,8 +679,12 @@ msgstr "Ta wersja Widevine została unieważniona przez Google\n"
 "Wybierz Tak, aby zainstalować mimo to"
 
 msgctxt "#32124"
-msgid "Widevine license request failed"
-msgstr "Żądanie licencji Widevine nie powiodło się"
+msgid "Widevine license request failed\n"
+"Usual cause is Google revoking older Widevine versions\n"
+"Select Yes to check for new Widevine versions"
+msgstr "Żądanie licencji Widevine nie powiodło się\n"
+"Zwykle przyczyna jest taka, że Google unieważnia starsze wersje Widevine\n"
+"Wybierz Tak, aby sprawdzić dostępność nowych wersji Widevine"
 
 msgctxt "#32125"
 msgid "tvOS does not support Widevine playback on Kodi"
@@ -798,8 +753,8 @@ msgid "Look & Feel"
 msgstr "Wygląd i działanie"
 
 msgctxt "#32140"
-msgid "Donate at [B]https://donate.slyguy.uk[/B]"
-msgstr "Wpłać na [B]https://donate.slyguy.uk[/B]"
+msgid "Donate at [B]www.matthuisman.nz/donate[/B]"
+msgstr "Wpłać na [B]www.matthuisman.nz/donate[/B]"
 
 msgctxt "#32141"
 msgid "Season {number}"

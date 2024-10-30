@@ -156,8 +156,8 @@ msgid "No Results"
 msgstr "Nessun risultato"
 
 msgctxt "#32032"
-msgid "{addon} ({version}/{common_version}) - Unexpected Error"
-msgstr "{addon} ({version}/{common_version}) - Errore inaspettato"
+msgid "{addon} ({version}) - Unexpected Error"
+msgstr "{addon} ({version}) - Errore inaspettato"
 
 msgctxt "#32033"
 msgid "Failed to download required file: {filename}"
@@ -214,6 +214,10 @@ msgstr "HTTP Tempo scaduto (secondi)"
 msgctxt "#32045"
 msgid "HTTP Retries"
 msgstr "HTTP Tentativo"
+
+msgctxt "#32046"
+msgid "Chunksize"
+msgstr "Dimensione"
 
 msgctxt "#32047"
 msgid "{label} (LATEST)"

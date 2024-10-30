@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="slyguy.dependencies" name="SlyGuy Dependencies" provider-name="SlyGuy" version="100.0.17">
-  <requires>
-  </requires>
+<addon id="slyguy.dependencies" name="Newf Dependencies" provider-name="Newf276" version="10.0.7">
+  <requires></requires>
   <extension point="xbmc.python.module" library="resources/modules" />
   <extension point="xbmc.addon.metadata">
-    <description lang="en">Dependencies required by all Slyguy add-ons</description>
+    <description lang="en">Dependencies required by all Newf add-ons</description>
     <reuselanguageinvoker>true</reuselanguageinvoker>
     <license></license>
     <language></language>
     <website></website>
-    <news></news>
+    <news>Add dnspython 1.16.0</news>
     <assets>
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>

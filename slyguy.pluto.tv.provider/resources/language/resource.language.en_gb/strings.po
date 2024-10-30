@@ -71,7 +71,7 @@ msgid "Show Countries"
 msgstr ""
 
 msgctxt "#30014"
-msgid "Use Alternate Streams"
+msgid "Show Adverts"
 msgstr ""
 
 ## COMMON SETTINGS ##

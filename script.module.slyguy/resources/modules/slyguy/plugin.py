@@ -13,19 +13,22 @@ from . import router, gui, settings, userdata, inputstream, signals, migrate, bo
 from .constants import *
 from .log import log
 from .language import _
-from .exceptions import Error, PluginError, CancelDialog
+from .exceptions import Error, PluginError
 from .util import set_kodi_string, get_addon, remove_file, user_country
 
 ## SHORTCUTS
 url_for = router.url_for
 dispatch = router.dispatch
-redirect = router.redirect
 ############
 
 def exception(msg=''):
     raise PluginError(msg)
 
 logged_in = False
+
+class Redirect(object):
+    def __init__(self, location):
+        self.location = location
 
 # @plugin.no_error_gui()
 def no_error_gui():
@@ -69,6 +72,11 @@ def route(url=None):
                 item.display()
             elif isinstance(item, Item):
                 item.play(**kwargs)
+            elif isinstance(item, Redirect):
+                if _handle() > 0:
+                    xbmcplugin.endOfDirectory(_handle(), succeeded=True, updateListing=True, cacheToDisc=True)
+
+                gui.redirect(item.location)
             else:
                 resolve()
 
@@ -78,23 +86,34 @@ def route(url=None):
 
 # @plugin.plugin_middleware()
 def plugin_middleware():
-    log.debug('@plugin.plugin_middleware() is deprecated. Use @plugin.plugin_request() instead')
-    return plugin_request()
+    def decorator(func):
+        @wraps(func)
+        def decorated_function(*args, **kwargs):
+            kwargs['_path'] = xbmc.translatePath(kwargs['_path'])
+            with open(kwargs['_path'], 'rb') as f:
+                kwargs['_data'] = f.read()
+
+            remove_file(kwargs['_path'])
+
+            try:
+                data = func(*args, **kwargs)
+            except Exception as e:
+                log.exception(e)
+                data = None
+
+            folder = Folder(show_news=False)
+            folder.add_item(
+                path = quote_plus(json.dumps(data or {})),
+            )
+            return folder
+        return decorated_function
+    return lambda func: decorator(func)
 
 # @plugin.plugin_request()
 def plugin_request():
     def decorator(func):
         @wraps(func)
         def decorated_function(*args, **kwargs):
-            if '_path' in kwargs:
-                kwargs['_path'] = xbmc.translatePath(kwargs['_path'])
-                with open(kwargs['_path'], 'rb') as f:
-                    kwargs['_data'] = f.read()
-                remove_file(kwargs['_path'])
-
-            if '_headers' in kwargs:
-                kwargs['_headers'] = json.loads(kwargs['_headers'])
-
             try:
                 data = func(*args, **kwargs)
             except Exception as e:
@@ -116,7 +135,6 @@ def merge():
         def decorated_function(*args, **kwargs):
             result = False
             try:
-                require_update()
                 message = f(*args, **kwargs) or ''
             except Error as e:
                 log.debug(e, exc_info=True)
@@ -208,9 +226,8 @@ def pagination(key=None):
                     folder, more_results = f(**kwargs)
                     kwargs['page'] += 1
                 else:
-                    folder, key_val = f(**kwargs)
+                    folder, more_results, key_val = f(**kwargs)
                     kwargs[key] = key_val
-                    more_results = key_val
 
                 items.extend(folder.items)
                 if not more_results:
@@ -264,12 +281,8 @@ def _exception(e):
     mem_cache.empty()
     _close()
 
-    if not isinstance(e, CancelDialog):
-        log.exception(e)
-        gui.exception()
-    else:
-        log.debug(e)
-
+    log.exception(e)
+    gui.exception()
     resolve()
 
 @route('')
@@ -338,17 +351,6 @@ def _ia_settings(**kwargs):
 def _ia_install(**kwargs):
     _close()
     inputstream.install_widevine(reinstall=True)
-
-@route(ROUTE_IA_HELPER)
-def _ia_helper(protocol, drm='', **kwargs):
-    _close()
-    result = bool(inputstream.ia_helper(protocol, drm=drm))
-    log.debug('IA Helper Result: {}'.format(result))
-    folder = Folder(show_news=False)
-    folder.add_item(
-        path = str(result),
-    )
-    return folder
 
 @route(ROUTE_SETUP_MERGE)
 def _setup_iptv_merge(**kwargs):
@@ -537,8 +539,8 @@ default_thumb  = ADDON_ICON
 default_fanart = ADDON_FANART
 
 def resume_from(seconds):
-    if not seconds or seconds < 60:
-        return None
+    if not seconds or seconds < 0:
+        return 0
 
     minutes = seconds // 60
     hours = minutes // 60
@@ -578,12 +580,12 @@ class Item(gui.Item):
         #     url = url_for(ROUTE_CLEAR_CACHE, key=self.cache_key)
         #     self.context.append((_.PLUGIN_CONTEXT_CLEAR_CACHE, 'RunPlugin({})'.format(url)))
 
-        if settings.getBool('bookmarks', True) and self.bookmark:
+        if settings.getBool('bookmarks') and self.bookmark:
             url = url_for(ROUTE_ADD_BOOKMARK, path=self.path, label=self.label, thumb=self.art.get('thumb'), folder=int(self.is_folder), playable=int(self.playable))
             self.context.append((_.ADD_BOOKMARK, 'RunPlugin({})'.format(url)))
 
         if not self.playable:
-            self.art['thumb'] = self.art.get('thumb') or default_thumb
+            self.art['thumb']  = self.art.get('thumb') or default_thumb
             self.art['fanart'] = self.art.get('fanart') or default_fanart
 
         quality = settings.getEnum('default_quality', QUALITY_TYPES, default=QUALITY_ASK)
@@ -597,6 +599,8 @@ class Item(gui.Item):
         self.playable = True
 
         quality = kwargs.get(QUALITY_TAG, self.quality)
+        is_live = ROUTE_LIVE_TAG in kwargs
+
         if quality is None:
             quality = settings.getEnum('default_quality', QUALITY_TYPES, default=QUALITY_ASK)
             if quality == QUALITY_CUSTOM:
@@ -610,7 +614,7 @@ class Item(gui.Item):
             self.play_skips.append({'to': int(self.resume_from)})
             self.resume_from = 1
 
-        li = self.get_li(playing=True)
+        li = self.get_li()
         handle = _handle()
 
         play_data = {
@@ -637,7 +641,7 @@ class Item(gui.Item):
 
 #Plugin.Folder()
 class Folder(object):
-    def __init__(self, title=None, items=None, content='AUTO', updateListing=False, cacheToDisc=True, sort_methods=None, thumb=None, fanart=None, art=None, no_items_label=_.NO_ITEMS, no_items_method='notification', show_news=True):
+    def __init__(self, title=None, items=None, content='AUTO', updateListing=False, cacheToDisc=True, sort_methods=None, thumb=None, fanart=None, no_items_label=_.NO_ITEMS, no_items_method='dialog', show_news=True):
         self.title = title
         self.items = items or []
         self.content = content
@@ -646,43 +650,33 @@ class Folder(object):
         self.sort_methods = sort_methods
         self.thumb = thumb or default_thumb
         self.fanart = fanart or default_fanart
-        self.art = art or {}
         self.no_items_label = no_items_label
         self.no_items_method = no_items_method
         self.show_news = show_news
 
     def display(self):
-        if self.show_news:
-            require_update()
-
+        handle = _handle()
         items = [i for i in self.items if i]
+
+        ep_sort = True
+        last_show_name = ''
+
+        item_types = {}
+
         if not items and self.no_items_label:
-            if self.no_items_method == 'notification':
-                gui.notification(self.no_items_label, heading=self.title)
-                return resolve()
-            elif self.no_items_method == 'dialog':
-                gui.ok(self.no_items_label, heading=self.title)
+            label = _(self.no_items_label, _label=True)
+
+            if self.no_items_method == 'dialog':
+                gui.ok(label, heading=self.title)
                 return resolve()
             else:
                 items.append(Item(
-                    label = _(self.no_items_label, _label=True),
+                    label = label,
                     is_folder = False,
                 ))
 
-        video_view_menus = settings.common_settings.getBool('video_view_menus', False)
-        video_view_media = settings.common_settings.getBool('video_view_media', False)
-        menu_view_shows_seasons = settings.common_settings.getBool('menu_view_shows_seasons', False)
-
-        handle = _handle()
         count = 0.0
-        item_types = {}
-        ep_sort = True
-        last_show_name = ''
         for item in items:
-            for key in self.art:
-                if self.art[key] and not item.art.get(key):
-                    item.art[key] = self.art[key]
-
             if self.thumb and not item.art.get('thumb'):
                 item.art['thumb'] = self.thumb
 
@@ -692,14 +686,7 @@ class Folder(object):
             if not item.specialsort:
                 media_type = item.info.get('mediatype')
                 show_name = item.info.get('tvshowtitle')
-
-                if not media_type and item.playable:
-                    item.info['mediatype'] = media_type = 'video'
-
-                if not (item.info.get('plot') or '').strip() and not item.info.get('mediatype') and video_view_menus:
-                    item.info['plot'] = '[B][/B]'
-
-                if media_type != 'episode' or not item.info.get('episode') or not show_name or (last_show_name and show_name != last_show_name):
+                if media_type != 'episode' or not show_name or (last_show_name and show_name != last_show_name):
                     ep_sort = False
 
                 if not last_show_name:
@@ -731,13 +718,8 @@ class Folder(object):
                 content_type = 'seasons'
             elif top_type == 'episode':
                 content_type = 'episodes'
-            elif top_type == 'video':
-                content_type = 'videos'
 
-        if content_type in ('tvshows', 'seasons') and menu_view_shows_seasons:
-            content_type = 'menus'
-
-        if (content_type == 'menus' and video_view_menus) or (content_type != 'menus' and video_view_media):
+        if settings.common_settings.getBool('video_folder_content', False):
             content_type = 'videos'
 
         # data = userdata.get('view_{}'.format(content_type))
@@ -746,12 +728,14 @@ class Folder(object):
         #     self.content = data[1]
 
         if self.content == 'AUTO':
-            if content_type in ('movies', 'tvshows', 'seasons', 'episodes', 'videos'):
-                self.content = content_type
-            elif content_type == 'mixed':
+            if content_type == 'movies':
                 self.content = 'movies'
+            elif content_type in ('tvshows', 'seasons'):
+                self.content = 'tvshows'
+            elif content_type == 'episodes':
+                self.content = 'tvshows'
             else:
-                self.content = None
+                self.content = 'videos'
 
         if self.content: xbmcplugin.setContent(handle, self.content)
         if self.title: xbmcplugin.setPluginCategory(handle, self.title)
@@ -770,18 +754,11 @@ class Folder(object):
             process_news()
 
     def add_item(self, *args, **kwargs):
-        condition = kwargs.pop('_condition', None)
         position = kwargs.pop('_position', None)
-        kiosk = kwargs.pop('_kiosk', None)
+        kiosk    = kwargs.pop('_kiosk', None)
 
         if kiosk == False and settings.getBool('kiosk', False):
             return False
-
-        if condition is not None:
-            if callable(condition):
-                condition = condition()
-            if not condition:
-                return False
 
         item = Item(*args, **kwargs)
 
@@ -802,24 +779,6 @@ class Folder(object):
             self.items.append(items)
         else:
             raise Exception('add_items only accepts an Item or list of Items')
-
-def require_update():
-    updates = settings.common_settings.getDict('_updates')
-    if not updates:
-        return
-
-    need_updated = []
-    for addon_id in REQUIRED_UPDATE:
-        if addon_id in updates:
-            try: addon = xbmcaddon.Addon(addon_id)
-            except: continue
-
-            cur_version = addon.getAddonInfo('version')
-            if updates[addon_id][0] == cur_version and time.time() > updates[addon_id][1] + UPDATE_TIME_LIMIT:
-                need_updated.append([addon_id, addon.getAddonInfo('name'), cur_version])
-
-    if need_updated:
-        log.error(_(_.UPDATES_REQUIRED, updates_required='\n'.join(['{} ({})'.format(entry[1], entry[2]) for entry in need_updated])))
 
 def process_news():
     news = settings.common_settings.get('_news')
@@ -854,7 +813,7 @@ def process_news():
             log.debug('news only for users with add-on: {} '.format(news['requires']))
             return
 
-        if news['type'] in ('message', 'donate'):
+        if news['type'] == 'message':
             gui.ok(news['message'], news.get('heading', _.NEWS_HEADING))
 
         elif news['type'] == 'addon_release':

@@ -14,15 +14,11 @@ ADDON_FANART   = ADDON.getAddonInfo('fanart')
 ADDON_DEV      = bool(int(os.environ.get('SLYGUY_DEV', '0')))
 #################
 
-REPO_ADDON_ID = 'repository.slyguy'
-DEPENDENCIES_ADDON_ID = 'slyguy.dependencies'
 COMMON_ADDON_ID = 'script.module.slyguy'
-COMMON_ADDON = xbmcaddon.Addon(COMMON_ADDON_ID)
+COMMON_ADDON    = xbmcaddon.Addon(COMMON_ADDON_ID)
 
 try: KODI_VERSION = int(xbmc.getInfoLabel("System.BuildVersion").split('.')[0])
 except: KODI_VERSION = 18
-
-REPO_DOMAIN = 'https://slyguy.uk'
 
 #### DATABASE #####
 DB_PATH         = os.path.join(ADDON_PROFILE, 'data.db')
@@ -58,7 +54,6 @@ ROUTE_SETTINGS         = '_settings'
 ROUTE_IA_SETTINGS      = '_ia_settings'
 ROUTE_SETUP_MERGE      = '_setup_merge'
 ROUTE_IA_INSTALL       = '_ia_install'
-ROUTE_IA_HELPER        = '_ia_helper'
 ROUTE_CLEAR_CACHE      = '_clear_cache'
 ROUTE_SERVICE          = '_service'
 ROUTE_SERVICE_INTERVAL = (60*5)
@@ -86,8 +81,8 @@ IA_HLS_MIN_VER = '2.0.0'
 IA_PR_MIN_VER = '2.2.19'
 IA_MPD_MIN_VER = '2.2.19'
 IA_WV_MIN_VER = '2.2.27'
-IA_MODULES_URL = REPO_DOMAIN+'/.decryptmodules/modules.json.gz'
-IA_CHECK_EVERY = 3600 #1hour
+IA_MODULES_URL = 'https://slyguy.uk/.decryptmodules/modules.json.gz'
+IA_CHECK_EVERY = 86400 #24 hours
 IA_LINUX_PACKAGE = 'kodi-inputstream-adaptive'
 ###################
 
@@ -121,8 +116,7 @@ WIDEVINE_UUID = bytearray([237, 239, 139, 169, 121, 214, 74, 206, 163, 200, 39, 
 WIDEVINE_PSSH = bytearray([112, 115, 115, 104])
 
 #DEFAULT_USERAGENT = xbmc.getUserAgent()
-#DEFAULT_USERAGENT = 'Dalvik/2.1.0 (Linux; U; Android 9; SHIELD Android TV Build/PPR1.180610.011)'
-DEFAULT_USERAGENT = 'okhttp/4.9.3'
+DEFAULT_USERAGENT = 'okhttp/3.4.1'
 DEFAULT_WORKERS = 5
 
 #### BOOKMARKS #####
@@ -140,7 +134,7 @@ EMPTY_TS = 'empty.ts' if KODI_VERSION < 19 else ''
 #################
 
 CHUNK_SIZE = 64 * 1024
-LIVE_HEAD = 25*60*60
+LIVE_HEAD = 12*60*60
 NEWS_MAX_TIME = 432000 #5 Days
 MAX_SEARCH_HISTORY = 10
 MAX_QUALITY_HISTORY = 10
@@ -149,9 +143,4 @@ MIDDLEWARE_CONVERT_SUB = 'convert_sub'
 MIDDLEWARE_REGEX = 'regex'
 MIDDLEWARE_PLUGIN = 'plugin'
 
-REDIRECT_HOSTS = ['i.mjh.nz', 'r.mjh.nz', 'c.mjh.nz']
-DONOR_URL = 'https://d.slyguy.uk/donors/{id}'
-DONOR_CHECK_TIME = (60*60*6) #6 hours
-DONOR_TIMEOUT = 172800 #48 hours
-UPDATE_TIME_LIMIT = 86400 #24 hours
-REQUIRED_UPDATE = [ADDON_ID, COMMON_ADDON_ID, DEPENDENCIES_ADDON_ID, REPO_ADDON_ID]
+DONOR_URL = 'https://d.mjh.nz/donors/{id}'

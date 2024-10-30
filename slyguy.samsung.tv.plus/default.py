@@ -1,3 +1,5 @@
+import sys
+
 from resources.lib.plugin import plugin
 
-plugin.dispatch()
+plugin.dispatch(sys.argv[2])

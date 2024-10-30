@@ -92,8 +92,6 @@ class SOCKSConnection(HTTPConnection):
         if self.socket_options:
             extra_kw["socket_options"] = self.socket_options
 
-        extra_kw['getaddrinfo'] = self.getaddrinfo
-
         try:
             conn = socks.create_connection(
                 (self.host, self.port),
