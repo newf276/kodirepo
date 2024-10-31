@@ -59,16 +59,22 @@
 							<param name="list_id" value="5900"/>
 						</include>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.fenlight/?action=tmdb_movies_latest_releases&amp;iconImage=dvd.png&amp;mode=build_movie_list&amp;name=32461"/>
-							<param name="widget_header" value="Latest Releases"/>
+							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=Hallmark%20Christmas%20-%202024&amp;list_type=user_lists&amp;mode=trakt.list.build_trakt_list&amp;slug=hallmark-christmas-2024&amp;user=crossoverenserie"/>
+							<param name="widget_header" value="Hallmark Xmas 2024"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5100"/>
 						</include>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.fenlight/?action=tmdb_movies_premieres&amp;iconImage=fresh.png&amp;mode=build_movie_list&amp;name=32460"/>
-							<param name="widget_header" value="Premieres"/>
+							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=Latest%20Releases&amp;list_type=user_lists&amp;mode=trakt.list.build_trakt_list&amp;slug=latest-releases&amp;user=giladg"/>
+							<param name="widget_header" value="Latest Releases"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5200"/>
+						</include>
+						<include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=Latest%204K%20Releases&amp;list_type=user_lists&amp;mode=trakt.list.build_trakt_list&amp;slug=latest-4k-releases&amp;user=giladg"/>
+							<param name="widget_header" value="Latest Releases 4K"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5300"/>
 						</include>
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
@@ -99,10 +105,16 @@
 							<param name="list_id" value="6100"/>
 						</include>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.fenlight/?name=32460&amp;action=tmdb_tv_premieres&amp;iconImage=fresh&amp;mode=build_tvshow_list"/>
-							<param name="widget_header" value="Premieres"/>
+							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=netflix-top-10&amp;list_type=user_lists&amp;mode=trakt.list.build_trakt_list&amp;slug=netflix-top-10&amp;user=danqbudz"/>
+							<param name="widget_header" value="Netflix Top 10"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6200"/>
+						</include>
+						<include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=prime-video-top-10&amp;list_type=user_lists&amp;mode=trakt.list.build_trakt_list&amp;slug=prime-video-top-10&amp;user=danqbudz"/>
+							<param name="widget_header" value="Prime Top 10"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6300"/>
 						</include>
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
