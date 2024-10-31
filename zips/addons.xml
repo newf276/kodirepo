@@ -25,50 +25,7 @@
     </extension>
 </addon>
 
-<addon id="slyguy.samsung.tv.plus" name="Samsung TV Plus" provider-name="SlyGuy" version="10.1.8">
-  <requires>
-    <import addon="script.module.slyguy"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py" provides="video">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <description lang="en">Just free TV. Whether you're a news buff, sports fan, gamer, an aspiring chef, or need something for the kids, Samsung TV Plus offers TV that everyone can enjoy.</description>
-    <reuselanguageinvoker>true</reuselanguageinvoker>
-    <license></license>
-    <language></language>
-    <website></website>
-    <news>Move EPG url into Playlist</news>
-    <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
-    </assets>
-  </extension>
-</addon>
-
-<addon id="plugin.program.iptv.merge" name="Newf TV Merge" provider-name="Newf276" version="10.22.6">
-  <requires>
-    <import addon="script.module.slyguy"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>executable</provides>
-  </extension>
-  <extension point="xbmc.service" library="service.py" start="login" />
-  <extension point="xbmc.addon.metadata">
-    <description lang="en">Easily merge multiple IPTV playlists &amp; EPGs from remote, local or supported add-on sources.</description>
-    <reuselanguageinvoker>true</reuselanguageinvoker>
-    <license></license>
-    <language/>
-    <website></website>
-    <news>Add setting to do merge at specific hour each day</news>
-    <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
-    </assets>
-  </extension>
-</addon>
-
-<addon id="plugin.video.fenlight" name="Fen Light" provider-name="Tikipeter" version="1.0.89">
+<addon id="plugin.video.fenlight" name="Fen Light" provider-name="Tikipeter" version="1.0.91">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>
@@ -91,27 +48,6 @@
         </assets>
         <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>
-</addon>
-
-<addon id="slyguy.plex.live" name="Plex Live" provider-name="SlyGuy" version="10.0.8">
-  <requires>
-    <import addon="script.module.slyguy"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py" provides="video">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <description lang="en">Over 200 free channels. No subscription required.</description>
-    <reuselanguageinvoker>true</reuselanguageinvoker>
-    <license></license>
-    <language></language>
-    <website></website>
-    <news>Move EPG into Playlist</news>
-    <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
-    </assets>
-  </extension>
 </addon>
 
 <addon id="plugin.video.fen" name="Fen" provider-name="Tikipeter" version="3.2.30">
@@ -139,7 +75,7 @@
     </extension>
 </addon>
 
-<addon id="repository.newf" name="[COLOR deepskyblue]Repository Newf[/COLOR]" version="1.5.0" provider-name="[COLOR deepskyblue]Newf276[/COLOR]">
+<addon id="repository.newf" name="[COLOR deepskyblue]Repository Newf[/COLOR]" version="1.5.1" provider-name="[COLOR deepskyblue]Newf276[/COLOR]">
     <extension point="xbmc.addon.repository" name="[COLOR deepskyblue]Repository Newf[/COLOR]">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/newf276/kodirepo/master/zips/addons.xml</info>
@@ -166,6 +102,21 @@
             <checksum>https://raw.githubusercontent.com/newt-sc/a4kSubtitles/master/packages/addons.xml.crc</checksum>
             <datadir>https://github.com/newt-sc/a4kSubtitles/archive</datadir>
             <artdir>https://github.com/a4k-openproject/a4kSubtitles/releases/download/v0.0.13</artdir>
+        </dir>
+            <dir>
+            <info compressed="false">https://slyguy.uk/.repo/repository.slyguy/addons.xml</info>
+            <checksum>https://slyguy.uk/.repo/repository.slyguy/addons.xml.md5</checksum>
+            <datadir zip="true">https://slyguy.uk/.repo/repository.slyguy/</datadir>
+        </dir>
+        <dir>
+            <info compressed="false">https://slyguy.uk/.repo/repository.slyguy.inputstreamhelper/addons.xml</info>
+            <checksum>https://slyguy.uk/.repo/repository.slyguy.inputstreamhelper/addons.xml.md5</checksum>
+            <datadir zip="true">https://slyguy.uk/.repo/repository.slyguy.inputstreamhelper/</datadir>
+        </dir>
+        <dir>
+            <info compressed="false">https://slyguy.uk/.repo/repository.slyguy.youtube/addons.xml</info>
+            <checksum>https://slyguy.uk/.repo/repository.slyguy.youtube/addons.xml.md5</checksum>
+            <datadir zip="true">https://slyguy.uk/.repo/repository.slyguy.youtube/</datadir>
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
@@ -234,23 +185,6 @@
 		</assets>
         <description>Skin Fen is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with FenLight Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search myflix in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
 	</extension>
-</addon>
-
-<addon id="slyguy.dependencies" name="Newf Dependencies" provider-name="Newf276" version="10.0.7">
-  <requires></requires>
-  <extension point="xbmc.python.module" library="resources/modules" />
-  <extension point="xbmc.addon.metadata">
-    <description lang="en">Dependencies required by all Newf add-ons</description>
-    <reuselanguageinvoker>true</reuselanguageinvoker>
-    <license></license>
-    <language></language>
-    <website></website>
-    <news>Add dnspython 1.16.0</news>
-    <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
-    </assets>
-  </extension>
 </addon>
 
 <addon id="plugin.video.xumoplay" name="Xumo Play" version="1.0.0" provider-name="MetalChris">
@@ -512,48 +446,6 @@
     <assets>
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
-    </assets>
-  </extension>
-</addon>
-
-<addon id="script.module.slyguy" name="Newf TV Common" provider-name="Newf276" version="10.56.4">
-  <requires>
-    <import addon="slyguy.dependencies"/>
-  </requires>
-  <extension point="xbmc.service" library="service.py" start="login" />
-  <extension point="xbmc.python.pluginsource" library="default.py" />
-  <extension point="xbmc.python.module" library="resources/modules" />
-  <extension point="xbmc.addon.metadata">
-    <description lang="en">Common code required by all Newf add-ons</description>
-    <reuselanguageinvoker>true</reuselanguageinvoker>
-    <license></license>
-    <language></language>
-    <website></website>
-    <news>Added ability to set dns resolvers in smart urls</news>
-    <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
-    </assets>
-  </extension>
-</addon>
-
-<addon id="slyguy.pluto.tv.provider" name="Pluto TV" provider-name="SlyGuy" version="10.5.6">
-  <requires>
-    <import addon="script.module.slyguy"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py" provides="video">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <description lang="en">Watch all your favourite Pluto TV channels live anywhere. No subscription required.</description>
-    <reuselanguageinvoker>true</reuselanguageinvoker>
-    <license></license>
-    <language></language>
-    <website></website>
-    <news>Fix Adverts</news>
-    <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
 </addon>
