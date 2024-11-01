@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.program.cleaner" name="[COLOR deepskyblue]Newf's[/COLOR] Wizard" version="1.0.0" provider-name="Newf276">
+<addon id="plugin.program.cleaner" name="[COLOR deepskyblue]Newf's[/COLOR] Wizard" version="2.0.0" provider-name="Newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
@@ -17,7 +17,7 @@
         <platform>all</platform>
         <reuselanguageinvoker>false</reuselanguageinvoker>
         <source>https://newf276.github.io/</source>
-        <news>Version 1.0.0 - Initial Commit</news>
+        <news>Version 2.0.0 - Minor updates</news>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
@@ -215,7 +215,7 @@
   </extension>
 </addon>
 
-<addon id="skin.seren" version="1.0.3" name="Skin Seren" provider-name="newf276">
+<addon id="skin.seren" version="1.0.4" name="Skin Seren" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>

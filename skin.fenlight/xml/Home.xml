@@ -59,7 +59,7 @@
 							<param name="list_id" value="5900"/>
 						</include>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=Hallmark%20Christmas%20-%202024&amp;list_type=user_lists&amp;mode=trakt.list.build_trakt_list&amp;slug=hallmark-christmas-2024&amp;user=crossoverenserie"/>
+							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=Hallmark%20Christmas%20-%202024&amp;list_type=liked_lists&amp;mode=trakt.list.build_trakt_list&amp;random=true&amp;slug=hallmark-christmas-2024&amp;user=crossoverenserie"/>
 							<param name="widget_header" value="Hallmark Xmas 2024"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5100"/>
