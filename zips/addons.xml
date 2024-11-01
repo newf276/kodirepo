@@ -131,7 +131,7 @@
     </extension>
 </addon>
 
-<addon id="skin.fenlight" version="1.0.2" name="Skin Fenlight" provider-name="newf276">
+<addon id="skin.fenlight" version="1.0.3" name="Skin Fenlight" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -155,7 +155,7 @@
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
 		</assets>
-        <description>Fenlight is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with FenLight Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search myflix in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
+        <description>Fenlight Skin is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with FenLight Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search myflix in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
 	</extension>
 </addon>
 

@@ -71,10 +71,16 @@
 							<param name="list_id" value="5200"/>
 						</include>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=Latest%204K%20Releases&amp;list_type=user_lists&amp;mode=trakt.list.build_trakt_list&amp;slug=latest-4k-releases&amp;user=giladg"/>
-							<param name="widget_header" value="Latest Releases 4K"/>
+							<param name="content_path" value="plugin://plugin.video.fenlight/?action=tmdb_movies_providers&amp;iconImage=https%3a%2f%2fimage.tmdb.org%2ft%2fp%2foriginal%2ft2yyOv40HZeVlLjYsCsPHnWLk4W.jpg&amp;key_id=8&amp;mode=build_movie_list&amp;name=Netflix"/>
+							<param name="widget_header" value="On Netflix"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5300"/>
+						</include>
+						<include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.video.fenlight/?action=tmdb_movies_providers&amp;iconImage=https%3a%2f%2fimage.tmdb.org%2ft%2fp%2foriginal%2f6uhKBfmtzFqOcLousHwZuzcrScK.jpg&amp;key_id=350&amp;mode=build_movie_list&amp;name=Apple%20TV%20Plus"/>
+							<param name="widget_header" value="On Apple Plus"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5400"/>
 						</include>
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
@@ -115,6 +121,12 @@
 							<param name="widget_header" value="Prime Top 10"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6300"/>
+						</include>
+						<include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=New%20Shows%20on%20Netflix&amp;list_type=liked_lists&amp;mode=trakt.list.build_trakt_list&amp;random=true&amp;slug=new-shows-on-netflix&amp;user=mattm382"/>
+							<param name="widget_header" value="New on Netflix"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6400"/>
 						</include>
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
