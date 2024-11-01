@@ -1,1 +1,3 @@
-No changes. Used for my own FenLight Skin.
+- Version="1.0.3 (31 October 2024)"
+
+- Added new Widgets for Netflix Top 10, Apple Top 10 and Prime Top 10 for both TVShow and Movie Menu. 

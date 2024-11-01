@@ -59,16 +59,28 @@
 							<param name="list_id" value="5900"/>
 						</include>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.seren/?action=moviePopularRecent"/>
-							<param name="widget_header" value="Popular Movies"/>
+							<param name="content_path" value="plugin://plugin.video.seren/?action=traktList&amp;action_args=%7b%22trakt_id%22%3a%2028386182%2c%20%22username%22%3a%20%22crossoverenserie%22%7d&amp;media_type=movies"/>
+							<param name="widget_header" value="Hallmark Christmas"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5100"/>
 						</include>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.seren/?action=genericEndpoint&amp;endpoint=trending&amp;mediatype=movies"/>
-							<param name="widget_header" value="Trending Now"/>
+							<param name="content_path" value="plugin://plugin.video.seren/?action=traktList&amp;action_args=%7b%22trakt_id%22%3a%2027599933%2c%20%22username%22%3a%20%22danqbudz%22%7d&amp;media_type=movies"/>
+							<param name="widget_header" value="Netflix Top 10"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5200"/>
+						</include>
+						<include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.video.seren/?action=traktList&amp;action_args=%7b%22trakt_id%22%3a%2027599956%2c%20%22username%22%3a%20%22danqbudz%22%7d&amp;media_type=movies"/>
+							<param name="widget_header" value="Prime Top 10"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5300"/>
+						</include>
+						<include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.video.seren/?action=traktList&amp;action_args=%7b%22trakt_id%22%3a%2027599957%2c%20%22username%22%3a%20%22danqbudz%22%7d&amp;media_type=movies"/>
+							<param name="widget_header" value="Apple Top 10"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5400"/>
 						</include>
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
@@ -100,17 +112,28 @@
 							<param name="list_id" value="6100"/>
 						</include>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.seren/?action=showsPopularRecent"/>
-							<param name="widget_header" value="Popular Shows"/>
+							<param name="content_path" value="plugin://plugin.video.seren/?action=traktList&amp;action_args=%7b%22trakt_id%22%3a%2027599933%2c%20%22username%22%3a%20%22danqbudz%22%7d&amp;media_type=shows"/>
+							<param name="widget_header" value="Netflix Top 10"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6200"/>
 						</include>
-					</control>
-					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+						<include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.video.seren/?action=traktList&amp;action_args=%7b%22trakt_id%22%3a%2027599956%2c%20%22username%22%3a%20%22danqbudz%22%7d&amp;media_type=shows"/>
+							<param name="widget_header" value="Prime Top 10"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6300"/>
+						</include>
+						<include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.video.seren/?action=traktList&amp;action_args=%7b%22trakt_id%22%3a%2027599957%2c%20%22username%22%3a%20%22danqbudz%22%7d&amp;media_type=shows"/>
+							<param name="widget_header" value="Apple Top 10"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="600"/>
+						</include>
+					</control>                    
+ 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
 						<param name="scrollbar_id" value="6010"/>
 					</include>
 				</control>
-
 				<control type="group" id="7000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
 					<include content="Visible_Right_Delayed">
