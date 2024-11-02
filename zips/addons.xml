@@ -50,6 +50,74 @@
     </extension>
 </addon>
 
+<addon id="plugin.video.popcorn" version="7.0.3" name="Popcorn" provider-name="Newf276">
+    <requires>
+        <import addon="xbmc.addon" version="17.9.910" />
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" version="2.27.0" />
+        <import addon="script.module.beautifulsoup4" version="4.9.3"/>
+        <import addon="context.popcorn" version="1.0.0"/>
+        <import addon="script.module.inputstreamhelper" version="0.5.10" optional="true"/>
+        <import addon="script.module.unidecode" version="1.1.1"/>
+        <import addon="script.module.myconnpy" version="8.0.18"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="popcorn.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py"/>
+    <extension point="xbmc.addon.metadata">
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <summary lang="en">Popcorn - Modular Multi-source Addon</summary>
+        <description lang="en">Popcorn is a modular provider based, cloud service streaming software that is tightly
+            interwoven with Trakt. Popcorn provides the freedom to view media from a single menu system from service
+            providers of the users choosing. Please Note: This addon requires the use of a compatible cloud service.
+        </description>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <forum/>
+        <website>https://github.com/newf276/kodirepo/plugin.video.popcorn</website>
+        <source>https://github.com/newf276/kodirepo/plugin.video.popcorn</source>
+        <disclaimer lang="en">
+            Last updated: September 09, 2019.
+            The information contained within the Popcorn software (the "Service") is for general information purposes
+            only.
+            The author assumes no responsibility for errors, omissions in the contents on the Service, nor does it
+            assume responsibility for any material provided by any external services.
+            The use of the Service does not author the user to engage in any kind of illegal, criminal or tortious
+            activity through the use of the software, including infringement of any third party intellectual property
+            rights (including without limitation copyright, trade marks, patent, trade secrets and confidential
+            information), fraud, child pornography, trafficking in obscene material, violation of applicable export
+            restrictions, drug dealing, gambling, harassment, stalking, spamming, hacking, sending of viruses or other
+            harmful files or illegal posting of computer passwords or computer code.
+            The user is responsible for all their activity in connection with the use of the Service and the author
+            reserves the right to report any potentially criminal activity to appropriate law enforcement agencies.
+            The user must not transmit to or via the Service, any material that may infringe the intellectual property
+            rights of any third party, or any defamatory, derogatory or offensive material or publication.
+            In no event shall the author of this software be liable for any special, direct, indirect, consequential, or
+            incidental damages or any damages whatsoever, whether in an action of contract, negligence or other tort,
+            arising out of or in connection with the use of the Service or the contents of the Service.
+            The author reserves the right to make additions, deletions, or modification to the contents on the Service
+            at any time without prior notice.
+            The author of this software does not warrant that the software is free of viruses or other harmful
+            components.
+            Popcorn may contain links to external websites that are not provided or maintained by or in any way affiliated
+            with the author.
+            Please note that the author does not guarantee the accuracy, relevance, timeliness, or completeness of any
+            information on these external websites.
+        </disclaimer>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <clearlogo>resources/images/logo-popcorn-3.png</clearlogo>
+            <poster>resources/images/poster-popcorn-3.png</poster>
+            <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
+            <screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
+            <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
+            <screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
+        </assets>
+    </extension>
+</addon>
+
 <addon id="plugin.video.fen" name="Fen" provider-name="Tikipeter" version="3.2.30">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
@@ -75,7 +143,141 @@
     </extension>
 </addon>
 
-<addon id="repository.newf" name="[COLOR deepskyblue]Repository Newf[/COLOR]" version="1.5.1" provider-name="[COLOR deepskyblue]Newf276[/COLOR]">
+<addon id="skin.popcorn" version="1.0.4" name="Skin Popcorn" provider-name="newf276">
+	<requires>
+		<import addon="xbmc.gui" version="5.17.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
+		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+        <summary lang="en">estuary is basically estuary with minmal changes to the Movie and TVShow Menu widgets.</summary>
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<forum>http://forum.kodi.tv/</forum>
+		<source></source>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+        <description>Popcorn Skin is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with Popcorn Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search popcorn in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
+	</extension>
+</addon>
+
+<addon id="context.popcorn" version="1.0.0" name="Popcorn - Global Context Menu Items" provider-name="Newf276">
+	<requires>
+		<import addon="xbmc.addon" version="17.9.910" />
+		<import addon="xbmc.python" version="3.0.0" />
+	</requires>
+	<extension point="kodi.context.item">
+		<menu id="kodi.core.main">
+			<item library="context.py" args="quickRresume">
+				<label>$ADDON[context.popcorn 30000]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.quickResume)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
+			</item>
+			<item library="context.py" args="shuffle">
+				<label>$ADDON[context.popcorn 30001]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.shuffle)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,episode)]</visible>
+			</item>
+			<item library="context.py" args="playFromRandomPoint">
+				<label>$ADDON[context.popcorn 30002]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.playFromRandomPoint)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
+			</item>
+			<item library="context.py" args="rescrape">
+				<label>$ADDON[context.popcorn 30003]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.rescrape)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+			<item library="context.py" args="rescrape_ss">
+				<label>$ADDON[context.popcorn 30010]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.rescrape_ss)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+			<item library="context.py" args="sourceSelect">
+				<label>$ADDON[context.popcorn 30004]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.sourceSelect)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+			<item library="context.py" args="findSimilar">
+				<label>$ADDON[context.popcorn 30005]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.findSimilar)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+			<item library="context.py" args="browseShow">
+				<label>$ADDON[context.popcorn 30006]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.browseShow)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,tvshow)]</visible>
+			</item>
+			<item library="context.py" args="browseSeason">
+				<label>$ADDON[context.popcorn 30007]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.browseSeason)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)]</visible>
+			</item>
+			<item library="context.py" args="traktManager">
+				<label>$ADDON[context.popcorn 30008]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.traktManager)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+		</menu>
+	</extension>
+	<extension point="xbmc.service" library="service.py" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Popcorn - Global Context Menu Items</summary>
+		<summary lang="nl">Popcorn - Algemene contextmenu-items</summary>
+		<description lang="en">Adds Context Menu items for Popcorn menu items throughout Kodi</description>
+		<description lang="nl">Voegt contextmenu-items toe voor Popcorn-menu-items in Kodi</description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<forum></forum>
+		<website></website>
+		<source></source>
+		<disclaimer lang="en"></disclaimer>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<clearlogo>resources/images/logo-popcorn-3.png</clearlogo>
+			<poster>resources/images/poster-popcorn-3.png</poster>
+		</assets>
+		<news>
+			Changelog 3.0.1
+			Fix Shuffle play copy pasta mix up
+			Resolve settings not showing in Kodi
+
+			Changelog 3.0.0
+			Re-write of context menu addon, supporting py3 only (Matrix and above)
+			Update icons to match Popcorn 3.0.0 release
+			Update language support set to match Popcorn (add auto-translated Hebrew)
+
+			Changelog 2.2.0
+			Added "Rescrape and Source Select" context menu item.
+
+			Changelog 2.1.2
+			Added Polish translation
+
+			Changelog 2.1.1:
+			Implemented a workaround for broken future.backports module method (fixes Leia issues)
+
+			Changelog 2.1.0:
+			Refactored code to modern standards
+			Use backported URL lib for py2 to ensure unicode compatibility
+			Extracted out common functions and reused
+			Add settings to enable/disable individual items
+			Add more localizations
+			Add GitHub issue templates
+
+			Changelog 2.0.2:
+			Make python version agnostic
+
+			Changelog 2.0.1:
+			Fixed addon icons/fanart
+
+			Changelog 2.0.0:
+			Rework for Popcorn 2.0
+		</news>
+	</extension>
+</addon>
+
+<addon id="repository.newf" name="[COLOR deepskyblue]Repository Newf[/COLOR]" version="1.5.2" provider-name="[COLOR deepskyblue]Newf276[/COLOR]">
     <extension point="xbmc.addon.repository" name="[COLOR deepskyblue]Repository Newf[/COLOR]">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/newf276/kodirepo/master/zips/addons.xml</info>
@@ -116,16 +318,6 @@
             <info compressed="false">https://slyguy.uk/.repo/repository.slyguy.youtube/addons.xml</info>
             <checksum>https://slyguy.uk/.repo/repository.slyguy.youtube/addons.xml.md5</checksum>
             <datadir zip="true">https://slyguy.uk/.repo/repository.slyguy.youtube/</datadir>
-        </dir>
-		<dir>
-			<info compressed="false">https://raw.githubusercontent.com/doomzdayteam/repo/master/_zipfiles/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/doomzdayteam/repo/master/_zipfiles/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/doomzdayteam/repo/master/_zipfiles/</datadir>
-		</dir>
-		<dir>
-           <info compressed="false">https://raw.githubusercontent.com/MJInit/repo/main/_zips/addons.xml</info>
-           <checksum>https://raw.githubusercontent.com/MJInit/repo/main/_zips/addons.xml.md5</checksum>
-           <datadir zip="true">https://raw.githubusercontent.com/MJInit/repo/master/_zips/</datadir>
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
@@ -425,40 +617,6 @@
       <screenshot>resources/media/screenshot03.jpg</screenshot>
     </assets>
   </extension>
-</addon>
-
-<addon id="plugin.program.newfwizard" name="Newf276 Wizard" version="1.0.0" provider-name="Newf276">
-	<requires>
-		<import addon="xbmc.python" version="3.0.0"/>
-		<import addon="script.module.requests" optional="true"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="addon.py">
-		<provides>executable</provides>
-	</extension>
-	<extension point="xbmc.service" library="service.py" />
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">Welcome to the Newf276's Wizard</summary>
-		<description lang="en_GB">Provides access to Newf276's Fenlight and Seren builds.</description>
-		<disclaimer lang="en_GB">This Addon contains no content</disclaimer>
-		<language>en</language>
-		<platform>all</platform>
-		<license>GPL-2.0-or-later</license>
-		<forum></forum>
-		<website></website>
-		<email></email>
-		<source></source>
-		<news></news>
-		<assets>
-				<icon>icon.png</icon>
-				<fanart>fanart.jpg</fanart>
-				<screenshot>resources/screenshot-01.jpg</screenshot>
-				<screenshot>resources/screenshot-02.jpg</screenshot>
-				<screenshot>resources/screenshot-03.jpg</screenshot>
-				<banner></banner>
-				<clearlogo></clearlogo>
-				<screenshot></screenshot>
-		</assets>
-	</extension>
 </addon>
 
 <addon id="plugin.audio.iheart"

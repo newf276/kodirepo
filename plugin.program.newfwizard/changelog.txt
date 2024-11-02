@@ -1,7 +1,0 @@
->>>>>>>>>>>>>>> Newf276's Builds <<<<<<<<<<<<<<<
-
-- These two builds are for speed and simplicity.
-- Based on lightly modded Estuary Skins that are fully integrated with your own Trakt.tv collection. Two options available, Seren Build and Fenlight Build.
-- Authorize Trakt, Real Debrid and or another debrid service of your choice and away you go.
-
-- Assembled by Newf276. Use at your risk!!!

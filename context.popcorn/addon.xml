@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="context.popcorn" version="1.0.0" name="Popcorn - Global Context Menu Items" provider-name="Newf276">
+	<requires>
+		<import addon="xbmc.addon" version="17.9.910" />
+		<import addon="xbmc.python" version="3.0.0" />
+	</requires>
+	<extension point="kodi.context.item">
+		<menu id="kodi.core.main">
+			<item library="context.py" args="quickRresume">
+				<label>$ADDON[context.popcorn 30000]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.quickResume)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
+			</item>
+			<item library="context.py" args="shuffle">
+				<label>$ADDON[context.popcorn 30001]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.shuffle)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,episode)]</visible>
+			</item>
+			<item library="context.py" args="playFromRandomPoint">
+				<label>$ADDON[context.popcorn 30002]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.playFromRandomPoint)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
+			</item>
+			<item library="context.py" args="rescrape">
+				<label>$ADDON[context.popcorn 30003]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.rescrape)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+			<item library="context.py" args="rescrape_ss">
+				<label>$ADDON[context.popcorn 30010]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.rescrape_ss)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+			<item library="context.py" args="sourceSelect">
+				<label>$ADDON[context.popcorn 30004]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.sourceSelect)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+			<item library="context.py" args="findSimilar">
+				<label>$ADDON[context.popcorn 30005]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.findSimilar)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+			<item library="context.py" args="browseShow">
+				<label>$ADDON[context.popcorn 30006]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.browseShow)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,tvshow)]</visible>
+			</item>
+			<item library="context.py" args="browseSeason">
+				<label>$ADDON[context.popcorn 30007]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.browseSeason)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)]</visible>
+			</item>
+			<item library="context.py" args="traktManager">
+				<label>$ADDON[context.popcorn 30008]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.popcorn.traktManager)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+		</menu>
+	</extension>
+	<extension point="xbmc.service" library="service.py" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Popcorn - Global Context Menu Items</summary>
+		<summary lang="nl">Popcorn - Algemene contextmenu-items</summary>
+		<description lang="en">Adds Context Menu items for Popcorn menu items throughout Kodi</description>
+		<description lang="nl">Voegt contextmenu-items toe voor Popcorn-menu-items in Kodi</description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<forum></forum>
+		<website></website>
+		<source></source>
+		<disclaimer lang="en"></disclaimer>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<clearlogo>resources/images/logo-popcorn-3.png</clearlogo>
+			<poster>resources/images/poster-popcorn-3.png</poster>
+		</assets>
+		<news>
+			Changelog 3.0.1
+			Fix Shuffle play copy pasta mix up		
+			Resolve settings not showing in Kodi
+
+			Changelog 3.0.0
+			Re-write of context menu addon, supporting py3 only (Matrix and above)
+			Update icons to match Popcorn 3.0.0 release
+			Update language support set to match Popcorn (add auto-translated Hebrew)
+
+			Changelog 2.2.0
+			Added "Rescrape and Source Select" context menu item.
+
+			Changelog 2.1.2
+			Added Polish translation
+
+			Changelog 2.1.1:
+			Implemented a workaround for broken future.backports module method (fixes Leia issues)
+
+			Changelog 2.1.0:
+			Refactored code to modern standards
+			Use backported URL lib for py2 to ensure unicode compatibility
+			Extracted out common functions and reused
+			Add settings to enable/disable individual items
+			Add more localizations
+			Add GitHub issue templates
+
+			Changelog 2.0.2:
+			Make python version agnostic
+
+			Changelog 2.0.1:
+			Fixed addon icons/fanart
+
+			Changelog 2.0.0:
+			Rework for Popcorn 2.0
+		</news>
+	</extension>
+</addon>
