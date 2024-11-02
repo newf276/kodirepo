@@ -1,0 +1,20 @@
+{
+	"builds": [
+				{
+			"name": "Fenlight Build",
+			"version": "1.91",
+			"url": "https://www.dropbox.com/scl/fi/calavyll4513z8mdxkmvb/Fenlight.zip?rlkey=q3um759nbgh6wnl72qj9amarl&dl=1",
+			"icon": "https://raw.githubusercontent.com/newf276/wizard/master/Build%20Artwork/fenlight-icon.png",
+			"fanart": "https://raw.githubusercontent.com/newf276/wizard/master/Build%20Artwork/fenlight-fanart.jpg",
+			"description": "You NEED to have either RealDebrid, or Premiumize for this build to work! (Add to settings of FenLight Addon) This build is designed around your Trakt Collection, Movie and TVShow Menus take you to your trakt show or movie collection, and the next up widget on home screen of Fenlight Skin (basically estuary) shows your next episode and some other widgets for non Trakt collection options. You need to have a Trakt account and must activate in FenLight addon settings.  This build is meant for speed and simplicity."
+		},
+		{
+			"name": "Seren Build",
+			"version": "7.3",
+			"url": "https://www.dropbox.com/scl/fi/d6fjjutnv1x4srfpady9n/Seren.zip?rlkey=6jmbg1givkn70ef5ssduew0ve&st=0d6vkw4s&dl=1",
+			"icon": "https://raw.githubusercontent.com/newf276/wizard/master/Build%20Artwork/seren-icon.png",
+			"fanart": "https://raw.githubusercontent.com/newf276/wizard/master/Build%20Artwork/seren-fanart.jpg",
+			"description": "You NEED to have either RealDebrid, or Premiumize for this build to work! (Add to settings of Seren Addon) This build is designed around your Trakt Collection, Movie and TVShow Menus take you to your trakt show or movie collection, and the next up widget on home screen of Seren Skin (basically estuary) shows your next episode and some other widgets for non Trakt collection options. You need to have a Trakt account and must activate in Seren addon settings.  This build is meant for speed and simplicity."
+		}
+	]
+}
