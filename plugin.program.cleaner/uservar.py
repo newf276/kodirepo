@@ -100,7 +100,7 @@ REPOID = 'repository.newf'
 # Url to Addons.xml file in your repo folder(this is so we can get the latest version)
 REPOADDONXML = 'https://raw.githubusercontent.com/newf276/kodirepo/master/zips/addons.xml'
 # Url to folder zip is located in
-REPOZIPURL = 'https://github.com/newf276/kodirepo/blob/master/zips/repository.newf/repository.newf-1.5.1.zip?raw=true'
+REPOZIPURL = 'https://github.com/newf276/kodirepo/blob/master/zips/repository.newf/repository.newf-1.5.2.zip?raw=true'
 
 #########################################################
 
