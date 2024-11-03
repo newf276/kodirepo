@@ -444,6 +444,98 @@
 	</extension>
 </addon>
 
+<addon id="plugin.video.flix" version="1.0.0" name="Flix" provider-name="Newf276">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="resources/lib/flix.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="resources/lib/service.py" />
+    <extension point="xbmc.addon.metadata">
+        <reuselanguageinvoker>true</reuselanguageinvoker>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
+        <summary>What you like to watch.[CR]</summary>
+        <description lang="en">This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</description>
+        <news>INFO: For latest changes see Changelog within add-on.</news>
+        <assets><icon>icon.png</icon><fanart>fanart.png</fanart></assets>
+    </extension>
+    <extension point="kodi.context.item">
+        <menu id="kodi.core.main">
+            <item library="resources/lib/contextmenu.py" args="refresh_widgets">
+                <label>40001</label>
+                <visible>String.IsEqual(ListItem.Property(flix_widget),true)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="flix_watched_params">
+                <label>40003</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(flix_widget),true) + String.IsEqual(ListItem.Property(flix_playcount),0)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="flix_unwatched_params">
+                <label>40004</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(flix_widget),true) + String.IsEqual(ListItem.Property(flix_playcount),1)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="flix_clearprog_params">
+                <label>40009</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(flix_widget),true) + String.IsEqual(ListItem.Property(flix_in_progress),true)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="flix_browse_params">
+                <label>40002</label>
+                <visible>String.IsEqual(ListItem.dbtype,episode) + String.IsEqual(ListItem.Property(flix_widget),true)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="flix_browse_seas_params">
+                <label>40011</label>
+                <visible>String.IsEqual(ListItem.dbtype,episode) + String.IsEqual(ListItem.Property(flix_widget),true)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="flix_trakt_manager_params">
+                <label>40005</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)] + String.IsEqual(ListItem.Property(flix_widget),true)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="flix_fav_manager_params">
+                <label>40008</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)] + String.IsEqual(ListItem.Property(flix_widget),true)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="flix_options_menu_params">
+                <label>40007</label>
+                <visible>String.IsEqual(ListItem.Property(flix_widget),true)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="flix_extras_menu_params">
+                <label>40006</label>
+                <visible>String.IsEqual(ListItem.Property(flix_widget),true)</visible>
+            </item>
+        </menu>
+    </extension>
+</addon>
+
+<addon id="skin.flix" version="1.0.2" name="Skin Flix" provider-name="newf276">
+	<requires>
+		<import addon="xbmc.gui" version="5.17.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
+		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+        <summary lang="en">Made for Flix, it is basically estuary with minmal changes to the Movie and TVShow Menu widgets.</summary>
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<forum>http://forum.kodi.tv/</forum>
+		<source></source>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.png</fanart>
+		</assets>
+        <description>Skin Flix is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with FlixLight Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search myflix in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
+	</extension>
+</addon>
+
 <addon id="plugin.video.seren" version="7.0.3" name="Seren" provider-name="Newf276">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
@@ -649,5 +741,69 @@
 			<fanart>fanart.jpg</fanart>
     </assets>
   </extension>
+</addon>
+
+<addon id="plugin.video.pov" version="4.11.02" name="POV" provider-name="kodifitzwell">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="resources/lib/pov.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="resources/lib/service.py" />
+    <extension point="xbmc.addon.metadata">
+        <reuselanguageinvoker>true</reuselanguageinvoker>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
+        <summary>What you like to watch.[CR]</summary>
+        <description lang="en">This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</description>
+        <news>INFO: For latest changes see Changelog within add-on.</news>
+        <assets><icon>icon.png</icon><fanart>fanart.png</fanart></assets>
+    </extension>
+    <extension point="kodi.context.item">
+        <menu id="kodi.core.main">
+            <item library="resources/lib/contextmenu.py" args="refresh_widgets">
+                <label>40001</label>
+                <visible>String.IsEqual(ListItem.Property(pov_widget),true)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="pov_watched_params">
+                <label>40003</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(pov_widget),true) + String.IsEqual(ListItem.Property(pov_playcount),0)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="pov_unwatched_params">
+                <label>40004</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(pov_widget),true) + String.IsEqual(ListItem.Property(pov_playcount),1)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="pov_clearprog_params">
+                <label>40009</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(pov_widget),true) + String.IsEqual(ListItem.Property(pov_in_progress),true)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="pov_browse_params">
+                <label>40002</label>
+                <visible>String.IsEqual(ListItem.dbtype,episode) + String.IsEqual(ListItem.Property(pov_widget),true)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="pov_browse_seas_params">
+                <label>40011</label>
+                <visible>String.IsEqual(ListItem.dbtype,episode) + String.IsEqual(ListItem.Property(pov_widget),true)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="pov_trakt_manager_params">
+                <label>40005</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)] + String.IsEqual(ListItem.Property(pov_widget),true)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="pov_fav_manager_params">
+                <label>40008</label>
+                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)] + String.IsEqual(ListItem.Property(pov_widget),true)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="pov_options_menu_params">
+                <label>40007</label>
+                <visible>String.IsEqual(ListItem.Property(pov_widget),true)</visible>
+            </item>
+            <item library="resources/lib/contextmenu.py" args="pov_extras_menu_params">
+                <label>40006</label>
+                <visible>String.IsEqual(ListItem.Property(pov_widget),true)</visible>
+            </item>
+        </menu>
+    </extension>
 </addon>
 </addons>
