@@ -611,17 +611,45 @@
 	</requires>
 	<extension point="kodi.context.item">
 		<menu id="kodi.core.main">
-            <item library="context.py" args="traktManager">
-				<label>$ADDON[context.seren 30008]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.traktManager)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			<item library="context.py" args="quickRresume">
+				<label>$ADDON[context.seren 30000]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.seren.quickResume)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
+			</item>
+			<item library="context.py" args="shuffle">
+				<label>$ADDON[context.seren 30001]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.seren.shuffle)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,episode)]</visible>
+			</item>
+			<item library="context.py" args="playFromRandomPoint">
+				<label>$ADDON[context.seren 30002]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.seren.playFromRandomPoint)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
+			</item>
+			<item library="context.py" args="rescrape">
+				<label>$ADDON[context.seren 30003]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.seren.rescrape)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
 			</item>
 			<item library="context.py" args="rescrape_ss">
 				<label>$ADDON[context.seren 30010]</label>
 				<visible>String.IsEmpty(Window(home).Property(context.seren.rescrape_ss)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
 			</item>
+			<item library="context.py" args="sourceSelect">
+				<label>$ADDON[context.seren 30004]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.seren.sourceSelect)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
 			<item library="context.py" args="findSimilar">
 				<label>$ADDON[context.seren 30005]</label>
 				<visible>String.IsEmpty(Window(home).Property(context.seren.findSimilar)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+			<item library="context.py" args="browseShow">
+				<label>$ADDON[context.seren 30006]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.seren.browseShow)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,tvshow)]</visible>
+			</item>
+			<item library="context.py" args="browseSeason">
+				<label>$ADDON[context.seren 30007]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.seren.browseSeason)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)]</visible>
+			</item>
+			<item library="context.py" args="traktManager">
+				<label>$ADDON[context.seren 30008]</label>
+				<visible>String.IsEmpty(Window(home).Property(context.seren.traktManager)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
 			</item>
 		</menu>
 	</extension>
@@ -639,15 +667,11 @@
 		<disclaimer lang="en"></disclaimer>
 		<assets>
 			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
+			<fanart>fanart.png</fanart>
 			<clearlogo>resources/images/logo-seren-3.png</clearlogo>
 			<poster>resources/images/poster-seren-3.png</poster>
 		</assets>
 		<news>
-			Changelog 3.0.2
-			Compressed icons from 3.53 MB to 1.34
-			Update background color to Black
-
 			Changelog 3.0.1
 			Fix Shuffle play copy pasta mix up
 			Resolve settings not showing in Kodi
