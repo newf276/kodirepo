@@ -1,2 +1,3 @@
-Changelog 6.0.3
-[BUG] Update database versions for Kodi 21.0 Omega
+Changelog 10.0.3
+
+Update globals for Omega
