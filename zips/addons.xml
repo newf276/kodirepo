@@ -536,14 +536,16 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.seren" version="10.0.3" name="Seren" provider-name="Newf276">
+<addon id="plugin.video.seren" version="10.0.4" name="Seren" provider-name="Nixgates">
     <requires>
+        <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests"/>
-        <import addon="script.module.beautifulsoup4"/>
-        <import addon="context.seren" version="10.0.3"/>
-        <import addon="script.module.unidecode"/>
-        <import addon="script.module.myconnpy"/>
+        <import addon="script.module.requests" version="2.27.0" />
+        <import addon="script.module.beautifulsoup4" version="4.9.3"/>
+        <import addon="context.seren" version="10.0.4"/>
+        <import addon="script.module.inputstreamhelper" version="0.5.10" optional="true"/>
+        <import addon="script.module.unidecode" version="1.1.1"/>
+        <import addon="script.module.myconnpy" version="8.0.18"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="seren.py">
         <provides>video</provides>
@@ -554,7 +556,8 @@
         <summary lang="en">Seren - Modular Multi-source Addon</summary>
         <description lang="en">Seren is a modular provider based, cloud service streaming software that is tightly
             interwoven with Trakt. Seren provides the freedom to view media from a single menu system from service
-            providers of the users choosing. Please Note: This addon requires the use of a compatible cloud service</description>
+            providers of the users choosing. Please Note: This addon requires the use of a compatible cloud service.
+        </description>
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
         <disclaimer lang="en">
@@ -599,7 +602,7 @@
     </extension>
 </addon>
 
-<addon id="context.seren" version="10.0.3" name="Seren Context" provider-name="Newf276">
+<addon id="context.seren" version="10.0.4" name="Seren Context" provider-name="Newf276">
 	<requires>
         <import addon="xbmc.python" version="3.0.0" />
 	</requires>
