@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.fenlight" version="4.0.2" name="Skin Fenlight" provider-name="phil65, Ichabod Fletchman">
+<addon id="skin.fenlight" version="4.0.3" name="Skin Fenlight" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
