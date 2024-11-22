@@ -1,5 +1,5 @@
 # Kodi Media Center language file
-# Addon Name: flix
+# Addon Name: Flix
 # Addon id: skin.flix
 # Addon Provider: Team Kodi
 msgid ""
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Weblate 5.3\n"
 
 msgctxt "Addon Summary"
-msgid "flix skin by phil65. (Kodi's default skin)"
-msgstr "Skin flix por phil65 e Piers. (Skin padrão do Kodi)"
+msgid "Flix skin by phil65. (Kodi's default skin)"
+msgstr "Skin Flix por phil65 e Piers. (Skin padrão do Kodi)"
 
 msgctxt "Addon Description"
-msgid "flix is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "flix é a skin padrão para o Kodi 17.0 e acima. Objetiva ser fácil para usuários que iniciam no Kodi pela primeira vez, facilitando aprendizagem de uso do mesmo."
+msgid "Flix is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Flix é a skin padrão para o Kodi 17.0 e acima. Objetiva ser fácil para usuários que iniciam no Kodi pela primeira vez, facilitando aprendizagem de uso do mesmo."
 
 msgctxt "Addon Disclaimer"
-msgid "flix is the default skin for Kodi, removing it may cause issues"
-msgstr "flix é a skin padrão para o Kodi, removendo-a pode causar problemas"
+msgid "Flix is the default skin for Kodi, removing it may cause issues"
+msgstr "Flix é a skin padrão para o Kodi, removendo-a pode causar problemas"
 
 msgctxt "#31000"
 msgid "Now playing"

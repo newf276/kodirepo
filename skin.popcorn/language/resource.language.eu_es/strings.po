@@ -1,5 +1,5 @@
 # Kodi Media Center language file
-# Addon Name: popcorn
+# Addon Name: Popcorn
 # Addon id: skin.popcorn
 # Addon Provider: Team Kodi
 msgid ""
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Weblate 4.11\n"
 
 msgctxt "Addon Summary"
-msgid "popcorn skin by phil65. (Kodi's default skin)"
-msgstr "popcorn azala phil65-ek egina. (Kodiren azal lehenetsia)"
+msgid "Popcorn skin by phil65. (Kodi's default skin)"
+msgstr "Popcorn azala phil65-ek egina. (Kodiren azal lehenetsia)"
 
 msgctxt "Addon Description"
-msgid "popcorn is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "popcorn azala kodi 17.0 eta berriagoen azal lehenetsia da. Kodiren erabiltzaile hasiberrientzako erabilerraza eta ulerterraza izaten saiatzen da."
+msgid "Popcorn is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Popcorn azala kodi 17.0 eta berriagoen azal lehenetsia da. Kodiren erabiltzaile hasiberrientzako erabilerraza eta ulerterraza izaten saiatzen da."
 
 msgctxt "Addon Disclaimer"
-msgid "popcorn is the default skin for Kodi, removing it may cause issues"
-msgstr "popcorn Kodiren azal lehenetsia da. Ezabatzeak arazoak eragin ditzake"
+msgid "Popcorn is the default skin for Kodi, removing it may cause issues"
+msgstr "Popcorn Kodiren azal lehenetsia da. Ezabatzeak arazoak eragin ditzake"
 
 msgctxt "#31000"
 msgid "Now playing"

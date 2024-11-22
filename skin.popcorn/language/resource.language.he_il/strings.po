@@ -1,5 +1,5 @@
 # Kodi Media Center language file
-# Addon Name: popcorn
+# Addon Name: Popcorn
 # Addon id: skin.popcorn
 # Addon Provider: Team Kodi
 msgid ""
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Weblate 5.2.1\n"
 
 msgctxt "Addon Summary"
-msgid "popcorn skin by phil65. (Kodi's default skin)"
-msgstr "מעטפת popcorn של phil65 (ברירת המחדל של קודי)"
+msgid "Popcorn skin by phil65. (Kodi's default skin)"
+msgstr "מעטפת Popcorn של phil65 (ברירת המחדל של קודי)"
 
 msgctxt "Addon Description"
-msgid "popcorn is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "popcorn היא מעטפת ברירת המחדל של קודי מגרסאות 17.0 ומעלה. מטרת מעטפת זו היא להיות פשוטה לשימוש ולהכרה ראשונית על ידי משתמשים חדשים."
+msgid "Popcorn is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Popcorn היא מעטפת ברירת המחדל של קודי מגרסאות 17.0 ומעלה. מטרת מעטפת זו היא להיות פשוטה לשימוש ולהכרה ראשונית על ידי משתמשים חדשים."
 
 msgctxt "Addon Disclaimer"
-msgid "popcorn is the default skin for Kodi, removing it may cause issues"
-msgstr "popcorn היא מעטפת ברירת המחדל של קודי, הסרתה עלולה לגרום לתקלות"
+msgid "Popcorn is the default skin for Kodi, removing it may cause issues"
+msgstr "Popcorn היא מעטפת ברירת המחדל של קודי, הסרתה עלולה לגרום לתקלות"
 
 msgctxt "#31000"
 msgid "Now playing"

@@ -1,5 +1,5 @@
 # Kodi Media Center language file
-# Addon Name: seren
+# Addon Name: Seren
 # Addon id: skin.seren
 # Addon Provider: Team Kodi
 msgid ""
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Weblate 5.3\n"
 
 msgctxt "Addon Summary"
-msgid "seren skin by phil65. (Kodi's default skin)"
-msgstr "Máscara seren por phil65 y Piers. (La máscara predeterminada de Kodi)"
+msgid "Seren skin by phil65. (Kodi's default skin)"
+msgstr "Máscara Seren por phil65 y Piers. (La máscara predeterminada de Kodi)"
 
 msgctxt "Addon Description"
-msgid "seren is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "seren es la máscara por defecto para Kodi 17.0 y superior. Su objetivo es ser fácil de entender y usar para los usuarios nuevos a Kodi."
+msgid "Seren is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Seren es la máscara por defecto para Kodi 17.0 y superior. Su objetivo es ser fácil de entender y usar para los usuarios nuevos a Kodi."
 
 msgctxt "Addon Disclaimer"
-msgid "seren is the default skin for Kodi, removing it may cause issues"
-msgstr "seren es la máscara predeterminada de Kodi, eliminarla puede causar problemas"
+msgid "Seren is the default skin for Kodi, removing it may cause issues"
+msgstr "Seren es la máscara predeterminada de Kodi, eliminarla puede causar problemas"
 
 msgctxt "#31000"
 msgid "Now playing"

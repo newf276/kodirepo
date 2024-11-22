@@ -1,5 +1,5 @@
 # Kodi Media Center language file
-# Addon Name: fenlight
+# Addon Name: Fenlight
 # Addon id: skin.fenlight
 # Addon Provider: Team Kodi
 msgid ""
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Weblate 4.11\n"
 
 msgctxt "Addon Summary"
-msgid "fenlight skin by phil65. (Kodi's default skin)"
-msgstr "fenlight azala phil65-ek egina. (Kodiren azal lehenetsia)"
+msgid "Fenlight skin by phil65. (Kodi's default skin)"
+msgstr "Fenlight azala phil65-ek egina. (Kodiren azal lehenetsia)"
 
 msgctxt "Addon Description"
-msgid "fenlight is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "fenlight azala kodi 17.0 eta berriagoen azal lehenetsia da. Kodiren erabiltzaile hasiberrientzako erabilerraza eta ulerterraza izaten saiatzen da."
+msgid "Fenlight is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Fenlight azala kodi 17.0 eta berriagoen azal lehenetsia da. Kodiren erabiltzaile hasiberrientzako erabilerraza eta ulerterraza izaten saiatzen da."
 
 msgctxt "Addon Disclaimer"
-msgid "fenlight is the default skin for Kodi, removing it may cause issues"
-msgstr "fenlight Kodiren azal lehenetsia da. Ezabatzeak arazoak eragin ditzake"
+msgid "Fenlight is the default skin for Kodi, removing it may cause issues"
+msgstr "Fenlight Kodiren azal lehenetsia da. Ezabatzeak arazoak eragin ditzake"
 
 msgctxt "#31000"
 msgid "Now playing"

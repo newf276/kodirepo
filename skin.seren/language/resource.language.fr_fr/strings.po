@@ -1,5 +1,5 @@
 # Kodi Media Center language file
-# Addon Name: seren
+# Addon Name: Seren
 # Addon id: skin.seren
 # Addon Provider: Team Kodi
 msgid ""
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Weblate 5.2.1\n"
 
 msgctxt "Addon Summary"
-msgid "seren skin by phil65. (Kodi's default skin)"
-msgstr "seren, un habillage par phil65 et Piers (habillage d'origine de Kodi)"
+msgid "Seren skin by phil65. (Kodi's default skin)"
+msgstr "Seren, un habillage par phil65 et Piers (habillage d'origine de Kodi)"
 
 msgctxt "Addon Description"
-msgid "seren is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "seren est l'habillage d'origine pour Kodi 17.0 et supérieur. Il est facile à comprendre et à utiliser pour les utilisateurs novices de Kodi."
+msgid "Seren is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Seren est l'habillage d'origine pour Kodi 17.0 et supérieur. Il est facile à comprendre et à utiliser pour les utilisateurs novices de Kodi."
 
 msgctxt "Addon Disclaimer"
-msgid "seren is the default skin for Kodi, removing it may cause issues"
-msgstr "seren est l'habillage d'origine de Kodi, le retirer peut créer des problèmes"
+msgid "Seren is the default skin for Kodi, removing it may cause issues"
+msgstr "Seren est l'habillage d'origine de Kodi, le retirer peut créer des problèmes"
 
 msgctxt "#31000"
 msgid "Now playing"

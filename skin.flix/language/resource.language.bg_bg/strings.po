@@ -1,6 +1,6 @@
 # Kodi Media Center language file
-# Addon Name: fen
-# Addon id: skin.fen
+# Addon Name: Flix
+# Addon id: skin.flix
 # Addon Provider: Team Kodi
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2023-12-04 09:42+0000\n"
 "Last-Translator: Christian Gade <gade@kodi.tv>\n"
-"Language-Team: Bulgarian <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-fen/bg_bg/>\n"
+"Language-Team: Bulgarian <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-flix/bg_bg/>\n"
 "Language: bg_bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Weblate 5.2.1\n"
 
 msgctxt "Addon Summary"
-msgid "fen skin by phil65. (Kodi's default skin)"
-msgstr "fen облик от phil65 и Piers. (стандартния облик на Kodi)"
+msgid "Flix skin by phil65. (Kodi's default skin)"
+msgstr "Flix облик от phil65 и Piers. (стандартния облик на Kodi)"
 
 msgctxt "Addon Description"
-msgid "fen is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "fen е стандартният облик на Kodi 17 и по-новите версии. Целта е да се улеснят хората, които се сблъскват за първи път с Kodi."
+msgid "Flix is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Flix е стандартният облик на Kodi 17 и по-новите версии. Целта е да се улеснят хората, които се сблъскват за първи път с Kodi."
 
 msgctxt "Addon Disclaimer"
-msgid "fen is the default skin for Kodi, removing it may cause issues"
-msgstr "fen е стандартният облик на Kodi. Премахването му може да предизвика проблеми"
+msgid "Flix is the default skin for Kodi, removing it may cause issues"
+msgstr "Flix е стандартният облик на Kodi. Премахването му може да предизвика проблеми"
 
 msgctxt "#31000"
 msgid "Now playing"

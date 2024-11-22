@@ -1,5 +1,5 @@
 # Kodi Media Center language file
-# Addon Name: fenlight
+# Addon Name: Fenlight
 # Addon id: skin.fenlight
 # Addon Provider: Team Kodi
 msgid ""
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Weblate 5.2.1\n"
 
 msgctxt "Addon Summary"
-msgid "fenlight skin by phil65. (Kodi's default skin)"
-msgstr "fenlight облик от phil65 и Piers. (стандартния облик на Kodi)"
+msgid "Fenlight skin by phil65. (Kodi's default skin)"
+msgstr "Fenlight облик от phil65 и Piers. (стандартния облик на Kodi)"
 
 msgctxt "Addon Description"
-msgid "fenlight is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "fenlight е стандартният облик на Kodi 17 и по-новите версии. Целта е да се улеснят хората, които се сблъскват за първи път с Kodi."
+msgid "Fenlight is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Fenlight е стандартният облик на Kodi 17 и по-новите версии. Целта е да се улеснят хората, които се сблъскват за първи път с Kodi."
 
 msgctxt "Addon Disclaimer"
-msgid "fenlight is the default skin for Kodi, removing it may cause issues"
-msgstr "fenlight е стандартният облик на Kodi. Премахването му може да предизвика проблеми"
+msgid "Fenlight is the default skin for Kodi, removing it may cause issues"
+msgstr "Fenlight е стандартният облик на Kodi. Премахването му може да предизвика проблеми"
 
 msgctxt "#31000"
 msgid "Now playing"

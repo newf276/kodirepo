@@ -1,5 +1,5 @@
 # Kodi Media Center language file
-# Addon Name: flix
+# Addon Name: Flix
 # Addon id: skin.flix
 # Addon Provider: Team Kodi
 msgid ""
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Weblate 4.15.2\n"
 
 msgctxt "Addon Summary"
-msgid "flix skin by phil65. (Kodi's default skin)"
-msgstr "flix dış görünümü. phil65 (Kodi'nin varsayılan dış görünümü)"
+msgid "Flix skin by phil65. (Kodi's default skin)"
+msgstr "Flix dış görünümü. phil65 (Kodi'nin varsayılan dış görünümü)"
 
 msgctxt "Addon Description"
-msgid "flix is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "flix Kodi 17.0 ve yukarısı için varsayılan dış görünümdür. İlk kez Kodi kullananlar için anlaşılması ve kullanımı kolaydır."
+msgid "Flix is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Flix Kodi 17.0 ve yukarısı için varsayılan dış görünümdür. İlk kez Kodi kullananlar için anlaşılması ve kullanımı kolaydır."
 
 msgctxt "Addon Disclaimer"
-msgid "flix is the default skin for Kodi, removing it may cause issues"
-msgstr "flix Kodi için varsayılan dış görünümdür, kaldırmak sorunlara yol açabilir"
+msgid "Flix is the default skin for Kodi, removing it may cause issues"
+msgstr "Flix Kodi için varsayılan dış görünümdür, kaldırmak sorunlara yol açabilir"
 
 msgctxt "#31000"
 msgid "Now playing"
@@ -524,7 +524,7 @@ msgstr "Oynatma hızı"
 
 msgctxt "#31143"
 msgid "You did not set up PVR yet. In order to use PVR, choose a PVR client addon and configure it. Please visit http://kodi.wiki/view/PVR to learn more."
-msgstr "Henüz hiçbir PVR ayarlanmamış. PVR özelliğini kullanabilmek için bir PVR istemci eklentisi seçin ve yapılandırın. Daha fazlasını öğrenmek için lütflix http://kodi.wiki/view/PVR adresini ziyaret edin."
+msgstr "Henüz hiçbir PVR ayarlanmamış. PVR özelliğini kullanabilmek için bir PVR istemci eklentisi seçin ve yapılandırın. Daha fazlasını öğrenmek için lütfen http://kodi.wiki/view/PVR adresini ziyaret edin."
 
 msgctxt "#31144"
 msgid "Enter add-on browser"

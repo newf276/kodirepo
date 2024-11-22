@@ -1,6 +1,6 @@
 # Kodi Media Center language file
-# Addon Name: seren
-# Addon id: skin.seren
+# Addon Name: Popcorn
+# Addon id: skin.popcorn
 # Addon Provider: Team Kodi
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2023-12-04 09:42+0000\n"
 "Last-Translator: Christian Gade <gade@kodi.tv>\n"
-"Language-Team: Greek <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-seren/el_gr/>\n"
+"Language-Team: Greek <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-popcorn/el_gr/>\n"
 "Language: el_gr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Weblate 5.2.1\n"
 
 msgctxt "Addon Summary"
-msgid "seren skin by phil65. (Kodi's default skin)"
-msgstr "Το κέλυφος seren από τον phil65 και τον Pier. (προεπιλεγμένο κέλυφος του Kodi)"
+msgid "Popcorn skin by phil65. (Kodi's default skin)"
+msgstr "Το κέλυφος Popcorn από τον phil65 και τον Pier. (προεπιλεγμένο κέλυφος του Kodi)"
 
 msgctxt "Addon Description"
-msgid "seren is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "Το seren είναι η προεπιλεγμένη αμφίεση για τις εκδόσεις Kodi 17.0 και άνω. Επιχειρεί να είναι προσιτό στους αρχάριους χρήστες του Kodi για να το κατανοήσουν και να το χρησιμοποιήσουν."
+msgid "Popcorn is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Το Popcorn είναι η προεπιλεγμένη αμφίεση για τις εκδόσεις Kodi 17.0 και άνω. Επιχειρεί να είναι προσιτό στους αρχάριους χρήστες του Kodi για να το κατανοήσουν και να το χρησιμοποιήσουν."
 
 msgctxt "Addon Disclaimer"
-msgid "seren is the default skin for Kodi, removing it may cause issues"
-msgstr "Το seren είναι η προεπιλεγμένη αμφίεση για το Kodi. Η αφαίρεσή του μπορεί να δημιουργήσει προβλήματα."
+msgid "Popcorn is the default skin for Kodi, removing it may cause issues"
+msgstr "Το Popcorn είναι η προεπιλεγμένη αμφίεση για το Kodi. Η αφαίρεσή του μπορεί να δημιουργήσει προβλήματα."
 
 msgctxt "#31000"
 msgid "Now playing"

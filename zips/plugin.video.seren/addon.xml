@@ -24,7 +24,7 @@
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
         <disclaimer lang="en">
-            Last updated: 11 November 2024.
+            Last updated: 11 November 2024. Version 10.0.4
             The information contained within the Seren software (the "Service") is for general information purposes
             only.
             The author assumes no responsibility for errors, omissions in the contents on the Service, nor does it
@@ -61,6 +61,6 @@
             <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
             <screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
         </assets>
-        <news>Changelog 10.0.3: (Update Globals for Omega)</news>
+        <news>Changelog 10.0.4, Fix monitor and globals module.</news>
     </extension>
 </addon>

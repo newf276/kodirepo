@@ -60,6 +60,6 @@
 			<clearlogo>resources/images/logo-seren-3.png</clearlogo>
 			<poster>resources/images/poster-seren-3.png</poster>
 		</assets>
-		<news>Changelog 10.0.3: Rework for Seren 10.0.3</news>
+        <news>Changelog 10.0.4, Fix monitor and globals module.</news>
 	</extension>
 </addon>

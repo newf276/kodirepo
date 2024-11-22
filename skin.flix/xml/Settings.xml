@@ -55,16 +55,9 @@
 						<icon>icons/settings/sysinfo.png</icon>
 					</item>
 					<item>
-						<label>LibreELEC</label>
-						<onclick>RunAddon(service.libreelec.settings)</onclick>
-						<icon>icons/settings/libreelec.png</icon>
-						<visible>System.AddonIsEnabled(service.libreelec.settings)</visible>
-					</item>
-					<item>
 						<label>$LOCALIZE[31067]</label>
 						<onclick>ActivateWindow(eventlog)</onclick>
 						<icon>icons/settings/eventlog.png</icon>
-						<visible>!System.HasAddon(service.libreelec.settings)</visible>
 					</item>
 				</content>
 			</control>
@@ -117,6 +110,12 @@
 						<label>$LOCALIZE[13000]</label>
 						<onclick>ActivateWindow(SystemSettings)</onclick>
 						<icon>icons/settings/system.png</icon>
+					</item>
+					<item>
+						<label>LibreELEC</label>
+						<onclick>RunAddon(service.libreelec.settings)</onclick>
+						<icon>icons/settings/libreelec.png</icon>
+						<visible>System.AddonIsEnabled(service.libreelec.settings)</visible>
 					</item>
 				</content>
 			</control>

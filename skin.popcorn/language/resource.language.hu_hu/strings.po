@@ -1,6 +1,6 @@
 # Kodi Media Center language file
-# Addon Name: seren
-# Addon id: skin.seren
+# Addon Name: Popcorn
+# Addon id: skin.popcorn
 # Addon Provider: Team Kodi
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2023-11-28 18:10+0000\n"
 "Last-Translator: Frodo19 <bilbohu@gmail.com>\n"
-"Language-Team: Hungarian <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-seren/hu_hu/>\n"
+"Language-Team: Hungarian <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-popcorn/hu_hu/>\n"
 "Language: hu_hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Weblate 5.2.1\n"
 
 msgctxt "Addon Summary"
-msgid "seren skin by phil65. (Kodi's default skin)"
-msgstr "seren felszín. Készítette phil65 és Piers. (Kodi alapértelmezett felszín)"
+msgid "Popcorn skin by phil65. (Kodi's default skin)"
+msgstr "Popcorn felszín. Készítette phil65 és Piers. (Kodi alapértelmezett felszín)"
 
 msgctxt "Addon Description"
-msgid "seren is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "Az seren az alapértelmezett felszín a 17.0 és újabb Kodi kiadásokban. Megpróbál könnyen kezelhető és használható lenni, az újonc Kodi felhasználóknak is."
+msgid "Popcorn is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Az Popcorn az alapértelmezett felszín a 17.0 és újabb Kodi kiadásokban. Megpróbál könnyen kezelhető és használható lenni, az újonc Kodi felhasználóknak is."
 
 msgctxt "Addon Disclaimer"
-msgid "seren is the default skin for Kodi, removing it may cause issues"
-msgstr "Az seren az alapértelmezett Kodi felszín. Eltávolítása problémákat okozhat"
+msgid "Popcorn is the default skin for Kodi, removing it may cause issues"
+msgstr "Az Popcorn az alapértelmezett Kodi felszín. Eltávolítása problémákat okozhat"
 
 msgctxt "#31000"
 msgid "Now playing"

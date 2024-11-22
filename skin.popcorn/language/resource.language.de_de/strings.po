@@ -1,5 +1,5 @@
 # Kodi Media Center language file
-# Addon Name: popcorn
+# Addon Name: Popcorn
 # Addon id: skin.popcorn
 # Addon Provider: Team Kodi
 msgid ""
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Weblate 5.2.1\n"
 
 msgctxt "Addon Summary"
-msgid "popcorn skin by phil65. (Kodi's default skin)"
-msgstr "popcorn Skin von phil65. (Kodi-Standardskin)"
+msgid "Popcorn skin by phil65. (Kodi's default skin)"
+msgstr "Popcorn Skin von phil65. (Kodi-Standardskin)"
 
 msgctxt "Addon Description"
-msgid "popcorn is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "popcorn ist der Standardskin für Kodi 17.0 und höher. Ziel war es, einen einfach zu bedienenden Skin für neue Kodi-Benutzer zu entwickeln."
+msgid "Popcorn is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Popcorn ist der Standardskin für Kodi 17.0 und höher. Ziel war es, einen einfach zu bedienenden Skin für neue Kodi-Benutzer zu entwickeln."
 
 msgctxt "Addon Disclaimer"
-msgid "popcorn is the default skin for Kodi, removing it may cause issues"
-msgstr "popcorn ist der Standardskin von Kodi. Ein Entfernen des Skins kann Probleme verursachen"
+msgid "Popcorn is the default skin for Kodi, removing it may cause issues"
+msgstr "Popcorn ist der Standardskin von Kodi. Ein Entfernen des Skins kann Probleme verursachen"
 
 msgctxt "#31000"
 msgid "Now playing"
@@ -763,3 +763,7 @@ msgstr "System"
 #~ msgctxt "#31138"
 #~ msgid "Player process info"
 #~ msgstr "Player-Informationen"
+
+msgctxt "#31616"
+msgid "Enable \"Picture-In-Picture\"-Mode"
+msgstr "\"Bild-im-Bild\"-Modus aktivieren"

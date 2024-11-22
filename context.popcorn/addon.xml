@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="context.popcorn" version="1.0.0" name="Popcorn - Global Context Menu Items" provider-name="Newf276">
+<addon id="context.popcorn" version="10.0.4" name="Popcorn - Global Context Menu Items" provider-name="Newf276">
 	<requires>
 		<import addon="xbmc.addon" version="17.9.910" />
 		<import addon="xbmc.python" version="3.0.0" />
@@ -66,41 +66,6 @@
 			<clearlogo>resources/images/logo-popcorn-3.png</clearlogo>
 			<poster>resources/images/poster-popcorn-3.png</poster>
 		</assets>
-		<news>
-			Changelog 3.0.1
-			Fix Shuffle play copy pasta mix up		
-			Resolve settings not showing in Kodi
-
-			Changelog 3.0.0
-			Re-write of context menu addon, supporting py3 only (Matrix and above)
-			Update icons to match Popcorn 3.0.0 release
-			Update language support set to match Popcorn (add auto-translated Hebrew)
-
-			Changelog 2.2.0
-			Added "Rescrape and Source Select" context menu item.
-
-			Changelog 2.1.2
-			Added Polish translation
-
-			Changelog 2.1.1:
-			Implemented a workaround for broken future.backports module method (fixes Leia issues)
-
-			Changelog 2.1.0:
-			Refactored code to modern standards
-			Use backported URL lib for py2 to ensure unicode compatibility
-			Extracted out common functions and reused
-			Add settings to enable/disable individual items
-			Add more localizations
-			Add GitHub issue templates
-
-			Changelog 2.0.2:
-			Make python version agnostic
-
-			Changelog 2.0.1:
-			Fixed addon icons/fanart
-
-			Changelog 2.0.0:
-			Rework for Popcorn 2.0
-		</news>
+        <news>Changelog 10.0.4, Fix monitor and globals module.</news>
 	</extension>
 </addon>

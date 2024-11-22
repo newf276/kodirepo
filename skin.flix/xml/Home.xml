@@ -121,7 +121,6 @@
 						<param name="scrollbar_id" value="6010"/>
 					</include>
 				</control>
-
 				<control type="group" id="7000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
 					<include content="Visible_Right_Delayed">

@@ -1,6 +1,6 @@
 # Kodi Media Center language file
-# Addon Name: sestuary
-# Addon id: skin.sestuary
+# Addon Name: Seren
+# Addon id: skin.seren
 # Addon Provider: Team Kodi
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2023-01-29 21:15+0000\n"
 "Last-Translator: psp2111-ADSLGATE <psp100000@hotmail.com>\n"
-"Language-Team: Arabic (Saudi Arabia) <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-sestuary/ar_sa/>\n"
+"Language-Team: Arabic (Saudi Arabia) <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-seren/ar_sa/>\n"
 "Language: ar_sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Weblate 4.15.2\n"
 
 msgctxt "Addon Summary"
-msgid "sestuary skin by phil65. (Kodi's default skin)"
-msgstr "مظهر sestuary بواسطة phil65. ( مظهر كودي الافتراضي )"
+msgid "Seren skin by phil65. (Kodi's default skin)"
+msgstr "مظهر Seren بواسطة phil65. ( مظهر كودي الافتراضي )"
 
 msgctxt "Addon Description"
-msgid "sestuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "sestuary هو المظهر الافتراضي ل كودي الإصدار 17.0 و أعلى. يطمح بأن يكون سهل الاستخدام والفهم لمستخدمين كودي الجدد."
+msgid "Seren is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Seren هو المظهر الافتراضي ل كودي الإصدار 17.0 و أعلى. يطمح بأن يكون سهل الاستخدام والفهم لمستخدمين كودي الجدد."
 
 msgctxt "Addon Disclaimer"
-msgid "sestuary is the default skin for Kodi, removing it may cause issues"
-msgstr "sestuary هو المظهر الافتراضي ل كودي, إزالته قد تسبب بعض المشاكل"
+msgid "Seren is the default skin for Kodi, removing it may cause issues"
+msgstr "Seren هو المظهر الافتراضي ل كودي, إزالته قد تسبب بعض المشاكل"
 
 msgctxt "#31000"
 msgid "Now playing"

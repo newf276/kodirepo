@@ -1,5 +1,5 @@
 # Kodi Media Center language file
-# Addon Name: popcorn
+# Addon Name: Popcorn
 # Addon id: skin.popcorn
 # Addon Provider: phil65, Ichabod Fletchman
 msgid ""
@@ -17,15 +17,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgctxt "Addon Summary"
-msgid "popcorn skin by phil65. (Kodi's default skin)"
+msgid "Popcorn skin by phil65. (Kodi's default skin)"
 msgstr ""
 
 msgctxt "Addon Description"
-msgid "popcorn is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgid "Popcorn is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
 msgstr ""
 
 msgctxt "Addon Disclaimer"
-msgid "popcorn is the default skin for Kodi, removing it may cause issues"
+msgid "Popcorn is the default skin for Kodi, removing it may cause issues"
 msgstr ""
 
 #: /xml/Home.xml /xml/DialogSeekBar.xml
@@ -920,4 +920,8 @@ msgstr ""
 #. Label to show the system info page
 msgctxt "#31611"
 msgid "System"
+msgstr ""
+
+msgctxt "#31616"
+msgid "Enable \"Picture-In-Picture\"-Mode"
 msgstr ""

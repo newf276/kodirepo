@@ -129,8 +129,8 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="600"/>
 						</include>
-					</control>                    
- 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+					</control>
+					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
 						<param name="scrollbar_id" value="6010"/>
 					</include>
 				</control>

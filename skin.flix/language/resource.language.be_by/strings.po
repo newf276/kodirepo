@@ -1,5 +1,5 @@
 # Kodi Media Center language file
-# Addon Name: flix
+# Addon Name: Flix
 # Addon id: skin.flix
 # Addon Provider: Team Kodi
 msgid ""
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Weblate 4.11.2\n"
 
 msgctxt "Addon Summary"
-msgid "flix skin by phil65. (Kodi's default skin)"
-msgstr "Абалонка \"flix\" ад phil65. (прадвызначаная абалонка Kodi)"
+msgid "Flix skin by phil65. (Kodi's default skin)"
+msgstr "Абалонка \"Flix\" ад phil65. (прадвызначаная абалонка Kodi)"
 
 msgctxt "Addon Description"
-msgid "flix is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "flix - прадвызначаная абалонка для Kodi 17.0 і пазнейшых версій. Яна будзе простай і зразумелай для карыстальнікаў, якія не мелі досведу працы з Kodi."
+msgid "Flix is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Flix - прадвызначаная абалонка для Kodi 17.0 і пазнейшых версій. Яна будзе простай і зразумелай для карыстальнікаў, якія не мелі досведу працы з Kodi."
 
 msgctxt "Addon Disclaimer"
-msgid "flix is the default skin for Kodi, removing it may cause issues"
-msgstr "flix - прадвызначаная абалонка для Kodi. Яе выдаленне можа прывесці да праблем"
+msgid "Flix is the default skin for Kodi, removing it may cause issues"
+msgstr "Flix - прадвызначаная абалонка для Kodi. Яе выдаленне можа прывесці да праблем"
 
 msgctxt "#31000"
 msgid "Now playing"
