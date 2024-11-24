@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.seren" version="10.0.4" name="Seren" provider-name="Nixgates">
+<addon id="plugin.video.seren" version="10.0.4" name="[COLOR deepskyblue]Seren[/COLOR]" provider-name="Newf276">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.0" />

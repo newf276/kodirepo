@@ -25,7 +25,7 @@
     </extension>
 </addon>
 
-<addon id="skin.finder" version="4.0.2" name="Skin Finder" provider-name="Newf276">
+<addon id="skin.finder" version="4.0.3" name="[COLOR deepskyblue]Finder[/COLOR] Skin" provider-name="Newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -212,7 +212,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.popcorn" version="10.0.4" name="Popcorn" provider-name="Newf276">
+<addon id="plugin.video.popcorn" version="10.0.4" name="[COLOR deepskyblue]Popcorn[/COLOR]" provider-name="Newf276">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.0" />
@@ -281,7 +281,7 @@
     </extension>
 </addon>
 
-<addon id="skin.popcorn" version="4.0.2" name="Skin Popcorn" provider-name="phil65, Ichabod Fletchman">
+<addon id="skin.popcorn" version="4.0.3" name="[COLOR deepskyblue]Popcorn[/COLOR] Skin" provider-name="Newf276, phil65, Ichabod Fletchman">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -468,7 +468,7 @@
 	</extension>
 </addon>
 
-<addon id="context.popcorn" version="10.0.4" name="Popcorn - Global Context Menu Items" provider-name="Newf276">
+<addon id="context.popcorn" version="10.0.4" name="[COLOR deepskyblue]Popcorn[/COLOR] Context Menu" provider-name="Newf276">
 	<requires>
 		<import addon="xbmc.addon" version="17.9.910" />
 		<import addon="xbmc.python" version="3.0.0" />
@@ -622,7 +622,7 @@
   </extension>
 </addon>
 
-<addon id="skin.seren" version="4.0.2" name="Skin Seren" provider-name="phil65, Ichabod Fletchman">
+<addon id="skin.seren" version="4.0.3" name="[COLOR deepskyblue]Seren[/COLOR] Skin" provider-name="Newf276, phil65, Ichabod Fletchman">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -809,7 +809,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.flix" version="1.0.0" name="Flix" provider-name="Newf276">
+<addon id="plugin.video.flix" version="1.0.0" name="[COLOR deepskyblue]Flix[/COLOR]" provider-name="Newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
@@ -873,7 +873,7 @@
     </extension>
 </addon>
 
-<addon id="skin.flix" version="4.0.2" name="Skin Flix" provider-name="phil65, Ichabod Fletchman">
+<addon id="skin.flix" version="4.0.2" name="[COLOR deepskyblue]Flix[/COLOR] Skin" provider-name="Newf276, phil65, Ichabod Fletchman">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -1060,7 +1060,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.seren" version="10.0.4" name="Seren" provider-name="Nixgates">
+<addon id="plugin.video.seren" version="10.0.4" name="[COLOR deepskyblue]Seren[/COLOR]" provider-name="Newf276">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.0" />
@@ -1126,7 +1126,7 @@
     </extension>
 </addon>
 
-<addon id="context.seren" version="10.0.4" name="Seren Context" provider-name="Newf276">
+<addon id="context.seren" version="10.0.4" name="[COLOR deepskyblue]Seren[/COLOR] Context Menu" provider-name="Newf276">
 	<requires>
         <import addon="xbmc.python" version="3.0.0" />
 	</requires>
@@ -1192,7 +1192,7 @@
 </addon>
 
 <addon id="plugin.audio.iheart"
-       name="iHeartRadio"
+       name="[COLOR deepskyblue]iHeart[/COLOR] Radio"
        version="2.0.2"
        provider-name="newf276">
   <requires>
@@ -1223,7 +1223,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.finder" name="Finder" provider-name="Newf276" version="1.0.0">
+<addon id="plugin.video.finder" name="[COLOR deepskyblue]Finder[/COLOR]" provider-name="Newf276" version="1.0.0">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>

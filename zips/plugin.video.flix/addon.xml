@@ -1,4 +1,4 @@
-<addon id="plugin.video.flix" version="1.0.0" name="Flix" provider-name="Newf276">
+<addon id="plugin.video.flix" version="1.0.0" name="[COLOR deepskyblue]Flix[/COLOR]" provider-name="Newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
