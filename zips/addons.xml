@@ -25,7 +25,7 @@
     </extension>
 </addon>
 
-<addon id="skin.finder" version="4.0.3" name="[COLOR deepskyblue]Finder[/COLOR] Skin" provider-name="Newf276">
+<addon id="skin.finder" version="4.0.4" name="[COLOR deepskyblue]Finder[/COLOR] Skin" provider-name="Newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -281,7 +281,7 @@
     </extension>
 </addon>
 
-<addon id="skin.popcorn" version="4.0.3" name="[COLOR deepskyblue]Popcorn[/COLOR] Skin" provider-name="Newf276, phil65, Ichabod Fletchman">
+<addon id="skin.popcorn" version="4.0.4" name="[COLOR deepskyblue]Popcorn[/COLOR] Skin" provider-name="Newf276, phil65, Ichabod Fletchman">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -622,7 +622,7 @@
   </extension>
 </addon>
 
-<addon id="skin.seren" version="4.0.3" name="[COLOR deepskyblue]Seren[/COLOR] Skin" provider-name="Newf276, phil65, Ichabod Fletchman">
+<addon id="skin.seren" version="4.0.4" name="[COLOR deepskyblue]Seren[/COLOR] Skin" provider-name="Newf276, phil65, Ichabod Fletchman">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -873,7 +873,7 @@
     </extension>
 </addon>
 
-<addon id="skin.flix" version="4.0.2" name="[COLOR deepskyblue]Flix[/COLOR] Skin" provider-name="Newf276, phil65, Ichabod Fletchman">
+<addon id="skin.flix" version="4.0.4" name="[COLOR deepskyblue]Flix[/COLOR] Skin" provider-name="Newf276, phil65, Ichabod Fletchman">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
