@@ -1,1 +1,2 @@
-Basic cache cleaner for kodi
+# plugin.program.cleaner
+Cleaner
