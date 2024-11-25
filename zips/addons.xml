@@ -212,7 +212,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.popcorn" version="10.0.4" name="[COLOR deepskyblue]Popcorn[/COLOR]" provider-name="Newf276">
+<addon id="plugin.video.popcorn" version="10.0.5" name="[COLOR deepskyblue]Popcorn[/COLOR]" provider-name="Newf276">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.0" />
@@ -240,7 +240,7 @@
         <website>https://github.com/newf276/kodirepo/plugin.video.popcorn</website>
         <source>https://github.com/newf276/kodirepo/plugin.video.popcorn</source>
         <disclaimer lang="en">
-            Last updated: September 09, 2019.
+            Last updated: November 24, 2024.
             The information contained within the Popcorn software (the "Service") is for general information purposes
             only.
             The author assumes no responsibility for errors, omissions in the contents on the Service, nor does it
@@ -267,7 +267,7 @@
             Please note that the author does not guarantee the accuracy, relevance, timeliness, or completeness of any
             information on these external websites.
         </disclaimer>
-        <news>Changelog 10.0.4, Fix monitor and globals module.</news>
+        <news>Changelog 10.0.5, Work around for Real Debrid, to continue to use your RD Account.</news>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
@@ -1060,7 +1060,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.seren" version="10.0.4" name="[COLOR deepskyblue]Seren[/COLOR]" provider-name="Newf276">
+<addon id="plugin.video.seren" version="10.0.5" name="[COLOR deepskyblue]Seren[/COLOR]" provider-name="Newf276">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.0" />
@@ -1085,7 +1085,7 @@
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
         <disclaimer lang="en">
-            Last updated: 11 November 2024. Version 10.0.4
+            Last updated: 24 November 2024. Version 10.0.5
             The information contained within the Seren software (the "Service") is for general information purposes
             only.
             The author assumes no responsibility for errors, omissions in the contents on the Service, nor does it
@@ -1122,7 +1122,7 @@
             <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
             <screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
         </assets>
-        <news>Changelog 10.0.4, Fix monitor and globals module.</news>
+        <news>Changelog 10.0.5, Work around for Real Debrid, to continue to use your RD Account.</news>
     </extension>
 </addon>
 
