@@ -1,4 +1,4 @@
-<addon id="plugin.video.finder" name="[COLOR deepskyblue]Finder[/COLOR]" provider-name="Newf276" version="1.0.3">
+<addon id="plugin.video.finder" name="[COLOR deepskyblue]Finder[/COLOR]" provider-name="Newf276" version="1.0.4">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>
