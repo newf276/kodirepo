@@ -606,7 +606,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.seren" version="10.0.5" name="[COLOR deepskyblue]Seren[/COLOR]" provider-name="Newf276">
+<addon id="plugin.video.seren" version="10.0.6" name="[COLOR deepskyblue]Seren[/COLOR]" provider-name="Newf276">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.0" />
@@ -668,7 +668,7 @@
             <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
             <screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
         </assets>
-        <news>Changelog 10.0.5, Work around for Real Debrid, to continue to use your RD Account.</news>
+        <news>[BUG] Optimised RD fix implementation. [BUG] Improved RD season pack handling</news>
     </extension>
 </addon>
 
