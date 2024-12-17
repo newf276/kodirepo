@@ -16,7 +16,7 @@
     <source>https://github.com/add-ons/script.speedtester</source>
     <news>v11.1.3 (2024-11-25) Add support for Python 3.9 and later</news>
     <assets>
-      <icon>resources/media/icon.png</icon>
+      <icon>icon.png</icon>
       <screenshot>resources/media/screenshot01.jpg</screenshot>
       <screenshot>resources/media/screenshot02.jpg</screenshot>
       <screenshot>resources/media/screenshot03.jpg</screenshot>
