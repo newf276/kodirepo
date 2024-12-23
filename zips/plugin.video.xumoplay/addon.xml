@@ -21,8 +21,8 @@
     <source></source>
     <news>Fix for limit of 25 items on VOD categories.</news>
     <assets>
-        <icon>resources/media/icon.png</icon>
-        <fanart>resources/media/fanart.jpg</fanart>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
 </addon>
