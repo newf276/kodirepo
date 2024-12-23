@@ -81,7 +81,10 @@ def genres(apiUrl):
 		li.setArt({'thumb':defaultimage,'fanart':defaultfanart})
 		xbmcplugin.addDirectoryItem(handle=addon_handle, url=streamUrl, listitem=li, isFolder=True)
 	xbmcplugin.setContent(addon_handle, 'episodes')
-
+	addDir2('On Demand TV Shows', baseUrl + 'tv-shows'
+	, 18, defaultimage, defaultfanart, infoLabels={'plot':'Stream unlimited TV shows. Watch action, comedy, drama, romance, and timeless classics from our vast collection on Local Now.'})
+	addDir2('On Demand Movies', baseUrl + 'free-movies'
+	, 18, defaultimage, defaultfanart, infoLabels={'plot':'Stream unlimited free movies. Watch action, comedy, drama, romance, blockbuster films and more on Local Now.'})
 	xbmcplugin.endOfDirectory(addon_handle, cacheToDisc=True)
 
 #3
@@ -321,7 +324,46 @@ def movie_stream(url):
 	PLAY(name,stream)
 
 
+#27
+def show_collection(url):
+	response = s.get(url)
+	xbmc.log('RESPONSE LENGTH: ' + str(len(response.text)),level=log_level)
+	#jsob = re.compile('application/json">(.+?)</script>').findall(response.text)[0]
+	data = json.loads(response.text)#;genres = []
+	prefix = url.replace('.json','/')
+	for count, item in enumerate(data['pageProps']['page']['rails']):
+		if item['category']['name'] == name:
+			xbmc.log(('MATCH'),level=log_level)
+			xbmc.log(('COUNT: ' + str(count)),level=log_level)
+			catId = item['category']['id']
+			xbmc.log(('CATID: ' + str(catId)),level=log_level)
+			c = count
+			slug = name.lower().replace(' ','-').replace('&','and')
+			xbmc.log(('SLUG: ' + str(slug)),level=log_level)
+			url = prefix + 'collection/' + slug + '/' + catId + '.json?slug=' + slug + '&slug=' + catId
+			xbmc.log('COLLECTION URL: ' + str(url),level=log_level)
+			shows(name,url)
 
+
+#30
+def movie_collection(url):
+	response = s.get(url)
+	xbmc.log('RESPONSE LENGTH: ' + str(len(response.text)),level=log_level)
+	#jsob = re.compile('application/json">(.+?)</script>').findall(response.text)[0]
+	data = json.loads(response.text)#;genres = []
+	prefix = url.replace('.json','/')
+	for count, item in enumerate(data['pageProps']['page']['rails']):
+		if item['category']['name'] == name:
+			xbmc.log(('MATCH'),level=log_level)
+			xbmc.log(('COUNT: ' + str(count)),level=log_level)
+			catId = item['category']['id']
+			xbmc.log(('CATID: ' + str(catId)),level=log_level)
+			c = count
+			deepLink = item['category']['deepLink']
+			xbmc.log(('SLUG: ' + str(deepLink)),level=log_level)
+			url = prefix + 'collection/' + deepLink + '.json?slug=' + deepLink
+			xbmc.log('COLLECTION URL: ' + str(url),level=log_level)
+			movies(name,url)
 
 
 #82
