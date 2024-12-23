@@ -18,12 +18,8 @@
     Browse radio stations by music genre and location.[CR]
     Read more: http://news.iheart.com/about/
     </description>
-    <platform>all</platform>
     <language>en_US</language>
     <license>GPL-2.0-or-later</license>
-        <website>https://github.com/newf276/repository.newf/tree/main/</website>
-        <source>https://github.com/newf276/repository.newf/tree/main/plugin.audio.iheart</source>
-    <news>v2.0.2 (01/30/2022)</news>
     <assets>
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>

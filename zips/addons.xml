@@ -25,7 +25,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.fenlight" name="Fen Light" provider-name="Tikipeter" version="2.0.05">
+<addon id="plugin.video.fenlight" name="[COLOR deepskyblue]Fenlight[/COLOR]" provider-name="Tikipeter" version="2.0.06">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>
@@ -43,8 +43,8 @@
 		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
         <license/>
         <assets>
-            <icon>fenlight_icon.png</icon>
-            <fanart>fenlight_fanart2.jpg</fanart>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
         </assets>
         <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>
@@ -237,7 +237,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.fen" name="Fen" provider-name="Tikipeter" version="3.5.02">
+<addon id="plugin.video.fen" name="[COLOR deepskyblue]Fen[/COLOR]" provider-name="Tikipeter" version="3.5.02">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>
@@ -260,77 +260,6 @@
         </assets>
         <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>
-</addon>
-
-<addon id="context.popcorn" version="10.0.4" name="[COLOR deepskyblue]Popcorn[/COLOR] Context Menu" provider-name="Newf276">
-	<requires>
-		<import addon="xbmc.addon" version="17.9.910" />
-		<import addon="xbmc.python" version="3.0.0" />
-	</requires>
-	<extension point="kodi.context.item">
-		<menu id="kodi.core.main">
-			<item library="context.py" args="quickRresume">
-				<label>$ADDON[context.popcorn 30000]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.quickResume)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
-			</item>
-			<item library="context.py" args="shuffle">
-				<label>$ADDON[context.popcorn 30001]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.shuffle)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,episode)]</visible>
-			</item>
-			<item library="context.py" args="playFromRandomPoint">
-				<label>$ADDON[context.popcorn 30002]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.playFromRandomPoint)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
-			</item>
-			<item library="context.py" args="rescrape">
-				<label>$ADDON[context.popcorn 30003]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.rescrape)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-			</item>
-			<item library="context.py" args="rescrape_ss">
-				<label>$ADDON[context.popcorn 30010]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.rescrape_ss)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-			</item>
-			<item library="context.py" args="sourceSelect">
-				<label>$ADDON[context.popcorn 30004]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.sourceSelect)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-			</item>
-			<item library="context.py" args="findSimilar">
-				<label>$ADDON[context.popcorn 30005]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.findSimilar)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-			</item>
-			<item library="context.py" args="browseShow">
-				<label>$ADDON[context.popcorn 30006]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.browseShow)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,tvshow)]</visible>
-			</item>
-			<item library="context.py" args="browseSeason">
-				<label>$ADDON[context.popcorn 30007]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.browseSeason)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)]</visible>
-			</item>
-			<item library="context.py" args="traktManager">
-				<label>$ADDON[context.popcorn 30008]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.popcorn.traktManager)) + String.StartsWith(ListItem.path,plugin://plugin.video.popcorn/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-			</item>
-		</menu>
-	</extension>
-	<extension point="xbmc.service" library="service.py" />
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Popcorn - Global Context Menu Items</summary>
-		<summary lang="nl">Popcorn - Algemene contextmenu-items</summary>
-		<description lang="en">Adds Context Menu items for Popcorn menu items throughout Kodi</description>
-		<description lang="nl">Voegt contextmenu-items toe voor Popcorn-menu-items in Kodi</description>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-		<forum></forum>
-		<website></website>
-		<source></source>
-		<disclaimer lang="en"></disclaimer>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-			<clearlogo>resources/images/logo-popcorn-3.png</clearlogo>
-			<poster>resources/images/poster-popcorn-3.png</poster>
-		</assets>
-        <news>Changelog 10.0.4, Fix monitor and globals module.</news>
-	</extension>
 </addon>
 
 <addon id="repository.newf" name="[COLOR deepskyblue]Repository Newf[/COLOR]" version="1.5.3" provider-name="[COLOR deepskyblue]Newf276[/COLOR]">
@@ -575,7 +504,7 @@
 	</extension>
 </addon>
 
-<addon id="skin.fen" version="1.0.2" name="Skin Fen" provider-name="newf276">
+<addon id="skin.fen" version="4.0.4" name="[COLOR deepskyblue]Skin Fen[/COLOR]" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -599,7 +528,7 @@
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
 		</assets>
-        <description>Fen Skin is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with FenLight Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search myflix in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
+        <description>Skin Fen is basically estuary with minmal changes to the Movie and TVShow Menu widgets. It is meant to be used with FenLight Addon with trakt enabled. The Movie Menu will take you to your Trakt Movie Collection list, not Watchlist and the Widgets will be for Trakt Trending, Premieres, Latest releases items etc. The same goes for TVShows Menu item, it takes you to your Trakt TVShow Collection and similar Widgets. Works clean and fast just like estaury. You can edit the Home.xml (tip search myflix in file) within the addon folder yourself if you want to change the items to Watchlist vice collection items or change the widget links for what you prefer.</description>
 	</extension>
 </addon>
 
@@ -993,12 +922,8 @@
     Browse radio stations by music genre and location.[CR]
     Read more: http://news.iheart.com/about/
     </description>
-    <platform>all</platform>
     <language>en_US</language>
     <license>GPL-2.0-or-later</license>
-        <website>https://github.com/newf276/repository.newf/tree/main/</website>
-        <source>https://github.com/newf276/repository.newf/tree/main/plugin.audio.iheart</source>
-    <news>v2.0.2 (01/30/2022)</news>
     <assets>
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
