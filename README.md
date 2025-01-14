@@ -1,2 +1,2 @@
-# kodirepo
-My personal repo
+# repository.newf
+My Kodi Files
