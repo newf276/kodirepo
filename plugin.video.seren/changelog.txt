@@ -1,5 +1,0 @@
-Changelog 10.0.6
-
-Changelog 3.0.62
-[BUG] Optimised RD fix implementation
-[BUG] Improved RD season pack handling
