@@ -17,7 +17,7 @@ ADDONTITLE = '[COLOR deepskyblue][B]Newfs[/B][/COLOR] Wizard'
 BUILDERNAME = 'Newf276'
 EXCLUDES = [ADDON_ID, 'repository.openwizard']
 # Text File with build info in it. Please read https://github.com/a4k-openproject/plugin.program.openwizard/wiki/Installing-Builds
-BUILDFILE = 'https://www.dropbox.com/scl/fi/w87d6kzqum0d7bw4xx7y1/builds.txt?rlkey=h0aadigjeqy8hndp3cg5v99fv&st=vcb0hdc1&dl=1'
+BUILDFILE = 'https://www.dropbox.com/scl/fi/w87d6kzqum0d7bw4xx7y1/builds.txt?rlkey=h0aadigjeqy8hndp3cg5v99fv&st=0n2yra85&dl=1'
 # How often you would like it to check for build updates in days
 # 0 being every startup of kodi
 UPDATECHECK = 0
@@ -98,9 +98,9 @@ AUTOINSTALL = 'Yes'
 # Addon ID for the repository
 REPOID = 'repository.newf'
 # Url to Addons.xml file in your repo folder(this is so we can get the latest version)
-REPOADDONXML = 'https://github.com/newf276/kodirepo/raw/refs/heads/master/zips/addons.xml'
+REPOADDONXML = 'https://raw.githubusercontent.com/newf276/kodirepo/master/zips/addons.xml'
 # Url to folder zip is located in
-REPOZIPURL = 'https://github.com/newf276/kodirepo/raw/refs/heads/master/zips/repository.newf/repository.newf-1.5.4.zip'
+REPOZIPURL = 'https://github.com/newf276/kodirepo/blob/master/zips/repository.newf/repository.newf-1.5.2.zip?raw=true'
 
 #########################################################
 
@@ -114,12 +114,12 @@ NOTIFICATION = 'https://github.com/newf276/kodirepo/raw/master/plugin.program.cl
 # Use either 'Text' or 'Image'
 HEADERTYPE = 'Text'
 # Font size of header
-FONTHEADER = 'Font16'
+FONTHEADER = 'Font14'
 HEADERMESSAGE = '[COLOR deepskyblue][B]Newfs[/B][/COLOR] Wizard'
 # url to image if using Image 424x180
 HEADERIMAGE = 'https://github.com/newf276/kodirepo/raw/master/icon.png'
 # Font for Notification Window
-FONTSETTINGS = 'Font14'
+FONTSETTINGS = 'Font13'
 # Background for Notification Window
-BACKGROUND = ''
+BACKGROUND = 'https://github.com/newf276/kodirepo/raw/master/fanart.jpg'
 #########################################################
