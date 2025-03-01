@@ -1,0 +1,2 @@
+# plugin.program.cleaner
+Cleaner
