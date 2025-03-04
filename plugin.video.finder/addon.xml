@@ -16,8 +16,8 @@
 		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
         <license/>
         <assets>
-            <icon>resources/media/finder_icon.png</icon>
-            <fanart>resources/media/finder_fanart2.jpg</fanart>
+            <icon>finder_icon.png</icon>
+            <fanart>finder_fanart2.jpg</fanart>
         </assets>
         <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>

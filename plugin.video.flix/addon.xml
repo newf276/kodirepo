@@ -1,4 +1,4 @@
-<addon id="plugin.video.flix" version="5.02.20" name="FLIX" provider-name="kodifitzwell">
+<addon id="plugin.video.flix" version="5.02.20" name="[COLOR deepskyblue]Flix[/COLOR]"  provider-name="newf276, kodifitzwell">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />

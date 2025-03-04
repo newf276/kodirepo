@@ -61,15 +61,14 @@
 		<source></source>
 		<disclaimer lang="en"></disclaimer>
 		<assets>
-			<icon>resources/images/ico-seren-3.png</icon>
+			<icon>ico-seren-3.png</icon>
 			<fanart>fanart-seren-3.jpg</fanart>
 			<clearlogo>resources/images/logo-seren-3.png</clearlogo>
 			<poster>resources/images/poster-seren-3.png</poster>
 		</assets>
 		<news>
-			Changelog 3.0.2
-			Compressed icons from 3.53 MB to 1.34
-			Update background color to Black
+			Changelog 10.0.4
+            Fix images
 
 			Changelog 3.0.1
 			Fix Shuffle play copy pasta mix up		
