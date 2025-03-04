@@ -102,11 +102,11 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6900"/>
 						</include>
-                        <include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.finder/?action=in_progress_tvshows&mode=build_tvshow_list&name=In Progress"/>
+                        <include content="WidgetListEpisodes">
+							<param name="content_path" value="plugin://plugin.video.finder/?iconImage=next_episodes&mode=build_next_episode&name=32483"/>
                             <param name="sortby" value="recentlyplayed"/>
 							<param name="sortorder" value="ascending"/>
-							<param name="widget_header" value="In Progress"/>
+							<param name="widget_header" value="Next Episode"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6100"/>
 						</include>

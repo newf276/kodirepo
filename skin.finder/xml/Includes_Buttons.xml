@@ -18,31 +18,6 @@
 		<radioposx>1</radioposx>
 		<radioposy>0</radioposy>
 	</include>
-	<include name="OSDSmallButton">
-		<definition>
-			<control type="radiobutton" id="$PARAM[control_id]">
-				<textureradioonfocus colordiffuse="lightgreen">$PARAM[texture]</textureradioonfocus>
-				<textureradioonnofocus colordiffuse="lightgreen">$PARAM[texture]</textureradioonnofocus>
-				<textureradioofffocus colordiffuse="white">$PARAM[texture]</textureradioofffocus>
-				<textureradiooffnofocus>$PARAM[texture]</textureradiooffnofocus>
-				<textureradioondisabled colordiffuse="disabled">$PARAM[texture]</textureradioondisabled>
-				<textureradiooffdisabled colordiffuse="disabled">$PARAM[texture]</textureradiooffdisabled>
-				<texturefocus colordiffuse="button_focus">osd/fullscreen/buttons/button-fo.png</texturefocus>
-				<texturenofocus/>
-				<width>44</width>
-				<height>44</height>
-				<radiowidth>44</radiowidth>
-				<radioheight>44</radioheight>
-				<radioposx>1</radioposx>
-				<radioposy>0</radioposy>
-				<onclick>$PARAM[onclick]</onclick>
-				<selected>$PARAM[selected]</selected>
-				<visible>Player.Process(videohwdecoder)</visible>
-				<visible>!Integer.IsEqual(System.GetInt(coreelec.amlogic.dolbyvision.mode),2)</visible>
-				<visible>$PARAM[visible]</visible>
-			</control>
-		</definition>
-	</include>
 	<include name="InfoDialogMetadata">
 		<param name="onclick_condition">false</param>
 		<param name="onclick">noop</param>
