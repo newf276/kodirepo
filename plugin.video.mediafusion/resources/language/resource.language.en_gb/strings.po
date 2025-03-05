@@ -1,0 +1,53 @@
+# Kodi Media Center language file
+# Addon Name: MediaFusion addon for Kodi
+# Addon id: plugin.mediafusion
+# Addon Provider: Mohamed Zumair
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#30000"
+msgid "MediaFusion Settings"
+msgstr ""
+
+msgctxt "#30001"
+msgid "MediaFusion Base URL"
+msgstr ""
+
+msgctxt "#30002"
+msgid "Secret String"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Configure/Reconfigure Secret String"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Scan QR Code or Enter Code"
+msgstr ""
+
+msgctxt "#30005"
+msgid "Time Remaining"
+msgstr ""
+
+msgctxt "#30006"
+msgid "Setup Completed Successfully"
+msgstr ""
+
+msgctxt "#30007"
+msgid "Setup Failed. Please try again."
+msgstr ""
+
+msgctxt "#30008"
+msgid "Setup TMDB Helper Select"
+msgstr ""
