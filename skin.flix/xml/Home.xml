@@ -65,16 +65,22 @@
 							<param name="list_id" value="5100"/>
 						</include>
     						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.flix/?action=trakt_movies_trending_recent&amp;iconImage=trending.png&amp;mode=build_movie_list&amp;name=Trending%20Recent"/>
-							<param name="widget_header" value="Trending"/>
+							<param name="content_path" value="plugin://plugin.video.flix/?list_id=29895417&amp;list_type=liked_lists&amp;mode=build_trakt_list&amp;name=Top%2010%20Movies%20-%20Apple%20TV%2b&amp;slug=top-10-movies-apple-tv&amp;user=unclemozilla"/>
+							<param name="widget_header" value="Apple+ Top 10"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5200"/>
 						</include>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.flix/?action=trakt_recommendations&amp;iconImage=%2fUsers%2fian%2fLibrary%2fApplication%20Support%2fKodi%2faddons%2fplugin.video.flix%2fresources%2fmedia%2ftrakt.png&amp;mode=build_movie_list&amp;name=Movies"/>
-							<param name="widget_header" value="Recommended"/>
+							<param name="content_path" value="plugin://plugin.video.flix/?list_id=25631133&amp;list_type=liked_lists&amp;mode=build_trakt_list&amp;name=Netflix%20-%20Top%2010%20Movies&amp;slug=netflix-top-10-movies&amp;user=sondagee"/>
+							<param name="widget_header" value="Netflix Top 10"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5300"/>
+						</include>
+						<include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.video.flix/?list_id=27868562&amp;list_type=liked_lists&amp;mode=build_trakt_list&amp;name=Amazon%20Top%2010%20Movies&amp;slug=amazon-top-10-movies&amp;user=primepiv"/>
+							<param name="widget_header" value="Prime Top 10"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5400"/>
 						</include>
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
