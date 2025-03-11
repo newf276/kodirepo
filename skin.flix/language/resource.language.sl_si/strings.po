@@ -110,7 +110,7 @@ msgstr "Nedavno predvajani kanali"
 
 msgctxt "#31019"
 msgid "Forecast"
-msgstr "Naflixed"
+msgstr "Napoved"
 
 msgctxt "#31020"
 msgid "Actions"

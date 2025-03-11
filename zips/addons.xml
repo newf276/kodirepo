@@ -532,33 +532,7 @@
   </extension>
 </addon>
 
-<addon id="skin.seren" version="10.0.4" name="[COLOR deepskyblue]Skin Seren[/COLOR]" provider-name="Newf276, phil65, Ichabod Fletchman">
-	<requires>
-		<import addon="xbmc.gui" version="5.18.0"/>
-	</requires>
-	<extension point="xbmc.gui.skin" debugging="false">
-		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
-		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
-		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
-		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
-		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
-		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
-		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
-		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<platform>all</platform>
-		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-		</assets>
-		<summary lang="en_US">Seren Skin is a fork of Estuary by phil65 and Piers. (Kodi&apos;s default skin)</summary>
-		<disclaimer lang="en_US">seren Skin is a fork of Estuary the default skin for Kodi, tweaked to use your own Trakt Collection and Seren Addon Widgets</disclaimer>
-	</extension>
-</addon>
-
-<addon id="plugin.video.flix" version="5.02.20" name="[COLOR deepskyblue]Flix[/COLOR]"  provider-name="newf276, kodifitzwell">
+<addon id="plugin.video.flix" version="5.03.05" name="Flix" provider-name="newf276l">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
@@ -574,55 +548,19 @@
         <summary>What you like to watch.[CR]</summary>
         <description lang="en">This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</description>
         <news>INFO: For latest changes see Changelog within add-on.</news>
-        <assets><icon>icon.png</icon><fanart>fanart.jpg</fanart></assets>
+        <assets><icon>icon.jpg</icon><fanart>fanart.jpg</fanart></assets>
     </extension>
     <extension point="kodi.context.item">
         <menu id="kodi.core.main">
-            <item library="resources/lib/contextmenu.py" args="refresh_widgets">
+            <item library="resources/lib/flix.py" args="refresh_widgets">
                 <label>40001</label>
-                <visible>String.IsEqual(ListItem.Property(flix_widget),true)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="flix_watched_params">
-                <label>40003</label>
-                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(flix_widget),true) + String.IsEqual(ListItem.Property(flix_playcount),0)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="flix_unwatched_params">
-                <label>40004</label>
-                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(flix_widget),true) + String.IsEqual(ListItem.Property(flix_playcount),1)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="flix_clearprog_params">
-                <label>40009</label>
-                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(flix_widget),true) + String.IsEqual(ListItem.Property(flix_in_progress),true)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="flix_browse_params">
-                <label>40002</label>
-                <visible>String.IsEqual(ListItem.dbtype,episode) + String.IsEqual(ListItem.Property(flix_widget),true)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="flix_browse_seas_params">
-                <label>40011</label>
-                <visible>String.IsEqual(ListItem.dbtype,episode) + String.IsEqual(ListItem.Property(flix_widget),true)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="flix_trakt_manager_params">
-                <label>40005</label>
-                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)] + String.IsEqual(ListItem.Property(flix_widget),true)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="flix_fav_manager_params">
-                <label>40008</label>
-                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)] + String.IsEqual(ListItem.Property(flix_widget),true)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="flix_options_menu_params">
-                <label>40007</label>
-                <visible>String.IsEqual(ListItem.Property(flix_widget),true)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="flix_extras_menu_params">
-                <label>40006</label>
                 <visible>String.IsEqual(ListItem.Property(flix_widget),true)</visible>
             </item>
         </menu>
     </extension>
 </addon>
 
-<addon id="skin.flix" version="4.0.9" name="[COLOR deepskyblue]Flix[/COLOR] Skin" provider-name="Newf276">
+<addon id="skin.flix" version="4.1.8" name="[COLOR deepskyblue]Flix[/COLOR] Skin" provider-name="Newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -639,122 +577,166 @@
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
 		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<forum>http://forum.kodi.tv/</forum>
+		<source>https://github.com/xbmc/skin.flix/</source>
 		<assets>
-			<icon>icon.png</icon>
+			<icon>icon.jpg</icon>
 			<fanart>fanart.jpg</fanart>
 		</assets>
-		<summary lang="en_US">Flix Skin is a fork of Estuary by phil65 and Piers. (Kodi&apos;s default skin)</summary>
-		<disclaimer lang="en_US">Flix Skin is a fork of Estuary the default skin for Kodi, tweaked to use your own Trakt Collection and Flix Addon Widgets</disclaimer>
+		<summary lang="af_ZA">Flix oortreksel deur phil65. (Kodi se bestek oortreksel)</summary>
+		<summary lang="ar_SA">مظهر Flix بواسطة phil65. ( مظهر كودي الافتراضي )</summary>
+		<summary lang="be_BY">Абалонка &quot;Flix&quot; ад phil65. (прадвызначаная абалонка Kodi)</summary>
+		<summary lang="bg_BG">Flix облик от phil65 и Piers. (стандартния облик на Kodi)</summary>
+		<summary lang="ca_ES">Aparença Flix per phil65 i Piers. (aparença predeterminada de Kodi)</summary>
+		<summary lang="cs_CZ">Vzhled Flix od autora phil65. (Výchozí vzhled Kodi)</summary>
+		<summary lang="da_DK">Flix skin af phil65 (Kodis standard brugerflade)</summary>
+		<summary lang="de_DE">Flix Skin von phil65. (Kodi-Standardskin)</summary>
+		<summary lang="el_GR">Το κέλυφος Flix από τον phil65 και τον Pier. (προεπιλεγμένο κέλυφος του Kodi)</summary>
+		<summary lang="en_GB">Flix skin by phil65. (Kodi&apos;s default skin)</summary>
+		<summary lang="en_NZ">Flix skin by phil65 and Piers. (Kodi&apos;s default skin)</summary>
+		<summary lang="en_US">Flix skin by phil65 and Piers. (Kodi&apos;s default skin)</summary>
+		<summary lang="es_AR">Skin Flix por phil65 (skin por defecto de Kodi)</summary>
+		<summary lang="es_ES">Skin Flix por phil65. (skin por defecto de Kodi)</summary>
+		<summary lang="es_MX">Máscara Flix por phil65 y Piers. (La máscara predeterminada de Kodi)</summary>
+		<summary lang="et_EE">Flix rüü autor on phil65. (Kodi vaikerüü)</summary>
+		<summary lang="eu_ES">Flix azala phil65-ek egina. (Kodiren azal lehenetsia)</summary>
+		<summary lang="fa_IR">پوستهٔ اسچوری به دست phil65. (پوستهٔ پیش‌گزیدهٔ کودی)</summary>
+		<summary lang="fi_FI">Flix-ulkoasun ovat kehittäneet phil65 ja Piers. (Kodin oletusulkoasu)</summary>
+		<summary lang="fr_CA">Habillage Flix par phil65 et Piers (habillage par défaut de Kodi).</summary>
+		<summary lang="fr_FR">Flix, un habillage par phil65 et Piers (habillage d&apos;origine de Kodi)</summary>
+		<summary lang="gl_ES">Pel Flix por phil65 and Piers. (Pel predefinida do Kodi)</summary>
+		<summary lang="he_IL">מעטפת Flix של phil65 (ברירת המחדל של קודי)</summary>
+		<summary lang="hr_HR">Flix presvlaka autora phil65 i Piersa. (Zadana Kodi presvlaka)</summary>
+		<summary lang="hu_HU">Flix felszín. Készítette phil65 és Piers. (Kodi alapértelmezett felszín)</summary>
+		<summary lang="id_ID">Skin Flix oleh phil65. (Skin default Kodi)</summary>
+		<summary lang="is_IS">Flix-skinnið eftir phil65. (sjálfgefið útlit Kodi)</summary>
+		<summary lang="it_IT">Skin Flix di phil65. (Skin predefinita di Kodi)</summary>
+		<summary lang="ja_JP">Flixスキン by phil65 and Piers (Kodi デフォルトスキン)</summary>
+		<summary lang="ko_KR">phil65가 만든 Flix 스킨. (Kodi 기본 스킨)</summary>
+		<summary lang="lt_LT">Flix teminė išvaizda, kurią sukūrė phil65 ir Piers. (Numatytoji Kodi teminė išvaizda)</summary>
+		<summary lang="lv_LV">Flix apvalks no phil65. (Kodi noklusējuma apvalks)</summary>
+		<summary lang="mk_MK">Flix skin by phil65. (Kodi&apos;s default skin)</summary>
+		<summary lang="ms_MY">Kulit Flix oleh phil65 dan rakan-rakan. (Kulit lalai Kodi)</summary>
+		<summary lang="nb_NO">Esturay-drakt av phil65 og Piers. (Kodis forvalgte drakt)</summary>
+		<summary lang="nl_NL">Flix skin door phil65 en Piers. (Kodi&apos;s standaardskin)</summary>
+		<summary lang="pl_PL">Skóra Eustary autorstwa phil65. (domyślna skóra Kodi)</summary>
+		<summary lang="pt_BR">Skin Flix por phil65 e Piers. (Skin padrão do Kodi)</summary>
+		<summary lang="pt_PT">Visual Flix de phil65 e Piers. (Visual por omissão do Kodi)</summary>
+		<summary lang="ro_RO">Tema Flix de phil65. (Temă implicită pentru Kodi)</summary>
+		<summary lang="ru_RU">Обложка Flix от phil65 (стандартная обложка Kodi)</summary>
+		<summary lang="sk_SK">Vzhľad Flix, vytvorili phil65. (predvolený vzhľad pre Kodi)</summary>
+		<summary lang="sr_RS">Маска Flix аутора phil65 и Piers. (Подразумевана Коди маска)</summary>
+		<summary lang="sr_RS@latin">Maska Flix autora phil65 i Piers. (Podrazumevana Kodi maska)</summary>
+		<summary lang="sv_SE">Flix, ett skal av phil65. (Kodi&apos;s standardskal)</summary>
+		<summary lang="szl">Skōra Flix ôd phil65 i Piers. (Wychodno skōra Kodi)</summary>
+		<summary lang="th_TH">สกิน Flix โดย phil65 และ Piers (หน้าตาเริ่มต้นของKodi)</summary>
+		<summary lang="tr_TR">Flix dış görünümü. phil65 (Kodi&apos;nin varsayılan dış görünümü)</summary>
+		<summary lang="uk_UA">Обкладинка Flix від phil65 і Piers. (стандартна обкладинка Kodi)</summary>
+		<summary lang="vi_VN">Giao diện Flix của phil65. (Giao diện mặc định của Kodi)</summary>
+		<summary lang="zh_CN">phil65 开发的 Flix 皮肤（Kodi 的默认皮肤）。</summary>
+		<summary lang="zh_TW">phil65與Piers 製作的Flix佈景主題（Kodi的預設佈景主題）</summary>
+		<description lang="af_ZA">Flix is die bestek oortreksel vir Kodi 17.0 en op. Dit poog om maklik te wees vir eerste keer Kodi gebruikers om te verstaan en te gebruik.</description>
+		<description lang="ar_SA">Flix هو المظهر الافتراضي ل كودي الإصدار 17.0 و أعلى. يطمح بأن يكون سهل الاستخدام والفهم لمستخدمين كودي الجدد.</description>
+		<description lang="be_BY">Flix - прадвызначаная абалонка для Kodi 17.0 і пазнейшых версій. Яна будзе простай і зразумелай для карыстальнікаў, якія не мелі досведу працы з Kodi.</description>
+		<description lang="bg_BG">Flix е стандартният облик на Kodi 17 и по-новите версии. Целта е да се улеснят хората, които се сблъскват за първи път с Kodi.</description>
+		<description lang="ca_ES">Flix és l&apos;aparença predeterminada de Kodi 17.0 i posteriors. Per als usuaris per primera vegada de Kodi, intenta ser fàcil d&apos;entendre i d&apos;utilitzar.</description>
+		<description lang="cs_CZ">Flix je výchozí vzhled pro Kodi 17.0 a vyšší. Snaží se být jednoduše pochopitelný a použitelný pro nové uživatele Kodi.</description>
+		<description lang="da_DK">Flix er standardbrugerfladen for Kodi 17.0 og højere. Det forenkler førstegangsbrugen af Kodi ved at gøre det nemmere at forstå og bruge.</description>
+		<description lang="de_DE">Flix ist der Standardskin für Kodi 17.0 und höher. Ziel war es, einen einfach zu bedienenden Skin für neue Kodi-Benutzer zu entwickeln.</description>
+		<description lang="el_GR">Το Flix είναι η προεπιλεγμένη αμφίεση για τις εκδόσεις Kodi 17.0 και άνω. Επιχειρεί να είναι προσιτό στους αρχάριους χρήστες του Kodi για να το κατανοήσουν και να το χρησιμοποιήσουν.</description>
+		<description lang="en_GB">Flix is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use.</description>
+		<description lang="en_NZ">Flix is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use.</description>
+		<description lang="en_US">Flix is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use.</description>
+		<description lang="es_AR">Flix es el skin por defecto para Kodi 17.0 y posteriores. Intenta ser fácil de entender y utilizar para los usuarios Kodi primerizos.</description>
+		<description lang="es_ES">Flix es el skin por defecto para Kodi 17.0 o superior. Su objetivo es la facilidad de comprensión y uso para usuarios primerizos de Kodi.</description>
+		<description lang="es_MX">Flix es la máscara por defecto para Kodi 17.0 y superior. Su objetivo es ser fácil de entender y usar para los usuarios nuevos a Kodi.</description>
+		<description lang="et_EE">Flix on Kodi vaikerüü versioonist 17.0. Kodi esmakasutajatel on rüüd kerge mõista ja kasutada.</description>
+		<description lang="eu_ES">Flix azala kodi 17.0 eta berriagoen azal lehenetsia da. Kodiren erabiltzaile hasiberrientzako erabilerraza eta ulerterraza izaten saiatzen da.</description>
+		<description lang="fa_IR">اسچوری پوستهٔ پیش‌گزیدهٔ کودی ۱۷٫۰ و بالاتر است. این پوسته تلاش می‌کند درک و استفاده‌اش برای کاربرانی که نخستین بار با کودی کار می‌کنند، ساده باشد.</description>
+		<description lang="fi_FI">Flix on Kodin oletusulkoasu alkaen versiosta 17.0. Sen on tarkoitus olla uusille Kodi-käyttäjille selkeä ja helppokäyttöinen.</description>
+		<description lang="fr_CA">Flix est l’habillage par défaut pour Kodi 17.0 et ultérieure. Il s’efforce d’être facile à comprendre et à utiliser pour les utilisateurs débutants de Kodi.</description>
+		<description lang="fr_FR">Flix est l&apos;habillage d&apos;origine pour Kodi 17.0 et supérieur. Il est facile à comprendre et à utiliser pour les utilisateurs novices de Kodi.</description>
+		<description lang="gl_ES">Flix é a pel predefinida para Kodi 17.0 e superior. Esta tenta ser doada de entender e usar polos usuarios recen chegados a Kodi.</description>
+		<description lang="he_IL">Flix היא מעטפת ברירת המחדל של קודי מגרסאות 17.0 ומעלה. מטרת מעטפת זו היא להיות פשוטה לשימוש ולהכרה ראשונית על ידי משתמשים חדשים.</description>
+		<description lang="hr_HR">Flix je zadana presvlaka za Kodi 17.0 i novije inačice. To je pokušaj da se novim korisnicima olakša prvo korištenje i kasnija upotreba Kodija.</description>
+		<description lang="hu_HU">Az Flix az alapértelmezett felszín a 17.0 és újabb Kodi kiadásokban. Megpróbál könnyen kezelhető és használható lenni, az újonc Kodi felhasználóknak is.</description>
+		<description lang="id_ID">Flix adalah skin default untuk Kodi 17.0 dan di atasnya. Ini untuk mudah dipahami dan digunakan oleh pengguna Kodi yang pertama kali.</description>
+		<description lang="is_IS">Flix er sjálfgefið skinn fyrir Kodi 17.0 og nýrri. Með því á að vera auðvelt fyrir fyrsta-skiptis Kodi-notendur að skilja og nota viðmótið.</description>
+		<description lang="it_IT">Flix è la skin predefinita di Kodi 17.0 e successivi. Cerca di essere facile da capire e da usare per chi si avvicina per la prima volta a Kodi.</description>
+		<description lang="ja_JP">FlixはKodi 17.0およびそれ以上のバージョンで標準のスキンです。ユーザーが初めてKodiに触れる際にわかりやすく使えるようにしてあります。</description>
+		<description lang="ko_KR">Flix는 Kodi 17.0이상의 기본 스킨입니다. 처음 Kodi를 접하는 사용자가 쉽게 이해하고 사용할 수 있도록 만들었습니다.</description>
+		<description lang="lt_LT">Flix yra numatytoji Kodi 17.0 ir aukštesnių versijų teminė išvaizda. Jos tikslas yra būti lengvai perprantama naujiems Kodi vartotojams.</description>
+		<description lang="ms_MY">Flix ialah kulit lalai untuk Kodi 17.0 dan ke atas. Kulit yang mudah digunakan buat pengguna Kodi kali pertama untuk memahami dan menggunakannya.</description>
+		<description lang="nb_NO">Flix er forvalgt drakt til Kodi 17.0 og nyere. Det tar mål av seg å være en enkel drakt for førstegangsbrukere av Kodi, slik at det er til å forstå og kan brukes.</description>
+		<description lang="nl_NL">Flix is de standaardskin voor Kodi 17.0 en hoger. Het tracht eenvoudig te begrijpen en te gebruiken te zijn voor beginnende Kodi-gebruikers.</description>
+		<description lang="pl_PL">Eustary jest domyślną skórą Kodi dla wersji 17.0 i późniejszych. Jest próbą łatwego wprowadzenia początkujących użytkowników w funkcje Kodi.</description>
+		<description lang="pt_BR">Flix é a skin padrão para o Kodi 17.0 e acima. Objetiva ser fácil para usuários que iniciam no Kodi pela primeira vez, facilitando aprendizagem de uso do mesmo.</description>
+		<description lang="pt_PT">O Flix é o visual por omissão para o Kodi 17.0 e posteriores. Tenta ser simples para os utilizadores menos experientes do Kodi compreenderem e usarem.</description>
+		<description lang="ro_RO">Flix este tema implicită pentru Kodi 17.0 și versiunile ulterioare. Încearcă să fie ușor de înțeles și folosit pentru utilizatorii care folosesc Kodi pentru prima dată.</description>
+		<description lang="ru_RU">Flix — это стандартная обложка Kodi, начиная с версии 17.0. Простая и понятная в использовании для новых пользователей Kodi.</description>
+		<description lang="sk_SK">Flix je predvolený vzhľad pre Kodi 17.0 a vyššie. Je výsledkom snahy o vzhľad, ktorý bude ľahko zrozumiteľný a použiteľný pre nových používateľov Kodi.</description>
+		<description lang="sr_RS">Flix је подразумевана маска за Kodi 17.0 и изнад. Покушава да буде једноставан за разумевање и коришћење новим корисницима Kodi-ја.</description>
+		<description lang="sr_RS@latin">Flix je podrazumevana maska za Kodi 17.0 i iznad. Pokušava da bude jednostavan za razumevanje i korišćenje novim korisnicima Kodija.</description>
+		<description lang="sv_SE">Flix är standardskalet för Kodi 17.0 och uppåt. Det är utformat för att vara lättförståeligt och användarvänligt för förstagångsanvändare av Kodi.</description>
+		<description lang="szl">Flix je wychodnōm skōrōm Kodi dlŏ wersyje 17.0 i dalszych. Prōbuje być proste dlŏ używŏczōw, dlŏ kerych Kodi je nowe</description>
+		<description lang="th_TH">Flix คือหน้าตาเริ่มต้นของ Kodi 17.0 และสูงกว่า เป็นความพยายามที่จะทำให้ง่ายสำหรับผู้ใช้ Kodi ในครั้งแรก ที่จะเข้าใจและใช้งาน</description>
+		<description lang="tr_TR">Flix Kodi 17.0 ve yukarısı için varsayılan dış görünümdür. İlk kez Kodi kullananlar için anlaşılması ve kullanımı kolaydır.</description>
+		<description lang="uk_UA">Flix є стандартною обкладинкою Kodi 17.0 і подальших версій. Її основна ідея — простота використання для нових користувачів Kodi.</description>
+		<description lang="vi_VN">Flix là giao diện mặc định cho Kodi 17.0 trở lên. Nó dễ dàng cho người dùng Kodi lần đầu tiên hiểu và sử dụng.</description>
+		<description lang="zh_CN">Flix 是 Kodi 17.0 的默认皮肤。它力求使首次使用 Kodi 的用户易于上手。</description>
+		<description lang="zh_TW">Flix是Kodi 17.0開始搭載的預設佈景主題。主要在讓第一次使用 Kodi 的使用者可以簡單地上手。</description>
+		<disclaimer lang="af_ZA">Flix is die bestek oortreksel vir Kodi, verwydering mag probleme veroorsaak</disclaimer>
+		<disclaimer lang="ar_SA">Flix هو المظهر الافتراضي ل كودي, إزالته قد تسبب بعض المشاكل</disclaimer>
+		<disclaimer lang="be_BY">Flix - прадвызначаная абалонка для Kodi. Яе выдаленне можа прывесці да праблем</disclaimer>
+		<disclaimer lang="bg_BG">Flix е стандартният облик на Kodi. Премахването му може да предизвика проблеми</disclaimer>
+		<disclaimer lang="ca_ES">Flix és l&apos;aparença predeterminada de Kodi, si s&apos;elimina pot causar problemes</disclaimer>
+		<disclaimer lang="cs_CZ">Flix je výchozí vzhled pro Kodi, jeho odebrání může způsobit problémy</disclaimer>
+		<disclaimer lang="cy_GB">Flix yw croen diofyn Kodi. Efallai bydd ei dynnu yn achosi problemau</disclaimer>
+		<disclaimer lang="da_DK">Flix er standard brugerfladen. Fjernes det kan der opstå problemer.</disclaimer>
+		<disclaimer lang="de_DE">Flix ist der Standardskin von Kodi. Ein Entfernen des Skins kann Probleme verursachen</disclaimer>
+		<disclaimer lang="el_GR">Το Flix είναι η προεπιλεγμένη αμφίεση για το Kodi. Η αφαίρεσή του μπορεί να δημιουργήσει προβλήματα.</disclaimer>
+		<disclaimer lang="en_GB">Flix is the default skin for Kodi, removing it may cause issues</disclaimer>
+		<disclaimer lang="en_NZ">Flix is the default skin for Kodi, removing it may cause issues</disclaimer>
+		<disclaimer lang="en_US">Flix is the default skin for Kodi, removing it may cause issues</disclaimer>
+		<disclaimer lang="es_AR">Flix es el skin por defecto de Kodi. Borrarlo puede causar problemas</disclaimer>
+		<disclaimer lang="es_ES">Flix es el skin por defecto de Kodi, quitarlo puede causar problemas</disclaimer>
+		<disclaimer lang="es_MX">Flix es la máscara predeterminada de Kodi, eliminarla puede causar problemas</disclaimer>
+		<disclaimer lang="et_EE">Flix on Kodi vaikerüü, selle eemaldamine võib põhjustada probleeme</disclaimer>
+		<disclaimer lang="eu_ES">Flix Kodiren azal lehenetsia da. Ezabatzeak arazoak eragin ditzake</disclaimer>
+		<disclaimer lang="fa_IR">اسچوری پوستهٔ پیش‌گزیدهٔ کودی است. ممکن است برداشتنش موجب مشکلاتی شود</disclaimer>
+		<disclaimer lang="fi_FI">Flix on Kodin oletusulkoasu ja sen poisto voi aiheuttaa ongelmia</disclaimer>
+		<disclaimer lang="fr_CA">Flix est l’habillage par défaut de Kodi, le supprimer peut créer des problèmes</disclaimer>
+		<disclaimer lang="fr_FR">Flix est l&apos;habillage d&apos;origine de Kodi, le retirer peut créer des problèmes</disclaimer>
+		<disclaimer lang="gl_ES">Flix é a pel predefinida para Kodi e eliminala pode causar problemas.</disclaimer>
+		<disclaimer lang="he_IL">Flix היא מעטפת ברירת המחדל של קודי, הסרתה עלולה לגרום לתקלות</disclaimer>
+		<disclaimer lang="hr_HR">Flix je zadana presvlaka za Kodi, njegovo uklanjanje može uzrokovati poteškoće</disclaimer>
+		<disclaimer lang="hu_HU">Az Flix az alapértelmezett Kodi felszín. Eltávolítása problémákat okozhat</disclaimer>
+		<disclaimer lang="id_ID">Flix adalah skin default untuk Kodi, menghapusnya dapat menyebabkan masalah</disclaimer>
+		<disclaimer lang="is_IS">Flix er sjálfgefið skinn fyrir Kodi, ef það er fjarlægt gætu komið upp ýmis vandamál</disclaimer>
+		<disclaimer lang="it_IT">Flix è la skin predefinita di Kodi, rimuoverla potrebbe causare problemi</disclaimer>
+		<disclaimer lang="ja_JP">FlixはKodiのデフォルトスキンなので、これを削除するとうまく動かなくなる可能性があります</disclaimer>
+		<disclaimer lang="ko_KR">Flix는 Kodi의 기본스킨으로 제거시 문제가 생길 수 있습니다</disclaimer>
+		<disclaimer lang="lt_LT">Flix yra numatytoji Kodi teminė išvaizda, jos pašalinimas gali sukelti problemų</disclaimer>
+		<disclaimer lang="ms_MY">Flix ialah kulit lalai Kodi, mengubahnya boleh menimbulkan isu.</disclaimer>
+		<disclaimer lang="nb_NO">Flix er forvalgt drakt for Kodi, dersom du fjerner det kan det forårsake problemer.</disclaimer>
+		<disclaimer lang="nl_NL">Flix is de standaardskin voor Kodi, het verwijderen van Flix kan leiden tot problemen.</disclaimer>
+		<disclaimer lang="pl_PL">Eustary jest domyślną skórą Kodi, usunięciejej może powodować problemy</disclaimer>
+		<disclaimer lang="pt_BR">Flix é a skin padrão para o Kodi, removendo-a pode causar problemas</disclaimer>
+		<disclaimer lang="pt_PT">O Flix é o visual por omissão do Kodi; se o remover, poderá ter alguns problemas</disclaimer>
+		<disclaimer lang="ro_RO">Flix este tema implicită pentru Kodi, eliminarea ei poate cauza probleme</disclaimer>
+		<disclaimer lang="ru_RU">Flix — это стандартная обложка Kodi, и ее удаление может привести к возникновению проблем</disclaimer>
+		<disclaimer lang="sk_SK">Flix je predvolený vzhľad pre Kodi, jeho odstránenie môže spôsobiť problémy</disclaimer>
+		<disclaimer lang="sr_RS">Flix је подразумевана маска за Kodi, уклањање може изазвати проблеме</disclaimer>
+		<disclaimer lang="sr_RS@latin">Flix je podrazumevana maska za Kodi, uklanjanje može izazvati probleme</disclaimer>
+		<disclaimer lang="sv_SE">Flix är Kodis standardskal. Om du tar bort det kan det orsaka problem</disclaimer>
+		<disclaimer lang="szl">Flix je wychodnōm skōrōm Kodi, jij uchrōniynie może sprŏwiać niyprzileżytości</disclaimer>
+		<disclaimer lang="th_TH">Flix เป็นหน้าตาเริ่มต้นสำหรับ Kodi, การลบมัน อาจทำให้เกิดปัญหา</disclaimer>
+		<disclaimer lang="tr_TR">Flix Kodi için varsayılan dış görünümdür, kaldırmak sorunlara yol açabilir</disclaimer>
+		<disclaimer lang="uk_UA">Flix — основна обкладинка Kodi, і її видалення може призвести до проблем</disclaimer>
+		<disclaimer lang="vi_VN">Flix là giao diện mặc định cho Kodi, loại bỏ nó có thể gây ra sự cố</disclaimer>
+		<disclaimer lang="zh_CN">Flix 是 Kodi 的默认皮肤，删除它可能导致故障。</disclaimer>
+		<disclaimer lang="zh_TW">Flix 是 Kodi 預設的佈景主題，移除它可能會造成問題</disclaimer>
 	</extension>
-</addon>
-
-<addon id="plugin.video.seren" version="10.0.4" name="[COLOR deepskyblue]Seren[/COLOR]" provider-name="Newf276, Nixgates">
-    <requires>
-        <import addon="xbmc.addon" version="17.9.910" />
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" version="2.27.0" />
-        <import addon="script.module.beautifulsoup4" version="4.9.3"/>
-        <import addon="context.seren" version="2.2.0"/>
-        <import addon="script.module.inputstreamhelper" version="0.5.10" optional="true"/>
-        <import addon="script.module.unidecode" version="1.1.1"/>
-        <import addon="script.module.myconnpy" version="8.0.18"/>
-        <import addon="script.module.web-pdb" version="1.5.6"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="seren.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.service" library="service.py"/>
-    <extension point="xbmc.addon.metadata">
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-        <summary lang="en">Seren - Modular Multi-source Addon</summary>
-        <description lang="en">Seren is a modular provider based, cloud service streaming software that is tightly
-            interwoven with Trakt. Seren provides the freedom to view media from a single menu system from service
-            providers of the users choosing. Please Note: This addon requires the use of a compatible cloud service.
-        </description>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-        <forum/>
-        <website>https://github.com/nixgates/plugin.video.seren</website>
-        <source>https://github.com/nixgates/plugin.video.seren</source>
-        <disclaimer lang="en">
-            Last updated: March 4, 2025.
-            The information contained within the Seren software (the "Service") is for general information purposes
-            only.
-            The author assumes no responsibility for errors, omissions in the contents on the Service, nor does it
-            assume responsibility for any material provided by any external services.
-            The use of the Service does not author the user to engage in any kind of illegal, criminal or tortious
-            activity through the use of the software, including infringement of any third party intellectual property
-            rights (including without limitation copyright, trade marks, patent, trade secrets and confidential
-            information), fraud, child pornography, trafficking in obscene material, violation of applicable export
-            restrictions, drug dealing, gambling, harassment, stalking, spamming, hacking, sending of viruses or other
-            harmful files or illegal posting of computer passwords or computer code.
-            The user is responsible for all their activity in connection with the use of the Service and the author
-            reserves the right to report any potentially criminal activity to appropriate law enforcement agencies.
-            The user must not transmit to or via the Service, any material that may infringe the intellectual property
-            rights of any third party, or any defamatory, derogatory or offensive material or publication.
-            In no event shall the author of this software be liable for any special, direct, indirect, consequential, or
-            incidental damages or any damages whatsoever, whether in an action of contract, negligence or other tort,
-            arising out of or in connection with the use of the Service or the contents of the Service.
-            The author reserves the right to make additions, deletions, or modification to the contents on the Service
-            at any time without prior notice.
-            The author of this software does not warrant that the software is free of viruses or other harmful
-            components.
-            Seren may contain links to external websites that are not provided or maintained by or in any way affiliated
-            with the author.
-            Please note that the author does not guarantee the accuracy, relevance, timeliness, or completeness of any
-            information on these external websites.
-        </disclaimer>
-        <assets>
-            <icon>ico-seren-3.png</icon>
-            <fanart>fanart-seren-3.jpg</fanart>
-            <clearlogo>resources/images/logo-seren-3.png</clearlogo>
-            <poster>resources/images/poster-seren-3.png</poster>
-        </assets>
-        <news>
-            Changelog 10.0.4
-            [Minor Tweaks] Improved Kodi 22 handling
-
-            Changelog 3.0.65
-            [BUG] Improved SQLite database lock handling
-            [BUG] If you skip back to the start and stop playback seren will now stop trakt scrobble and remove playback history
-            [BUG] Will no longer use stretched icon for fanart on menu items
-            [PERFORMANCE] Will no longer remove trakt bookmark when starting playback
-            [PERFORMANCE] Resuming playback will now seek faster
-            [PERFORMANCE] Removed unnecessary error when RD magnet doesn't resolve
-            [FEATURE] Can limit next up episodes by item limit
-            [FEATURE] Added sorting options for watchlist
-            [FEATURE] Can now use chapter info to trigger smartplay window
-            [FEATURE] Added progress indicators
-
-            Changelog 3.0.62
-            [BUG] Optimised RD fix implementation
-            [BUG] Improved RD season pack handling
-            [BUG] Improved RD download handling when uncached
-            [BUG] Improved RD file selection handling when uncached
-
-            Changelog 3.0.61
-            [BUG] Fix AD not deleting magnet if not cached
-
-            Changelog 3.0.6
-            [BUG] Fix AD Playback
-
-            Changelog 3.0.5
-            [BUG] Fix RD playback
-            [BUG] Improved 3D Filtering
-            [FEATURE] Added option to filer results by internet speed
-            [FEATURE] Added 'Cancel' button to smartplay window
-            [FEATURE] Added 'Icon Only' scraper display style option
-            [FEATURE] Added 'Minimum Percentage Left Before Showing Dialog option' for smartplay window
-            [FEATURE] Added option to hide resolver window when attempting to play
-            [FEATURE] Added 60 FPS filter
-
-            Changelog 3.0.1
-            [FEATURE] Handle Kodi database version for Omega 21
-            [PERFORMANCE] Compressed icons from 3.53 MB to 1.34
-            [FEATURE] Update background color to Black for 3.0.1
-
-        </news>
-    </extension>
 </addon>
 
 <addon id="context.seren" version="10.0.4" name="[COLOR deepskyblue]Seren Context Menu[/COLOR]" provider-name="Newf276, Nixgates">
@@ -991,7 +973,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.pov" version="5.02.20" name="[COLOR deepskyblue]POV[/COLOR]"  provider-name="newf276, kodifitzwell">
+<addon id="plugin.video.pov" version="5.03.05" name="POV" provider-name="kodifitzwell">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
@@ -1007,48 +989,12 @@
         <summary>What you like to watch.[CR]</summary>
         <description lang="en">This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</description>
         <news>INFO: For latest changes see Changelog within add-on.</news>
-        <assets><icon>icon.png</icon><fanart>fanart.jpg</fanart></assets>
+        <assets><icon>icon.png</icon><fanart>fanart.png</fanart></assets>
     </extension>
     <extension point="kodi.context.item">
         <menu id="kodi.core.main">
-            <item library="resources/lib/contextmenu.py" args="refresh_widgets">
+            <item library="resources/lib/pov.py" args="refresh_widgets">
                 <label>40001</label>
-                <visible>String.IsEqual(ListItem.Property(pov_widget),true)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="pov_watched_params">
-                <label>40003</label>
-                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(pov_widget),true) + String.IsEqual(ListItem.Property(pov_playcount),0)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="pov_unwatched_params">
-                <label>40004</label>
-                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(pov_widget),true) + String.IsEqual(ListItem.Property(pov_playcount),1)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="pov_clearprog_params">
-                <label>40009</label>
-                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)] + String.IsEqual(ListItem.Property(pov_widget),true) + String.IsEqual(ListItem.Property(pov_in_progress),true)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="pov_browse_params">
-                <label>40002</label>
-                <visible>String.IsEqual(ListItem.dbtype,episode) + String.IsEqual(ListItem.Property(pov_widget),true)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="pov_browse_seas_params">
-                <label>40011</label>
-                <visible>String.IsEqual(ListItem.dbtype,episode) + String.IsEqual(ListItem.Property(pov_widget),true)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="pov_trakt_manager_params">
-                <label>40005</label>
-                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)] + String.IsEqual(ListItem.Property(pov_widget),true)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="pov_fav_manager_params">
-                <label>40008</label>
-                <visible>[String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)] + String.IsEqual(ListItem.Property(pov_widget),true)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="pov_options_menu_params">
-                <label>40007</label>
-                <visible>String.IsEqual(ListItem.Property(pov_widget),true)</visible>
-            </item>
-            <item library="resources/lib/contextmenu.py" args="pov_extras_menu_params">
-                <label>40006</label>
                 <visible>String.IsEqual(ListItem.Property(pov_widget),true)</visible>
             </item>
         </menu>

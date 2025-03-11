@@ -30,7 +30,7 @@
         <setting id="rd.refresh" type="text" default="" visible="false" />
         <setting id="rd.client_id" type="text" default="" visible="false" />
         <setting id="rd.secret" type="text" default="" visible="false" />
-        <setting id="results.sort_order" type="text" default="1" visible="false" />
+        <setting id="results.sort_order" type="text" default="0" visible="false" />
         <setting id="database.maintenance.due" type="text" default="0" visible="false" />
         <setting id="reuse_language_invoker" type="text" default="true" visible="false" />
         <setting id="folder1.display_name" type="text" default="Folder 1" visible="false" />
@@ -190,18 +190,18 @@
         <setting id="debug.enabled" label="Enable Debug" type="bool" default="false" />
         <setting id="debug.location" label="Logging Location" type="enum" default="1" enable="eq(-1,true)" values="Kodi Log|Addon Log" visible="eq(-1,true)" />
         <setting label="32830" type="lsep" />
+        <setting id="provider.comet" label="comet" type="bool" default="false" />
         <setting id="provider.knightcrawler" label="knightcrawler (torrentio/dmm)" type="bool" default="false" />
         <setting id="provider.mediafusion" label="mediafusion" type="bool" default="false" />
             <setting id="mediafusion.packs" label="Include Show Packs" type="bool" default="false" subsetting="true" visible="eq(-1,true)" />
         <setting id="provider.zilean" label="zilean (dmm)" type="bool" default="false" />
-        <setting id="provider.nyaaio" label="nyaaio (nyaasi/tokyotosho/anidex)" type="bool" default="false" />
-        <setting id="provider.torrentio" label="torrentio (pack capable)" type="bool" default="true" />
         <setting id="provider.animetosho" label="animetosho (pack capable)" type="bool" default="false" />
         <setting id="provider.bitsearch" label="bitsearch (pack capable)" type="bool" default="false" />
             <setting id="bitsearch.sort" label="results preference" type="enum" default="0" subsetting="true" values="random|largest" visible="eq(-1,true)" />
         <setting id="provider.dmm" label="dmm" type="bool" default="false" visible="false" />
         <setting id="provider.nyaa" label="nyaa" type="bool" default="false" />
         <setting id="provider.piratebay" label="piratebay (pack capable)" type="bool" default="true" />
+        <setting id="provider.torrentio" label="torrentio (pack capable)" type="bool" default="true" />
         <setting id="provider.torrentdownload" label="torrentdownload (pack capable)" type="bool" default="false" />
         <setting id="provider.torrentquest" label="torrentquest (pack capable)" type="bool" default="false" />
         <setting id="provider.library" label="library" type="bool" default="false" visible="false" />
@@ -290,10 +290,10 @@
             <setting id="tidebrid.debrid" label="Debrid Provider" type="enum" default="0" subsetting="true" values="Real Debrid|All Debrid|Direct" visible="eq(-1,true)" />
         <setting id="provider.mfdebrid" label="mediafusion debrid+" type="bool" default="false" />
             <setting id="mfdebrid.debrid" label="Debrid Provider" type="enum" default="0" subsetting="true" values="Real Debrid|All Debrid|Direct" visible="eq(-1,true)" />
-            <setting id="mfdebrid.token" label="" type="text" default="" subsetting="true" visible="false" />
-            <setting id="mfdebrid.url" label="" type="enum" default="0" subsetting="true" visible="false" />
-            <setting id="mfdebrid.packs" label="Include Show Packs" type="bool" default="false" subsetting="true" visible="eq(-4,true)" />
-        <setting label="[COLOR BFFD3DB5]Enable torrentio/mediafusion debrid+ After RD/AD Authorization[/COLOR]" type="lsep" />
+            <setting id="mfdebrid.packs" label="Include Show Packs" type="bool" default="false" subsetting="true" visible="eq(-2,true)" />
+        <setting id="provider.cmdebrid" label="comet debrid+" type="bool" default="false" />
+            <setting id="cmdebrid.debrid" label="Debrid Provider" type="enum" default="0" subsetting="true" values="Real Debrid|All Debrid|Direct" visible="eq(-1,true)" />
+        <setting label="[COLOR BFFD3DB5]Enable torrentio/mediafusion/comet debrid+ After RD/AD Authorization[/COLOR]" type="lsep" />
         <setting id="amble.debrid" label="" type="text" visible="false" />
         <!-- Real Debrid -->
         <setting label="32054" type="lsep" />
@@ -375,6 +375,11 @@
         <setting label="32173" type="lsep" />
         <setting id="fanart_amble1" label="32180" type="text" enable="false" />
         <setting id="fanart_client_key" label="32053" type="text" default="fe073550acf157bdb8a4217f215c0882" enable="true" option="hidden" />
+        <!-- RPDB -->
+        <setting label="Rating Poster Database" type="lsep" />
+        <setting id="rpdb_api_key" label="API Key" type="text" default="" />
+            <setting id="get_rpdb_data" label="Use Poster At Movie Level" type="bool" default="false" subsetting="true" visible="!eq(-1,)" />
+            <setting id="get_rpdb_data_series" label="Use Poster At TV Show Level" type="bool" default="false" subsetting="true" visible="!eq(-2,)" />
         <!-- TMDb -->
         <setting label="32068" type="lsep" />
         <setting id="image_resolutions" label="32149" type="enum" default="2" values="Low|Medium|High|Original" />

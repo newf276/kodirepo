@@ -2,7 +2,13 @@
   [COLOR dodgerblue][B]CREDITS[/B][/COLOR]
 - Fen, Venom, Mr-Kodi.
 
+  [COLOR dodgerblue][B]Version 5.03[/B][/COLOR]
+- Added Clear MDBList Cache.
+- Updated Comet/Mediafusion.  Added Comet Debrid+ for RD/AD crowd sourced cached status.
+
   [COLOR dodgerblue][B]Version 5.02[/B][/COLOR]
+- Added Rating Poster Database api.  Insert API key in Settings/Metadata.
+- Added Scrape From Episode Group to "Options..." context menu for episodes.
 - Added MDBList Watchlist menu items/api endpoints.
 - Added Results/Results Display/WideList settings.
 - Added Navigation/Context Menu Sorting settings. (0 disables item)
@@ -59,12 +65,12 @@
 - EXPERIMENTAL: changed Full-Screen playback window, if errors occur change setting
   Playback/Loading Progress to Background.  One service in particular seems to cause
   kodi to "freeze", causing pause in the animation.
-- [COLOR chartreuse]Added EasyDebrid as a debrid provider.[/COLOR]
+- Added EasyDebrid as a debrid provider.
 - Added zilean.
 - Changed mediafusion to "Direct Torrent" only.
 
   [COLOR dodgerblue][B]Version 4.11[/B][/COLOR]
-- [COLOR chartreuse]Added TorBox as a debrid provider.[/COLOR]
+- Added TorBox as a debrid provider.
 - Added torbox cloud scraper and enabled context menu download options.
 - Added meta_language iso:pt-BR, name:Portuguese (Brazil).
 - Added meta_language iso:es-MX, name:Spanish (Mexico).
@@ -106,7 +112,7 @@
 - Added "Loading progress / Background Dialog or Background Image" setting to Playback.
 
   [COLOR dodgerblue][B]Version 4.04[/B][/COLOR]
-- [COLOR chartreuse]NOTICE: Trakt re-authorization required with 4.04.01 release.[/COLOR]
+- NOTICE: Trakt re-authorization required with 4.04.01 release.
   Trakt will not work without due to separating api keys for each addon in repo.
 - Added "Trending Recent" to Movies/TV Shows.  These lists include titles from this/last year.
   From Edit context menu, "Restore" menu or "Check" menu for new items.
@@ -145,7 +151,7 @@
 - Disabled playback for certain file types from Offcloud because their api is not friendly.
 
   [COLOR dodgerblue][B]Version 4.01[/B][/COLOR]
-- [COLOR chartreuse]Added Offcloud as a debrid provider.[/COLOR]
+- Added Offcloud as a debrid provider.
   Offcloud seems to yield most results when torrentio also enabled.
 - Added magnetdl,rutor to the torrentio search links.
 
@@ -159,8 +165,8 @@
 
   [COLOR dodgerblue][B]Version 3.08[/B][/COLOR]
 - Revert threading code as fix for previous update that broke in Android.
-- [COLOR chartreuse]Trakt lists now support mixed Movies/TVShows/Seasons/Episodes,
-  i.e. "The Essential X-Files Episodes" and "Star Wars Canon timeline."[/COLOR]
+- Trakt lists now support mixed Movies/TVShows/Seasons/Episodes,
+  i.e. "The Essential X-Files Episodes" and "Star Wars Canon timeline."
   Even if you do not choose to "Paginate Lists When Possible," enable this setting and
   change it to a reasonable amount for your device and then disable it. Even if disabled,
   FLIX will use this nominal value to limit the number of threads used when creating lists.
@@ -180,8 +186,8 @@
   empty results window from way back.
 
   [COLOR dodgerblue][B]Version 3.02[/B][/COLOR]
-- [COLOR chartreuse]Added back user defined undesirables through comma separated list. See "Sources" settings.
-  Example: define "8ch,7ch,atmos,hqcam" to filter out these terms.[/COLOR]
+- Added back user defined undesirables through comma separated list. See "Sources" settings.
+  Example: define "8ch,7ch,atmos,hqcam" to filter out these terms.
 - Added more Kodi 20 Nexus changes.
 
   [COLOR dodgerblue][B]Version 3.01[/B][/COLOR]
@@ -233,9 +239,9 @@
 - Other changes/fixes.
 
   [COLOR dodgerblue][B]Version 2.13.0[/B][/COLOR]
-- [COLOR chartreuse]Migrated scrapers to FLIX addon, see FLIX settings to enable/disable
-  individual sources.[/COLOR]
-- [COLOR chartreuse]Please uninstall separate FenomScrapers addon (Orphaned).[/COLOR]
+- Migrated scrapers to FLIX addon, see FLIX settings to enable/disable
+  individual sources.
+- Please uninstall separate FenomScrapers addon (Orphaned).
 - Context menu scraper navigation may not be complete, more testing needed.
 - Removed support for hosters, may bring back in future.
 - Other changes/fixes.
@@ -251,8 +257,8 @@
 - New media icons.
 
   [COLOR dodgerblue][B]Version 2.9.0[/B][/COLOR]
-- [COLOR chartreuse]Authorize/revoke accounts directly from FLIX addon, removed
-  dependency for separate accounts addon.[/COLOR]
+- Authorize/revoke accounts directly from FLIX addon, removed
+  dependency for separate accounts addon.
 - Trakt/Easynews/Furk functions are beta at this time.
 - Changed settings organization/defaults.
 

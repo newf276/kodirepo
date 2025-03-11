@@ -63,7 +63,7 @@ msgstr "Nepozreté filmy"
 
 msgctxt "#31008"
 msgid "Enable category widgets"
-msgstr "Flixoliť widgety kategórií"
+msgstr "Povoliť widgety kategórií"
 
 msgctxt "#31009"
 msgid "Download icons"
@@ -110,7 +110,7 @@ msgstr "Nedávno prehrávané kanály"
 
 msgctxt "#31019"
 msgid "Forecast"
-msgstr "Predflixeď"
+msgstr "Predpoveď"
 
 msgctxt "#31020"
 msgid "Actions"
@@ -203,7 +203,7 @@ msgstr "Možnosti zoznamu skladieb"
 
 msgctxt "#31043"
 msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
-msgstr "Nastavte typ a pridajte pravidlá pre vytvorenie inteligentného zoznamu skladieb. Tieto zoznamy skladieb sú dynamické a zahŕňajú všetky položky médií z vašej databázy, ktoré zodflixedajú zvoleným pravidlám."
+msgstr "Nastavte typ a pridajte pravidlá pre vytvorenie inteligentného zoznamu skladieb. Tieto zoznamy skladieb sú dynamické a zahŕňajú všetky položky médií z vašej databázy, ktoré zodpovedajú zvoleným pravidlám."
 
 msgctxt "#31044"
 msgid "Add group"

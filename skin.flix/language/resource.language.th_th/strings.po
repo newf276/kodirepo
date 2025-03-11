@@ -1,6 +1,6 @@
 # Kodi Media Center language file
-# Addon Name: Finder
-# Addon id: skin.finder
+# Addon Name: Estuary
+# Addon id: skin.estuary
 # Addon Provider: Team Kodi
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2023-12-04 09:42+0000\n"
 "Last-Translator: Christian Gade <gade@kodi.tv>\n"
-"Language-Team: Thai <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-finder/th_th/>\n"
+"Language-Team: Thai <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-estuary/th_th/>\n"
 "Language: th_th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Weblate 5.2.1\n"
 
 msgctxt "Addon Summary"
-msgid "Finder skin by phil65. (Kodi's default skin)"
-msgstr "สกิน Finder โดย phil65 และ Piers (หน้าตาเริ่มต้นของKodi)"
+msgid "Estuary skin by phil65. (Kodi's default skin)"
+msgstr "สกิน Estuary โดย phil65 และ Piers (หน้าตาเริ่มต้นของKodi)"
 
 msgctxt "Addon Description"
-msgid "Finder is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "Finder คือหน้าตาเริ่มต้นของ Kodi 17.0 และสูงกว่า เป็นความพยายามที่จะทำให้ง่ายสำหรับผู้ใช้ Kodi ในครั้งแรก ที่จะเข้าใจและใช้งาน"
+msgid "Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Estuary คือหน้าตาเริ่มต้นของ Kodi 17.0 และสูงกว่า เป็นความพยายามที่จะทำให้ง่ายสำหรับผู้ใช้ Kodi ในครั้งแรก ที่จะเข้าใจและใช้งาน"
 
 msgctxt "Addon Disclaimer"
-msgid "Finder is the default skin for Kodi, removing it may cause issues"
-msgstr "Finder เป็นหน้าตาเริ่มต้นสำหรับ Kodi, การลบมัน อาจทำให้เกิดปัญหา"
+msgid "Estuary is the default skin for Kodi, removing it may cause issues"
+msgstr "Estuary เป็นหน้าตาเริ่มต้นสำหรับ Kodi, การลบมัน อาจทำให้เกิดปัญหา"
 
 msgctxt "#31000"
 msgid "Now playing"

@@ -905,7 +905,7 @@
 					<content>
 	                        <item>
 							<label>$LOCALIZE[20343]</label>
-							<onclick>ActivateWindow(Videos,"plugin://plugin.video.flix/?action=trakt_collection&amp;iconImage=%2fUsers%2fian%2fLibrary%2fApplication%20Support%2fKodi%2faddons%2fplugin.video.flix%2fresources%2fmedia%2ftrakt.png&amp;mode=build_tvshow_list&amp;name=TV%20Shows",return)</onclick>
+							<onclick>ActivateWindow(Videos,"plugin://plugin.video.flix/?action=trakt_collection&mode=build_tvshow_list",return)</onclick>
 							<property name="menu_id">$NUMBER[6000]</property>
 							<thumb>icons/sidemenu/tv.png</thumb>
 							<property name="id">tvshows</property>
@@ -913,7 +913,7 @@
 						</item>
 						<item>
 							<label>$LOCALIZE[342]</label>
-                            <onclick>ActivateWindow(Videos,"plugin://plugin.video.flix/?action=trakt_collection&amp;iconImage=%2fUsers%2fian%2fLibrary%2fApplication%20Support%2fKodi%2faddons%2fplugin.video.flix%2fresources%2fmedia%2ftrakt.png&amp;mode=build_movie_list&amp;name=Movies",return)</onclick>
+                            <onclick>ActivateWindow(Videos,"plugin://plugin.video.flix/?action=trakt_collection&mode=build_movie_list",return)</onclick>
 							<property name="menu_id">$NUMBER[5000]</property>
 							<thumb>icons/sidemenu/movies.png</thumb>
 							<property name="id">movies</property>

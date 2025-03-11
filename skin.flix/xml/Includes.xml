@@ -1764,40 +1764,4 @@
 			</focusedlayout>
 		</definition>
 	</include>
-	<include name="VideoCodecFlag">
-		<param name="groupId"/>
-		<param name="imageId"/>
-		<param name="visible"/>
-		<param name="texture"/>
-		<definition>
-			<control type="group" id="$PARAM[groupId]">
-				<control type="image" id="$PARAM[imageId]">
-					<top>20</top>
-					<left>806</left>
-					<width>144</width>
-					<height>80</height>
-					<visible>$PARAM[visible]</visible>
-					<texture>$PARAM[texture]</texture>
-				</control>
-			</control>
-		</definition>
-	</include>
-	<include name="AudioCodecFlag">
-		<param name="groupId"/>
-		<param name="imageId"/>
-		<param name="visible"/>
-		<param name="texture"/>
-		<definition>
-			<control type="group" id="$PARAM[groupId]">
-				<control type="image" id="$PARAM[imageId]">
-					<top>20</top>
-					<left>970</left>
-					<width>144</width>
-					<height>80</height>
-					<visible>$PARAM[visible]</visible>
-					<texture>$PARAM[texture]</texture>
-				</control>
-			</control>
-		</definition>
-	</include>
 </includes>

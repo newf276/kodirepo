@@ -634,7 +634,7 @@ msgstr "Pokaži postere umjesto minijatura za glazbene spotove"
 #. Description label for skin settings area
 msgctxt "#31169"
 msgid "Artwork related settings."
-msgstr "Postavke flixezane slikama omota."
+msgstr "Postavke povezane slikama omota."
 
 #. Label for OSD settings category
 msgctxt "#31170"
@@ -644,7 +644,7 @@ msgstr "Prikaz na zaslonu"
 #. Helper text for the label of OSD settings category
 msgctxt "#31171"
 msgid "On screen display (OSD) related settings"
-msgstr "Postavke flixezane s prikazom na zaslonu (OSD)"
+msgstr "Postavke povezane s prikazom na zaslonu (OSD)"
 
 #. Setting Automatically close video OSD
 msgctxt "#31172"

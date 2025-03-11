@@ -1,6 +1,6 @@
 # Kodi Media Center language file
-# Addon Name: Flix
-# Addon id: skin.flix
+# Addon Name: Estuary
+# Addon id: skin.estuary
 # Addon Provider: Team Kodi
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2024-02-12 00:31+0000\n"
 "Last-Translator: Christian Gade <gade@kodi.tv>\n"
-"Language-Team: Russian <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-flix/ru_ru/>\n"
+"Language-Team: Russian <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-estuary/ru_ru/>\n"
 "Language: ru_ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Weblate 5.3\n"
 
 msgctxt "Addon Summary"
-msgid "Flix skin by phil65. (Kodi's default skin)"
-msgstr "Обложка Flix от phil65 (стандартная обложка Kodi)"
+msgid "Estuary skin by phil65. (Kodi's default skin)"
+msgstr "Обложка Estuary от phil65 (стандартная обложка Kodi)"
 
 msgctxt "Addon Description"
-msgid "Flix is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
-msgstr "Flix — это стандартная обложка Kodi, начиная с версии 17.0. Простая и понятная в использовании для новых пользователей Kodi."
+msgid "Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Estuary — это стандартная обложка Kodi, начиная с версии 17.0. Простая и понятная в использовании для новых пользователей Kodi."
 
 msgctxt "Addon Disclaimer"
-msgid "Flix is the default skin for Kodi, removing it may cause issues"
-msgstr "Flix — это стандартная обложка Kodi, и ее удаление может привести к возникновению проблем"
+msgid "Estuary is the default skin for Kodi, removing it may cause issues"
+msgstr "Estuary — это стандартная обложка Kodi, и ее удаление может привести к возникновению проблем"
 
 msgctxt "#31000"
 msgid "Now playing"
