@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: FLIX
 # Addon id: plugin.video.flix
-# Addon Provider: newf276
+# Addon Provider: kodifitzwell
 # Translator English: Tiki
 msgid ""
 msgstr ""

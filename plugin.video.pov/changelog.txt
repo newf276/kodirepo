@@ -3,6 +3,8 @@
 - Fen, Venom, Mr-Kodi.
 
   [COLOR dodgerblue][B]Version 5.03[/B][/COLOR]
+- Added TorBox Usenet Search Sort setting in Settings/My Services/TorBox.
+- Added TorBox Usenet Search to Options... context menu and My Services menu.
 - Added Clear MDBList Cache.
 - Updated Comet/Mediafusion.  Added Comet Debrid+ for RD/AD crowd sourced cached status.
 
@@ -53,7 +55,7 @@
   all others OR enable "display uncached" and manually add those to cloud to view from there.
 - Changed `nyaaio` scraper to include more of the foreign language sources from torrentio
   and disabled title check.
-- Added completed TorBox usenet to Torbox Cloud Storage.
+- Added completed TorBox usenet to TorBox Cloud Storage.
   Playback links from TorBox are still problematic.  Check the kodi.log before complaints
   the addon does not work.
 - Added TorBox "Add Resovled Torrents to Cloud".

@@ -265,10 +265,11 @@
             <setting id="tb_cloud.title_filter" label="32172" type="bool" default="false" subsetting="true" visible="eq(-1,true)+eq(-5,true)+!eq(-6,)" />
             <setting id="check.tb_cloud" label="32104" type="bool" default="false" subsetting="true" visible="eq(-2,true)+eq(-6,true)+!eq(-7,)" />
             <setting id="results.sort_tbcloud_first" label="32103" type="bool" default="true" subsetting="true" visible="eq(-3,true)+eq(-7,true)+!eq(-8,)" />
-        <setting id="tb.priority" label="32011" type="slider" default="9" option="int" range="1,1,10" visible="eq(-8,true)+!eq(-9,)" />
-        <setting id="tb.expires" label="Premium Expires Notification (days)" type="slider" default="0" option="int" range="0,1,7" visible="eq(-9,true)+!eq(-10,)" />
-        <setting label="Authorize" type="action" visible="eq(-11,)" option="close" action="RunPlugin(plugin://plugin.video.flix/?mode=torbox.tb_auth)" />
-        <setting label="Revoke" type="action" visible="!eq(-12,)" action="RunPlugin(plugin://plugin.video.flix/?mode=torbox.tb_revoke)" />
+        <setting id="tb.sort" label="TorBox Usenet Search Sort" type="enum" default="0" values="Age|Size|Tracker" visible="eq(-8,true)+!eq(-9,)" />
+        <setting id="tb.priority" label="32011" type="slider" default="9" option="int" range="1,1,10" visible="eq(-9,true)+!eq(-10,)" />
+        <setting id="tb.expires" label="Premium Expires Notification (days)" type="slider" default="0" option="int" range="0,1,7" visible="eq(-10,true)+!eq(-11,)" />
+        <setting label="Authorize" type="action" visible="eq(-12,)" option="close" action="RunPlugin(plugin://plugin.video.flix/?mode=torbox.tb_auth)" />
+        <setting label="Revoke" type="action" visible="!eq(-13,)" action="RunPlugin(plugin://plugin.video.flix/?mode=torbox.tb_revoke)" />
         <!-- Easynews -->
         <setting label="32070" type="lsep" />
         <setting id="provider.easynews" label="32055" type="bool" default="false" />
