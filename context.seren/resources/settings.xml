@@ -10,12 +10,12 @@
                 </setting>
                 <setting id="context.seren.shuffle" type="boolean" label="30001" help="">
                     <level>0</level>
-                    <default>true</default>
+                    <default>false</default>
                     <control type="toggle"/>
                 </setting>
                 <setting id="context.seren.playFromRandomPoint" type="boolean" label="30002" help="">
                     <level>0</level>
-                    <default>true</default>
+                    <default>false</default>
                     <control type="toggle"/>
                 </setting>
                 <setting id="context.seren.rescrape" type="boolean" label="30003" help="">
@@ -25,12 +25,12 @@
                 </setting>
                 <setting id="context.seren.rescrape_ss" type="boolean" label="30010" help="">
                     <level>0</level>
-                    <default>true</default>
+                    <default>false</default>
                     <control type="toggle"/>
                 </setting>
                 <setting id="context.seren.sourceSelect" type="boolean" label="30004" help="">
                     <level>0</level>
-                    <default>true</default>
+                    <default>false</default>
                     <control type="toggle"/>
                 </setting>
                 <setting id="context.seren.findSimilar" type="boolean" label="30005" help="">
@@ -45,7 +45,7 @@
                 </setting>
                 <setting id="context.seren.browseSeason" type="boolean" label="30007" help="">
                     <level>0</level>
-                    <default>true</default>
+                    <default>false</default>
                     <control type="toggle"/>
                 </setting>
                 <setting id="context.seren.traktManager" type="boolean" label="30008" help="">
