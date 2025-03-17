@@ -58,29 +58,17 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5900"/>
 						</include>
-						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.finder/?action=tmdb_movies_genres&amp;iconImage=https%3a%2f%2fi.imgur.com%2fxCJdDW7.png&amp;key_id=16&amp;mode=build_movie_list&amp;name=Animation"/>
-							<param name="widget_header" value="Animation"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5100"/>
-						</include>
-						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.finder/?list_name=Kids_Movies&amp;list_type=liked_lists&amp;mode=trakt.list.build_trakt_list&amp;random=true&amp;slug=kids_movies&amp;user=b1scu17"/>
-							<param name="widget_header" value="Kids Films"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5200"/>
-						</include>
     						<include content="WidgetListPoster">
 							<param name="content_path" value="plugin://plugin.video.finder/?list_name=Pixar%20Feature%20Films&amp;list_type=liked_lists&amp;mode=trakt.list.build_trakt_list&amp;random=true&amp;slug=pixar-feature-films&amp;user=draackje"/>
 							<param name="widget_header" value="Pixar Films"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5300"/>
+							<param name="list_id" value="5100"/>
 						</include>
 						<include content="WidgetListPoster">
 							<param name="content_path" value="plugin://plugin.video.finder/?list_name=Walt%20Disney%20Animation%20Studios&amp;list_type=liked_lists&amp;mode=trakt.list.build_trakt_list&amp;random=true&amp;slug=walt-disney-animation-studios&amp;user=jashack"/>
 							<param name="widget_header" value="Walt Disney Animation"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5400"/>
+							<param name="list_id" value="5200"/>
 						</include>
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
@@ -103,28 +91,16 @@
 							<param name="list_id" value="6900"/>
 						</include>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.finder/?action=tmdb_tv_genres&amp;iconImage=https%3a%2f%2fi.imgur.com%2fxCJdDW7.png&amp;key_id=16&amp;mode=build_tvshow_list&amp;name=Animation"/>
-							<param name="widget_header" value="Animation"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6100"/>
-						</include>
-						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.finder/?action=tmdb_tv_networks&amp;iconImage=https%3a%2f%2fi.imgur.com%2fzmOLbbI.png&amp;key_id=56&amp;mode=build_tvshow_list&amp;name=Cartoon%20Network"/>
-							<param name="widget_header" value="Cartoon Network"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6200"/>
-						</include>
-						<include content="WidgetListPoster">
 							<param name="content_path" value="plugin://plugin.video.finder/?action=tmdb_tv_networks&amp;iconImage=https%3a%2f%2fi.imgur.com%2fZCgEkp6.png&amp;key_id=54&amp;mode=build_tvshow_list&amp;name=Disney%20Channel"/>
 							<param name="widget_header" value="Disney Channel"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6300"/>
+							<param name="list_id" value="6100"/>
 						</include>
 						<include content="WidgetListPoster">
 							<param name="content_path" value="plugin://plugin.video.finder/?action=tmdb_tv_networks&amp;iconImage=https%3a%2f%2fi.imgur.com%2fOUVoqYc.png&amp;key_id=13&amp;mode=build_tvshow_list&amp;name=Nickelodeon"/>
 							<param name="widget_header" value="Nickelodeon"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6400"/>
+							<param name="list_id" value="6200"/>
 						</include>
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
