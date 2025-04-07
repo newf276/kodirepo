@@ -43,11 +43,6 @@
 					<effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
 				</animation>
 				<include>OpenClose_Right</include>
-				<control type="group" id="5000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>
-					<include content="Visible_Right_Delayed">
-						<param name="id" value="movies"/>
-					</include>
 					<control type="grouplist" id="5001">
 						<include>WidgetGroupListCommon</include>
 						<pagecontrol>5010</pagecontrol>
