@@ -59,28 +59,16 @@
 							<param name="list_id" value="5900"/>
 						</include>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=Latest%20Releases&amp;list_type=user_lists&amp;mode=trakt.list.build_trakt_list&amp;slug=latest-releases&amp;user=giladg"/>
-							<param name="widget_header" value="Latest Releases"/>
+							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=Top%20Movies%20of%20the%20week&amp;list_type=user_lists&amp;mode=trakt.list.build_trakt_list&amp;slug=top-movies-of-the-week&amp;user=garycrawfordgc"/>
+							<param name="widget_header" value="Weekly Top Movies"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5100"/>
 						</include>
-    						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.fenlight/?action=tmdb_movies_providers&amp;iconImage=https%3a%2f%2fimage.tmdb.org%2ft%2fp%2foriginal%2ftbEdFQDwx5LEVr8WpSeXQSIirVq.jpg&amp;key_id=3&amp;mode=build_movie_list&amp;name=Google%20Play%20Movies"/>
-							<param name="widget_header" value="On Google"/>
+						<include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=Latest%20Releases&amp;list_type=user_lists&amp;mode=trakt.list.build_trakt_list&amp;slug=latest-releases&amp;user=giladg"/>
+							<param name="widget_header" value="Latest Releases"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5200"/>
-						</include>
-						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.fenlight/?action=tmdb_movies_providers&amp;iconImage=https%3a%2f%2fimage.tmdb.org%2ft%2fp%2foriginal%2ft2yyOv40HZeVlLjYsCsPHnWLk4W.jpg&amp;key_id=8&amp;mode=build_movie_list&amp;name=Netflix"/>
-							<param name="widget_header" value="On Netflix"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5300"/>
-						</include>
-						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.fenlight/?action=tmdb_movies_providers&amp;iconImage=https%3a%2f%2fimage.tmdb.org%2ft%2fp%2foriginal%2f6uhKBfmtzFqOcLousHwZuzcrScK.jpg&amp;key_id=350&amp;mode=build_movie_list&amp;name=Apple%20TV%20Plus"/>
-							<param name="widget_header" value="On Apple Plus"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5400"/>
 						</include>
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
@@ -111,23 +99,11 @@
 							<param name="list_id" value="6100"/>
 						</include>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=netflix-top-10&amp;list_type=user_lists&amp;mode=trakt.list.build_trakt_list&amp;slug=netflix-top-10&amp;user=danqbudz"/>
-							<param name="widget_header" value="Netflix Top 10"/>
+							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=Apple%20TV%2b%20Top%2010%20TV%20Shows&amp;list_type=user_lists&amp;mode=trakt.list.build_trakt_list&amp;slug=latest-tv-shows&amp;user=garycrawfordgc"/>
+							<param name="widget_header" value="Latest Shows"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6200"/>
-						</include>
-						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=prime-video-top-10&amp;list_type=user_lists&amp;mode=trakt.list.build_trakt_list&amp;slug=prime-video-top-10&amp;user=danqbudz"/>
-							<param name="widget_header" value="Prime Top 10"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6300"/>
-						</include>
-						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=New%20Shows%20on%20Netflix&amp;list_type=liked_lists&amp;mode=trakt.list.build_trakt_list&amp;random=true&amp;slug=new-shows-on-netflix&amp;user=mattm382"/>
-							<param name="widget_header" value="New on Netflix"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6400"/>
-						</include>
+						</include>                   
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
 						<param name="scrollbar_id" value="6010"/>
@@ -1064,8 +1040,8 @@
 			<include>BottomBar</include>
 			<control type="group">
 				<depth>DepthBars</depth>
-				<bottom>0</bottom>
-				<height>70</height>
+				<bottom>10</bottom>
+				<height>40</height>
 				<animation effect="fade" start="0" end="100" time="300" delay="300">WindowOpen</animation>
 				<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 				<include condition="!Skin.HasSetting(hide_mediaflags)">MediaFlags</include>
