@@ -16,7 +16,7 @@
         </control>
         <control type="group">
             <animation effect="fade" end="100" time="200" delay="400">WindowOpen</animation>
-            <!-- Finder Logo and Tips/Clock & Date --> 
+            <!-- Fen Light Logo and Tips/Clock & Date --> 
             <control type="group">
                 <left>5</left>
                 <control type="image">

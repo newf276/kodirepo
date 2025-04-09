@@ -2,7 +2,7 @@
 <settings>
 	<!-- General -->
 	<category label="General">
-		<setting label="Finder uses it's own settings window." type="text" enable="false" />
-		<setting label="Open Finder Settings..." type="action" option="close" action="RunPlugin(plugin://plugin.video.finder/?mode=open_settings)" />
+		<setting label="Fen Light uses it's own settings window." type="text" enable="false" />
+		<setting label="Open Fen Light Settings..." type="action" option="close" action="RunPlugin(plugin://plugin.video.finder/?mode=open_settings)" />
 	</category>
 </settings>

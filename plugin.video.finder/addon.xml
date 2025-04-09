@@ -1,4 +1,4 @@
-<addon id="plugin.video.finder" name="[COLOR deepskyblue]Finder[/COLOR]" provider-name="Newf276" version="1.0.07">
+<addon id="plugin.video.finder" name="[COLOR deepskyblue]Finder[/COLOR]" provider-name="Newf276, Tikipeter, AnonyMouse" version="2.1.13">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>
@@ -16,8 +16,8 @@
 		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
         <license/>
         <assets>
-            <icon>finder_icon.png</icon>
-            <fanart>finder_fanart2.jpg</fanart>
+            <icon>resources/media/finder_icon.png</icon>
+            <fanart>resources/media/finder_fanart2.jpg</fanart>
         </assets>
         <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>

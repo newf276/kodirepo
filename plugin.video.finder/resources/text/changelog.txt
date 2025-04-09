@@ -1,5 +1,30 @@
 [COLOR darkgoldenrod]GOD BLESS HIM AND KEEP HIM SAFE.[/COLOR]
 
+[COLOR dodgerblue][B]Version 2.1.13[/B][/COLOR]
+- Couple of quick fixes for Person search in IvanBrandt's skins and cache cleaning.
+
+[COLOR dodgerblue][B]Version 2.1.11/12[/B][/COLOR]
+- [BUG] Fixed some random menus.
+- [BUG] Fixed info window for scrape results.
+- [BUG] Fixed Watchlist not showing for Next Episodes.
+- [CODE] Finished most code refactoring.
+
+[COLOR dodgerblue][B]Version 2.1.10[/B][/COLOR]
+- [REQUEST] Added ability for Fen Light to remember your reuselanguageinvoker state when updating.
+- [REQUEST] Added RPDb (Rating Posters) support. Enter your API in Settings->Accounts, then clear the meta cache.
+
+[COLOR dodgerblue][B]Version 2.1.07/08/09[/B][/COLOR]
+- [BUG] Quick fix for Movie sets and "More Like this" list.
+- [BUG] Quick fix for navigation lists not loading on new installs.
+- [BUG] Quick fix for incorrect detection of current skin name and font type.
+
+[COLOR dodgerblue][B]Version 2.1.01/02/03/04/05/06[/B][/COLOR]
+- [FEATURE] Adjusted Trakt token refresh to 24 hours.
+- [FEATURE] Added "Personal Lists" to My Lists. Here you can make personal lists that can be used on this instance of Fen Light. Movies or TV Shows supported.
+- [FEATURE] Added Settings->Content->Context Menu->"Context Menu Order" to change the order of Context Menu items for media displayed by Fen Light. Idea from Kodifitzwell.
+- [FEATURE] Added more flexibility for using external sources modules.
+- [CODE] Large refactoring of code.
+
 [COLOR dodgerblue][B]Version 2.0.07[/B][/COLOR]
 - Added support for Season and Episode items included in Trakt list contents (My Lists, Liked Lists).
 - Updated Trakt icon.
@@ -23,7 +48,7 @@
 [COLOR dodgerblue][B]Version 2.0.04[/B][/COLOR]
 - AD fix.
 - Reinstate Upload Manager, but I have disabled the Rollback Feature.
-- Added settings General->Manage Addon Updates... "Github Username" & "Github Repo Address". In these, you can enter the username and repo address of another dev who may wish to push a Finder release. Devs will need to check the code within updater.py and make sure their repo is structured correctly. Basically repo_name/packages/CONTENT.
+- Added settings General->Manage Addon Updates... "Github Username" & "Github Repo Address". In these, you can enter the username and repo address of another dev who may wish to push a Fen Light release. Devs will need to check the code within updater.py and make sure their repo is structured correctly. Basically repo_name/packages/CONTENT.
 
 [COLOR dodgerblue][B]Version 2.0.03[/B][/COLOR]
 - Let's try this again.
@@ -56,8 +81,8 @@ NOTE: THERE ARE NO FIXES IN THIS RELEASE FOR REAL DEBRID INTEGRATION.
 - Couple of quick fixes.
 
 [COLOR dodgerblue][B]Version 1.0.92[/B][/COLOR]
-- [CONTEXT MENU->OPTIONS->ASSIGN AN EPISODE GROUP TO...] Added option for TV Shows to assign an episode group from TMDb. These episode groups cover alternate season and episode orders based on other parameters. For example, it might be possible to set the episode order for a TV Show based on it's streaming aired order, or it's order from another service such as TVDb. These Custom Episode Groups will not change how the episodes are arranged within Finder, rather the information from them will be used when scraping for results for playback. This feature may be particularly useful when dealing with Anime content, but can be set for any TV Show.
-- Added Settings->Results->General->"Retry With Custom Episode Group When No Results". Enable this and Finder will rescrape using a custom episode group if no results are found. If a custom episode group is already assigned to the TV Show (above for details), then a rescrape will occur using instead the default season/episode values instead.
+- [CONTEXT MENU->OPTIONS->ASSIGN AN EPISODE GROUP TO...] Added option for TV Shows to assign an episode group from TMDb. These episode groups cover alternate season and episode orders based on other parameters. For example, it might be possible to set the episode order for a TV Show based on it's streaming aired order, or it's order from another service such as TVDb. These Custom Episode Groups will not change how the episodes are arranged within Fen Light, rather the information from them will be used when scraping for results for playback. This feature may be particularly useful when dealing with Anime content, but can be set for any TV Show.
+- Added Settings->Results->General->"Retry With Custom Episode Group When No Results". Enable this and Fen Light will rescrape using a custom episode group if no results are found. If a custom episode group is already assigned to the TV Show (above for details), then a rescrape will occur using instead the default season/episode values instead.
 - Added Settings->General->General->"Limit Concurrent Threads". Use this if your device is erroring by not allowing python to start new threads once a certain threshold is reached. There is a hard limit of 60 if this is not enabled and set to a user preference. Min/max settings are 10/300.
 - Temporary workaround for the RD "no cached results" error currently randomly affecting calls to check RD's cache. Will be removed once their API is fixed for this endpoint.
 - Fixed "Parental Guide" in Extras window. To get fresh results (empty results are cached), clear IMDb Database and restart Kodi.
@@ -77,7 +102,7 @@ NOTE: THERE ARE NO FIXES IN THIS RELEASE FOR REAL DEBRID INTEGRATION.
 
 [COLOR dodgerblue][B]Version 1.0.87[/B][/COLOR]
 - Fixed incorrect aired episode totals in seasons container.
-- Optimizations to service procedures to help Finder start quicker on Kodi opening.
+- Optimizations to service procedures to help Fen Light start quicker on Kodi opening.
 - Other changes/fixes.
 
 [COLOR dodgerblue][B]Version 1.0.86[/B][/COLOR]
@@ -131,7 +156,7 @@ NOTE: THERE ARE NO FIXES IN THIS RELEASE FOR REAL DEBRID INTEGRATION.
 
 [COLOR dodgerblue][B]Version 1.0.72/73[/B][/COLOR]
 - Added "Single Episode Lists" settings category. Some re-organizing of settings.
-- Added Settings->Content->Widgets->"Refresh Widgets on Timer". Enable this, set a timer value, and Finder will refresh your widgets when the timer is due. Off by default. Also added boolean to enable/disable Notifications when this occurs. If you use "random" widgets (made using the various methods in Finder) then you will need to set a value here or else the random widgets will only show fresh random content on each Kodi start.
+- Added Settings->Content->Widgets->"Refresh Widgets on Timer". Enable this, set a timer value, and Finder will refresh your widgets when the timer is due. Off by default. Also added boolean to enable/disable Notifications when this occurs. If you use "random" widgets (made using the various methods in Fen Light) then you will need to set a value here or else the random widgets will only show fresh random content on each Kodi start.
 - Bifurcated (thanks for the new word) Minimum Size setting into movies/episodes for filtering results.
 - Other changes/fixes.
 
