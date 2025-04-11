@@ -25,7 +25,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.fenlight" name="FenLightAM" provider-name="Tikipeter/AnonyMouse" version="2.1.13">
+<addon id="plugin.video.fenlight" name="[COLOR deepskyblue]Fenlight[/COLOR]" provider-name="Newf276, Tikipeter/AnonyMouse" version="3.1.13">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>
@@ -480,9 +480,9 @@
 </addon>
 
 <addon id="plugin.video.cbc"
-       name="Canadian Broadcasting Corp (CBC)"
+       name="[COLOR deepskyblue]Canadian Broadcasting Corp[/COLOR](CBC)"
        version="4.0.20+matrix.1"
-       provider-name="micahg,t1m,smf007,oshanrube">
+       provider-name="newf276,micahg">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
     <import addon="script.module.requests" version="2.22.0"/>
@@ -505,10 +505,6 @@
     <language>en</language>
     <disclaimer lang="en_GB">For bugs, requests or general questions visit the CBC TV thread on the Kodi forum.</disclaimer>
     <license>GPL-2.0-or-later</license>
-    <forum>https://forum.kodi.tv/showthread.php?tid=328421</forum>
-    <website>https://watch.cbc.ca/</website>
-    <source>https://github.com/micahg/plugin.video.cbc</source>
-    <news>- Updates for new CBC Gem API</news>
   </extension>
 </addon>
 
@@ -560,71 +556,6 @@
             <fanart>resources/fanart.jpg</fanart>
         </assets>
     </extension>
-</addon>
-
-<addon id="context.seren" version="10.0.4" name="[COLOR deepskyblue]Seren Context Menu[/COLOR]" provider-name="Newf276, Nixgates">
-	<requires>
-        <import addon="xbmc.python" version="3.0.0" />
-	</requires>
-	<extension point="kodi.context.item">
-		<menu id="kodi.core.main">
-			<item library="context.py" args="quickRresume">
-				<label>$ADDON[context.seren 30000]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.quickResume)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
-			</item>
-			<item library="context.py" args="shuffle">
-				<label>$ADDON[context.seren 30001]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.shuffle)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,episode)]</visible>
-			</item>
-			<item library="context.py" args="playFromRandomPoint">
-				<label>$ADDON[context.seren 30002]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.playFromRandomPoint)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
-			</item>
-			<item library="context.py" args="rescrape">
-				<label>$ADDON[context.seren 30003]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.rescrape)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-			</item>
-			<item library="context.py" args="rescrape_ss">
-				<label>$ADDON[context.seren 30010]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.rescrape_ss)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-			</item>
-			<item library="context.py" args="sourceSelect">
-				<label>$ADDON[context.seren 30004]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.sourceSelect)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-			</item>
-			<item library="context.py" args="findSimilar">
-				<label>$ADDON[context.seren 30005]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.findSimilar)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-			</item>
-			<item library="context.py" args="browseShow">
-				<label>$ADDON[context.seren 30006]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.browseShow)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,tvshow)]</visible>
-			</item>
-			<item library="context.py" args="browseSeason">
-				<label>$ADDON[context.seren 30007]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.browseSeason)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)]</visible>
-			</item>
-			<item library="context.py" args="traktManager">
-				<label>$ADDON[context.seren 30008]</label>
-				<visible>String.IsEmpty(Window(home).Property(context.seren.traktManager)) + String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-			</item>
-		</menu>
-	</extension>
-	<extension point="xbmc.service" library="service.py" />
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Seren Context Menu Items</summary>
-		<description lang="en">Adds Context Menu items for Seren menu items throughout Kodi</description>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-		<disclaimer lang="en"></disclaimer>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.png</fanart>
-			<clearlogo>resources/images/logo-seren-3.png</clearlogo>
-			<poster>resources/images/poster-seren-3.png</poster>
-		</assets>
-        <news>Changelog 10.0.4, Fix monitor and globals module.</news>
-	</extension>
 </addon>
 
 <addon id="script.speedtester" version="11.1.3" name="[COLOR deepskyblue]Speed Tester[/COLOR]"  provider-name="Newf276">
