@@ -237,6 +237,39 @@
 	</extension>
 </addon>
 
+<addon id="plugin.video.cbc"
+       name="[COLOR deepskyblue]Canadian Broadcasting Corp (CBC)[/COLOR]"
+       version="5.0.20+matrix.1"
+       provider-name="micahg,t1m,smf007,oshanrube">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.requests" version="2.22.0"/>
+    <import addon="script.module.inputstreamhelper" version="0.5.6"/>
+    <import addon="script.module.routing" version="0.2.3+matrix.1"/>
+    <import addon="script.module.beautifulsoup4" version="4.9.3+matrix.1"/>
+    <import addon="script.module.unidecode" version="1.1.1+matrix.2"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+	<provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
+    <summary lang="en_GB">CBC TV Kodi Plugin</summary>
+    <description lang="en_GB">View online content from the Canadian Broadcasting Corporation.</description>
+    <platform>all</platform>
+    <language>en</language>
+    <disclaimer lang="en_GB">For bugs, requests or general questions visit the CBC TV thread on the Kodi forum.</disclaimer>
+    <license>GPL-2.0-or-later</license>
+    <forum>https://forum.kodi.tv/showthread.php?tid=328421</forum>
+    <website>https://watch.cbc.ca/</website>
+    <source>https://github.com/micahg/plugin.video.cbc</source>
+    <news>- Updates for new CBC Gem API</news>
+  </extension>
+</addon>
+
 <addon id="repository.newf" name="[COLOR deepskyblue]Repository Newf[/COLOR]" version="1.5.4" provider-name="[COLOR deepskyblue]Newf276[/COLOR]">
     <extension point="xbmc.addon.repository" name="[COLOR deepskyblue]Repository Newf[/COLOR]">
         <dir>
@@ -477,35 +510,6 @@
 		<disclaimer lang="zh_CN">Fenlight 是 Kodi 的默认皮肤，删除它可能导致故障。</disclaimer>
 		<disclaimer lang="zh_TW">Fenlight 是 Kodi 預設的佈景主題，移除它可能會造成問題</disclaimer>
 	</extension>
-</addon>
-
-<addon id="plugin.video.cbc"
-       name="[COLOR deepskyblue]Canadian Broadcasting Corp[/COLOR](CBC)"
-       version="4.0.20+matrix.1"
-       provider-name="newf276,micahg">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
-    <import addon="script.module.requests" version="2.22.0"/>
-    <import addon="script.module.inputstreamhelper" version="0.5.6"/>
-    <import addon="script.module.routing" version="0.2.3+matrix.1"/>
-    <import addon="script.module.beautifulsoup4" version="4.9.3+matrix.1"/>
-    <import addon="script.module.unidecode" version="1.1.1+matrix.2"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-	<provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
-    </assets>
-    <summary lang="en_GB">CBC TV Kodi Plugin</summary>
-    <description lang="en_GB">View online content from the Canadian Broadcasting Corporation.</description>
-    <platform>all</platform>
-    <language>en</language>
-    <disclaimer lang="en_GB">For bugs, requests or general questions visit the CBC TV thread on the Kodi forum.</disclaimer>
-    <license>GPL-2.0-or-later</license>
-  </extension>
 </addon>
 
 <addon id="plugin.video.xumoplay" version="2025.01.06" name="[COLOR deepskyblue]Xumo TV[/COLOR]"  provider-name="Newf276">
