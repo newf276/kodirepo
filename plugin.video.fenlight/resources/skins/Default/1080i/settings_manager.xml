@@ -430,6 +430,7 @@
                       </item>
                       <item>
                           <visible>Container(2000).HasFocus(10)</visible>
+                          <visible>String.EndsWith(Window(10000).Property(fenlight.default_addon_fanart),fenlightam_fanart.jpg)</visible>
                           <property name="setting_label">Assign Addon Background Image</property>
                           <property name="setting_type">action</property>
                           <property name="setting_value">$INFO[Window(10000).Property(fenlight.default_addon_fanart)]</property>
@@ -439,9 +440,9 @@
                       <item>
                           <visible>Container(2000).HasFocus(10)</visible>
                           <visible>!String.EndsWith(Window(10000).Property(fenlight.default_addon_fanart),fenlightam_fanart.jpg)</visible>
-                          <property name="setting_label">    - Restore Default Background Image</property>
+                          <property name="setting_label">Restore Default Background Image</property>
                           <property name="setting_type">action</property>
-                          <property name="setting_value">...</property>
+                          <property name="setting_value">$INFO[Window(10000).Property(fenlight.default_addon_fanart)]</property>
                           <property name="setting_description">Restore default Fen Light background</property>
                           <onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=settings_manager.restore_setting_default&amp;setting_id=default_addon_fanart)</onclick>
                       </item>
