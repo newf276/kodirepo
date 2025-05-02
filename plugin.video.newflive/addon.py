@@ -1,8 +1,6 @@
 '''
 **********************************************************
-* Updated on 2025-04-04.
-* 
-* @license GNU General Public License, version 3 (GPL-3.0)
+*@license GNU General Public License, version 3 (GPL-3.0)*
 **********************************************************
 '''
 
@@ -11,7 +9,7 @@ import os
 import sys
 import json
 import html
-from urllib.parse import urlencode, quote, unquote, parse_qsl, quote_plus, urlparse
+from urllib.parse import urlencode, quote, unquote, parse_qsl, quote_plus, urlparse, urlunparse
 from datetime import datetime, timedelta, timezone
 import time
 import requests
@@ -21,6 +19,7 @@ import xbmcgui
 import xbmcplugin
 import xbmcaddon
 import base64
+import traceback
 
 addon_url = sys.argv[0]
 addon_handle = int(sys.argv[1])
@@ -28,14 +27,22 @@ params = dict(parse_qsl(sys.argv[2][1:]))
 addon = xbmcaddon.Addon(id='plugin.video.newflive')
 
 mode = addon.getSetting('mode')
-#baseurl = 'https://dlhd.so/'
-baseurl = 'https://daddylive.mp/'
-json_url = f'{baseurl}stream/stream-%s.php'
-schedule_url = baseurl + 'schedule/schedule-generated.php'
+baseurl = addon.getSetting('baseurl').strip()
+schedule_path = addon.getSetting('schedule_path').strip()
+schedule_url = baseurl + schedule_path
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36'
 FANART = addon.getAddonInfo('fanart')
 ICON = addon.getAddonInfo('icon')
+# Cache for schedule and live tv
+schedule_cache = None
+cache_timestamp = 0
+livetv_cache = None
+livetv_cache_timestamp = 0
+cache_duration = 900  # 15 minutes = 900 seconds
 
+AUTH_SERVER = "https://top2new.newkso.ru"
+CDN1_BASE = "https://top1.newkso.ru/top1/cdn"
+CDN_DEFAULT = "newkso.ru"
 
 def log(msg):
     LOGPATH = xbmcvfs.translatePath('special://logpath/')
@@ -56,26 +63,59 @@ def log(msg):
             f.write(line.rstrip('\r\n') + '\n')
     except (TypeError, Exception) as e:
         try:
-            xbmc.log(f'[ Newflive ] Logging Failure: {e}', 2)
+            xbmc.log(f'[ Daddylive ] Logging Failure: {e}', 2)
         except:
             pass
 
 
+def preload_cache():
+    global schedule_cache, cache_timestamp
+    global livetv_cache, livetv_cache_timestamp
+
+    now = time.time()
+
+    # Preload LIVE SPORTS schedule
+    try:
+        hea = {
+            'User-Agent': UA,
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Referer': baseurl,
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1',
+            'DNT': '1',
+            'Sec-Fetch-Dest': 'document',
+            'Sec-Fetch-Mode': 'navigate',
+            'Sec-Fetch-Site': 'same-origin',
+            'Sec-GPC': '1'
+        }
+        response = requests.get(schedule_url, headers=hea, timeout=10)
+        if response.status_code == 200:
+            schedule_cache = response.json()
+            cache_timestamp = now
+    except Exception as e:
+        log(f"Failed to preload LIVE SPORTS schedule: {e}")
+
+    # Preload LIVE TV channels
+    try:
+        livetv_cache = channels(fetch_live=True)
+        livetv_cache_timestamp = now
+    except Exception as e:
+        log(f"Failed to preload LIVE TV channels: {e}")
+
+
 def clean_category_name(name):
-    """Cleans up HTML tags and entities from sport categories."""
+    """Cleans up HTML entities from sport categories."""
     if isinstance(name, str):
-        # Decode HTML entities
-        name = html.unescape(name)
-        # Remove any lingering span tags (i.e., </span>) and extra whitespace
-        name = name.replace('</span>', '').strip()
+        # Decode HTML entities only
+        name = html.unescape(name).strip()
     return name
 
 
 def get_local_time(utc_time_str):
-    # Get the time format from the settings
     time_format = addon.getSetting('time_format')
 
-    # If no time format is selected, set default to '12h'
     if not time_format:
         time_format = '12h'
 
@@ -84,25 +124,24 @@ def get_local_time(utc_time_str):
     except TypeError:
         event_time_utc = datetime(*(time.strptime(utc_time_str, '%H:%M')[0:6]))
 
-    # Retrieve the selected timezone from the settings
     user_timezone = addon.getSetting('epg_timezone')
 
-    # If the user hasn't set a timezone, use a default (UTC+00)
     if not user_timezone:
-        user_timezone = 0  # Default timezone: UTC+00 (Greenwich Mean Time)
+        user_timezone = 0
     else:
         user_timezone = int(user_timezone)
 
-    # Timezone offset from UTC in minutes (example: UTC+3 -> 180 minutes, UTC-5 -> -300 minutes)
-    timezone_offset_minutes = user_timezone * 60
+    dst_enabled = addon.getSettingBool('dst_enabled')
+    if dst_enabled:
+        user_timezone += 1
 
+    timezone_offset_minutes = user_timezone * 60
     event_time_local = event_time_utc + timedelta(minutes=timezone_offset_minutes)
 
-    # Determine the time format (12h or 24h)
     if time_format == '12h':
-        local_time_str = event_time_local.strftime('%I:%M %p').lstrip('0')  # 12-hour format (AM/PM)
+        local_time_str = event_time_local.strftime('%I:%M %p').lstrip('0')
     else:
-        local_time_str = event_time_local.strftime('%H:%M')  # 24-hour format (HH:mm)
+        local_time_str = event_time_local.strftime('%H:%M')
 
     return local_time_str
 
@@ -120,8 +159,8 @@ def addDir(title, dir_url, is_folder=True):
     else:
         infotag = li.getVideoInfoTag()
         infotag.setMediaType(labels.get("mediatype", "video"))
-        infotag.setTitle(labels.get("title", "Newflive"))
-        infotag.setPlot(labels.get("plot", labels.get("title", "Newflive")))
+        infotag.setTitle(labels.get("title", "Daddylive"))
+        infotag.setPlot(labels.get("plot", labels.get("title", "Daddylive")))
     li.setArt({'thumb': '', 'poster': '', 'banner': '', 'icon': ICON, 'fanart': FANART})
     if is_folder is True:
         li.setProperty("IsPlayable", 'false')
@@ -139,16 +178,23 @@ def getKodiversion():
 
 
 def Main_Menu():
-    menu = [
-        ['LIVE SPORTS', 'sched'],
-        ['LIVE TV', 'live_tv'],
-    ]
-    for m in menu:
-        addDir(m[0], build_url({'mode': 'menu', 'serv_type': m[1]}))
+    addDir('LIVE SPORTS', build_url({'mode': 'menu', 'serv_type': 'sched'}))
+    addDir('LIVE TV', build_url({'mode': 'menu', 'serv_type': 'live_tv'}))
+
+    li = xbmcgui.ListItem("Settings")
+    li.setArt({'icon': ICON, 'fanart': FANART})
+    li.setProperty("IsPlayable", "false")
+
+    # Point to your addon with custom mode that opens settings
+    url = build_url({'mode': 'open_settings'})
+    xbmcplugin.addDirectoryItem(handle=addon_handle, url=url, listitem=li, isFolder=False)
+
     closeDir()
 
 
+
 def getCategTrans():
+    global schedule_cache, cache_timestamp
     hea = {
         'User-Agent': UA,
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -165,25 +211,36 @@ def getCategTrans():
     }
     categs = []
 
+    now = time.time()
+
     try:
-        response = requests.get(schedule_url, headers=hea, timeout=10)
-        if response.status_code == 200:
-            # Print the raw response to inspect its content
-            print(response.text)  # For debugging
-            schedule = response.json()
-            for date_key, events in schedule.items():
-                for categ, events_list in events.items():
-                    # Clean category name here
-                    categ = clean_category_name(categ)
-                    categs.append((categ, json.dumps(events_list)))
+        # Use cache if it's still fresh
+        if schedule_cache and (now - cache_timestamp) < cache_duration:
+            schedule = schedule_cache
         else:
-            xbmcgui.Dialog().ok("Error", f"Failed to fetch data, status code: {response.status_code}")
-            return []
+            # Download fresh schedule
+            response = requests.get(schedule_url, headers=hea, timeout=10)
+            if response.status_code == 200:
+                schedule = response.json()
+                schedule_cache = schedule
+                cache_timestamp = now
+            else:
+                xbmcgui.Dialog().ok("Error", f"Failed to fetch data, status code: {response.status_code}")
+                return []
     except Exception as e:
         xbmcgui.Dialog().ok("Error", f"Error fetching category data: {e}")
         return []
 
+    try:
+        for date_key, events in schedule.items():
+            for categ, events_list in events.items():
+                categ = clean_category_name(categ)
+                categs.append((categ, json.dumps(events_list)))
+    except Exception as e:
+        log(f"Error parsing schedule: {e}")
+
     return categs
+
 
 
 def Menu_Trans():
@@ -197,10 +254,25 @@ def Menu_Trans():
 
 
 def ShowChannels(categ, channels_list):
+    # Special NBA filter for Basketball
+    if categ.lower() == 'basketball':
+        nba_channels = []
+        for item in channels_list:
+            title = item.get('title')
+            if 'NBA' in title.upper():
+                nba_channels.append(item)
+        
+        # Add NBA folder at the top
+        if nba_channels:
+            addDir('[NBA]', build_url({'mode': 'showNBA', 'trType': categ, 'nba_channels': json.dumps(nba_channels)}), True)
+
+    # Always add the full list (unfiltered)
     for item in channels_list:
         title = item.get('title')
         addDir(title, build_url({'mode': 'trList', 'trType': categ, 'channels': json.dumps(item.get('channels'))}), True)
+    
     closeDir()
+
 
 
 def getTransData(categ):
@@ -217,13 +289,18 @@ def getTransData(categ):
                 title = f'{event_time_local} {event}'
                 channels = item.get('channels')
                 
+                # Fix: Accept both list and dict structures
+                if isinstance(channels, dict):
+                    # Convert dict to list of dicts
+                    channels = list(channels.values())
+
                 if isinstance(channels, list) and all(isinstance(channel, dict) for channel in channels):
                     trns.append({
                         'title': title,
                         'channels': [{'channel_name': channel.get('channel_name'), 'channel_id': channel.get('channel_id')} for channel in channels]
                     })
                 else:
-                    log(f"Unexpected data structure in 'channels': {channels}")
+                    log(f"Unexpected data structure in 'channels' after conversion: {channels}")
 
     return trns
 
@@ -256,7 +333,15 @@ def list_gen():
     closeDir()
 
 
-def channels():
+def channels(fetch_live=False):
+
+    global livetv_cache, livetv_cache_timestamp
+
+    if not fetch_live:
+        now = time.time()
+        if livetv_cache and (now - livetv_cache_timestamp) < cache_duration:
+            return livetv_cache
+    
     url = baseurl + '/24-7-channels.php'
     do_adult = xbmcaddon.Addon().getSetting('adult_pw')
 
@@ -280,42 +365,111 @@ def channels():
 
 
 def PlayStream(link):
-    try:
-        headers = {'Referer': baseurl, 'user-agent': UA}
-        resp = requests.post(link, headers=headers).text
-        url_1 = re.findall('iframe src="([^"]*)', resp)[0]
-        parsed_url = urlparse(url_1)
-        referer_base = f"{parsed_url.scheme}://{parsed_url.netloc}"
-        referer = quote_plus(referer_base)
-        user_agent = quote_plus(UA)
-        resp2 = requests.post(url_1, headers=headers).text
-        stream_id = re.findall('fetch\(\'([^\']*)',resp2)[0]
-        url_2 = re.findall('var channelKey = "([^"]*)',resp2)[0]
-        m3u8 = re.findall('(\/mono\.m3u8)',resp2)[0]
-        resp3 = referer_base + stream_id + url_2
-        url_3 = requests.post(resp3, headers=headers).text
-        key = re.findall(':"([^"]*)',url_3)[0]
+    """
+    Tries each mirror host end-to-end (iframe → auth vars → auth.php → server_lookup.php)
+    until one completes successfully. Builds and plays the final HLS URL.
+    """
+    headers = {'Referer': baseurl, 'user-agent': UA}
 
-        final_link = f'https://{key}.newkso.ru/{key}/{url_2}{m3u8}|Referer={referer}/&Origin={referer}&Keep-Alive=true&User-Agent={user_agent}'
+    # 1) Extract the raw iframe src URL
+    resp0 = requests.post(link, headers=headers, timeout=10).text
+    m_iframe = re.search(r'iframe\s+src="([^"]+)"', resp0)
+    if not m_iframe:
+        xbmcgui.Dialog().ok("Playback Error", "Could not find iframe URL.")
+        return
+    raw_iframe_url = m_iframe.group(1)
 
-        if final_link.startswith("http"):
-            liz = xbmcgui.ListItem('Newflive', path=final_link)
-            liz.setProperty('inputstream', 'inputstream.ffmpegdirect')
+    # 2) Pre-fetch that page to decode the Base64 mirror list
+    tmp = requests.post(raw_iframe_url, headers=headers, timeout=5).text
+    m_dom = re.search(r'var\s+encodedDomains\s*=\s*"([^"]+)"', tmp)
+    if m_dom:
+        try:
+            decoded = base64.b64decode(m_dom.group(1)).decode('utf-8')
+            mirrors = json.loads(decoded)
+        except Exception:
+            mirrors = []
+    else:
+        mirrors = []
+
+    # Always try the original host first
+    hosts_to_try = [None] + mirrors
+
+    last_error = None
+    for host in hosts_to_try:
+        try:
+            # 3a) Build the iframe URL for this host
+            parsed = urlparse(raw_iframe_url)
+            iframe_url = raw_iframe_url if host is None else urlunparse(parsed._replace(netloc=host))
+
+            # 3b) Fetch iframe page and extract auth vars
+            r_iframe = requests.post(iframe_url, headers=headers, timeout=5)
+            r_iframe.raise_for_status()
+            text = r_iframe.text
+
+            channel_key = re.search(r'var\s+channelKey\s*=\s*"([^"]+)"', text).group(1)
+            auth_ts     = re.search(r'var\s+authTs\s*=\s*"([^"]+)"',     text).group(1)
+            auth_rnd    = re.search(r'var\s+authRnd\s*=\s*"([^"]+)"',    text).group(1)
+            auth_sig    = re.search(r'var\s+authSig\s*=\s*"([^"]+)"',    text).group(1)
+
+            # 3c) Call the central auth server
+            auth_url = (
+                f"{AUTH_SERVER}/auth.php?"
+                f"channel_id={channel_key}"
+                f"&ts={auth_ts}&rnd={auth_rnd}"
+                f"&sig={quote_plus(auth_sig)}"
+            )
+            r_auth = requests.get(auth_url, headers=headers, timeout=10)
+            r_auth.raise_for_status()
+
+            # 3d) Call server_lookup on the same host
+            host_root = f"{parsed.scheme}://{(host or parsed.netloc)}"
+            lookup_url = f"{host_root}/server_lookup.php?channel_id={channel_key}"
+            r_lookup = requests.get(lookup_url, headers=headers, timeout=10)
+            r_lookup.raise_for_status()
+            server_key = r_lookup.json().get('server_key')
+            if not server_key:
+                raise RuntimeError("server_key missing")
+
+            # 4) Build the final .m3u8 URL
+            if server_key == "top1/cdn":
+                m3u8 = f"{CDN1_BASE}/{channel_key}/mono.m3u8"
+            else:
+                m3u8 = f"https://{server_key}.{CDN_DEFAULT}/{server_key}/{channel_key}/mono.m3u8"
+
+            # 5) Append Kodi headers and play
+            ref = quote_plus(host_root)
+            ua  = quote_plus(UA)
+            final_link = (
+                f"{m3u8}"
+                f"|Referer={ref}&Origin={ref}"
+                f"&User-Agent={ua}&Keep-Alive=true"
+            )
+
+            liz = xbmcgui.ListItem('Daddylive', path=final_link)
+            liz.setProperty('inputstream','inputstream.ffmpegdirect')
             liz.setMimeType('application/x-mpegURL')
-            liz.setProperty('inputstream.ffmpegdirect.is_realtime_stream', 'true')
-            liz.setProperty('inputstream.ffmpegdirect.stream_mode', 'timeshift')
-            liz.setProperty('inputstream.ffmpegdirect.manifest_type', 'hls')
+            liz.setProperty('inputstream.ffmpegdirect.is_realtime_stream','true')
+            liz.setProperty('inputstream.ffmpegdirect.stream_mode','timeshift')
+            liz.setProperty('inputstream.ffmpegdirect.manifest_type','hls')
             xbmcplugin.setResolvedUrl(addon_handle, True, liz)
-        else:
-            xbmcgui.Dialog().ok("Playback Error", "Invalid stream link.")
-    except Exception as e:
-        log(f"Error in PlayStream: {traceback.format_exc()}")
+
+            # Success—break out of the host loop
+            return
+
+        except Exception as e:
+            last_error = e
+            #log(f"[FALLBACK] Host {host or 'original'} failed: {e}")
+
+    # If we get here, all hosts failed
+    log(traceback.format_exc())
+    xbmcgui.Dialog().ok("Playback Error", f"All mirrors failed:\n{last_error}")
 
 
 kodiversion = getKodiversion()
 mode = params.get('mode', None)
 
 if not mode:
+    preload_cache()
     Main_Menu()
 else:
     if mode == 'menu':
@@ -342,3 +496,12 @@ else:
     if mode == 'play':
         link = params.get('url')
         PlayStream(link)
+        
+    if mode == 'open_settings':
+        xbmcaddon.Addon().openSettings()
+        xbmcplugin.endOfDirectory(addon_handle)
+        
+    if mode == 'showNBA':
+        transType = params.get('trType')
+        nba_channels = json.loads(params.get('nba_channels'))
+        ShowChannels(transType, nba_channels)

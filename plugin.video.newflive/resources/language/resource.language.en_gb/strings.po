@@ -1,7 +1,7 @@
 # Kodi Media Center language file
-# Addon Name: Newflive
+# Addon Name: DaddyLiveHD
 # Addon id: plugin.video.newflive
-# Addon Provider: Newf276
+# Addon Provider: FubuZ
 msgid ""
 msgstr ""
 
@@ -17,12 +17,12 @@ msgid "Live Sports and TV"
 msgstr ""
 
 msgctxt "Addon Description"
-msgid "Free streming of Live Sports and TV."
+msgid "Free streaming of Live Sports and TV."
 msgstr ""
 
 #. Category title
 msgctxt "#30100"
-msgid "EPG Schedule"
+msgid "Schedule"
 msgstr ""
 
 #. Category group title
@@ -37,7 +37,7 @@ msgstr ""
 
 #. Description of setting
 msgctxt "#30103"
-msgid "Select your timezone for correct EPG time in Live Sports."
+msgid "Select your timezone for correct schedule time in Live Sports."
 msgstr ""
 
 #. Setting name
@@ -68,4 +68,54 @@ msgstr ""
 #. Description of setting
 msgctxt "#30109"
 msgid "Choose between 12-hour (AM/PM) or the 24-hour time format."
+msgstr ""
+
+#. Setting name
+msgctxt "#30110"
+msgid "Website/domain URL:"
+msgstr ""
+
+#. Description of setting
+msgctxt "#30111"
+msgid "Enter new website URL string (if the default/current one stops working). If you entered something by mistake, just use the button Defaults and OK."
+msgstr ""
+
+#. Category title
+msgctxt "#30112"
+msgid "Advanced"
+msgstr ""
+
+#. Category group title
+msgctxt "#30113"
+msgid "Modular settings (Url strings)"
+msgstr ""
+
+#. Setting name
+msgctxt "#30114"
+msgid "Schedule URL:"
+msgstr ""
+
+#. Description of setting
+msgctxt "#30115"
+msgid "Enter new schedule URL string (if the default/current one stops working). If you entered something by mistake, just use the button Defaults and OK."
+msgstr ""
+
+#. Setting name
+msgctxt "#30116"
+msgid ""
+msgstr ""
+
+#. Description of setting
+msgctxt "#30117"
+msgid ""
+msgstr ""
+
+#. Setting name
+msgctxt "#30118"
+msgid "Daylight Saving/Summer Time (DST):"
+msgstr ""
+
+#. Description of setting
+msgctxt "#30119"
+msgid "Toggle ON/OFF. Toggle ON adds +1 hour to the Timezone."
 msgstr ""
