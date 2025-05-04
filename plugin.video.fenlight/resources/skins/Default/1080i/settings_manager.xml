@@ -1482,7 +1482,7 @@
                          <property name="setting_label">Priority (Lower Number Equals Higher Priority)</property>
                          <property name="setting_type">numeric</property>
                          <property name="setting_value">$INFO[Window(10000).Property(fenlight.pm.priority)]</property>
-                         <property name="setting_description">Choose the order in which Real Debrid results appear in relation to any other active accounts. The lower the number, the higher the sort order</property>
+                         <property name="setting_description">Choose the order in which Premiumize results appear in relation to any other active accounts. The lower the number, the higher the sort order</property>
                          <onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=settings_manager.set_numeric&amp;setting_id=pm.priority)</onclick>
                      </item>
         <!-- All Debrid -->
@@ -1905,7 +1905,7 @@
                           <property name="setting_label">Priority (Lower Number Equals Higher Priority)</property>
                           <property name="setting_type">numeric</property>
                           <property name="setting_value">$INFO[Window(10000).Property(fenlight.en.priority)]</property>
-                          <property name="setting_description">Choose the order in which Real Debrid results appear in relation to any other active accounts. The lower the number, the higher the sort order</property>
+                          <property name="setting_description">Choose the order in which Easynews results appear in relation to any other active accounts. The lower the number, the higher the sort order</property>
                           <onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=settings_manager.set_numeric&amp;setting_id=en.priority)</onclick>
                       </item>
         <!-- Local Media Folders -->
@@ -1967,6 +1967,15 @@
                           <property name="setting_value">$INFO[Window(10000).Property(fenlight.results.folders_ignore_filters)]</property>
                           <property name="setting_description">Enable this and Fen Light will ignore any Quality or Size filters when processing local media folders results</property>
                           <onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=settings_manager.set_boolean&amp;setting_id=results.folders_ignore_filters)</onclick>
+                      </item>
+                      <item>
+                          <visible>Container(2000).HasFocus(50)</visible>
+                          <visible>String.IsEqual(Window(10000).Property(fenlight.provider.folders),true)</visible>
+                          <property name="setting_label">Priority (Lower Number Equals Higher Priority)</property>
+                          <property name="setting_type">numeric</property>
+                          <property name="setting_value">$INFO[Window(10000).Property(fenlight.folders.priority)]</property>
+                          <property name="setting_description">Choose the order in which Media Folders results appear in relation to any other active accounts. The lower the number, the higher the sort order</property>
+                          <onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=settings_manager.set_numeric&amp;setting_id=folders.priority)</onclick>
                       </item>
 <!-- RESULTS 60 -->
         <!-- Display -->

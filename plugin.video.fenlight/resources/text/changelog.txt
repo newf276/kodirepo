@@ -1,5 +1,17 @@
 [COLOR darkgoldenrod]GOD BLESS HIM AND KEEP HIM SAFE.[/COLOR]
 
+[COLOR dodgerblue][B]Version 2.1.25[/B][/COLOR]
+- Quick fix for media tagged with 5.1 audio being recognized as a file for S05E01.
+- Other changes/fixes.
+
+[COLOR dodgerblue][B]Version 2.1.24[/B][/COLOR]
+[BUG] Various fixes.
+
+[COLOR dodgerblue][B]Version 2.1.23[/B][/COLOR]
+- [REQUEST] Added custom artwork to TMDb User Lists.
+- [REQUEST] Added ability to use 4 random posters/fanart from items in list when making custom artwork for the list.
+- Other changes/fixes.
+
 [COLOR dodgerblue][B]Version 2.1.22[/B][/COLOR]
 - [REQUEST] Added custom poster/fanart for Personal Lists. This means for the list itself. Found within the "Edit Properties" context menu item.
 - [CODE] A fair few fixes for small bugs throughout addon.
