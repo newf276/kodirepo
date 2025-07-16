@@ -1,6 +1,9 @@
 [COLOR darkgoldenrod]GOD BLESS HIM AND KEEP HIM SAFE.[/COLOR]
 
-[COLOR dodgerblue][B]Version 2.1.26/27[/B][/COLOR]
+[COLOR dodgerblue][B]Version 2.1.27/28[/B][/COLOR]
+[BUG] Various fixes.
+
+[COLOR dodgerblue][B]Version 2.1.26[/B][/COLOR]
 [BUG] Various fixes.
 
 [COLOR dodgerblue][B]Version 2.1.25[/B][/COLOR]
