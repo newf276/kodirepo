@@ -430,6 +430,15 @@
                       </item>
                       <item>
                           <visible>Container(2000).HasFocus(10)</visible>
+                          <property name="setting_label">Assign Addon Icon Image</property>
+                          <property name="setting_type">action</property>
+                          <property name="setting_value">$INFO[Window(10000).Property(finder.addon_icon_choice_name)]</property>
+                          <property name="setting_description">Choose from assigned custom icons to use with Finder</property>
+                          <onclick>RunPlugin(plugin://plugin.video.finder/?mode=addon_icon_choice)</onclick>
+                      </item>
+                      <item>
+                          <visible>Container(2000).HasFocus(10)</visible>
+                          <visible>String.EndsWith(Window(10000).Property(finder.default_addon_fanart),Window(10000).Property(finder.addon_fanart))</visible>
                           <property name="setting_label">Assign Addon Background Image</property>
                           <property name="setting_type">action</property>
                           <property name="setting_value">$INFO[Window(10000).Property(finder.default_addon_fanart)]</property>
@@ -438,10 +447,10 @@
                       </item>
                       <item>
                           <visible>Container(2000).HasFocus(10)</visible>
-                          <visible>!String.EndsWith(Window(10000).Property(finder.default_addon_fanart),finder_fanart2.jpg)</visible>
-                          <property name="setting_label">    - Restore Default Background Image</property>
+                          <visible>!String.EndsWith(Window(10000).Property(finder.default_addon_fanart),Window(10000).Property(finder.addon_fanart))</visible>
+                          <property name="setting_label">Restore Default Background Image</property>
                           <property name="setting_type">action</property>
-                          <property name="setting_value">...</property>
+                          <property name="setting_value">$INFO[Window(10000).Property(finder.default_addon_fanart)]</property>
                           <property name="setting_description">Restore default Finder background</property>
                           <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.restore_setting_default&amp;setting_id=default_addon_fanart)</onclick>
                       </item>
@@ -745,6 +754,23 @@
                           <property name="setting_description">Enable this and the "Next Page" item will be hidden in Finder widgets</property>
                           <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_boolean&amp;setting_id=widget_hide_next_page)</onclick>
                       </item>
+        <!-- RPDb Ratings Posters -->
+                      <item>
+                          <visible>Container(2000).HasFocus(30)</visible>
+                          <visible>!String.IsEqual(Window(10000).Property(finder.rpdb_api),empty_setting)</visible>
+                          <property name="setting_label">Ratings Posters</property>
+                          <property name="setting_type">separator</property>
+                          <onclick>noop</onclick>
+                      </item>
+                      <item>
+                          <visible>Container(2000).HasFocus(30)</visible>
+                          <visible>!String.IsEqual(Window(10000).Property(finder.rpdb_api),empty_setting)</visible>
+                          <property name="setting_label">Use RPDb Ratings Posters For...</property>
+                          <property name="setting_type">action</property>
+                          <property name="setting_value">$INFO[Window(10000).Property(finder.rpdb_enabled_name)]</property>
+                          <property name="setting_description">Choose which media types utilize that Rated Posters provided by RPDb. Choices are None, Movies, TV Shows or Both</property>
+                          <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_from_list&amp;setting_id=rpdb_enabled)</onclick>
+                      </item>
         <!-- Context Menu -->
                       <item>
                           <visible>Container(2000).HasFocus(30)</visible>
@@ -759,6 +785,14 @@
                           <property name="setting_value">...</property>
                           <property name="setting_description">Choose the order in which Context Menu items appear for Finder media items</property>
                           <onclick>RunPlugin(plugin://plugin.video.finder/?mode=context_menu_order_choice)</onclick>
+                      </item>
+                      <item>
+                          <visible>Container(2000).HasFocus(30)</visible>
+                          <property name="setting_label">Reset Context Menu to Default</property>
+                          <property name="setting_type">action</property>
+                          <property name="setting_value">...</property>
+                          <property name="setting_description">Return the Context Menu do default items</property>
+                          <onclick>RunPlugin(plugin://plugin.video.finder/?mode=context_menu_default_choice)</onclick>
                       </item>
         <!-- General -->
                       <item>
@@ -813,7 +847,7 @@
                           <visible>Container(2000).HasFocus(30)</visible>
                           <property name="setting_label">Set MPAA Region</property>
                           <property name="setting_type">action</property>
-                          <property name="setting_value">$INFO[Window(10000).Property(finder.mpaa_region_display_name)]</property>
+                          <property name="setting_value">$INFO[Window(10000).Property(finder.mpaa_display_region_name)]</property>
                           <property name="setting_description">Choose the region from which the MPAA advisories will be displayed</property>
                           <onclick>RunPlugin(plugin://plugin.video.finder/?mode=mpaa_region_choice)</onclick>
                       </item>
@@ -1115,6 +1149,16 @@
                       </item>
                       <item>
                           <visible>Container(2000).HasFocus(50)</visible>
+                          <visible>!String.IsEqual(Window(10000).Property(finder.rd.token),empty_setting)|!String.IsEqual(Window(10000).Property(finder.ad.token),empty_setting)</visible>
+                          <visible>String.IsEqual(Window(10000).Property(finder.rd.enabled),true)|String.IsEqual(Window(10000).Property(finder.ad.enabled),true)</visible>
+                          <property name="setting_label">Check for cached status of Results (RD &amp; AD)</property>
+                          <property name="setting_type">boolean</property>
+                          <property name="setting_value">$INFO[Window(10000).Property(finder.external.cache_check)]</property>
+                          <property name="setting_description">Enable this to get the cached status for Real Debrid and All Debrid results. This will lead to less results overall, but the results displayed SHOULD be cached on their servers. There will also be results filtered out that are cached. Use this knowing that you will get less results</property>
+                          <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_boolean&amp;setting_id=external.cache_check)</onclick>
+                      </item>
+                      <item>
+                          <visible>Container(2000).HasFocus(50)</visible>
                           <visible>String.IsEqual(Window(10000).Property(finder.provider.external),true)</visible>
                           <visible>!String.IsEqual(Window(10000).Property(finder.external_scraper.name),empty_setting)</visible>
                           <property name="setting_label">Open External Scraper Settings</property>
@@ -1142,6 +1186,7 @@
                       </item>
                       <item>
                           <visible>Container(2000).HasFocus(50)</visible>
+                          <visible>!String.IsEqual(Window(10000).Property(finder.trakt.user),empty_setting)</visible>
                           <property name="setting_label">Revoke Authorization</property>
                           <property name="setting_type">action</property>
                           <property name="setting_value">...</property>
@@ -1159,7 +1204,7 @@
                       </item>
                       <item>
                           <visible>Container(2000).HasFocus(50)</visible>
-                          <visible>!String.IsEqual(Window(10000).Property(finder.trakt.client),d37e53be8a9ad6a243d6e72e6271de71bac2f718c8c512b93198bf3fd747ec37)</visible>
+                          <visible>!String.IsEqual(Window(10000).Property(finder.trakt.client),1038ef327e86e7f6d39d80d2eb5479bff66dd8394e813c5e0e387af0f84d89fb)</visible>
                           <property name="setting_label">    - Restore Default Client ID Key</property>
                           <property name="setting_type">action</property>
                           <property name="setting_value">...</property>
@@ -1176,7 +1221,7 @@
                       </item>
                       <item>
                           <visible>Container(2000).HasFocus(50)</visible>
-                          <visible>!String.IsEqual(Window(10000).Property(finder.trakt.secret),f1006109f91fb48f1fa97abb9fe35506e72af8843972efedfd0c7c544bfa63dd)</visible>
+                          <visible>!String.IsEqual(Window(10000).Property(finder.trakt.secret),8d27a92e1d17334dae4a0590083a4f26401cb8f721f477a79fd3f218f8534fd1)</visible>
                           <property name="setting_label">    - Restore Default Client Secret Key</property>
                           <property name="setting_type">action</property>
                           <property name="setting_value">...</property>
@@ -1200,7 +1245,7 @@
                       </item>
                       <item>
                           <visible>Container(2000).HasFocus(50)</visible>
-                          <visible>!String.IsEqual(Window(10000).Property(finder.tmdb_api),772defd0fb9daa76166a0163c458ad7e)</visible>
+                          <visible>!String.IsEqual(Window(10000).Property(finder.tmdb_api),b370b60447737762ca38457bd77579b3)</visible>
                           <property name="setting_label">    - Restore Default TMDb API Key</property>
                           <property name="setting_type">action</property>
                           <property name="setting_value">...</property>
@@ -1240,6 +1285,14 @@
                           <property name="setting_description">Revoke authorization of your TMDb account</property>
                           <onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.revoke_authentication)</onclick>
                       </item>
+                      <item>
+                          <visible>Container(2000).HasFocus(50)</visible>
+                          <property name="setting_label">Lists Display Sort Order</property>
+                          <property name="setting_type">action</property>
+                          <property name="setting_value">$INFO[Window(10000).Property(finder.tmdblist.list_sort_name)]</property>
+                          <property name="setting_description">Choose the order in which your TMDb lists are presented. This is not for the contents of the lists, but rather the lists themselves</property>
+                          <onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdb_list_order_choice)</onclick>
+                      </item>
         <!-- OMDb -->
                       <item>
                           <visible>Container(2000).HasFocus(50)</visible>
@@ -1269,15 +1322,6 @@
                           <property name="setting_value">$INFO[Window(10000).Property(finder.rpdb_api)]</property>
                           <property name="setting_description">Enter here your RPDb API key. This will allow you to utilize posters that include built in ratings information when available</property>
                           <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_string&amp;setting_id=rpdb_api)</onclick>
-                      </item>
-                      <item>
-                          <visible>Container(2000).HasFocus(50)</visible>
-                          <visible>!String.IsEqual(Window(10000).Property(finder.rpdb_api),empty_setting)</visible>
-                          <property name="setting_label">Use RPDb Ratings Posters For...</property>
-                          <property name="setting_type">action</property>
-                          <property name="setting_value">$INFO[Window(10000).Property(finder.rpdb_enabled_name)]</property>
-                          <property name="setting_description">Choose which media types utilize that Rated Posters provided by RPDb. Choices are None, Movies, TV Shows or Both</property>
-                          <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_from_list&amp;setting_id=rpdb_enabled)</onclick>
                       </item>
         <!-- Real Debrid -->
                       <item>
@@ -1472,7 +1516,7 @@
                          <property name="setting_label">Priority (Lower Number Equals Higher Priority)</property>
                          <property name="setting_type">numeric</property>
                          <property name="setting_value">$INFO[Window(10000).Property(finder.pm.priority)]</property>
-                         <property name="setting_description">Choose the order in which Real Debrid results appear in relation to any other active accounts. The lower the number, the higher the sort order</property>
+                         <property name="setting_description">Choose the order in which Premiumize results appear in relation to any other active accounts. The lower the number, the higher the sort order</property>
                          <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_numeric&amp;setting_id=pm.priority)</onclick>
                      </item>
         <!-- All Debrid -->
@@ -1895,7 +1939,7 @@
                           <property name="setting_label">Priority (Lower Number Equals Higher Priority)</property>
                           <property name="setting_type">numeric</property>
                           <property name="setting_value">$INFO[Window(10000).Property(finder.en.priority)]</property>
-                          <property name="setting_description">Choose the order in which Real Debrid results appear in relation to any other active accounts. The lower the number, the higher the sort order</property>
+                          <property name="setting_description">Choose the order in which Easynews results appear in relation to any other active accounts. The lower the number, the higher the sort order</property>
                           <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_numeric&amp;setting_id=en.priority)</onclick>
                       </item>
         <!-- Local Media Folders -->
@@ -1957,6 +2001,15 @@
                           <property name="setting_value">$INFO[Window(10000).Property(finder.results.folders_ignore_filters)]</property>
                           <property name="setting_description">Enable this and Finder will ignore any Quality or Size filters when processing local media folders results</property>
                           <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_boolean&amp;setting_id=results.folders_ignore_filters)</onclick>
+                      </item>
+                      <item>
+                          <visible>Container(2000).HasFocus(50)</visible>
+                          <visible>String.IsEqual(Window(10000).Property(finder.provider.folders),true)</visible>
+                          <property name="setting_label">Priority (Lower Number Equals Higher Priority)</property>
+                          <property name="setting_type">numeric</property>
+                          <property name="setting_value">$INFO[Window(10000).Property(finder.folders.priority)]</property>
+                          <property name="setting_description">Choose the order in which Media Folders results appear in relation to any other active accounts. The lower the number, the higher the sort order</property>
+                          <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_numeric&amp;setting_id=folders.priority)</onclick>
                       </item>
 <!-- RESULTS 60 -->
         <!-- Display -->
@@ -2174,11 +2227,20 @@
                       </item>
                       <item>
                           <visible>Container(2000).HasFocus(60)</visible>
-                          <property name="setting_label">Custom Autoplay Sort To Top</property>
+                          <property name="setting_label">Custom Sort To Top</property>
                           <property name="setting_type">action</property>
-                          <property name="setting_value">$INFO[Window(10000).Property(finder.preferred_autoplay)]</property>
-                          <property name="setting_description">Choose video and audio properties that will be sorted to the top of the sources list when using Autoplay. Choose up to 5 different parameters to be used, in order of importance. "Sort to Top" settings involving Debrid Cache and Folder Scraper results will take priority over these 5 params</property>
-                          <onclick>RunPlugin(plugin://plugin.video.finder/?mode=preferred_autoplay_choice)</onclick>
+                          <property name="setting_value">$INFO[Window(10000).Property(finder.filter.sort_to_top_name)]</property>
+                          <property name="setting_description">Choose the method used to provide highlight colors to source results. The options are DISABLED, SOURCE SELECT, AUTOPLAY or BOTH</property>
+                          <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_from_list&amp;setting_id=filter.sort_to_top)</onclick>
+                      </item>
+                      <item>
+                          <visible>Container(2000).HasFocus(60)</visible>
+                          <visible>!String.IsEqual(Window(10000).Property(finder.filter.sort_to_top),0)</visible>
+                          <property name="setting_label">    - Set Filters for Sort to Top</property>
+                          <property name="setting_type">action</property>
+                          <property name="setting_value">$INFO[Window(10000).Property(finder.filter.preferred_filters)]</property>
+                          <property name="setting_description">Choose video and audio properties that will be sorted to the top of the sources list. Choose up to 5 different parameters to be used, in order of importance. "Sort to Top" settings involving Debrid Cache and Folder Scraper results will take priority over these 5 params</property>
+                          <onclick>RunPlugin(plugin://plugin.video.finder/?mode=preferred_filters_choice)</onclick>
                       </item>
                       <item>
                           <visible>Container(2000).HasFocus(60)</visible>
@@ -2416,20 +2478,21 @@
                       <item>
                           <visible>Container(2000).HasFocus(70)</visible>
                           <visible>String.IsEqual(Window(10000).Property(finder.auto_play_episode),true) + String.IsEqual(Window(10000).Property(finder.autoplay_next_episode),true)</visible>
-                          <property name="setting_label">    - When No Interaction with Window</property>
-                          <property name="setting_type">action</property>
-                          <property name="setting_value">$INFO[Window(10000).Property(finder.autoplay_default_action_name)]</property>
-                          <property name="setting_description">Choose the action performed when you fail to interact with the Next Episode alert</property>
-                          <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_from_list&amp;setting_id=autoplay_default_action)</onclick>
-                      </item>
-                      <item>
-                          <visible>Container(2000).HasFocus(70)</visible>
-                          <visible>String.IsEqual(Window(10000).Property(finder.auto_play_episode),true) + String.IsEqual(Window(10000).Property(finder.autoplay_next_episode),true)</visible>
                           <property name="setting_label">    - Next Episode Alert Method</property>
                           <property name="setting_type">action</property>
                           <property name="setting_value">$INFO[Window(10000).Property(finder.autoplay_alert_method_name)]</property>
                           <property name="setting_description">Choose the alert method when Next Episode is ready to be played. Choose Window or Notification</property>
                           <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_from_list&amp;setting_id=autoplay_alert_method)</onclick>
+                      </item>
+                      <item>
+                          <visible>Container(2000).HasFocus(70)</visible>
+                          <visible>String.IsEqual(Window(10000).Property(finder.auto_play_episode),true) + String.IsEqual(Window(10000).Property(finder.autoplay_next_episode),true)</visible>
+                          <visible>String.IsEqual(Window(10000).Property(finder.autoplay_alert_method),0)</visible>
+                          <property name="setting_label">    - When No Interaction with Window</property>
+                          <property name="setting_type">action</property>
+                          <property name="setting_value">$INFO[Window(10000).Property(finder.autoplay_default_action_name)]</property>
+                          <property name="setting_description">Choose the action performed when you fail to interact with the Next Episode alert</property>
+                          <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_from_list&amp;setting_id=autoplay_default_action)</onclick>
                       </item>
                       <item>
                           <visible>Container(2000).HasFocus(70)</visible>

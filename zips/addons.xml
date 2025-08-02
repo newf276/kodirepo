@@ -25,7 +25,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.fenlight" name="FenLightAM" provider-name="Tikipeter/AnonyMouse" version="2.1.28">
+<addon id="plugin.video.fenlight" name="FenLightAM" provider-name="Tikipeter/AnonyMouse" version="2.1.30">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.pil" version="1.1.7"/>
@@ -44,8 +44,8 @@
 		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
         <license/>
         <assets>
-            <icon>resources/media/fenlightam_icon.png</icon>
-            <fanart>resources/media/fenlightam_fanart.jpg</fanart>
+            <icon>resources/media/addon_icons/fenlight_icon_01.png</icon>
+            <fanart>resources/media/fenlight_fanart_01.jpg</fanart>
         </assets>
         <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>
@@ -236,6 +236,42 @@
 		<disclaimer lang="zh_CN">Finder 是 Kodi 的默认皮肤，删除它可能导致故障。</disclaimer>
 		<disclaimer lang="zh_TW">Finder 是 Kodi 預設的佈景主題，移除它可能會造成問題</disclaimer>
 	</extension>
+</addon>
+
+<addon id="slyguy.trailers" name="SlyGuy Trailers" provider-name="SlyGuy" version="0.0.30">
+    <requires>
+        <import addon="script.module.slyguy" version="0.86.20"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="login" />
+    <extension point="kodi.context.item">
+        <menu id="kodi.core.main">
+        <item library="default.py">
+            <label>$LOCALIZE[20410]</label>
+            <visible>[!String.IsEmpty(ListItem.Trailer) + String.Contains(Window(10000).Property(_slyguy_trailer_context_menu),1)] |
+                    [[!String.IsEmpty(ListItem.IMDBNumber) | !String.IsEmpty(ListItem.UniqueID())] + String.IsEqual(ListItem.DBType,movie) + String.Contains(Window(10000).Property(_slyguy_trailer_context_menu),2)] |
+                    [[!String.IsEmpty(ListItem.IMDBNumber) | !String.IsEmpty(ListItem.UniqueID())] + String.IsEqual(ListItem.DBType,tvshow) + String.Contains(Window(10000).Property(_slyguy_trailer_context_menu),3)] |
+                    [!String.IsEmpty(ListItem.Label) + !String.IsEmpty(ListItem.Year) + String.IsEqual(ListItem.DBType,movie) + String.Contains(Window(10000).Property(_slyguy_trailer_context_menu),4)] |
+                    [!String.IsEmpty(ListItem.Label) + !String.IsEmpty(ListItem.Year) + String.IsEqual(ListItem.DBType,tvshow) + String.Contains(Window(10000).Property(_slyguy_trailer_context_menu),5)] |
+                    [String.IsEqual(ListItem.DBType,movie) + String.Contains(Window(10000).Property(_slyguy_trailer_context_menu),6)] |
+                    [String.IsEqual(ListItem.DBType,tvshow) + String.Contains(Window(10000).Property(_slyguy_trailer_context_menu),7)]
+            </visible>
+        </item>
+        </menu>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <description lang="en">An add-on to enhance the Kodi trailer experience</description>
+        <reuselanguageinvoker>true</reuselanguageinvoker>
+        <license></license>
+        <language></language>
+        <website></website>
+        <news>Add ignore scraped trailer setting. Allow Kodi trailer buttons to do other features due to reverse trailer lookup. Rework settings</news>
+        <assets>
+        <icon>icon.png</icon>
+        </assets>
+    </extension>
 </addon>
 
 <addon id="repository.newf" name="[COLOR deepskyblue]Repository Newf[/COLOR]" version="1.5.4" provider-name="[COLOR deepskyblue]Newf276[/COLOR]">
@@ -592,9 +628,10 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.finder" name="[COLOR deepskyblue]Finder[/COLOR]" provider-name="Newf276, Tikipeter, AnonyMouse" version="2.1.13">
+<addon id="plugin.video.finder" name="Finder" provider-name="Newf276/Tikipeter/AnonyMouse" version="2.1.13">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.pil" version="1.1.7"/>
         <import addon="script.module.requests" version="2.19.1"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/finder.py">
@@ -610,10 +647,10 @@
 		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
         <license/>
         <assets>
-            <icon>finder_icon.png</icon>
-            <fanart>finder_fanart2.jpg</fanart>
+            <icon>resources/media/addon_icons/finder_icon_01.png</icon>
+            <fanart>resources/media/finder_fanart_01.jpg</fanart>
         </assets>
-        <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
+        <news>Latest fork of Fenlight 2.1.30 by Tikipeter/Anonymous. For latest changes see Changelog within Tools of add-on.</news>
     </extension>
 </addon>
 </addons>
