@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.cleaner" name="[COLOR deepskyblue]Newf's[/COLOR] Wizard" version="3.0.4" provider-name="Newf276">
+<addon id="plugin.program.cleaner" name="[COLOR deepskyblue]Newf's[/COLOR] Wizard" version="3.1.4" provider-name="Newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
@@ -16,7 +16,7 @@
         <platform>all</platform>
         <reuselanguageinvoker>false</reuselanguageinvoker>
         <source>https://newf276.github.io/</source>
-        <news>Version 3.0.4 - Minor updates</news>
+        <news>Version 3.1.4 - Fix Automatic Update request to your new Build for your Personal Build</news>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
