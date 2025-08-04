@@ -1,10 +1,12 @@
 [COLOR darkgoldenrod]GOD BLESS HIM AND KEEP HIM SAFE.[/COLOR]
 
+[COLOR dodgerblue][B]Version 2.1.31[/B][/COLOR]
+- Added "Retry With Cache Check Ignored When No Results" to Settings->Results->General. If set to "Auto", then if there are no cached RD/AD results it will automatically show all results as Unchecked.
+
 [COLOR dodgerblue][B]Version 2.1.30[/B][/COLOR]
 - There are now 2 easily accessible methods to toggle the state of check cache status (RD & AD) and rescrape. Either through the Playback Options context menu item or through the results sideblade.
 - Fixed "random" not working as a sort for self made Discover lists.
 - Other quick fixes.
-
 
 [COLOR dodgerblue][B]Version 2.1.29[/B][/COLOR]
 - Added "Check for cached status of Results (RD & AD)" to Settings->Accounts->External Scrapers. Enabled by default. Enable this and Fen Light will attempt to determine the cached status of external results for Real Debrid and all Debrid. This is by no means fully accurate, and you will likely often receive less overall results than with this disabled. But if using it, all results shown are likely cached on their servers and can be played immediately (removes the "Unchecked" parameter for RD and AD results).
