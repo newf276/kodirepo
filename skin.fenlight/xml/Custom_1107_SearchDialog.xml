@@ -27,9 +27,9 @@
                      <item>
 						<label>Purge Databases</label>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick condition="System.AddonIsEnabled(plugin.video.finder)">ActivateWindow(10025,"plugin://plugin.program.cleaner/?mode=purgedb",return)</onclick>
-                        <onclick condition="System.HasAddon(plugin.video.finder) + !System.AddonIsEnabled(plugin.video.finder)">EnableAddon(plugin.video.finder)</onclick>
-						<onclick condition="!System.HasAddon(plugin.video.finder)">InstallAddon(plugin.video.finder)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.fenlight)">ActivateWindow(10025,"plugin://plugin.program.cleaner/?mode=purgedb",return)</onclick>
+                        <onclick condition="System.HasAddon(plugin.video.fenlight) + !System.AddonIsEnabled(plugin.video.fenlight)">EnableAddon(plugin.video.fenlight)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.fenlight)">InstallAddon(plugin.video.fenlight)</onclick>
 					</item>
 					<item>
 						<label>$LOCALIZE[31145]</label>
