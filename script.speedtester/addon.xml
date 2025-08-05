@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.speedtester" version="11.1.3" name="[COLOR deepskyblue]Speed Tester[/COLOR]"  provider-name="Newf276">
+<addon id="script.speedtester" name="Speed Tester" version="13.1.3+matrix.1" provider-name="Newf276, Dr0idGuy, dagwieers">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -13,11 +13,12 @@
     <disclaimer lang="en_GB">Speed Tester is powered by speedtest.net</disclaimer>
     <language>en</language>
     <license>Apache-2.0</license>
-    <source>https://github.com/add-ons/script.speedtester</source>
-    <news>v11.1.3 (2024-11-25) Add support for Python 3.9 and later</news>
+    <source>https://newf276.github.io</source>
     <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
+      <icon>resources/media/icon.png</icon>
+      <screenshot>resources/media/screenshot01.jpg</screenshot>
+      <screenshot>resources/media/screenshot02.jpg</screenshot>
+      <screenshot>resources/media/screenshot03.jpg</screenshot>
     </assets>
   </extension>
 </addon>
