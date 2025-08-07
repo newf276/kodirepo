@@ -108,7 +108,7 @@
     </extension>
 </addon>
 
-<addon id="skin.fenlight" version="6.2.1" name="[COLOR deepskyblue]Fenlight[/COLOR] Skin" provider-name="Newf276">
+<addon id="skin.fenlight" version="6.2.2" name="[COLOR deepskyblue]Fenlight[/COLOR] Skin" provider-name="Newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
