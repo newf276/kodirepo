@@ -408,7 +408,7 @@
   </extension>
 </addon>
 
-<addon id="script.kodi.apk" name="Kodi APK Installer[COLOR deepskyblue]Newf's[/COLOR]Kodi APK Installer" version="1.0.1" provider-name="Newf276">
+<addon id="script.kodi.apk" name="[COLOR deepskyblue]Newf's[/COLOR]Kodi APK Installer" version="1.0.1" provider-name="Newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.six" version="1.0.0"/>
