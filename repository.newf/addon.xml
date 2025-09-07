@@ -41,6 +41,16 @@
             <checksum>https://slyguy.uk/.repo/repository.slyguy.youtube/addons.xml.md5</checksum>
             <datadir zip="true">https://slyguy.uk/.repo/repository.slyguy.youtube/</datadir>
         </dir>
+        <dir minversion="19.0.0">
+            <info compressed="false">https://kodiyashimaru.github.io/repo/packages/addons.xml</info>
+            <checksum>https://kodiyashimaru.github.io/repo/packages/addons.xml.md5</checksum>
+            <datadir zip="true">https://kodiyashimaru.github.io/repo/</datadir>
+        </dir>
+        <dir minversion="19.0.0">
+            <info compressed="false">https://kodifitzwell.github.io/repo/packages/addons.xml</info>
+            <checksum>https://kodifitzwell.github.io/repo/packages/addons.xml.md5</checksum>
+            <datadir zip="true">https://kodifitzwell.github.io/repo/</datadir>
+        </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary>kodirepo</summary>
