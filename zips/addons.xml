@@ -27,7 +27,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.fenlight" name="FenLightAM" provider-name="Tikipeter/AnonyMouse" version="2.1.39">
+<addon id="plugin.video.fenlight" name="FenLightAM" provider-name="Tikipeter/AnonyMouse" version="2.1.41">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.pil" version="1.1.7"/>
@@ -118,7 +118,7 @@
     </extension>
 </addon>
 
-<addon id="skin.fenlight" version="6.2.2" name="[COLOR deepskyblue]Fenlight[/COLOR] Skin" provider-name="Newf276">
+<addon id="skin.fenlight" version="7.2.2" name="[COLOR deepskyblue]Fenlight[/COLOR] Skin" provider-name="Newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
