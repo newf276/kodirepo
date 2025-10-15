@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.program.cleaner" name="[COLOR deepskyblue]Newf's[/COLOR] Wizard" version="3.2.0" provider-name="Newf276">
+<addon id="plugin.program.cleaner" name="[COLOR deepskyblue]Newf's[/COLOR] Wizard" version="3.3.0" provider-name="Newf276">
     <requires>
         script.kodi.android.update
         <import addon="xbmc.python" version="3.0.0" />
@@ -118,7 +118,7 @@
     </extension>
 </addon>
 
-<addon id="skin.fenlight" version="7.2.2" name="[COLOR deepskyblue]Fenlight[/COLOR] Skin" provider-name="Newf276">
+<addon id="skin.fenlight" version="7.3.2" name="[COLOR deepskyblue]Fenlight[/COLOR] Skin" provider-name="Newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
