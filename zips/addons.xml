@@ -2,10 +2,11 @@
 <addons>
 <addon id="plugin.program.cleaner" name="[COLOR deepskyblue]Newf's[/COLOR] Wizard" version="3.2.0" provider-name="Newf276">
     <requires>
+        script.kodi.android.update
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
         <import addon="script.module.six" />
-        <import addon="script.kodi.apk" version="1.0.1" />
+        <import addon="script.kodi.apk" version="1.0.1" optional="true"/>
         <import addon="script.speedtester" version="1.1.3+matrix.1" optional="true"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
@@ -26,7 +27,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.fenlight" name="FenLightAM" provider-name="Tikipeter/AnonyMouse" version="2.1.41">
+<addon id="plugin.video.fenlight" name="FenLightAM" provider-name="Tikipeter/AnonyMouse" version="2.1.43">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.pil" version="1.1.7"/>
