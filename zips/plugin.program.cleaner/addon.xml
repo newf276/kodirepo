@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.program.cleaner" name="[COLOR deepskyblue]Newf's[/COLOR] Wizard" version="3.2.0" provider-name="Newf276">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.six" />
+        <import addon="script.kodi.apk" version="1.0.1" />
+        <import addon="script.speedtester" version="1.1.3+matrix.1" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="startup.py" start="startup" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">[COLOR deepskyblue]Newf's Wizard[/COLOR] + Cache Cleaner</summary>
+        <description lang="en">[COLOR deepskyblue]Newf's Wizard[/COLOR] + Cache Cleaner offers many maintenance features, selective add-on data saving, and automated build installs.</description>
+        <platform>all</platform>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <source>https://newf276.github.io/</source>
+        <news>Version 3.2.0 - Added Android Kodi APK Installer to update kodi on android devices. Fixed Automatic Update request to your new Build for your Personal Build, and repo link updated</news>
+        <assets>
+            <icon>icon.jpg</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
