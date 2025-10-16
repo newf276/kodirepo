@@ -1,3 +1,7 @@
+Changelog 3.0.66 (newf276)
+[FEATURE] Redesigned Source Select theme, better visually for sure.
+
+
 Changelog 3.0.65
 [BUG] Improved SQLite database lock handling
 [BUG] If you skip back to the start and stop playback will now stop trakt scrobble and remove playback history

@@ -1,114 +1,165 @@
-<!--Available source stats window properties:-->
-<!--has_torrent_providers-->
-<!--has_hoster_providers-->
-<!--has_adaptive_providers-->
-<!--has_direct_providers-->
-<!--has_cloud_scrapers-->
-<!--totals_4K-->
-<!--totals_1080p-->
-<!--totals_720p-->
-<!--totals_SD-->
-<!--totals_total-->
-<!--torrents_4K-->
-<!--torrents_1080p-->
-<!--torrents_720p-->
-<!--torrents_SD-->
-<!--torrents_total-->
-<!--torrentsCached_4K-->
-<!--torrentsCached_1080p-->
-<!--torrentsCached_720p-->
-<!--torrentsCached_SD-->
-<!--torrentsCached_total-->
-<!--hosters_4K-->
-<!--hosters_1080p-->
-<!--hosters_720p-->
-<!--hosters_SD-->
-<!--hosters_total-->
-<!--cloudFiles_4K-->
-<!--cloudFiles_1080p-->
-<!--cloudFiles_720p-->
-<!--cloudFiles_SD-->
-<!--cloudFiles_total-->
-<!--adaptiveSources_4K-->
-<!--adaptiveSources_1080p-->
-<!--adaptiveSources_720p-->
-<!--adaptiveSources_SD-->
-<!--adaptiveSources_total-->
-<!--directSources_4K-->
-<!--directSources_1080p-->
-<!--directSources_720p-->
-<!--directSources_SD-->
-<!--directSources_total-->
-
 <window type="dialog">
+    <defaultcontrol>2</defaultcontrol>
     <coordinates>
         <left>0</left>
         <top>0</top>
-		<width>1920</width>
-		<height>1080</height>
     </coordinates>
 
     <controls>
+        <!-- Background Texture -->
+        <control type="image">
+            <texture>$INFO[Window().Property(texture.white)]</texture>
+            <colordiffuse>FF000000</colordiffuse>
+        </control>
+        <control type="list" id="1100">
+        </control>
 
-		<!-- Background -->
-		<control type="group">
-			<top>0</top>
-			<left>0</left>
-			<width>1920</width>
-			<height>1080</height>
+        <!-- Background -->
+        <control type="image">
+            <top>0</top>
+            <left>0</left>
+            <width>1920</width>
+            <height>1080</height>
+            <texture background="true">$INFO[Window().Property(item.art.fanart)]</texture>
+        </control>
+        
+        <!-- MultiFanart -->
+            <control type="group">
+                <visible>Skin.HasSetting(SkinHelper.EnableExtraFanart) + System.HasAddon(script.artwork.helper)</visible>
+            
+                <control type="fadelabel" id="1010">
+                    <info>Window().Property(item.art.fanart)</info>
+                    <info>Window().Property(item.art.fanart1)</info>
+                    <info>Window().Property(item.art.fanart2)</info>
+                    <info>Window().Property(item.art.fanart3)</info>
+                    <info>Window().Property(item.art.fanart4)</info>
+                    <info>Window().Property(item.art.fanart5)</info>
+                    <info>Window().Property(item.art.fanart6)</info>
+                    <info>Window().Property(item.art.fanart7)</info>
+                    <info>Window().Property(item.art.fanart8)</info>
+                    <info>Window().Property(item.art.fanart9)</info>
+                    <info>Window().Property(item.art.fanart10)</info>
+                    <info>Window().Property(item.art.fanart11)</info>
+                    <info>Window().Property(item.art.fanart12)</info>
+                    <info>Window().Property(item.art.fanart13)</info>
+                    <info>Window().Property(item.art.fanart14)</info>
+                    <info>Window().Property(item.art.fanart15)</info>
+                    <info>Window().Property(item.art.fanart16)</info>
+                    <info>Window().Property(item.art.fanart17)</info>
+                    <info>Window().Property(item.art.fanart18)</info>
+                    <info>Window().Property(item.art.fanart19)</info>
+                    <info>Window().Property(item.art.fanart20)</info>
+                    <randomize>true</randomize>
+                    <pauseatend>8000</pauseatend>
+                    <scroll>false</scroll>
+                    <scrollout>false</scrollout>
+                    <resetonlabelchange>true</resetonlabelchange>
+                    <textcolor>0x00000000</textcolor>
+                </control>
+                
+                <!-- Background -->
+                <control type="multiimage">
+                    <imagepath background="true">$INFO[Control.GetLabel(1010)]</imagepath>
+                    <timeperimage>4000</timeperimage>
+                    <fadetime>1000</fadetime>
+                    <pauseatend>12000</pauseatend>
+                    <randomize>true</randomize>
+                    <loop>no</loop>
+                </control>
+            </control>
 
-			<!-- Fallback -->
-			<control type="image">
-				<texture>white.png</texture>
-				<colordiffuse>FF000000</colordiffuse>
-			</control>
+        <control type="image">
+            <top>0</top>
+            <left>0</left>
+            <width>1920</width>
+            <height>1080</height>
+            <texture background="true">$INFO[Window().Property(texture.white)]</texture>
+            <colordiffuse>CC000000</colordiffuse>
+        </control>
 
-			<!-- Fanart -->
-			<control type="image">
-				<texture background="true">$INFO[Window().Property(item.art.fanart)]</texture>
-			</control>
 
-			<!-- Overlay -->
-			<control type="image">
-				<texture background="true">white.png</texture>
-				<colordiffuse>CC000000</colordiffuse>
-			</control>
-		</control>
+        <!-- Side Info -->
+        <control type="group">
+            <top>120</top>
+            <left>1400</left>
+            <control type="label">
+                <top>-900</top>
+                <width>400</width>
+                <font>font12</font>
+                <textcolor>AAFFFFFF</textcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+                <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
+                <label>Season: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.season)] [/COLOR] | Episode: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.episode)][/COLOR]</label>
+            </control>
+            <control type="image">
+                <width>400</width>
+                <height>600</height>
+                <top>50</top>
+                <texture background="true">$INFO[Window().Property(item.art.poster)]</texture>
+            </control>
 
-		<!-- Seren Logo -->
-		<control type="image">
-			<animation effect="fade" end="0" time="350">WindowClose</animation>
-			<animation effect="fade" end="0" time="350" condition="String.IsEqual(Window().Property(process_started),true) + !String.IsEmpty(Window().Property(item.art.clearlogo))">Conditional</animation>
-			<centerleft>50%</centerleft>
-			<bottom>80</bottom>
-			<align>center</align>
-			<aligny>center</aligny>
-			<width>335</width>
-			<aspectratio>keep</aspectratio>
-			<texture>$INFO[Window().Property(seren.logo)]</texture>
-			<visible>String.IsEqual(Window().Property(process_started),false) | String.IsEmpty(Window().Property(item.art.clearlogo))</visible>
-		</control>
+            <control type="group">
+                <top>420</top>
+                <control type="label">
+                    <top>20</top>
+                    <width>400</width>
+                    <font>font14</font>
+                    <textcolor>AAFFFFFF</textcolor>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <label>[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.title)] [/COLOR]</label>
+                </control>
+                <control type="label">
+                    <top>150</top>
+                    <width>400</width>
+                    <font>font12</font>
+                    <textcolor>AAFFFFFF</textcolor>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <visible>String.IsEmpty(Window().Property(item.info.season))</visible>
+                    <label>Year: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.year)] [/COLOR] | Rating: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.rating)][/COLOR]
+                    </label>
+                </control>
+                <control type="label">
+                    <top>120</top>
+                    <width>400</width>
+                    <font>font12</font>
+                    <textcolor>AAFFFFFF</textcolor>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
+                    <label>Aired: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.aired)] [/COLOR]</label>
+                </control>
 
-		<!-- Clearlogo -->
-		<control type="image">
-			<animation effect="fade" time="350" condition="String.IsEqual(Window().Property(process_started),true) + !String.IsEmpty(Window().Property(item.art.clearlogo))">Conditional</animation>
-			<centerleft>50%</centerleft>
-			<width>335</width>
-			<bottom>80</bottom>
-			<align>center</align>
-			<aligny>center</aligny>
-			<aspectratio>keep</aspectratio>
-			<texture>$INFO[Window().Property(item.art.clearlogo)]</texture>
-			<visible>String.IsEqual(Window().Property(process_started),true) + !String.IsEmpty(Window().Property(item.art.clearlogo))</visible>
-		</control>
+                <control type="textbox">
+                    <wrapmultiline>true</wrapmultiline>
+                    <top>360</top>
+                    <left>-70</left>
+                    <height min="20" max="130">auto</height>
+                    <width>550</width>
+                    <font>font12</font>
+                    <textcolor>AAFFFFFF</textcolor>
+                    <align>center</align>
+                    <label>$INFO[Window().Property(item.info.plot)]</label>
+             </control>
+            </control>
+        </control>
 
-		<!-- Notification Text -->
+
+
+        <!-- Seren Logo -->
+        <control type="image" id="1001">
+            <top>-210</top>
+            <left>620</left>
+            <width>250</width>
+            <aspectratio>keep</aspectratio>
+            <texture>$INFO[Window().Property(seren.logo)]</texture>
+        </control>
+
         <control type="label">
-			<animation effect="fade" end="0" time="350">WindowClose</animation>
-			<animation effect="fade" end="0" time="350" condition="String.IsEqual(Window().Property(process_started),true)">Conditional</animation>
-			<animation effect="fade" time="350">WindowOpen</animation>
-            <top>210</top>
-			<centerleft>50%</centerleft>
+            <left>-200</left>
+            <top>10</top>
             <width>100%</width>
             <font>font12</font>
             <align>center</align>
@@ -118,780 +169,237 @@
             <label>$INFO[Window().Property(notification_text)]</label>
         </control>
 
-		<!-- Progress -->
-		<control type="grouplist">
-			<animation effect="fade" end="0" time="350">WindowClose</animation>
-			<animation effect="fade" time="350" condition="String.IsEqual(Window().Property(process_started),true)">Conditional</animation>
-			<visible>String.IsEqual(Window().Property(process_started),true)</visible>
-			<centerleft>50%</centerleft>
-			<orientation>horizontal</orientation>
-			<top>630</top>
-			<width>410</width>
-			<itemgap>10</itemgap>
-
-			<!-- 10% -->
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsLess(Window().Property(progress),10)</visible>
-				<colordiffuse>33FFFFFF</colordiffuse>
-			</control>
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsGreaterOrEqual(Window().Property(progress),10)</visible>
-				<colordiffuse>FFFFFFFF</colordiffuse>
-			</control>
-
-			<!-- 20% -->
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsLess(Window().Property(progress),20)</visible>
-				<colordiffuse>33FFFFFF</colordiffuse>
-			</control>
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsGreaterOrEqual(Window().Property(progress),20)</visible>
-				<colordiffuse>FFFFFFFF</colordiffuse>
-			</control>
-
-			<!-- 30% -->
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsLess(Window().Property(progress),30)</visible>
-				<colordiffuse>33FFFFFF</colordiffuse>
-			</control>
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsGreaterOrEqual(Window().Property(progress),30)</visible>
-				<colordiffuse>FFFFFFFF</colordiffuse>
-			</control>
-
-			<!-- 40% -->
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsLess(Window().Property(progress),40)</visible>
-				<colordiffuse>33FFFFFF</colordiffuse>
-			</control>
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsGreaterOrEqual(Window().Property(progress),40)</visible>
-				<colordiffuse>FFFFFFFF</colordiffuse>
-			</control>
-
-			<!-- 50% -->
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsLess(Window().Property(progress),50)</visible>
-				<colordiffuse>33FFFFFF</colordiffuse>
-			</control>
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsGreaterOrEqual(Window().Property(progress),50)</visible>
-				<colordiffuse>FFFFFFFF</colordiffuse>
-			</control>
-
-			<!-- 60% -->
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsLess(Window().Property(progress),60)</visible>
-				<colordiffuse>33FFFFFF</colordiffuse>
-			</control>
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsGreaterOrEqual(Window().Property(progress),60)</visible>
-				<colordiffuse>FFFFFFFF</colordiffuse>
-			</control>
-
-			<!-- 70% -->
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsLess(Window().Property(progress),70)</visible>
-				<colordiffuse>33FFFFFF</colordiffuse>
-			</control>
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsGreaterOrEqual(Window().Property(progress),70)</visible>
-				<colordiffuse>FFFFFFFF</colordiffuse>
-			</control>
-
-			<!-- 80% -->
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsLess(Window().Property(progress),80)</visible>
-				<colordiffuse>33FFFFFF</colordiffuse>
-			</control>
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsGreaterOrEqual(Window().Property(progress),80)</visible>
-				<colordiffuse>FFFFFFFF</colordiffuse>
-			</control>
-
-			<!-- 90% -->
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsLess(Window().Property(progress),90)</visible>
-				<colordiffuse>33FFFFFF</colordiffuse>
-			</control>
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsGreaterOrEqual(Window().Property(progress),90)</visible>
-				<colordiffuse>FFFFFFFF</colordiffuse>
-			</control>
-
-			<!-- 100% -->
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsLess(Window().Property(progress),100)</visible>
-				<colordiffuse>33FFFFFF</colordiffuse>
-			</control>
-			<control type="image">
-				<width>32</width>
-				<height>32</height>
-				<texture>white.png</texture>
-				<visible>Integer.IsGreaterOrEqual(Window().Property(progress),100)</visible>
-				<colordiffuse>FFFFFFFF</colordiffuse>
-			</control>
-		</control>
-
-		<!-- Information -->
-		<control type="group">
-			<centertop>10</centertop>
-			<top>712</top>
-			<width>1920</width>
-
-			<control type="grouplist">
-				<animation effect="slide" end="2000,0" time="350">WindowClose</animation>
-				<animation effect="fade" time="350" condition="String.IsEqual(Window().Property(process_started),true)">Conditional</animation>
-				<itemgap>10</itemgap>
-				<align>center</align>
-				<orientation>horizontal</orientation>
-				<visible>String.IsEqual(Window().Property(process_started),true)</visible>
-
-				<!-- Totals -->
-				<control type="grouplist">
-					<width>120</width>
-					<itemgap>40</itemgap>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$ADDON[plugin.video.seren 30610]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(totals_4K)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(totals_1080p)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(totals_720p)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(totals_SD)]</label>
-					</control>
-				</control>
-
-				<!-- Separator -->
-				<control type="grouplist">
-					<width>10</width>
-					<itemgap>40</itemgap>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>10</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>|</label>
-					</control>
-				</control>
-
-				<!-- Torrents -->
-				<control type="grouplist">
-					<width>120</width>
-					<itemgap>40</itemgap>
-					<visible>String.IsEqual(Window().Property(has_torrent_providers),true)</visible>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$ADDON[plugin.video.seren 30057]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(torrents_4K)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(torrents_1080p)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(torrents_720p)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(torrents_SD)]</label>
-					</control>
-				</control>
-
-				<!-- Separator -->
-				<control type="grouplist">
-					<width>10</width>
-					<itemgap>40</itemgap>
-					<visible>String.IsEqual(Window().Property(has_torrent_providers),true)</visible>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>10</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>|</label>
-					</control>
-				</control>
-
-				<!-- Cached -->
-				<control type="grouplist">
-					<width>120</width>
-					<itemgap>40</itemgap>
-					<visible>String.IsEqual(Window().Property(has_torrent_providers),true)</visible>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$ADDON[plugin.video.seren 30248]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(torrentsCached_4K)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(torrentsCached_1080p)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(torrentsCached_720p)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(torrentsCached_SD)]</label>
-					</control>
-				</control>
-
-				<!-- Separator -->
-				<control type="grouplist">
-					<width>10</width>
-					<itemgap>40</itemgap>
-					<visible>String.IsEqual(Window().Property(has_torrent_providers),true)</visible>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>10</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>|</label>
-					</control>
-				</control>
-
-				<!-- Hosters -->
-				<control type="grouplist">
-					<width>120</width>
-					<itemgap>40</itemgap>
-					<visible>String.IsEqual(Window().Property(has_hoster_providers),true)</visible>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$ADDON[plugin.video.seren 30058]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(hosters_4K)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(hosters_1080p)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(hosters_720p)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(hosters_SD)]</label>
-					</control>
-				</control>
-
-				<!-- Separator -->
-				<control type="grouplist">
-					<width>10</width>
-					<itemgap>40</itemgap>
-					<visible>String.IsEqual(Window().Property(has_hoster_providers),true)</visible>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>10</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>|</label>
-					</control>
-				</control>
-
-				<!-- Cloud -->
-				<control type="grouplist">
-					<width>120</width>
-					<itemgap>40</itemgap>
-					<visible>String.IsEqual(Window().Property(has_cloud_scrapers),true)</visible>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$ADDON[plugin.video.seren 30249]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(cloudFiles_4K)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(cloudFiles_1080p)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(cloudFiles_720p)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(cloudFiles_SD)]</label>
-					</control>
-				</control>
-
-				<!-- Separator -->
-				<control type="grouplist">
-					<width>10</width>
-					<itemgap>40</itemgap>
-					<visible>String.IsEqual(Window().Property(has_cloud_scrapers),true)</visible>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>10</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>|</label>
-					</control>
-				</control>
-
-				<!-- Adaptive -->
-				<control type="grouplist">
-					<width>120</width>
-					<itemgap>40</itemgap>
-					<visible>String.IsEqual(Window().Property(has_adaptive_providers),true)</visible>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$ADDON[plugin.video.seren 30470]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(adaptiveSources_4K)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(adaptiveSources_1080p)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(adaptiveSources_720p)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(adaptiveSources_SD)]</label>
-					</control>
-				</control>
-
-				<!-- Separator -->
-				<control type="grouplist">
-					<width>10</width>
-					<itemgap>40</itemgap>
-					<visible>String.IsEqual(Window().Property(has_adaptive_providers),true)</visible>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>10</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>|</label>
-					</control>
-				</control>
-
-				<!-- Direct -->
-				<control type="grouplist">
-					<width>120</width>
-					<itemgap>40</itemgap>
-					<visible>String.IsEqual(Window().Property(has_direct_providers),true)</visible>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$ADDON[plugin.video.seren 30631]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(directSources_4K)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(directSources_1080p)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(directSources_720p)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>$INFO[Window().Property(directSources_SD)]</label>
-					</control>
-				</control>
-
-				<!-- Separator -->
-				<control type="grouplist">
-					<width>10</width>
-					<itemgap>40</itemgap>
-					<visible>String.IsEqual(Window().Property(has_direct_providers),true)</visible>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>10</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>|</label>
-					</control>
-				</control>
-
-				<!-- Filtered -->
-				<control type="grouplist">
-					<width>120</width>
-					<itemgap>40</itemgap>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>$INFO[Window().Property(settings.color)]</textcolor>
-						<label>$ADDON[plugin.video.seren 30611]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>$INFO[Window().Property(settings.color)]</textcolor>
-						<label>$INFO[Window().Property(totals_4K_filtered)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>$INFO[Window().Property(settings.color)]</textcolor>
-						<label>$INFO[Window().Property(totals_1080p_filtered)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>$INFO[Window().Property(settings.color)]</textcolor>
-						<label>$INFO[Window().Property(totals_720p_filtered)]</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>$INFO[Window().Property(settings.color)]</textcolor>
-						<label>$INFO[Window().Property(totals_SD_filtered)]</label>
-					</control>
-				</control>
-
-				<!-- Separator -->
-				<control type="grouplist">
-					<width>10</width>
-					<itemgap>40</itemgap>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>10</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>|</label>
-					</control>
-				</control>
-
-				<!-- Resolution -->
-				<control type="grouplist">
-					<width>120</width>
-					<itemgap>40</itemgap>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>Quality</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>4K</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>1080p</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>720p</label>
-					</control>
-
-					<control type="label">
-						<font>font12</font>
-						<align>center</align>
-						<width>120</width>
-						<textcolor>FFDDDDDD</textcolor>
-						<label>SD</label>
-					</control>
-				</control>
-			</control>
-
-			<control type="group">
-				<top>220</top>
-				<animation effect="fade" end="0" time="350">WindowClose</animation>
-				<animation effect="fade" time="350" condition="String.IsEqual(Window().Property(process_started),true)">Conditional</animation>
-
-				<control type="label">
-					<font>font12</font>
-					<align>center</align>
-					<textcolor>FFDDDDDD</textcolor>
-					<label>$ADDON[plugin.video.seren 30250]: $INFO[Window().Property(remaining_providers_count)]</label>
-					<visible>Integer.IsGreaterOrEqual(Window().Property(remaining_providers_count),10)</visible>
-				</control>
-
-				<control type="label">
-					<font>font12</font>
-					<align>center</align>
-					<textcolor>FFDDDDDD</textcolor>
-					<label>$INFO[Window().Property(remaining_providers_list)]</label>
-					<visible>!Integer.IsGreaterOrEqual(Window().Property(remaining_providers_count),10)</visible>
-				</control>
-			</control>
-		</control>
-
-		<control type="list" id="2000">
-			<visible>false</visible>
-			<top>-140</top>
-			<left>-760</left>
-			<width>1920</width>
-			<align>center</align>
-			<aligny>center</aligny>
-			<orientation>horizontal</orientation>
-
-			<itemlayout width="192">
-				<width>auto</width>
-				<control type="label">
-					<font>font12</font>
-					<textcolor>FFDDDDDD</textcolor>
-					<label>$INFO[ListItem.Label]</label>
-				</control>
-			</itemlayout>
-
-			<focusedlayout width="192">
-				<width>auto</width>
-				<control type="label">
-					<font>font12</font>
-					<textcolor>FFDDDDDD</textcolor>
-					<label>$INFO[ListItem.Label]</label>
-				</control>
-			</focusedlayout>
-		</control>
+        <control type="group">
+            <visible>String.IsEqual(Window().Property(process_started),true)</visible>
+            <left>560</left>
+            <top>530</top>
+            <width>100%</width>
+
+            <!-- Progress -->
+            <control type="image">
+                <left>0</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),10)</visible>
+                <colordiffuse>33FFFFFF</colordiffuse>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),10)</visible>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+            </control>
+
+            <control type="image">
+                <left>40</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),20)</visible>
+                <colordiffuse>33FFFFFF</colordiffuse>
+            </control>
+            <control type="image">
+                <left>40</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),20)</visible>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+            </control>
+
+            <control type="image">
+                <left>80</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),30)</visible>
+                <colordiffuse>33FFFFFF</colordiffuse>
+            </control>
+            <control type="image">
+                <left>80</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),30)</visible>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+            </control>
+
+            <control type="image">
+                <left>120</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),40)</visible>
+                <colordiffuse>33FFFFFF</colordiffuse>
+            </control>
+            <control type="image">
+                <left>120</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),40)</visible>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+            </control>
+
+            <control type="image">
+                <left>160</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),50)</visible>
+                <colordiffuse>33FFFFFF</colordiffuse>
+            </control>
+            <control type="image">
+                <left>160</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),50)</visible>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+            </control>
+
+            <control type="image">
+                <left>200</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),60)</visible>
+                <colordiffuse>33FFFFFF</colordiffuse>
+            </control>
+            <control type="image">
+                <left>200</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),60)</visible>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+            </control>
+
+            <control type="image">
+                <left>240</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),70)</visible>
+                <colordiffuse>33FFFFFF</colordiffuse>
+            </control>
+            <control type="image">
+                <left>240</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),70)</visible>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+            </control>
+
+            <control type="image">
+                <left>280</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),80)</visible>
+                <colordiffuse>33FFFFFF</colordiffuse>
+            </control>
+            <control type="image">
+                <left>280</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),80)</visible>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+            </control>
+
+            <control type="image">
+                <left>320</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),90)</visible>
+                <colordiffuse>33FFFFFF</colordiffuse>
+            </control>
+            <control type="image">
+                <left>320</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),90)</visible>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+            </control>
+
+            <control type="image">
+                <left>360</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),100)</visible>
+                <colordiffuse>33FFFFFF</colordiffuse>
+            </control>
+            <control type="image">
+                <left>360</left>
+                <width>30</width>
+                <height>30</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),100)</visible>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+            </control>
+
+            <!-- Information -->
+            <control type="label">
+                <top>-400</top>
+                <left>-760</left>
+                <width>1920</width>
+                <font>font12</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>auto</width>
+                <textcolor>FFDDDDDD</textcolor>
+                <label>Torrents: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(totals_total)][/COLOR] | Cached: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(torrentsCached_total)][/COLOR] | Hosters: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(hosters_total)][/COLOR] | CloudFiles: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(cloudFiles_total)][/COLOR]</label>
+            </control>
+
+            <control type="label">
+                <top>-320</top>
+                <left>-760</left>
+                <width>1920</width>
+                <font>font12</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>auto</width>
+                <textcolor>FFDDDDDD</textcolor>
+                <label>4k: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(totals_4K)][/COLOR] | 1080p: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(totals_1080p)][/COLOR] | 720p: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(totals_720p)][/COLOR] | SD: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(totals_SD)][/COLOR]</label>
+            </control>
+
+            <control type="label">
+                <top>-240</top>
+                <left>-760</left>
+                <width>1920</width>
+                <font>font12</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>auto</width>
+                <textcolor>FFDDDDDD</textcolor>
+                <label>Remaining Providers: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(remaining_providers_count)][/COLOR]</label>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(remaining_providers_count),10)</visible>
+            </control>
+
+            <control type="label">
+                <top>-240</top>
+                <left>-760</left>
+                <width>1920</width>
+                <font>font12</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>auto</width>
+                <textcolor>FFDDDDDD</textcolor>
+                <label>$INFO[Window().Property(remaining_providers_list)]</label>
+                <visible>!Integer.IsGreaterOrEqual(Window().Property(remaining_providers_count),10)</visible>
+            </control>
+        </control>
+        
+        <control type="list" id="2000">
+            <visible>false</visible>
+        </control>
     </controls>
 </window>
