@@ -1,0 +1,130 @@
+# Kodi Media Center language file
+# Addon Name: Kodi Android Installer
+# Addon id: script.kodi.apk
+# Addon Provider: Lunatixz
+msgid ""
+msgstr ""
+"Project-Id-Version: script.kodi.apk\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-07-18 17:11+0000\n"
+"Last-Translator: skypichat <skypichat@hotmail.fr>\n"
+"Language-Team: French (France) <https://kodi.weblate.cloud/projects/kodi-add-ons-scripts/script-kodi-android-update/fr_fr/>\n"
+"Language: fr_fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.18.2\n"
+
+msgctxt "Addon Summary"
+msgid "Download and Install Kodi packages."
+msgstr "Télécharger et installer les packages Kodi."
+
+msgctxt "Addon Description"
+msgid "Download and Install Kodi android packages; select from  Nightlies, Releases, Snapshots and Test-builds."
+msgstr "Télécharger et installer les packages Android de Kodi ; sélectionner depuis Nightlies, Releases, Snapshots et Test-builds."
+
+msgctxt "#30000"
+msgid "Enable Debugging [Log errors]"
+msgstr "Activer le débogage [Log errors]"
+
+msgctxt "#30001"
+msgid "Something went wrong, Try again later..."
+msgstr "Quelque chose s'est mal passé, réessayez plus tard..."
+
+msgctxt "#30002"
+msgid "Preparing to download: %s"
+msgstr "Téléchargement en préparation : %s"
+
+msgctxt "#30003"
+msgid "Keep all downloads?"
+msgstr "Conserver tous les téléchargements ?"
+
+msgctxt "#30004"
+msgid "File already exists"
+msgstr "Le fichier existe déjà"
+
+msgctxt "#30005"
+msgid "Install"
+msgstr "Installation"
+
+msgctxt "#30006"
+msgid "Redownload"
+msgstr "Retélécharger"
+
+msgctxt "#30007"
+msgid "Installation complete, file removed"
+msgstr "Installation terminée, fichier supprimé"
+
+msgctxt "#30008"
+msgid "Cleanup download after installation"
+msgstr "Nettoyage du téléchargement après l'installation"
+
+msgctxt "#30009"
+msgid "Plugin disabled"
+msgstr "Plugin désactivé"
+
+msgctxt "#30010"
+msgid "Unknown Android version"
+msgstr "Version d'Android inconnue"
+
+msgctxt "#30011"
+msgid "Android v.%s.0.0 is incompatible with new Kodi versions,"
+msgstr "Android v.%s.0.0 est incompatible avec les nouvelles versions de Kodi,"
+
+msgctxt "#30012"
+msgid "Would you like to disable this plugin?"
+msgstr "Souhaitez-vous désactiver ce plugin ?"
+
+msgctxt "#30013"
+msgid "Detecting Android version..."
+msgstr "Détection de la version d'Android..."
+
+msgctxt "#30014"
+msgid "Current Android platform (%s)"
+msgstr "Plateforme Android courante (%s)"
+
+msgctxt "#30015"
+msgid "Semi-stable (Monthly builds)."
+msgstr "Semi-stable (versions mensuelles)."
+
+msgctxt "#30016"
+msgid "Stable (Final releases)."
+msgstr "Stable (versions finales)."
+
+msgctxt "#30017"
+msgid "Unstable (Daily builds)."
+msgstr "Instable (constructions quotidiennes)."
+
+msgctxt "#30018"
+msgid "Experimental (Debugging builds)."
+msgstr "Expérimental (versions de débogage)."
+
+msgctxt "#30019"
+msgid "Incompatible platform"
+msgstr "Plateforme incompatible"
+
+msgctxt "#30020"
+msgid "Select File Explorer"
+msgstr "Sélectionner l'explorateur de fichiers"
+
+msgctxt "#30021"
+msgid "File Explorer"
+msgstr "Explorateur de fichiers"
+
+msgctxt "#30022"
+msgid "Current Kodi Branch (%s.%s-%s)"
+msgstr "Branche Kodi actuelle (%s.%s-%s)"
+
+msgctxt "#30023"
+msgid "[B]Downloading:[/B]"
+msgstr "[B]Téléchargement :[/B]"
+
+msgctxt "#30024"
+msgid " | [B]Speed:[/B]"
+msgstr " | [B]Vitesse :[/B]"
+
+msgctxt "#30025"
+msgid " | [B]ETA:[/B]"
+msgstr " | [B]ETA :[/B]"

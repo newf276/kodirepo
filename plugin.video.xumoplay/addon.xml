@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.xumoplay" version="2025.01.06" name="[COLOR deepskyblue]Xumo TV[/COLOR]"  provider-name="Newf276">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.requests" version="2.9.1"/>
+    <import addon="script.module.inputstreamhelper"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Xumo Play</summary>
+    <description lang="en">Xumo Play is your destination for free LIVE and on-demand streaming channels ranging from sports highlights to fun recipes to music and festival coverage to stand up comedy.</description>
+    <disclaimer lang="en"></disclaimer>
+    <language></language>
+    <platform>all</platform>
+    <license>GPL(v2 or later)</license>
+    <forum></forum>
+    <website>https://play.xumo.com</website>
+    <email></email>
+    <source></source>
+    <news>Fix for DRM license requirement on some movies</news>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
