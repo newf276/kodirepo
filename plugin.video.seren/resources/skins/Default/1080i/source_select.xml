@@ -49,7 +49,7 @@
                     <aligny>center</aligny>
                     <scroll>true</scroll>
                     <scrollspeed>80</scrollspeed>
-                    <label>[COLOR deepskyblue]$INFO[Window().Property(item.info.title)] [/COLOR]</label>
+                    <label>[COLOR lightskyblue]$INFO[Window().Property(item.info.title)] [/COLOR]</label>
                 </control>
                 <control type="label">
                     <top>120</top>
@@ -134,70 +134,57 @@
                     <left>10</left>
                     <width>1160</width>
                     <height>5</height>
-                    <font>font10</font>
-                    <textcolor>FFFFFFFF</textcolor>
+                    <font>font12</font>
+                    <textcolor>fff5f5f5</textcolor>
 		            <shadowcolor>dimgrey</shadowcolor>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label>[UPPERCASE][COLOR lightgrey]$INFO[ListItem.Label][/COLOR][/UPPERCASE]</label>
+                    <label>[B][UPPERCASE][COLOR white]$INFO[ListItem.Label][/COLOR][/UPPERCASE][/B]</label>
                     <scroll>true</scroll>
                 </control>
-                    <control type="label">
-                        <top>60</top>
-                        <left>400</left>
-                        <width>450</width>
-                        <height>0</height>
-                        <font>font10</font>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <label>[B]Debrid[/B]: [UPPERCASE][COLOR lightgrey]$INFO[ListItem.Property(debrid_provider)][/COLOR][/UPPERCASE]</label>
-                    </control>
-                    <control type="label">
-                        <top>90</top>
-                        <left>400</left>
-                        <width>450</width>
-                        <height>0</height>
-                        <aligny>center</aligny>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <font>font10</font>
-                        <label>[B]Provider[/B]: [UPPERCASE][COLOR lightgrey]$INFO[ListItem.Property(provider)][/COLOR][/UPPERCASE]</label>
-                    </control>
-                    <control type="label">
-                        <top>60</top>
-                        <left>10</left>
-                        <width>350</width>
-                        <height>0</height>
-                        <aligny>center</aligny>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <shadowcolor>dimgrey</shadowcolor>
-                        <font>font10</font>
-                        <label>[B]Type[/B]: [UPPERCASE][COLOR lightgrey]$INFO[ListItem.Property(type)][/COLOR][/UPPERCASE]</label>
-                    </control>
-                    <control type="label">
-                        <top>90</top>
-                        <left>10</left>
-                        <width>350</width>
-                        <height>0</height>
-                        <aligny>center</aligny>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <shadowcolor>dimgrey</shadowcolor>
-                        <font>font10</font>
-                        <label>[B]Info[/B]: [UPPERCASE][COLOR lightgrey]$INFO[ListItem.Property(info_text)][/COLOR][/UPPERCASE]</label>
-                    </control>
-
-                    <control type="label">
-                        <left>880</left>
-                        <top>90</top>
-                        <width>350</width>
-                        <height>0</height>
-                        <font>font10</font>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <shadowcolor>dimgrey</shadowcolor>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <label>[B]Size[/B]: [UPPERCASE][COLOR lightgrey]$INFO[ListItem.Property(size)][/COLOR][/UPPERCASE]</label>
-                    </control>
+                <control type="label">
+                    <top>60</top>
+                    <left>510</left>
+                    <width>550</width>
+                    <height>0</height>
+                    <font>font10</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>[B]Info[/B]: [UPPERCASE][COLOR lightgrey]$INFO[ListItem.Property(info_text)][/COLOR][/UPPERCASE]</label>
+                </control>
+                <control type="label">
+                    <top>90</top>
+                    <left>510</left>
+                    <width>550</width>
+                    <height>0</height>
+                    <aligny>center</aligny>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <font>font10</font>
+                    <label>[B]Size[/B]: [UPPERCASE][COLOR lightgrey]$INFO[ListItem.Property(size)][/COLOR][/UPPERCASE]</label>
+                </control>
+                <control type="label">
+                    <top>60</top>
+                    <left>10</left>
+                    <width>550</width>
+                    <height>0</height>
+                    <aligny>center</aligny>
+                    <textcolor>FFFFFFFF</textcolor>
+		            <shadowcolor>dimgrey</shadowcolor>
+                    <font>font10</font>
+                    <label>[B]Debrid[/B]: [UPPERCASE][COLOR lightgrey]$INFO[ListItem.Property(debrid_provider)][/COLOR][/UPPERCASE]</label>
+                </control>
+                <control type="label">
+                    <top>90</top>
+                    <left>10</left>
+                    <width>550</width>
+                    <height>0</height>
+                    <aligny>center</aligny>
+                    <textcolor>FFFFFFFF</textcolor>
+		            <shadowcolor>dimgrey</shadowcolor>
+                    <font>font10</font>
+                    <label>[B]Provider[/B]: [UPPERCASE][COLOR lightgrey]$INFO[ListItem.Property(provider)][/COLOR][/UPPERCASE]</label>
+                </control>
 
                     <control type="image">
                         <centertop>50%</centertop>
@@ -260,7 +247,7 @@
                     <left>10</left>
                     <width>1160</width>
                     <height>5</height>
-                    <font>font12</font>
+                    <font>font13</font>
                     <textcolor>fff5f5f5</textcolor>
 		            <shadowcolor>dimgrey</shadowcolor>
                     <align>left</align>
@@ -268,60 +255,59 @@
                     <label>[B][UPPERCASE][COLOR deepskyblue]$INFO[ListItem.Label][/COLOR][/UPPERCASE][/B]</label>
                     <scroll>true</scroll>
                 </control>
-                <control type="label">
+                 <control type="label">
                     <top>60</top>
-                    <left>400</left>
-                    <width>450</width>
+                    <left>510</left>
+                    <width>550</width>
                     <height>0</height>
-                    <font>font10</font>
+                    <font>font12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label>[B]Debrid[/B]: [UPPERCASE][COLOR deepskyblue]$INFO[ListItem.Property(debrid_provider)][/COLOR][/UPPERCASE]</label>
+                    <label>[B]Info[/B]: [COLOR lightskyblue]$INFO[ListItem.Property(info_text)][/COLOR]</label>
                 </control>
                 <control type="label">
                     <top>90</top>
-                    <left>400</left>
-                    <width>450</width>
+                    <left>510</left>
+                    <width>550</width>
                     <height>0</height>
                     <aligny>center</aligny>
                     <textcolor>FFFFFFFF</textcolor>
-                    <font>font10</font>
-                    <label>[B]Provider[/B]: [UPPERCASE][COLOR deepskyblue]$INFO[ListItem.Property(provider)][/COLOR][/UPPERCASE]</label>
+                    <font>font12</font>
+                    <label>[B]Size[/B]: [UPPERCASE][COLOR lightskyblue]$INFO[ListItem.Property(size)][/COLOR][/UPPERCASE]</label>
                 </control>
                 <control type="label">
                     <top>60</top>
                     <left>10</left>
-                    <width>350</width>
+                    <width>550</width>
                     <height>0</height>
                     <aligny>center</aligny>
                     <textcolor>FFFFFFFF</textcolor>
 		            <shadowcolor>dimgrey</shadowcolor>
-                    <font>font10</font>
-                    <label>[B]Type[/B]: [UPPERCASE][COLOR deepskyblue]$INFO[ListItem.Property(type)][/COLOR][/UPPERCASE]</label>
+                    <font>font12</font>
+                    <label>[B]Debrid[/B]: [UPPERCASE][COLOR lightskyblue]$INFO[ListItem.Property(debrid_provider)][/COLOR][/UPPERCASE]</label>
                 </control>
                 <control type="label">
                     <top>90</top>
                     <left>10</left>
-                    <width>350</width>
+                    <width>550</width>
                     <height>0</height>
                     <aligny>center</aligny>
                     <textcolor>FFFFFFFF</textcolor>
 		            <shadowcolor>dimgrey</shadowcolor>
-                    <font>font10</font>
-                    <label>[B]Info[/B]: [UPPERCASE][COLOR deepskyblue]$INFO[ListItem.Property(info_text)][/COLOR][/UPPERCASE]</label>
+                    <font>font12</font>
+                    <label>[B]Provider[/B]: [UPPERCASE][COLOR lightskyblue]$INFO[ListItem.Property(provider)][/COLOR][/UPPERCASE]</label>
                 </control>
                 <control type="label">
-                    <left>880</left>
                     <top>90</top>
-                    <width>350</width>
+                    <left>10</left>
+                    <width>550</width>
                     <height>0</height>
-                    <font>font10</font>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <shadowcolor>dimgrey</shadowcolor>
-                    <align>left</align>
                     <aligny>center</aligny>
-                    <label>[B]Size[/B]: [UPPERCASE][COLOR deepskyblue]$INFO[ListItem.Property(size)][/COLOR][/UPPERCASE]</label>
+                    <textcolor>FFFFFFFF</textcolor>
+		            <shadowcolor>dimgrey</shadowcolor>
+                    <font>font12</font>
+                    <label>[B]Provider[/B]: [UPPERCASE][COLOR lightskyblue]$INFO[ListItem.Property(provider)][/COLOR][/UPPERCASE]</label>
                 </control>
 
                 <control type="image">
