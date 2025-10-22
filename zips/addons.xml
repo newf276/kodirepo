@@ -638,8 +638,8 @@
             information on these external websites.
         </disclaimer>
         <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
+            <icon>resources/images/ico-seren-3.png</icon>
+            <fanart>resources/images/fanart-seren-3.jpg</fanart>
             <clearlogo>resources/images/logo-seren-3.png</clearlogo>
             <poster>resources/images/poster-seren-3.png</poster>
             <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
@@ -651,7 +651,7 @@
     </extension>
 </addon>
 
-<addon id="context.seren" version="3.0.2" name="[COLOR deepskyblue]Seren[/COLOR] Context Tool" provider-name="Nixgates">
+<addon id="context.seren" version="3.0.2" name="Seren - Global Context Menu Items" provider-name="Nixgates">
 	<requires>
 		<import addon="xbmc.addon" version="17.9.910" />
 		<import addon="xbmc.python" version="3.0.0" />
@@ -713,8 +713,8 @@
 		<source></source>
 		<disclaimer lang="en"></disclaimer>
 		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
+			<icon>resources/images/ico-seren-3.png</icon>
+			<fanart>fanart-seren-3.jpg</fanart>
 			<clearlogo>resources/images/logo-seren-3.png</clearlogo>
 			<poster>resources/images/poster-seren-3.png</poster>
 		</assets>

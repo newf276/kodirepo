@@ -56,8 +56,8 @@
             information on these external websites.
         </disclaimer>
         <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
+            <icon>resources/images/ico-seren-3.png</icon>
+            <fanart>resources/images/fanart-seren-3.jpg</fanart>
             <clearlogo>resources/images/logo-seren-3.png</clearlogo>
             <poster>resources/images/poster-seren-3.png</poster>
             <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
