@@ -17,7 +17,7 @@ ADDONTITLE = '[COLOR deepskyblue][B]Newfs[/B][/COLOR] Wizard'
 BUILDERNAME = 'Newf276'
 EXCLUDES = [ADDON_ID, 'repository.openwizard']
 # Text File with build info in it. Please read https://github.com/a4k-openproject/plugin.program.openwizard/wiki/Installing-Builds
-BUILDFILE = 'https://www.dropbox.com/scl/fi/w87d6kzqum0d7bw4xx7y1/builds.txt?rlkey=h0aadigjeqy8hndp3cg5v99fv&st=j2xe4ww5&dl=1'
+BUILDFILE = 'https://www.dropbox.com/scl/fi/w87d6kzqum0d7bw4xx7y1/builds.txt?rlkey=h0aadigjeqy8hndp3cg5v99fv&dl=1'
 # How often you would like it to check for build updates in days
 # 0 being every startup of kodi
 UPDATECHECK = 0
