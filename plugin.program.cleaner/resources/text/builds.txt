@@ -1,6 +1,6 @@
 id="plugin.program.cleaner"
-version="1.0.0"
-zip="https://github.com/newf276/kodirepo/raw/master/zips/plugin.program.cleaner/plugin.program.cleaner-1.0.0.zip"
+version="3.3.0"
+zip="https://github.com/newf276/kodirepo/raw/master/zips/plugin.program.cleaner/plugin.program.cleaner-3.3.0.zip"
 
 name="Example Build 1"
 version="1.0"
