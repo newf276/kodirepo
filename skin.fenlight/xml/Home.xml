@@ -59,13 +59,13 @@
 							<param name="list_id" value="5900"/>
 						</include>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.fenlight/?action=trakt_movies_trending_recent&amp;iconImage=trending_recent&amp;mode=build_movie_list&amp;name=Trending%20Recent&amp;random_support=true"/>
-							<param name="widget_header" value="Trending Recently"/>
+							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=Top%20Movies%20of%20the%20week&amp;list_type=user_lists&amp;mode=trakt.list.build_trakt_list&amp;slug=top-movies-of-the-week&amp;user=garycrawfordgc"/>
+							<param name="widget_header" value="Weekly Top Movies"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5100"/>
 						</include>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.fenlight/?action=tmdb_movies_latest_releases&amp;iconImage=dvd&amp;mode=build_movie_list&amp;name=Latest%20Releases&amp;random_support=true"/>
+							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=Latest%20Releases&amp;list_type=user_lists&amp;mode=trakt.list.build_trakt_list&amp;slug=latest-releases&amp;user=giladg"/>
 							<param name="widget_header" value="Latest Releases"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5200"/>
@@ -99,8 +99,8 @@
 							<param name="list_id" value="6100"/>
 						</include>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.fenlight/?action=trakt_tv_trending_recent&amp;iconImage=trending_recent&amp;mode=build_tvshow_list&amp;name=Trending%20Recent&amp;random_support=true"/>
-							<param name="widget_header" value="Trending Recently"/>
+							<param name="content_path" value="plugin://plugin.video.fenlight/?list_name=Apple%20TV%2b%20Top%2010%20TV%20Shows&amp;list_type=user_lists&amp;mode=trakt.list.build_trakt_list&amp;slug=latest-tv-shows&amp;user=garycrawfordgc"/>
+							<param name="widget_header" value="Latest Shows"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6200"/>
 						</include> 

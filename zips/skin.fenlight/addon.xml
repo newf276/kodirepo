@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.fenlight" version="8.3.2" name="[COLOR deepskyblue]Fenlight[/COLOR] Skin" provider-name="Newf276">
+<addon id="skin.fenlight" version="8.4.2" name="[COLOR deepskyblue]Fenlight[/COLOR] Skin" provider-name="Newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
