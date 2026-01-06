@@ -1316,7 +1316,7 @@
                       </item>
                       <item>
                           <visible>Container(2000).HasFocus(50)</visible>
-                          <visible>!String.IsEqual(Window(10000).Property(finder.trakt.client),d37e53be8a9ad6a243d6e72e6271de71bac2f718c8c512b93198bf3fd747ec37)</visible>
+                          <visible>!String.IsEqual(Window(10000).Property(finder.trakt.client),1038ef327e86e7f6d39d80d2eb5479bff66dd8394e813c5e0e387af0f84d89fb)</visible>
                           <property name="setting_label">    - Restore Default Client ID Key</property>
                           <property name="setting_type">action</property>
                           <property name="setting_value">...</property>
