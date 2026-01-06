@@ -813,7 +813,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.finder" name="[COLOR deepskyblue]Finder[/COLOR]" provider-name="Newf276/Tikipeter/AnonyMouse" version="2.1.30">
+<addon id="plugin.video.finder" name="[COLOR deepskyblue]Finder[/COLOR]" provider-name="Newf276/Tikipeter/AnonyMouse" version="2.7.6">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.pil" version="1.1.7"/>
@@ -835,7 +835,7 @@
             <icon>resources/media/addon_icons/finder_icon_01.png</icon>
             <fanart>resources/media/finder_fanart_01.jpg</fanart>
         </assets>
-        <news>Latest fork of Fenlight 2.1.30 by Tikipeter/Anonymous. For latest changes see Changelog within Tools of add-on.</news>
+        <news>Newf's fork of Finder 2.1.61 by Tikipeter/Anonymous. For latest changes see Changelog within Tools of add-on</news>
     </extension>
 </addon>
 

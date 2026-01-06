@@ -67,7 +67,7 @@
                     <width>60</width>
                     <height>60</height>
                     <aspectratio aligny="top">keep</aspectratio>
-                    <texture>finder_common/finder.png</texture>
+                    <texture>$INFO[Window(10000).Property(finder.addon_icon_mini)]</texture>
                 </control>
                 <control type="label">
                     <left>75</left>

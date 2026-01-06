@@ -27,14 +27,14 @@
                     <width>60</width>
                     <height>60</height>
                     <aspectratio aligny="top">keep</aspectratio>
-                    <texture>finder_common/finder.png</texture>
+                    <texture>$INFO[Window(10000).Property(finder.addon_icon_mini)]</texture>
                 </control>
                 <control type="label">
                     <top>20</top>
                     <left>1590</left>
                     <width max="300">auto</width>
                     <height>20</height>
-                    <font>font_clock_small</font> <!-- FINDER_38 -->
+                    <font>font37</font> <!-- FINDER_38 -->
                     <textcolor>FFCCCCCC</textcolor>
                     <align>right</align>
                     <aligny>center</aligny>
