@@ -1,6 +1,9 @@
-Changelog 3.0.66 (newf276)
-[FEATURE] Redesigned Source Select theme, better visually for sure.
-
+Changelog 3.0.66
+[BUG] Resolved Kodi Omega deprecation warnings by migrating cast metadata to InfoTagVideo APIs
+[BUG] Fixed cast normalization to build xbmc.Actor objects and stop setCast runtime exceptions
+[BUG] Normalized unique IDs and resume data to prevent type errors and deprecated property usage
+[BUG] Ensured widget refresh runtime flag resets correctly after triggering refresh
+[BUG] Stopped duplicate episode rows during Trakt sync by keying upserts on show/season/number
 
 Changelog 3.0.65
 [BUG] Improved SQLite database lock handling
@@ -38,8 +41,8 @@ Changelog 3.0.5
 
 Changelog 3.0.1
 [FEATURE] Handle Kodi database version for Omega 21
-[PERFORMANCE] Compressed icons from 3.53 MB to 1.34
-[FEATURE] Update background color to Black for 3.0.1
+[PERFORMANCE] Compressed icons from 3.53 MB to 1.34 (Removed)
+[FEATURE] Update background color to Black for 3.0.1 (Removed)
 
 Changelog 3.0.0
 [PERFORMANCE] Drop support for Python 2.x (Kodi Leia and below)
